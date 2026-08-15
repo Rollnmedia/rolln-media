@@ -1,3 +1,5 @@
+import Hero3D from "./components/Hero3D";
+
 export default function Home() {
   return (
     <main className="site">
@@ -53,20 +55,10 @@ export default function Home() {
 
         </div>
 
-        {/* 3D PLACEHOLDER */}
+        {/* 3D HERO */}
         <div className="hero-visual">
 
-          <div className="glow glow-blue"></div>
-          <div className="glow glow-orange"></div>
-
-          <div className="cursor-orb">
-            <div className="cursor-shape">
-              ↖
-            </div>
-
-            <div className="cursor-ring ring-one"></div>
-            <div className="cursor-ring ring-two"></div>
-          </div>
+          <Hero3D />
 
           <div className="floating-word word-one">
             SEO
@@ -82,6 +74,7 @@ export default function Home() {
 
         </div>
 
+        {/* HERO SERVICES STRIP */}
         <div className="hero-bottom">
           <span>SEO</span>
           <i>✦</i>
@@ -96,7 +89,10 @@ export default function Home() {
 
       {/* SERVICES */}
       <section id="services" className="section">
-        <div className="section-label">01 / WHAT WE DO</div>
+
+        <div className="section-label">
+          01 / WHAT WE DO
+        </div>
 
         <h2>
           Digital marketing
@@ -108,7 +104,9 @@ export default function Home() {
 
           <div className="service-card">
             <span>01</span>
+
             <h3>SEO</h3>
+
             <p>
               Build search visibility and attract customers
               who are actively looking for your services.
@@ -117,7 +115,9 @@ export default function Home() {
 
           <div className="service-card">
             <span>02</span>
+
             <h3>Google Ads</h3>
+
             <p>
               Put your business in front of high-intent
               customers and turn clicks into enquiries.
@@ -126,7 +126,9 @@ export default function Home() {
 
           <div className="service-card">
             <span>03</span>
+
             <h3>Meta Ads</h3>
+
             <p>
               Creative campaigns designed to generate
               attention, conversations and leads.
@@ -135,7 +137,9 @@ export default function Home() {
 
           <div className="service-card">
             <span>04</span>
+
             <h3>Web Design</h3>
+
             <p>
               High-performance websites designed around
               your brand, customers and business goals.
@@ -143,11 +147,18 @@ export default function Home() {
           </div>
 
         </div>
+
       </section>
 
       {/* WORK */}
-      <section id="work" className="section work-section">
-        <div className="section-label">02 / SELECTED WORK</div>
+      <section
+        id="work"
+        className="section work-section"
+      >
+
+        <div className="section-label">
+          02 / SELECTED WORK
+        </div>
 
         <h2>
           Work that speaks
@@ -156,25 +167,35 @@ export default function Home() {
         </h2>
 
         <div className="work-card">
+
           <div className="work-info">
+
             <span className="work-category">
               PROPERTY MANAGEMENT · NEW ZEALAND
             </span>
 
-            <h3>Rent My Home</h3>
+            <h3>
+              Rent My Home
+            </h3>
 
             <p>
               Website, SEO and digital growth work for
               a New Zealand property management brand.
             </p>
 
-            <a href="#" className="text-link">
+            <a
+              href="#"
+              className="text-link"
+            >
               View Case Study ↗
             </a>
+
           </div>
 
           <div className="work-preview">
+
             <div className="preview-browser">
+
               <div className="browser-bar">
                 <span></span>
                 <span></span>
@@ -182,17 +203,34 @@ export default function Home() {
               </div>
 
               <div className="preview-content">
-                <strong>Rent My Home</strong>
-                <small>You Own. We Manage.</small>
+
+                <strong>
+                  Rent My Home
+                </strong>
+
+                <small>
+                  You Own. We Manage.
+                </small>
+
               </div>
+
             </div>
+
           </div>
+
         </div>
+
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="section about-section">
-        <div className="section-label">03 / WHY ROLL’N MEDIA</div>
+      <section
+        id="about"
+        className="section about-section"
+      >
+
+        <div className="section-label">
+          03 / WHY ROLL’N MEDIA
+        </div>
 
         <h2>
           Strategy.
@@ -207,15 +245,22 @@ export default function Home() {
           execution to help businesses move from being
           seen to being chosen.
         </p>
+
       </section>
 
       {/* CTA */}
-      <section id="contact" className="cta-section">
+      <section
+        id="contact"
+        className="cta-section"
+      >
 
         <div className="cta-orb"></div>
 
         <div className="cta-content">
-          <div className="section-label">LET’S WORK TOGETHER</div>
+
+          <div className="section-label">
+            LET’S WORK TOGETHER
+          </div>
 
           <h2>
             Ready to make
@@ -223,15 +268,20 @@ export default function Home() {
             your next move?
           </h2>
 
-          <a href="mailto:hello@rollnmedia.co.nz" className="primary-button">
+          <a
+            href="mailto:hello@rollnmedia.co.nz"
+            className="primary-button"
+          >
             Start a Conversation <span>↗</span>
           </a>
+
         </div>
 
       </section>
 
       {/* FOOTER */}
       <footer className="footer">
+
         <div className="footer-logo">
           Roll’n Media
         </div>
@@ -240,7 +290,10 @@ export default function Home() {
           Digital growth for ambitious businesses.
         </p>
 
-        <span>© 2026 Roll’n Media</span>
+        <span>
+          © 2026 Roll’n Media
+        </span>
+
       </footer>
 
     </main>
