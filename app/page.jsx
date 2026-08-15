@@ -1,12 +1,14 @@
-import Hero3D from "./components/Hero3D";
+import HeroNZMap from "./components/HeroNZMap";
 
 export default function Home() {
   return (
     <main className="site">
 
-      {/* NAVBAR */}
+      {/* ================= NAVBAR ================= */}
+
       <header className="navbar">
-        <a href="/" className="logo">
+
+        <a href="/" className="logo" aria-label="Roll'n Media Home">
           <span className="logo-roll">Roll’n</span>
           <span className="logo-media">Media</span>
         </a>
@@ -20,9 +22,12 @@ export default function Home() {
         <a href="#contact" className="nav-cta">
           Let’s Talk <span>↗</span>
         </a>
+
       </header>
 
-      {/* HERO */}
+
+      {/* ================= HERO ================= */}
+
       <section className="hero">
 
         <div className="hero-content">
@@ -33,7 +38,9 @@ export default function Home() {
           </div>
 
           <h1>
-            Digital growth
+            Digital
+            <br />
+            growth
             <br />
             <span>that clicks.</span>
           </h1>
@@ -44,21 +51,26 @@ export default function Home() {
           </p>
 
           <div className="hero-buttons">
+
             <a href="#contact" className="primary-button">
-              Start a Conversation <span>↗</span>
+              Start a Conversation
+              <span>↗</span>
             </a>
 
             <a href="#work" className="secondary-button">
               Explore Our Work
             </a>
+
           </div>
 
         </div>
 
-        {/* 3D HERO */}
+
+        {/* ================= NZ MAP VISUAL ================= */}
+
         <div className="hero-visual">
 
-          <Hero3D />
+          <HeroNZMap />
 
           <div className="floating-word word-one">
             SEO
@@ -72,22 +84,35 @@ export default function Home() {
             WEB
           </div>
 
+          <div className="floating-word word-four">
+            LEADS
+          </div>
+
         </div>
 
-        {/* HERO SERVICES STRIP */}
+
+        {/* ================= HERO BOTTOM STRIP ================= */}
+
         <div className="hero-bottom">
+
           <span>SEO</span>
           <i>✦</i>
+
           <span>PAID MEDIA</span>
           <i>✦</i>
+
           <span>WEB DESIGN</span>
           <i>✦</i>
+
           <span>GROWTH</span>
+
         </div>
 
       </section>
 
-      {/* SERVICES */}
+
+      {/* ================= SERVICES ================= */}
+
       <section id="services" className="section">
 
         <div className="section-label">
@@ -111,7 +136,10 @@ export default function Home() {
               Build search visibility and attract customers
               who are actively looking for your services.
             </p>
+
+            <div className="card-arrow">↗</div>
           </div>
+
 
           <div className="service-card">
             <span>02</span>
@@ -122,7 +150,10 @@ export default function Home() {
               Put your business in front of high-intent
               customers and turn clicks into enquiries.
             </p>
+
+            <div className="card-arrow">↗</div>
           </div>
+
 
           <div className="service-card">
             <span>03</span>
@@ -133,7 +164,10 @@ export default function Home() {
               Creative campaigns designed to generate
               attention, conversations and leads.
             </p>
+
+            <div className="card-arrow">↗</div>
           </div>
+
 
           <div className="service-card">
             <span>04</span>
@@ -144,17 +178,18 @@ export default function Home() {
               High-performance websites designed around
               your brand, customers and business goals.
             </p>
+
+            <div className="card-arrow">↗</div>
           </div>
 
         </div>
 
       </section>
 
-      {/* WORK */}
-      <section
-        id="work"
-        className="section work-section"
-      >
+
+      {/* ================= WORK ================= */}
+
+      <section id="work" className="section work-section">
 
         <div className="section-label">
           02 / SELECTED WORK
@@ -183,14 +218,12 @@ export default function Home() {
               a New Zealand property management brand.
             </p>
 
-            <a
-              href="#"
-              className="text-link"
-            >
+            <a href="#" className="text-link">
               View Case Study ↗
             </a>
 
           </div>
+
 
           <div className="work-preview">
 
@@ -203,6 +236,10 @@ export default function Home() {
               </div>
 
               <div className="preview-content">
+
+                <div className="preview-label">
+                  PROPERTY MANAGEMENT
+                </div>
 
                 <strong>
                   Rent My Home
@@ -222,11 +259,10 @@ export default function Home() {
 
       </section>
 
-      {/* ABOUT */}
-      <section
-        id="about"
-        className="section about-section"
-      >
+
+      {/* ================= ABOUT ================= */}
+
+      <section id="about" className="section about-section">
 
         <div className="section-label">
           03 / WHY ROLL’N MEDIA
@@ -248,11 +284,12 @@ export default function Home() {
 
       </section>
 
-      {/* CTA */}
-      <section
-        id="contact"
-        className="cta-section"
-      >
+
+      {/* ================= CTA ================= */}
+
+      <section id="contact" className="cta-section">
+
+        <div className="cta-grid"></div>
 
         <div className="cta-orb"></div>
 
@@ -272,14 +309,17 @@ export default function Home() {
             href="mailto:hello@rollnmedia.co.nz"
             className="primary-button"
           >
-            Start a Conversation <span>↗</span>
+            Start a Conversation
+            <span>↗</span>
           </a>
 
         </div>
 
       </section>
 
-      {/* FOOTER */}
+
+      {/* ================= FOOTER ================= */}
+
       <footer className="footer">
 
         <div className="footer-logo">
