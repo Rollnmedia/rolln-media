@@ -7,8 +7,7 @@ export default function Home() {
       {/* ================= NAVBAR ================= */}
 
       <header className="navbar">
-
-        <a href="/" className="logo" aria-label="Roll'n Media Home">
+        <a href="/" className="logo">
           <span className="logo-roll">Roll’n</span>
           <span className="logo-media">Media</span>
         </a>
@@ -22,7 +21,6 @@ export default function Home() {
         <a href="#contact" className="nav-cta">
           Let’s Talk <span>↗</span>
         </a>
-
       </header>
 
 
@@ -38,9 +36,7 @@ export default function Home() {
           </div>
 
           <h1>
-            Digital
-            <br />
-            growth
+            Digital growth
             <br />
             <span>that clicks.</span>
           </h1>
@@ -66,42 +62,27 @@ export default function Home() {
         </div>
 
 
-        {/* ================= NZ MAP VISUAL ================= */}
+        {/* ================= NZ HERO VISUAL ================= */}
 
         <div className="hero-visual">
-
           <HeroNZMap />
-
-          <div className="floating-word word-one">
-            SEO
-          </div>
-
-          <div className="floating-word word-two">
-            ADS
-          </div>
-
-          <div className="floating-word word-three">
-            WEB
-          </div>
-
-          <div className="floating-word word-four">
-            LEADS
-          </div>
-
         </div>
 
 
-        {/* ================= HERO BOTTOM STRIP ================= */}
+        {/* ================= HERO SERVICES STRIP ================= */}
 
         <div className="hero-bottom">
 
           <span>SEO</span>
+
           <i>✦</i>
 
           <span>PAID MEDIA</span>
+
           <i>✦</i>
 
           <span>WEB DESIGN</span>
+
           <i>✦</i>
 
           <span>GROWTH</span>
@@ -125,10 +106,14 @@ export default function Home() {
           <span>built to perform.</span>
         </h2>
 
+
         <div className="service-grid">
 
           <div className="service-card">
+
             <span>01</span>
+
+            <div className="card-arrow">↗</div>
 
             <h3>SEO</h3>
 
@@ -137,12 +122,14 @@ export default function Home() {
               who are actively looking for your services.
             </p>
 
-            <div className="card-arrow">↗</div>
           </div>
 
 
           <div className="service-card">
+
             <span>02</span>
+
+            <div className="card-arrow">↗</div>
 
             <h3>Google Ads</h3>
 
@@ -151,12 +138,14 @@ export default function Home() {
               customers and turn clicks into enquiries.
             </p>
 
-            <div className="card-arrow">↗</div>
           </div>
 
 
           <div className="service-card">
+
             <span>03</span>
+
+            <div className="card-arrow">↗</div>
 
             <h3>Meta Ads</h3>
 
@@ -165,12 +154,14 @@ export default function Home() {
               attention, conversations and leads.
             </p>
 
-            <div className="card-arrow">↗</div>
           </div>
 
 
           <div className="service-card">
+
             <span>04</span>
+
+            <div className="card-arrow">↗</div>
 
             <h3>Web Design</h3>
 
@@ -179,7 +170,6 @@ export default function Home() {
               your brand, customers and business goals.
             </p>
 
-            <div className="card-arrow">↗</div>
           </div>
 
         </div>
@@ -200,6 +190,7 @@ export default function Home() {
           <br />
           <span>for itself.</span>
         </h2>
+
 
         <div className="work-card">
 
@@ -238,7 +229,7 @@ export default function Home() {
               <div className="preview-content">
 
                 <div className="preview-label">
-                  PROPERTY MANAGEMENT
+                  PROPERTY MANAGEMENT · NZ
                 </div>
 
                 <strong>
