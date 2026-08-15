@@ -1,8 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
-
-/* =========================================
-   RESET
-========================================= */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -15,7 +11,7 @@ html {
 }
 
 body {
-  background: #080a0f;
+  background: #05070c;
   color: #f5f7fa;
   font-family: "DM Sans", sans-serif;
 }
@@ -29,38 +25,41 @@ a {
   overflow: hidden;
   background:
     radial-gradient(
-      circle at 75% 10%,
-      rgba(40, 75, 150, 0.14),
-      transparent 30%
+      circle at 78% 8%,
+      rgba(37, 86, 170, 0.12),
+      transparent 28%
     ),
-    #080a0f;
+    #05070c;
 }
 
 
-/* =========================================
-   NAVBAR
-========================================= */
+/* ================================================= */
+/* NAVBAR */
+/* ================================================= */
 
 .navbar {
   width: 100%;
-  height: 82px;
+  height: 96px;
+
   padding: 0 6vw;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 20;
+
+  z-index: 50;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .logo {
   display: flex;
   flex-direction: column;
+
   line-height: 0.8;
 
   font-family: "Space Grotesk", sans-serif;
@@ -69,20 +68,24 @@ a {
 }
 
 .logo-roll {
-  color: #3156a6;
+  color: #315da8;
 }
 
 .logo-media {
   color: #f47a20;
+
   font-size: 15px;
-  margin-left: 20px;
+
+  margin-left: 21px;
+  margin-top: 4px;
 }
 
 .nav-links {
   display: flex;
-  gap: 42px;
+  gap: 48px;
 
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.66);
+
   font-size: 14px;
 }
 
@@ -95,30 +98,31 @@ a {
 }
 
 .nav-cta {
-  padding: 12px 20px;
+  padding: 14px 22px;
 
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 999px;
 
   font-size: 13px;
 
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .nav-cta:hover {
   background: #f47a20;
   border-color: #f47a20;
-  color: #080a0f;
+  color: #05070c;
 }
 
 
-/* =========================================
-   HERO
-========================================= */
+/* ================================================= */
+/* HERO */
+/* ================================================= */
 
 .hero {
-  min-height: 850px;
-  padding: 180px 6vw 80px;
+  min-height: 900px;
+
+  padding: 190px 6vw 80px;
 
   position: relative;
 
@@ -127,23 +131,25 @@ a {
 }
 
 .hero-content {
-  width: 55%;
+  width: 56%;
 
   position: relative;
-  z-index: 5;
+
+  z-index: 10;
 }
 
 .eyebrow {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 11px;
 
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.52);
 
   font-size: 11px;
-  letter-spacing: 0.15em;
 
-  margin-bottom: 28px;
+  letter-spacing: 0.18em;
+
+  margin-bottom: 38px;
 }
 
 .eyebrow-dot {
@@ -154,26 +160,33 @@ a {
 
   background: #f47a20;
 
-  box-shadow: 0 0 16px rgba(244, 122, 32, 0.8);
+  box-shadow:
+    0 0 10px rgba(244, 122, 32, 0.8),
+    0 0 30px rgba(244, 122, 32, 0.3);
 }
 
 .hero h1 {
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: clamp(70px, 9vw, 150px);
-  line-height: 0.88;
+  font-size: clamp(78px, 9vw, 148px);
 
-  letter-spacing: -0.07em;
+  line-height: 0.84;
+
+  letter-spacing: -0.075em;
 
   font-weight: 600;
+
+  max-width: 800px;
 }
 
 .hero h1 span {
-  background: linear-gradient(
-    90deg,
-    #fff,
-    #5f7fca
-  );
+  background:
+    linear-gradient(
+      100deg,
+      #ffffff 0%,
+      #d7e0f6 35%,
+      #6688d5 100%
+    );
 
   -webkit-background-clip: text;
   background-clip: text;
@@ -182,21 +195,22 @@ a {
 }
 
 .hero-description {
-  max-width: 510px;
+  max-width: 530px;
 
-  margin-top: 38px;
+  margin-top: 42px;
 
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.58);
 
   font-size: 18px;
+
   line-height: 1.7;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 15px;
+  gap: 14px;
 
-  margin-top: 35px;
+  margin-top: 36px;
 }
 
 .primary-button {
@@ -204,141 +218,517 @@ a {
   align-items: center;
   gap: 15px;
 
-  padding: 15px 23px;
+  padding: 16px 24px;
 
   background: #f47a20;
-  color: #080a0f;
+  color: #05070c;
 
   border-radius: 999px;
 
-  font-weight: 600;
   font-size: 14px;
+  font-weight: 600;
 
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .primary-button:hover {
   transform: translateY(-3px);
 
   box-shadow:
-    0 15px 40px rgba(244, 122, 32, 0.2);
+    0 15px 50px rgba(244, 122, 32, 0.18);
 }
 
 .secondary-button {
   display: inline-flex;
   align-items: center;
 
-  padding: 15px 23px;
+  padding: 16px 24px;
 
   border: 1px solid rgba(255, 255, 255, 0.15);
+
   border-radius: 999px;
 
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.72);
 
   font-size: 14px;
 
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .secondary-button:hover {
-  border-color: rgba(255, 255, 255, 0.35);
-
-  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
 }
 
 
-/* =========================================
-   HERO 3D VISUAL
-========================================= */
+/* ================================================= */
+/* HERO NZ VISUAL */
+/* ================================================= */
 
 .hero-visual {
-  width: 52%;
-  height: 680px;
-
   position: absolute;
 
-  right: 1%;
-  top: 105px;
+  width: 52%;
+  height: 700px;
 
-  z-index: 2;
+  right: -1%;
+  top: 130px;
 
-  overflow: visible;
+  z-index: 3;
 
   pointer-events: none;
 }
 
-/*
-   Hero3D component container
-*/
 
-.hero-3d {
+/* Main component */
+
+.nz-visual {
   position: absolute;
 
   inset: 0;
 
+  overflow: visible;
+}
+
+
+/* Ambient glows */
+
+.nz-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(90px);
+
+  pointer-events: none;
+}
+
+.nz-glow-blue {
+  width: 500px;
+  height: 500px;
+
+  right: 14%;
+  top: 18%;
+
+  background: rgba(36, 91, 190, 0.24);
+
+  animation: glowPulse 6s ease-in-out infinite;
+}
+
+.nz-glow-orange {
+  width: 280px;
+  height: 280px;
+
+  right: 30%;
+  top: 42%;
+
+  background: rgba(244, 122, 32, 0.09);
+
+  animation: glowPulse 7s ease-in-out infinite reverse;
+}
+
+
+/* ================================================= */
+/* PARTICLES */
+/* ================================================= */
+
+.nz-particles {
+  position: absolute;
+
+  inset: 0;
+}
+
+.nz-particles span {
+  position: absolute;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: #4779db;
+
+  opacity: 0.5;
+
+  animation: particleFloat 5s ease-in-out infinite;
+}
+
+.nz-particles span:nth-child(1) {
+  left: 18%;
+  top: 25%;
+}
+
+.nz-particles span:nth-child(2) {
+  left: 31%;
+  top: 54%;
+}
+
+.nz-particles span:nth-child(3) {
+  left: 45%;
+  top: 21%;
+}
+
+.nz-particles span:nth-child(4) {
+  left: 60%;
+  top: 31%;
+}
+
+.nz-particles span:nth-child(5) {
+  left: 74%;
+  top: 16%;
+}
+
+.nz-particles span:nth-child(6) {
+  left: 86%;
+  top: 40%;
+}
+
+.nz-particles span:nth-child(7) {
+  left: 24%;
+  top: 72%;
+}
+
+.nz-particles span:nth-child(8) {
+  left: 51%;
+  top: 78%;
+}
+
+.nz-particles span:nth-child(9) {
+  left: 69%;
+  top: 68%;
+}
+
+.nz-particles span:nth-child(10) {
+  left: 91%;
+  top: 72%;
+}
+
+.nz-particles span:nth-child(11) {
+  left: 12%;
+  top: 46%;
+  background: #f47a20;
+}
+
+.nz-particles span:nth-child(12) {
+  left: 38%;
+  top: 38%;
+}
+
+.nz-particles span:nth-child(13) {
+  left: 78%;
+  top: 53%;
+  background: #f47a20;
+}
+
+.nz-particles span:nth-child(14) {
+  left: 58%;
+  top: 87%;
+}
+
+.nz-particles span:nth-child(15) {
+  left: 82%;
+  top: 83%;
+}
+
+
+/* ================================================= */
+/* ORBITS */
+/* ================================================= */
+
+.nz-orbit {
+  position: absolute;
+
+  border: 1px solid rgba(50, 105, 205, 0.38);
+
+  border-radius: 50%;
+
+  right: 10%;
+  top: 25%;
+
+  transform: rotate(-18deg);
+
+  pointer-events: none;
+}
+
+.orbit-a {
+  width: 530px;
+  height: 240px;
+
+  animation: orbitRotate 18s linear infinite;
+}
+
+.orbit-b {
+  width: 430px;
+  height: 620px;
+
+  right: 20%;
+
+  transform: rotate(28deg);
+
+  animation: orbitRotateReverse 22s linear infinite;
+}
+
+.orbit-c {
+  width: 620px;
+  height: 330px;
+
+  right: 4%;
+
+  top: 32%;
+
+  border-color: rgba(244, 122, 32, 0.28);
+
+  transform: rotate(-28deg);
+
+  animation: orbitRotate 25s linear infinite;
+}
+
+
+/* ================================================= */
+/* NZ MAP */
+/* ================================================= */
+
+.nz-map-wrap {
+  position: absolute;
+
+  width: 430px;
+  height: 610px;
+
+  right: 20%;
+  top: 5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: mapFloat 6s ease-in-out infinite;
+}
+
+.nz-map {
   width: 100%;
   height: 100%;
 
-  z-index: 1;
-
-  pointer-events: auto;
+  overflow: visible;
 }
 
-.hero-3d canvas {
-  width: 100% !important;
-  height: 100% !important;
+.nz-outline {
+  stroke: #3d76e4;
+  stroke-width: 3;
 
-  display: block;
+  stroke-linejoin: round;
+
+  transition: all 0.5s ease;
+}
+
+.nz-map-wrap:hover .nz-outline {
+  stroke: #7fa5ff;
+}
+
+.map-dot {
+  filter:
+    drop-shadow(0 0 8px currentColor);
+}
+
+.growth-line {
+  fill: none;
+
+  stroke: url(#nzOrange);
+
+  stroke-width: 5;
+
+  stroke-linecap: round;
+
+  stroke-dasharray: 18 12;
+
+  filter:
+    drop-shadow(0 0 7px rgba(244, 122, 32, 0.7));
+
+  animation: lineMove 4s linear infinite;
+}
+
+.growth-point {
+  fill: #ffb45d;
+
+  filter:
+    drop-shadow(0 0 10px #f47a20);
+
+  animation: pointPulse 2s ease-in-out infinite;
 }
 
 
-/*
-   Floating labels
-*/
+/* Center signal */
 
-.floating-word {
+.nz-center-point {
   position: absolute;
 
-  padding: 12px 18px;
+  width: 28px;
+  height: 28px;
 
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  left: 55%;
+  top: 43%;
 
-  background: rgba(255, 255, 255, 0.04);
+  transform: translate(-50%, -50%);
 
-  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nz-center-point::before {
+  content: "";
+
+  position: absolute;
+
+  width: 28px;
+  height: 28px;
+
+  border: 1px solid rgba(244, 122, 32, 0.6);
+
+  border-radius: 50%;
+
+  animation: signalPulse 2s ease-out infinite;
+}
+
+.nz-center-point span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #f47a20;
+
+  box-shadow:
+    0 0 12px #f47a20,
+    0 0 30px rgba(244, 122, 32, 0.7);
+}
+
+
+/* ================================================= */
+/* FLOATING LABELS */
+/* ================================================= */
+
+.floating-word {
+  display: none;
+}
+
+.nz-label {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 11px 16px;
+
+  background: rgba(5, 7, 12, 0.72);
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+
+  backdrop-filter: blur(15px);
 
   border-radius: 999px;
 
   color: rgba(255, 255, 255, 0.7);
 
-  font-size: 12px;
+  font-size: 11px;
 
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
 
-  z-index: 5;
+  box-shadow:
+    0 15px 50px rgba(0, 0, 0, 0.25);
 
-  pointer-events: none;
+  z-index: 10;
 }
 
-.word-one {
-  top: 130px;
-  right: 5%;
+.label-dot {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #4b82ee;
+
+  box-shadow: 0 0 10px #4b82ee;
 }
 
-.word-two {
-  top: 350px;
-  left: 0;
+.label-dot.orange {
+  background: #f47a20;
+
+  box-shadow: 0 0 10px #f47a20;
 }
 
-.word-three {
-  bottom: 80px;
-  right: 12%;
+.label-seo {
+  top: 25%;
+  right: 2%;
+}
+
+.label-ads {
+  top: 56%;
+  left: 3%;
+}
+
+.label-web {
+  bottom: 13%;
+  right: 15%;
+}
+
+.label-leads {
+  top: 42%;
+  right: 7%;
 }
 
 
-/* =========================================
-   HERO BOTTOM STRIP
-========================================= */
+/* ================================================= */
+/* SIGNAL */
+/* ================================================= */
+
+.nz-signal {
+  position: absolute;
+
+  width: 110px;
+  height: 30px;
+
+  left: 12%;
+  bottom: 15%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  opacity: 0.4;
+}
+
+.nz-signal span {
+  display: block;
+
+  width: 4px;
+
+  border-radius: 999px;
+
+  background: #4779db;
+
+  animation: signalBars 1.4s ease-in-out infinite;
+}
+
+.nz-signal span:nth-child(1) {
+  height: 9px;
+}
+
+.nz-signal span:nth-child(2) {
+  height: 18px;
+  animation-delay: 0.15s;
+}
+
+.nz-signal span:nth-child(3) {
+  height: 28px;
+  animation-delay: 0.3s;
+}
+
+
+/* ================================================= */
+/* HERO BOTTOM */
+/* ================================================= */
 
 .hero-bottom {
   position: absolute;
@@ -349,8 +739,8 @@ a {
   width: 100%;
   height: 58px;
 
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 
   display: flex;
   align-items: center;
@@ -358,26 +748,26 @@ a {
 
   gap: 30px;
 
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.38);
 
-  font-size: 11px;
+  font-size: 10px;
 
-  letter-spacing: 0.16em;
-
-  z-index: 10;
+  letter-spacing: 0.18em;
 }
 
 .hero-bottom i {
   color: #f47a20;
+
+  font-style: normal;
 }
 
 
-/* =========================================
-   SECTIONS
-========================================= */
+/* ================================================= */
+/* GENERAL SECTIONS */
+/* ================================================= */
 
 .section {
-  padding: 150px 6vw;
+  padding: 160px 6vw;
 
   position: relative;
 }
@@ -385,31 +775,31 @@ a {
 .section-label {
   color: #f47a20;
 
-  font-size: 11px;
+  font-size: 10px;
 
   letter-spacing: 0.2em;
 
-  margin-bottom: 35px;
+  margin-bottom: 38px;
 }
 
 .section h2 {
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: clamp(55px, 7vw, 105px);
+  font-size: clamp(58px, 7vw, 108px);
 
-  line-height: 0.95;
+  line-height: 0.9;
 
-  letter-spacing: -0.06em;
+  letter-spacing: -0.065em;
 }
 
 .section h2 span {
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.24);
 }
 
 
-/* =========================================
-   SERVICES
-========================================= */
+/* ================================================= */
+/* SERVICES */
+/* ================================================= */
 
 .service-grid {
   margin-top: 100px;
@@ -422,13 +812,15 @@ a {
 }
 
 .service-card {
-  min-height: 300px;
+  min-height: 310px;
 
-  padding: 40px;
+  padding: 42px;
+
+  position: relative;
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
-  transition: 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .service-card:nth-child(odd) {
@@ -442,7 +834,9 @@ a {
 .service-card > span {
   color: #f47a20;
 
-  font-size: 12px;
+  font-size: 11px;
+
+  letter-spacing: 0.1em;
 }
 
 .service-card h3 {
@@ -450,7 +844,7 @@ a {
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 42px;
+  font-size: 43px;
 }
 
 .service-card p {
@@ -458,18 +852,46 @@ a {
 
   margin-top: 15px;
 
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.48);
 
   line-height: 1.7;
 }
 
+.card-arrow {
+  position: absolute;
 
-/* =========================================
-   WORK
-========================================= */
+  right: 40px;
+  top: 40px;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 50%;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .card-arrow {
+  background: #f47a20;
+  border-color: #f47a20;
+  color: #05070c;
+}
+
+
+/* ================================================= */
+/* WORK */
+/* ================================================= */
 
 .work-section {
-  background: #0b0e15;
+  background: #090c13;
 }
 
 .work-card {
@@ -487,7 +909,7 @@ a {
 
   overflow: hidden;
 
-  background: #10131b;
+  background: #0d1119;
 }
 
 .work-info {
@@ -495,7 +917,6 @@ a {
 
   display: flex;
   flex-direction: column;
-
   justify-content: center;
 }
 
@@ -513,12 +934,14 @@ a {
   font-family: "Space Grotesk", sans-serif;
 
   font-size: 60px;
+
+  letter-spacing: -0.05em;
 }
 
 .work-info p {
   margin-top: 20px;
 
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.52);
 
   line-height: 1.7;
 }
@@ -526,30 +949,23 @@ a {
 .text-link {
   margin-top: 40px;
 
-  color: #fff;
-
   font-weight: 600;
 
-  transition: 0.3s ease;
-}
-
-.text-link:hover {
-  color: #f47a20;
+  color: #fff;
 }
 
 .work-preview {
   display: flex;
-
   align-items: center;
   justify-content: center;
 
   background:
     radial-gradient(
       circle at center,
-      rgba(49, 86, 166, 0.22),
-      transparent 50%
+      rgba(49, 86, 166, 0.2),
+      transparent 55%
     ),
-    #080a0f;
+    #07090e;
 }
 
 .preview-browser {
@@ -569,14 +985,13 @@ a {
   height: 35px;
 
   display: flex;
-
   align-items: center;
 
   gap: 6px;
 
   padding-left: 15px;
 
-  background: #161a23;
+  background: #151922;
 }
 
 .browser-bar span {
@@ -594,23 +1009,37 @@ a {
   padding: 50px;
 
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
 
   background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(49, 86, 166, 0.35),
+      transparent 35%
+    ),
     linear-gradient(
       135deg,
-      rgba(49, 86, 166, 0.25),
-      transparent
-    ),
-    #f5f5f5;
+      #e9edf5,
+      #ffffff
+    );
 
-  color: #111;
+  color: #10131a;
+}
+
+.preview-label {
+  font-size: 10px;
+
+  letter-spacing: 0.15em;
+
+  color: #365ba4;
+
+  margin-bottom: 20px;
 }
 
 .preview-content strong {
+  font-family: "Space Grotesk", sans-serif;
+
   font-size: 42px;
 }
 
@@ -621,17 +1050,15 @@ a {
 }
 
 
-/* =========================================
-   ABOUT
-========================================= */
+/* ================================================= */
+/* ABOUT */
+/* ================================================= */
 
 .about-section {
   min-height: 800px;
 
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
 }
 
@@ -644,13 +1071,13 @@ a {
 
   line-height: 1.5;
 
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.57);
 }
 
 
-/* =========================================
-   CTA
-========================================= */
+/* ================================================= */
+/* CTA */
+/* ================================================= */
 
 .cta-section {
   min-height: 700px;
@@ -658,7 +1085,6 @@ a {
   position: relative;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -667,22 +1093,49 @@ a {
   overflow: hidden;
 }
 
+.cta-grid {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.16;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px
+    );
+
+  background-size: 60px 60px;
+
+  mask-image: radial-gradient(
+    circle at center,
+    black,
+    transparent 70%
+  );
+}
+
 .cta-orb {
   position: absolute;
 
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
 
   border-radius: 50%;
 
   background:
     radial-gradient(
       circle,
-      rgba(244, 122, 32, 0.2),
+      rgba(244, 122, 32, 0.18),
       transparent 65%
     );
 
-  filter: blur(30px);
+  filter: blur(35px);
 }
 
 .cta-content {
@@ -704,14 +1157,14 @@ a {
 }
 
 
-/* =========================================
-   FOOTER
-========================================= */
+/* ================================================= */
+/* FOOTER */
+/* ================================================= */
 
 .footer {
-  padding: 40px 6vw;
+  padding: 42px 6vw;
 
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
 
   display: grid;
 
@@ -719,7 +1172,7 @@ a {
 
   align-items: center;
 
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.38);
 
   font-size: 12px;
 }
@@ -735,42 +1188,184 @@ a {
 }
 
 
-/* =========================================
-   TABLET
-========================================= */
+/* ================================================= */
+/* ANIMATIONS */
+/* ================================================= */
+
+@keyframes mapFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes orbitRotate {
+  0% {
+    transform: rotate(-18deg);
+  }
+
+  50% {
+    transform: rotate(12deg);
+  }
+
+  100% {
+    transform: rotate(-18deg);
+  }
+}
+
+@keyframes orbitRotateReverse {
+  0% {
+    transform: rotate(28deg);
+  }
+
+  50% {
+    transform: rotate(-22deg);
+  }
+
+  100% {
+    transform: rotate(28deg);
+  }
+}
+
+@keyframes lineMove {
+  to {
+    stroke-dashoffset: -120;
+  }
+}
+
+@keyframes pointPulse {
+  0%,
+  100% {
+    r: 5;
+    opacity: 0.7;
+  }
+
+  50% {
+    r: 9;
+    opacity: 1;
+  }
+}
+
+@keyframes signalPulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+@keyframes signalBars {
+  0%,
+  100% {
+    transform: scaleY(0.6);
+  }
+
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes particleFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: translateY(-12px);
+    opacity: 0.8;
+  }
+}
+
+
+/* ================================================= */
+/* TABLET */
+/* ================================================= */
 
 @media (max-width: 1100px) {
 
-  .hero-content {
-    width: 58%;
-  }
-
-  .hero-visual {
-    width: 48%;
-    right: 0;
+  .hero {
+    min-height: 850px;
   }
 
   .hero h1 {
-    font-size: clamp(65px, 8vw, 110px);
+    font-size: clamp(70px, 9vw, 110px);
+  }
+
+  .hero-visual {
+    width: 50%;
+    right: -7%;
+  }
+
+  .nz-map-wrap {
+    width: 360px;
+    height: 540px;
+
+    right: 14%;
+  }
+
+  .orbit-a {
+    width: 450px;
+  }
+
+  .orbit-b {
+    height: 540px;
+  }
+
+  .orbit-c {
+    width: 500px;
   }
 
 }
 
 
-/* =========================================
-   MOBILE
-========================================= */
+/* ================================================= */
+/* MOBILE */
+/* ================================================= */
 
 @media (max-width: 900px) {
+
+  .navbar {
+    height: 82px;
+
+    padding: 0 5vw;
+  }
 
   .nav-links {
     display: none;
   }
 
   .hero {
-    min-height: 900px;
+    min-height: 920px;
 
-    padding-top: 150px;
+    padding:
+      150px
+      5vw
+      100px;
+
+    display: block;
   }
 
   .hero-content {
@@ -778,38 +1373,74 @@ a {
   }
 
   .hero h1 {
-    font-size: 65px;
-  }
+    font-size: clamp(64px, 15vw, 100px);
 
-  /*
-     3D moves behind the text on mobile
-  */
-
-  .hero-visual {
-    width: 100%;
-
-    height: 520px;
-
-    opacity: 0.8;
-
-    top: 360px;
-    right: 0;
-
-    z-index: 1;
-  }
-
-  .hero-content {
-    z-index: 5;
-  }
-
-  .hero-bottom {
-    z-index: 10;
+    line-height: 0.86;
   }
 
   .hero-description {
-    font-size: 16px;
-
     max-width: 500px;
+
+    font-size: 16px;
+  }
+
+  .hero-visual {
+    width: 100%;
+    height: 500px;
+
+    right: 0;
+    top: 470px;
+
+    opacity: 0.8;
+  }
+
+  .nz-map-wrap {
+    width: 300px;
+    height: 430px;
+
+    right: 18%;
+  }
+
+  .nz-glow-blue {
+    width: 350px;
+    height: 350px;
+
+    right: 15%;
+  }
+
+  .orbit-a {
+    width: 370px;
+    height: 180px;
+  }
+
+  .orbit-b {
+    width: 280px;
+    height: 430px;
+  }
+
+  .orbit-c {
+    width: 420px;
+    height: 230px;
+  }
+
+  .label-seo {
+    top: 15%;
+    right: 3%;
+  }
+
+  .label-ads {
+    top: 54%;
+    left: 4%;
+  }
+
+  .label-web {
+    bottom: 5%;
+    right: 12%;
+  }
+
+  .label-leads {
+    top: 38%;
+    right: 0;
   }
 
   .service-grid {
@@ -822,14 +1453,6 @@ a {
 
   .work-card {
     grid-template-columns: 1fr;
-  }
-
-  .work-info {
-    padding: 40px;
-  }
-
-  .work-info h3 {
-    font-size: 48px;
   }
 
   .work-preview {
@@ -845,15 +1468,11 @@ a {
 }
 
 
-/* =========================================
-   SMALL MOBILE
-========================================= */
+/* ================================================= */
+/* SMALL MOBILE */
+/* ================================================= */
 
 @media (max-width: 600px) {
-
-  .navbar {
-    padding: 0 5vw;
-  }
 
   .logo {
     font-size: 22px;
@@ -861,29 +1480,38 @@ a {
 
   .logo-media {
     font-size: 13px;
+
+    margin-left: 18px;
   }
 
   .nav-cta {
-    padding: 10px 14px;
+    padding: 10px 15px;
+
+    font-size: 12px;
   }
 
   .hero {
     min-height: 850px;
+  }
 
-    padding-left: 5vw;
-    padding-right: 5vw;
+  .eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 0.13em;
+
+    margin-bottom: 28px;
   }
 
   .hero h1 {
-    font-size: 55px;
+    font-size: 58px;
 
-    line-height: 0.9;
+    letter-spacing: -0.07em;
   }
 
   .hero-description {
-    font-size: 15px;
-
     margin-top: 30px;
+
+    font-size: 15px;
   }
 
   .hero-buttons {
@@ -893,42 +1521,42 @@ a {
   }
 
   .hero-visual {
-    height: 470px;
+    height: 420px;
 
-    top: 370px;
-
-    opacity: 0.7;
+    top: 450px;
   }
 
-  .floating-word {
-    padding: 9px 13px;
+  .nz-map-wrap {
+    width: 230px;
+    height: 340px;
 
-    font-size: 9px;
+    right: 12%;
   }
 
-  .word-one {
-    top: 90px;
-    right: 3%;
+  .nz-label {
+    padding: 8px 11px;
+
+    font-size: 8px;
   }
 
-  .word-two {
-    top: 280px;
-    left: 2%;
+  .label-seo {
+    right: 0;
   }
 
-  .word-three {
-    bottom: 40px;
-    right: 8%;
+  .label-ads {
+    left: 0;
+  }
+
+  .label-leads {
+    right: -2%;
   }
 
   .hero-bottom {
     gap: 12px;
 
-    font-size: 8px;
+    font-size: 7px;
 
     letter-spacing: 0.1em;
-
-    white-space: nowrap;
   }
 
   .section {
@@ -941,12 +1569,18 @@ a {
 
   .service-card {
     padding: 30px;
+
+    min-height: 280px;
   }
 
   .service-card h3 {
     margin-top: 50px;
 
     font-size: 35px;
+  }
+
+  .work-info {
+    padding: 35px;
   }
 
   .work-info h3 {
@@ -976,28 +1610,7 @@ a {
   }
 
   .cta-content h2 {
-    font-size: 55px;
-  }
-
-}
-
-
-/* =========================================
-   REDUCED MOTION
-========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    font-size: 58px;
   }
 
 }
