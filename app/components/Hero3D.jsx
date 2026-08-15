@@ -1,11 +1,11 @@
 "use client";
 
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, MeshDistortMaterial } from "@react-three/drei";
+import { Float, Text } from "@react-three/drei";
 import { useRef } from "react";
 import * as THREE from "three";
 
-function CursorCore() {
+function DigitalGlobe() {
   const group = useRef();
 
   useFrame((state) => {
@@ -13,116 +13,289 @@ function CursorCore() {
 
     const t = state.clock.getElapsedTime();
 
-    group.current.rotation.y = Math.sin(t * 0.5) * 0.25;
-    group.current.rotation.x = Math.cos(t * 0.4) * 0.12;
+    group.current.rotation.y = t * 0.18;
+    group.current.rotation.x = Math.sin(t * 0.25) * 0.08;
   });
 
   return (
-    <group ref={group} rotation={[0, 0, -0.35]}>
-      {/* Main cursor body */}
-      <mesh position={[0, 0, 0.15]} rotation={[0, 0, -0.15]}>
-        <coneGeometry args={[0.72, 2.6, 3]} />
-        <meshStandardMaterial
-          color="#f47a20"
-          metalness={0.35}
-          roughness={0.22}
-          emissive="#6b2500"
-          emissiveIntensity={0.35}
-        />
-      </mesh>
+    <group ref={group}>
 
-      {/* Blue core */}
-      <mesh position={[0.05, -0.25, 0.45]}>
-        <sphereGeometry args={[0.42, 32, 32]} />
-        <MeshDistortMaterial
+      {/* Core */}
+      <mesh>
+        <sphereGeometry args={[1.35, 64, 64]} />
+
+        <meshStandardMaterial
           color="#3156a6"
-          metalness={0.45}
-          roughness={0.18}
-          distort={0.25}
-          speed={1.5}
+          metalness={0.65}
+          roughness={0.2}
+          emissive="#17346f"
+          emissiveIntensity={0.7}
         />
       </mesh>
 
-      {/* Orange energy point */}
-      <mesh position={[0, 0.85, 0.5]}>
-        <sphereGeometry args={[0.12, 20, 20]} />
-        <meshStandardMaterial
-          color="#ff9a4a"
-          emissive="#f47a20"
-          emissiveIntensity={2}
+      {/* Digital wireframe */}
+      <mesh scale={1.015}>
+        <sphereGeometry args={[1.35, 32, 20]} />
+
+        <meshBasicMaterial
+          color="#6e8ed8"
+          wireframe
+          transparent
+          opacity={0.28}
         />
       </mesh>
+
+      {/* Orange inner glow */}
+      <mesh scale={0.65}>
+        <sphereGeometry args={[1.35, 32, 32]} />
+
+        <meshBasicMaterial
+          color="#f47a20"
+          transparent
+          opacity={0.08}
+        />
+      </mesh>
+
     </group>
   );
 }
 
-function OrbitRing({ scale = 1, rotation = [0, 0, 0] }) {
-  const ring = useRef();
+function Orbit({ radius, rotation, color, speed }) {
+  const ref = useRef();
 
   useFrame((state) => {
-    if (!ring.current) return;
+    if (!ref.current) return;
 
-    const t = state.clock.getElapsedTime();
-
-    ring.current.rotation.z = t * 0.12;
-    ring.current.rotation.x =
-      rotation[0] + Math.sin(t * 0.3) * 0.08;
+    ref.current.rotation.z =
+      state.clock.getElapsedTime() * speed;
   });
 
   return (
-    <mesh ref={ring} scale={scale} rotation={rotation}>
-      <torusGeometry args={[2.15, 0.008, 16, 128]} />
+    <mesh
+      ref={ref}
+      rotation={rotation}
+    >
+      <torusGeometry
+        args={[radius, 0.012, 16, 128]}
+      />
+
       <meshBasicMaterial
-        color="#3156a6"
+        color={color}
         transparent
-        opacity={0.45}
+        opacity={0.7}
       />
     </mesh>
   );
 }
 
+function GrowthArrow() {
+  const group = useRef();
+
+  useFrame((state) => {
+    if (!group.current) return;
+
+    group.current.position.y =
+      Math.sin(state.clock.getElapsedTime() * 1.2) * 0.08;
+  });
+
+  return (
+    <group
+      ref={group}
+      position={[0.1, 0, 1.55]}
+      rotation={[0, 0, -0.45]}
+    >
+
+      {/* Arrow shaft */}
+      <mesh>
+        <boxGeometry args={[0.12, 1.6, 0.12]} />
+
+        <meshStandardMaterial
+          color="#f47a20"
+          emissive="#f47a20"
+          emissiveIntensity={1.5}
+          metalness={0.4}
+          roughness={0.2}
+        />
+      </mesh>
+
+      {/* Arrow head */}
+      <mesh
+        position={[0, 0.85, 0]}
+        rotation={[0, 0, 0]}
+      >
+        <coneGeometry args={[0.3, 0.55, 3]} />
+
+        <meshStandardMaterial
+          color="#f47a20"
+          emissive="#f47a20"
+          emissiveIntensity={1.5}
+        />
+      </mesh>
+
+    </group>
+  );
+}
+
+function FloatingLabel({ text, position, color }) {
+  return (
+    <Float
+      speed={1.4}
+      rotationIntensity={0.15}
+      floatIntensity={0.4}
+    >
+      <group position={position}>
+
+        <mesh>
+          <planeGeometry args={[1.25, 0.42]} />
+
+          <meshBasicMaterial
+            color="#0d111b"
+            transparent
+            opacity={0.9}
+          />
+        </mesh>
+
+        <Text
+          position={[0, 0, 0.03]}
+          fontSize={0.14}
+          color={color}
+          anchorX="center"
+          anchorY="middle"
+        >
+          {text}
+        </Text>
+
+      </group>
+    </Float>
+  );
+}
+
+function Particles() {
+  const ref = useRef();
+
+  useFrame((state) => {
+    if (!ref.current) return;
+
+    ref.current.rotation.y =
+      state.clock.getElapsedTime() * 0.04;
+
+    ref.current.rotation.x =
+      state.clock.getElapsedTime() * 0.02;
+  });
+
+  const particles = [];
+
+  for (let i = 0; i < 80; i++) {
+    const radius = 2.2 + Math.random() * 1.8;
+    const angle = Math.random() * Math.PI * 2;
+
+    particles.push(
+      <mesh
+        key={i}
+        position={[
+          Math.cos(angle) * radius,
+          (Math.random() - 0.5) * 3.5,
+          Math.sin(angle) * radius,
+        ]}
+      >
+        <sphereGeometry args={[0.018, 8, 8]} />
+
+        <meshBasicMaterial
+          color={
+            Math.random() > 0.5
+              ? "#3156a6"
+              : "#f47a20"
+          }
+          transparent
+          opacity={0.65}
+        />
+      </mesh>
+    );
+  }
+
+  return <group ref={ref}>{particles}</group>;
+}
+
 function Scene() {
   return (
     <>
-      <ambientLight intensity={1.2} />
+      <ambientLight intensity={1.4} />
 
       <directionalLight
-        position={[3, 4, 5]}
+        position={[4, 5, 6]}
         intensity={3}
-        color="#ffffff"
       />
 
       <pointLight
         position={[2, 1, 3]}
+        color="#3156a6"
         intensity={8}
         distance={8}
-        color="#3156a6"
       />
 
       <pointLight
         position={[-2, -1, 2]}
-        intensity={5}
-        distance={7}
         color="#f47a20"
+        intensity={6}
+        distance={7}
       />
 
       <Float
-        speed={1.4}
-        rotationIntensity={0.25}
-        floatIntensity={0.7}
+        speed={1}
+        rotationIntensity={0.12}
+        floatIntensity={0.45}
       >
-        <CursorCore />
+        <DigitalGlobe />
+
+        <GrowthArrow />
+
+        <Orbit
+          radius={1.9}
+          rotation={[0.5, 0.2, 0]}
+          color="#3156a6"
+          speed={0.15}
+        />
+
+        <Orbit
+          radius={2.2}
+          rotation={[1.2, 0.3, 0]}
+          color="#f47a20"
+          speed={-0.1}
+        />
+
+        <Orbit
+          radius={2.55}
+          rotation={[0.2, 1, 0]}
+          color="#3156a6"
+          speed={0.08}
+        />
       </Float>
 
-      <OrbitRing scale={1} />
-      <OrbitRing
-        scale={1.25}
-        rotation={[Math.PI / 3, 0, 0]}
+      <FloatingLabel
+        text="SEO"
+        position={[-2.2, 0.9, 0]}
+        color="#6e8ed8"
       />
-      <OrbitRing
-        scale={1.5}
-        rotation={[Math.PI / 2.5, 0.5, 0]}
+
+      <FloatingLabel
+        text="ADS"
+        position={[2.0, 1.1, 0]}
+        color="#f47a20"
       />
+
+      <FloatingLabel
+        text="LEADS"
+        position={[2.0, -1.1, 0]}
+        color="#6e8ed8"
+      />
+
+      <FloatingLabel
+        text="WEB"
+        position={[-2.0, -1.2, 0]}
+        color="#f47a20"
+      />
+
+      <Particles />
     </>
   );
 }
