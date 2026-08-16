@@ -11,6 +11,7 @@ export default function HeroNZMap() {
 
   return (
     <div className={`nz-visual ${mounted ? "is-mounted" : ""}`}>
+
       {/* =====================================================
           AMBIENT BACKGROUND
       ===================================================== */}
@@ -18,15 +19,13 @@ export default function HeroNZMap() {
       <div className="nz-bg-glow"></div>
       <div className="nz-bg-glow nz-bg-glow-orange"></div>
 
-      {/* =====================================================
-          FLOATING PARTICLES
-      ===================================================== */}
-
-      <div className="nz-particles" aria-hidden="true">
-        {Array.from({ length: 26 }).map((_, i) => (
+      {/* Floating particles */}
+      <div className="nz-particles">
+        {Array.from({ length: 28 }).map((_, i) => (
           <span key={i}></span>
         ))}
       </div>
+
 
       {/* =====================================================
           ORBIT SYSTEM
@@ -37,89 +36,46 @@ export default function HeroNZMap() {
       <div className="nz-orbit nz-orbit-3"></div>
       <div className="nz-orbit nz-orbit-4"></div>
 
-      {/* =====================================================
-          MAP PLATFORM / CENTRAL GLOW
-      ===================================================== */}
-
-      <div className="nz-platform" aria-hidden="true">
-        <div className="platform-ring ring-1"></div>
-        <div className="platform-ring ring-2"></div>
-        <div className="platform-ring ring-3"></div>
-
-        <div className="platform-glow"></div>
-      </div>
 
       {/* =====================================================
-          NEW ZEALAND MAP
+          NZ MAP AREA
       ===================================================== */}
 
       <div className="nz-map-stage">
-        {/* Large soft glow behind map */}
+
+        {/* Main map glow */}
         <div className="nz-map-glow"></div>
 
-        {/* Secondary map glow */}
-        <div className="nz-map-glow-secondary"></div>
-
-        {/* =================================================
-            ACTUAL NZ SVG
-
-            IMPORTANT:
-            /nz.svg contains ONLY the NZ map.
-        ================================================= */}
-
+        {/* Actual SVG */}
         <img
           src="/nz.svg"
           alt="New Zealand"
           className="nz-map-image"
         />
 
-        {/* Glow copy behind the actual map */}
-        <img
-          src="/nz.svg"
-          alt=""
-          aria-hidden="true"
-          className="nz-map-image-glow"
-        />
+        {/* Gradient map overlay */}
+        <div className="nz-map-gradient"></div>
 
-        {/* =================================================
-            MAP NETWORK / LIGHTING
-        ================================================= */}
+        {/* Soft map edge glow */}
+        <div className="nz-map-edge"></div>
 
+        {/* Network/grid effect */}
         <div className="nz-map-network"></div>
 
-        <div className="nz-map-shine"></div>
 
         {/* =================================================
-            MAP DATA NODES
+            MAP NODES
         ================================================= */}
 
-        <span className="nz-node node-1">
-          <i></i>
-        </span>
+        <span className="nz-node node-1"></span>
+        <span className="nz-node node-2"></span>
+        <span className="nz-node node-3"></span>
+        <span className="nz-node node-4"></span>
+        <span className="nz-node node-5"></span>
+        <span className="nz-node node-6"></span>
 
-        <span className="nz-node node-2">
-          <i></i>
-        </span>
 
-        <span className="nz-node node-3">
-          <i></i>
-        </span>
-
-        <span className="nz-node node-4">
-          <i></i>
-        </span>
-
-        <span className="nz-node node-5">
-          <i></i>
-        </span>
-
-        <span className="nz-node node-6">
-          <i></i>
-        </span>
-
-        {/* =================================================
-            ORANGE ACTIVE HOTSPOTS
-        ================================================= */}
+        {/* Orange active points */}
 
         <span className="nz-hotspot hotspot-1">
           <i></i>
@@ -136,13 +92,12 @@ export default function HeroNZMap() {
         <span className="nz-hotspot hotspot-4">
           <i></i>
         </span>
+
       </div>
 
-      {/* =====================================================
-          CONNECTION SYSTEM
 
-          These connect the floating service cards
-          visually back toward the NZ map.
+      {/* =====================================================
+          CONNECTION LINES
       ===================================================== */}
 
       <svg
@@ -151,111 +106,98 @@ export default function HeroNZMap() {
         preserveAspectRatio="none"
         aria-hidden="true"
       >
-        {/* SEO */}
+
         <path
           className="connection-blue connection-seo"
-          d="M90 165 C250 105 390 145 545 245"
+          d="M110 180 C270 100 430 155 570 250"
         />
 
-        {/* ADS */}
         <path
           className="connection-orange connection-ads"
-          d="M815 185 C700 205 635 245 555 315"
+          d="M790 175 C690 190 640 245 570 315"
         />
 
-        {/* WEB DESIGN */}
         <path
           className="connection-blue connection-web"
-          d="M115 525 C270 465 410 405 535 365"
+          d="M90 510 C260 450 405 405 535 360"
         />
 
-        {/* LEADS */}
         <path
           className="connection-blue connection-leads"
-          d="M815 535 C710 500 635 445 550 405"
+          d="M800 535 C700 505 620 440 555 400"
         />
+
       </svg>
 
-      {/* =====================================================
-          CONNECTION SIGNALS
-
-          Small moving points travelling through the
-          connection system.
-      ===================================================== */}
-
-      <span className="connection-signal signal-seo"></span>
-      <span className="connection-signal signal-ads"></span>
-      <span className="connection-signal signal-web"></span>
-      <span className="connection-signal signal-leads"></span>
 
       {/* =====================================================
-          FLOATING SERVICE CARD — SEO
+          FLOATING CARDS
       ===================================================== */}
 
       <div className="nz-floating-card card-seo">
+
         <div className="card-icon blue-icon">
-          <span>⌕</span>
+          ⌕
         </div>
 
-        <div className="card-content">
+        <div className="card-copy">
           <strong>SEO</strong>
           <span>More Visibility</span>
         </div>
+
       </div>
 
-      {/* =====================================================
-          FLOATING SERVICE CARD — ADS
-      ===================================================== */}
 
       <div className="nz-floating-card card-ads">
+
         <div className="card-icon orange-icon">
-          <span>◈</span>
+          ◈
         </div>
 
-        <div className="card-content">
+        <div className="card-copy">
           <strong>ADS</strong>
           <span>More Traffic</span>
         </div>
+
       </div>
 
-      {/* =====================================================
-          FLOATING SERVICE CARD — WEB DESIGN
-      ===================================================== */}
 
       <div className="nz-floating-card card-web">
+
         <div className="card-icon blue-icon">
-          <span>▣</span>
+          ▣
         </div>
 
-        <div className="card-content">
+        <div className="card-copy">
           <strong>WEB DESIGN</strong>
           <span>Stronger Presence</span>
         </div>
+
       </div>
 
-      {/* =====================================================
-          FLOATING SERVICE CARD — LEADS
-      ===================================================== */}
 
       <div className="nz-floating-card card-leads">
+
         <div className="card-icon blue-icon">
-          <span>♙</span>
+          ♙
         </div>
 
-        <div className="card-content">
+        <div className="card-copy">
           <strong>LEADS</strong>
           <span>More Customers</span>
         </div>
+
       </div>
 
+
       {/* =====================================================
-          EXTRA AMBIENT SIGNALS
+          EXTRA SIGNALS
       ===================================================== */}
 
       <div className="nz-signal signal-a"></div>
       <div className="nz-signal signal-b"></div>
       <div className="nz-signal signal-c"></div>
-      <div className="nz-signal signal-d"></div>
+
     </div>
   );
 }
