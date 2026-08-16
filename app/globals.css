@@ -2900,16 +2900,94 @@ a {
 }
 
 /* =========================================================
-   REDUCE MOTION
-========================================================= */
+   DESKTOP ANIMATION FIX
+   ========================================================= */
 
-@media (prefers-reduced-motion: reduce) {
+@media (min-width: 901px) {
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  .nz-bg-glow {
+    animation: mainGlow 7s ease-in-out infinite !important;
+  }
+
+  .nz-bg-glow-orange {
+    animation: orangeGlow 8s ease-in-out infinite !important;
+  }
+
+  .nz-particles span {
+    animation:
+      particleFloat 5s ease-in-out infinite,
+      particleBlink 3s ease-in-out infinite !important;
+  }
+
+  .nz-orbit-1 {
+    animation: orbitTilt1 14s linear infinite !important;
+  }
+
+  .nz-orbit-2 {
+    animation: orbitTilt2 18s linear infinite !important;
+  }
+
+  .nz-orbit-3 {
+    animation: orbitTilt3 22s linear infinite !important;
+  }
+
+  .nz-orbit-1::before {
+    animation: orbitParticle1 5s linear infinite !important;
+  }
+
+  .nz-orbit-1::after {
+    animation: orbitParticle1Reverse 8s linear infinite !important;
+  }
+
+  .nz-orbit-2::before {
+    animation: orbitParticle2 7s linear infinite !important;
+  }
+
+  .nz-orbit-2::after {
+    animation: orbitParticle2Reverse 10s linear infinite !important;
+  }
+
+  .nz-orbit-3::before {
+    animation: orbitParticle3 6.5s linear infinite !important;
+  }
+
+  .nz-orbit-3::after {
+    animation: orbitParticle3Reverse 9s linear infinite !important;
+  }
+
+  .nz-map-glow {
+    animation: mapGlowPulse 5s ease-in-out infinite !important;
+  }
+
+  .nz-map-image {
+    animation: mapFloat 6s ease-in-out infinite !important;
+  }
+
+  .nz-node {
+    animation: nodePulse 2.8s ease-in-out infinite !important;
+  }
+
+  .nz-hotspot i {
+    animation: hotspotRipple 2.4s ease-out infinite !important;
+  }
+
+  .connection-blue {
+    animation:
+      connectionFlow 5s linear infinite,
+      connectionPulse 3s ease-in-out infinite !important;
+  }
+
+  .connection-orange {
+    animation:
+      connectionFlowOrange 4s linear infinite,
+      connectionPulse 3s ease-in-out infinite !important;
+  }
+
+  .nz-floating-card {
+    animation: cardFloat 5s ease-in-out infinite !important;
+  }
+
+  .nz-signal {
+    animation: signalBlink 2.5s ease-in-out infinite !important;
   }
 }
