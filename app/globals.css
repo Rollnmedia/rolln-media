@@ -2991,3 +2991,454 @@ a {
     animation: signalBlink 2.5s ease-in-out infinite !important;
   }
 }
+/* =========================================================
+   IDEA SECTION
+   ========================================================= */
+
+.idea-section {
+  position: relative;
+  min-height: 760px;
+
+  padding: 150px 6vw;
+
+  background: #f5f6f8;
+  color: #080b11;
+
+  overflow: hidden;
+}
+
+.idea-inner {
+  width: 100%;
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 42% 58%;
+
+  align-items: center;
+
+  gap: 40px;
+}
+
+/* ---------------------------------------------------------
+   COPY
+   --------------------------------------------------------- */
+
+.idea-copy {
+  position: relative;
+  z-index: 5;
+}
+
+.idea-label {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 38px;
+
+  color: #59616f;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+}
+
+.idea-label span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #3974d9;
+
+  box-shadow:
+    0 0 10px rgba(57, 116, 217, 0.35);
+}
+
+.idea-copy h2 {
+  margin: 0;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(70px, 7vw, 112px);
+
+  line-height: 0.88;
+
+  letter-spacing: -0.07em;
+
+  font-weight: 600;
+}
+
+.idea-copy h2 span {
+  color: #a3a8b0;
+}
+
+.idea-copy p {
+  max-width: 560px;
+
+  margin-top: 42px;
+
+  color: #626975;
+
+  font-size: 17px;
+
+  line-height: 1.75;
+}
+
+/* ---------------------------------------------------------
+   SYSTEM VISUAL
+   --------------------------------------------------------- */
+
+.idea-system {
+  position: relative;
+
+  width: 100%;
+  height: 540px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------------------------------------------------------
+   CENTRAL SYSTEM
+   --------------------------------------------------------- */
+
+.idea-center {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 150px;
+  height: 150px;
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  border: 1px solid rgba(10, 15, 25, 0.12);
+
+  box-shadow:
+    0 30px 80px rgba(18, 30, 55, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+  z-index: 5;
+}
+
+.idea-center strong {
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 14px;
+
+  letter-spacing: 0.08em;
+}
+
+.idea-center small {
+  margin-top: 5px;
+
+  color: #858c97;
+
+  font-size: 8px;
+
+  letter-spacing: 0.2em;
+}
+
+.idea-center-ring {
+  position: absolute;
+
+  inset: -15px;
+
+  border: 1px solid rgba(57, 116, 217, 0.18);
+
+  border-radius: 50%;
+
+  animation: ideaRingPulse 4s ease-in-out infinite;
+}
+
+@keyframes ideaRingPulse {
+  0%,
+  100% {
+    transform: scale(0.96);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+/* ---------------------------------------------------------
+   NODES
+   --------------------------------------------------------- */
+
+.idea-node {
+  position: absolute;
+
+  min-width: 145px;
+
+  padding: 17px 20px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  border: 1px solid rgba(10, 15, 25, 0.1);
+
+  border-radius: 12px;
+
+  color: #151a23;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  box-shadow:
+    0 15px 40px rgba(18, 30, 55, 0.07);
+
+  backdrop-filter: blur(10px);
+
+  z-index: 6;
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.idea-node span {
+  color: #3974d9;
+
+  font-size: 9px;
+}
+
+.idea-node:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(57, 116, 217, 0.35);
+
+  box-shadow:
+    0 20px 45px rgba(18, 30, 55, 0.12);
+}
+
+/* positions */
+
+.idea-node-1 {
+  left: 7%;
+  top: 15%;
+}
+
+.idea-node-2 {
+  right: 6%;
+  top: 15%;
+}
+
+.idea-node-3 {
+  left: 7%;
+  bottom: 15%;
+}
+
+.idea-node-4 {
+  right: 6%;
+  bottom: 15%;
+}
+
+/* ---------------------------------------------------------
+   CONNECTION LINES
+   --------------------------------------------------------- */
+
+.idea-line {
+  position: absolute;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(57, 116, 217, 0.45),
+      transparent
+    );
+
+  transform-origin: center;
+
+  z-index: 1;
+}
+
+.idea-line::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #3974d9;
+
+  box-shadow:
+    0 0 10px rgba(57, 116, 217, 0.6);
+
+  transform: translateY(-50%);
+
+  animation: ideaSignal 3s linear infinite;
+}
+
+@keyframes ideaSignal {
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+.idea-line-1 {
+  width: 32%;
+
+  left: 19%;
+  top: 29%;
+
+  transform: rotate(16deg);
+}
+
+.idea-line-2 {
+  width: 32%;
+
+  right: 19%;
+  top: 29%;
+
+  transform: rotate(-16deg);
+}
+
+.idea-line-3 {
+  width: 58%;
+
+  left: 21%;
+  top: 50%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(57, 116, 217, 0.2),
+      transparent
+    );
+
+  opacity: 0.5;
+}
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 1000px) {
+
+  .idea-section {
+    padding: 120px 5vw;
+  }
+
+  .idea-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .idea-copy {
+    max-width: 700px;
+  }
+
+  .idea-system {
+    height: 500px;
+  }
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+  .idea-section {
+    min-height: auto;
+
+    padding: 100px 5vw;
+  }
+
+  .idea-copy h2 {
+    font-size: 60px;
+  }
+
+  .idea-copy p {
+    margin-top: 30px;
+
+    font-size: 15px;
+  }
+
+  .idea-system {
+    height: 500px;
+
+    margin-top: 40px;
+
+    transform: scale(0.82);
+  }
+
+  .idea-node {
+    min-width: 125px;
+
+    padding: 13px 14px;
+
+    font-size: 9px;
+  }
+
+  .idea-node-1 {
+    left: 0;
+  }
+
+  .idea-node-2 {
+    right: 0;
+  }
+
+  .idea-node-3 {
+    left: 0;
+  }
+
+  .idea-node-4 {
+    right: 0;
+  }
+
+  .idea-center {
+    width: 130px;
+    height: 130px;
+  }
+}
