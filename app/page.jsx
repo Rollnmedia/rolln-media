@@ -4,7 +4,33 @@ export default function Home() {
   return (
     <main className="site">
 
-           {/* ================= HERO ================= */}
+      {/* ================= NAVBAR ================= */}
+
+      <header className="navbar">
+
+        <a href="/" className="logo">
+          <span className="logo-roll">ROLL’N</span>
+          <span className="logo-media">MEDIA</span>
+        </a>
+
+        <nav className="nav-links">
+          <a href="/">Home</a>
+          <a href="/services">Services</a>
+          <a href="/portfolio">Portfolio</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+        </nav>
+
+        <a href="/contact" className="nav-cta">
+          +64 Get in touch
+        </a>
+
+      </header>
+
+
+      {/* =====================================================
+          HERO
+      ===================================================== */}
 
       <section className="hero">
 
@@ -22,18 +48,18 @@ export default function Home() {
           </h1>
 
           <p className="hero-description">
-            We help businesses turn attention into meaningful
-            traffic, qualified leads and measurable growth.
+            We build digital systems that turn attention into
+            meaningful traffic, qualified leads and measurable growth.
           </p>
 
           <div className="hero-buttons">
 
-            <a href="#contact" className="primary-button">
+            <a href="/contact" className="primary-button">
               Start a Conversation
               <span>↗</span>
             </a>
 
-            <a href="#work" className="secondary-button">
+            <a href="/portfolio" className="secondary-button">
               Explore Our Work
             </a>
 
@@ -42,112 +68,115 @@ export default function Home() {
         </div>
 
 
-        {/* ================= NZ HERO VISUAL ================= */}
+        {/* NZ MAP */}
 
         <div className="hero-visual">
           <HeroNZMap />
         </div>
 
 
-        {/* ================= HERO SERVICES STRIP ================= */}
+        {/* HERO STRIP */}
 
         <div className="hero-bottom">
 
-          <span>SEO</span>
+          <span>STRATEGY</span>
 
           <i>✦</i>
 
-          <span>PAID MEDIA</span>
+          <span>BUILD</span>
 
           <i>✦</i>
 
-          <span>WEB DESIGN</span>
+          <span>GROW</span>
 
           <i>✦</i>
 
-          <span>GROWTH</span>
+          <span>AUTOMATE</span>
 
         </div>
 
       </section>
 
 
-      {/* ================= SERVICES ================= */}
+      {/* =====================================================
+          STRATEGY
+      ===================================================== */}
 
-      <section id="services" className="section">
+      <section className="section strategy-section">
 
         <div className="section-label">
-          01 / WHAT WE DO
+          01 / THE SYSTEM
         </div>
 
-        <h2>
-          Digital marketing
-          <br />
-          <span>built to perform.</span>
-        </h2>
+        <div className="strategy-heading">
+
+          <h2>
+            We don't sell
+            <br />
+            <span>random marketing.</span>
+          </h2>
+
+          <p>
+            We build the digital growth engine behind your business —
+            from strategy and technology to acquisition and automation.
+          </p>
+
+        </div>
 
 
-        <div className="service-grid">
+        <div className="strategy-grid">
 
-          <div className="service-card">
+          <div className="strategy-card">
 
             <span>01</span>
 
-            <div className="card-arrow">↗</div>
-
-            <h3>SEO</h3>
+            <h3>STRATEGY</h3>
 
             <p>
-              Build search visibility and attract customers
-              who are actively looking for your services.
+              Research, positioning, customer psychology
+              and a clear digital roadmap.
             </p>
 
           </div>
 
 
-          <div className="service-card">
+          <div className="strategy-card">
 
             <span>02</span>
 
-            <div className="card-arrow">↗</div>
-
-            <h3>Google Ads</h3>
+            <h3>BUILD</h3>
 
             <p>
-              Put your business in front of high-intent
-              customers and turn clicks into enquiries.
+              Websites, applications, landing pages
+              and digital experiences built to perform.
             </p>
 
           </div>
 
 
-          <div className="service-card">
+          <div className="strategy-card">
 
             <span>03</span>
 
-            <div className="card-arrow">↗</div>
-
-            <h3>Meta Ads</h3>
+            <h3>GROW</h3>
 
             <p>
-              Creative campaigns designed to generate
-              attention, conversations and leads.
+              SEO, Google Ads, Meta Ads and performance
+              marketing focused on measurable growth.
             </p>
 
           </div>
 
 
-          <div className="service-card">
+          <div className="strategy-card">
 
             <span>04</span>
 
-            <div className="card-arrow">↗</div>
-
-            <h3>Web Design</h3>
+            <h3>AUTOMATE</h3>
 
             <p>
-              High-performance websites designed around
-              your brand, customers and business goals.
+              Marketing automation, AI tools, AI agents
+              and intelligent workflows.
             </p>
 
           </div>
@@ -157,19 +186,168 @@ export default function Home() {
       </section>
 
 
-      {/* ================= WORK ================= */}
+      {/* =====================================================
+          SERVICES / DIGITAL SYSTEM
+      ===================================================== */}
 
-      <section id="work" className="section work-section">
+      <section className="section system-section">
 
         <div className="section-label">
-          02 / SELECTED WORK
+          02 / WHAT WE BUILD
         </div>
 
-        <h2>
-          Work that speaks
-          <br />
-          <span>for itself.</span>
-        </h2>
+        <div className="system-heading">
+
+          <h2>
+            One system.
+            <br />
+            <span>Multiple growth levers.</span>
+          </h2>
+
+          <a href="/services" className="text-link">
+            Explore all services ↗
+          </a>
+
+        </div>
+
+
+        <div className="system-list">
+
+          <a href="/services" className="system-row">
+
+            <span className="system-number">01</span>
+
+            <div>
+              <h3>Website & Application Development</h3>
+
+              <p>
+                High-performance digital products designed
+                around your users and business goals.
+              </p>
+            </div>
+
+            <span className="system-arrow">↗</span>
+
+          </a>
+
+
+          <a href="/services" className="system-row">
+
+            <span className="system-number">02</span>
+
+            <div>
+              <h3>SEO</h3>
+
+              <p>
+                Build long-term search visibility and attract
+                customers actively looking for your business.
+              </p>
+            </div>
+
+            <span className="system-arrow">↗</span>
+
+          </a>
+
+
+          <a href="/services" className="system-row">
+
+            <span className="system-number">03</span>
+
+            <div>
+              <h3>Performance Marketing</h3>
+
+              <p>
+                Paid acquisition across Google, Meta and
+                other channels focused on profitable growth.
+              </p>
+            </div>
+
+            <span className="system-arrow">↗</span>
+
+          </a>
+
+
+          <a href="/services" className="system-row">
+
+            <span className="system-number">04</span>
+
+            <div>
+              <h3>Marketing Automation</h3>
+
+              <p>
+                Connect your marketing, leads and customer
+                journeys into smarter automated systems.
+              </p>
+            </div>
+
+            <span className="system-arrow">↗</span>
+
+          </a>
+
+
+          <a href="/services" className="system-row">
+
+            <span className="system-number">05</span>
+
+            <div>
+              <h3>AI Custom Tools</h3>
+
+              <p>
+                Custom AI-powered tools built around
+                specific business problems.
+              </p>
+            </div>
+
+            <span className="system-arrow">↗</span>
+
+          </a>
+
+
+          <a href="/services" className="system-row">
+
+            <span className="system-number">06</span>
+
+            <div>
+              <h3>AI Agents & Agentic Systems</h3>
+
+              <p>
+                Intelligent systems that can reason,
+                act and automate complex workflows.
+              </p>
+            </div>
+
+            <span className="system-arrow">↗</span>
+
+          </a>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          FEATURED WORK
+      ===================================================== */}
+
+      <section className="section work-section">
+
+        <div className="section-label">
+          03 / SELECTED WORK
+        </div>
+
+        <div className="work-heading">
+
+          <h2>
+            Built for
+            <br />
+            <span>real businesses.</span>
+          </h2>
+
+          <a href="/portfolio" className="text-link">
+            View portfolio ↗
+          </a>
+
+        </div>
 
 
         <div className="work-card">
@@ -189,7 +367,7 @@ export default function Home() {
               a New Zealand property management brand.
             </p>
 
-            <a href="#" className="text-link">
+            <a href="/portfolio" className="text-link">
               View Case Study ↗
             </a>
 
@@ -201,9 +379,11 @@ export default function Home() {
             <div className="preview-browser">
 
               <div className="browser-bar">
+
                 <span></span>
                 <span></span>
                 <span></span>
+
               </div>
 
               <div className="preview-content">
@@ -231,34 +411,51 @@ export default function Home() {
       </section>
 
 
-      {/* ================= ABOUT ================= */}
+      {/* =====================================================
+          ABOUT PREVIEW
+      ===================================================== */}
 
-      <section id="about" className="section about-section">
+      <section className="section about-preview-section">
 
         <div className="section-label">
-          03 / WHY ROLL’N MEDIA
+          04 / ABOUT ROLL’N MEDIA
         </div>
 
-        <h2>
-          Strategy.
-          <br />
-          Creativity.
-          <br />
-          <span>Growth.</span>
-        </h2>
+        <div className="about-preview-grid">
 
-        <p className="about-text">
-          We combine strategy, creative thinking and digital
-          execution to help businesses move from being
-          seen to being chosen.
-        </p>
+          <h2>
+            Strategy.
+            <br />
+            Technology.
+            <br />
+            <span>Execution.</span>
+          </h2>
+
+          <div>
+
+            <p className="about-text">
+              Roll’n Media is a digital growth partner for
+              ambitious businesses. We bring strategy,
+              technology, marketing and automation together
+              instead of treating them as separate services.
+            </p>
+
+            <a href="/about" className="text-link">
+              About us ↗
+            </a>
+
+          </div>
+
+        </div>
 
       </section>
 
 
-      {/* ================= CTA ================= */}
+      {/* =====================================================
+          CTA
+      ===================================================== */}
 
-      <section id="contact" className="cta-section">
+      <section className="cta-section">
 
         <div className="cta-grid"></div>
 
@@ -267,7 +464,7 @@ export default function Home() {
         <div className="cta-content">
 
           <div className="section-label">
-            LET’S WORK TOGETHER
+            LET’S BUILD SOMETHING
           </div>
 
           <h2>
@@ -277,7 +474,7 @@ export default function Home() {
           </h2>
 
           <a
-            href="mailto:hello@rollnmedia.co.nz"
+            href="/contact"
             className="primary-button"
           >
             Start a Conversation
@@ -289,23 +486,6 @@ export default function Home() {
       </section>
 
 
-      {/* ================= FOOTER ================= */}
-
-      <footer className="footer">
-
-        <div className="footer-logo">
-          Roll’n Media
-        </div>
-
-        <p>
-          Digital growth for ambitious businesses.
-        </p>
-
-        <span>
-          © 2026 Roll’n Media
-        </span>
-
-      </footer>
 
     </main>
   );
