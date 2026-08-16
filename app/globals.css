@@ -36,6 +36,7 @@ a {
     #05070c;
 }
 
+
 /* =========================================================
    NAVBAR
 ========================================================= */
@@ -61,7 +62,6 @@ a {
 .logo {
   display: flex;
   flex-direction: column;
-
   line-height: 0.8;
 
   font-family: "Space Grotesk", sans-serif;
@@ -75,9 +75,7 @@ a {
 
 .logo-media {
   color: #f47a20;
-
   font-size: 15px;
-
   margin-left: 21px;
   margin-top: 4px;
 }
@@ -87,7 +85,6 @@ a {
   gap: 48px;
 
   color: rgba(255, 255, 255, 0.66);
-
   font-size: 14px;
 }
 
@@ -116,6 +113,7 @@ a {
   color: #05070c;
 }
 
+
 /* =========================================================
    HERO
 ========================================================= */
@@ -136,7 +134,7 @@ a {
 
   position: relative;
 
-  z-index: 10;
+  z-index: 20;
 }
 
 .eyebrow {
@@ -147,7 +145,6 @@ a {
   color: rgba(255, 255, 255, 0.52);
 
   font-size: 11px;
-
   letter-spacing: 0.18em;
 
   margin-bottom: 38px;
@@ -261,6 +258,7 @@ a {
   color: #fff;
 }
 
+
 /* =========================================================
    HERO VISUAL
 ========================================================= */
@@ -271,10 +269,10 @@ a {
   width: 58%;
   height: 720px;
 
-  right: -2%;
+  right: -1%;
   top: 115px;
 
-  z-index: 3;
+  z-index: 5;
 
   pointer-events: none;
 
@@ -283,8 +281,9 @@ a {
   justify-content: center;
 }
 
+
 /* =========================================================
-   MAIN NZ VISUAL CONTAINER
+   MAIN NZ VISUAL
 ========================================================= */
 
 .nz-visual {
@@ -296,43 +295,43 @@ a {
   overflow: visible;
 }
 
+
 /* =========================================================
-   BACKGROUND GLOWS
+   BACKGROUND GLOW
 ========================================================= */
 
 .nz-bg-glow {
   position: absolute;
 
-  width: 520px;
-  height: 520px;
+  width: 560px;
+  height: 560px;
 
-  right: 12%;
-  top: 12%;
+  right: 14%;
+  top: 10%;
 
   border-radius: 50%;
 
-  background: rgba(36, 91, 190, 0.22);
+  background: rgba(35, 88, 190, 0.25);
 
-  filter: blur(100px);
+  filter: blur(110px);
 
-  opacity: 0.8;
-
-  animation: glowPulse 6s ease-in-out infinite;
+  animation: nzGlow 6s ease-in-out infinite;
 
   z-index: 0;
 }
 
 .nz-bg-glow-orange {
-  width: 300px;
-  height: 300px;
+  width: 330px;
+  height: 330px;
 
-  right: 30%;
-  top: 45%;
+  right: 35%;
+  top: 43%;
 
   background: rgba(244, 122, 32, 0.12);
 
   animation-delay: 1s;
 }
+
 
 /* =========================================================
    PARTICLES
@@ -340,6 +339,7 @@ a {
 
 .nz-particles {
   position: absolute;
+
   inset: 0;
 
   z-index: 1;
@@ -355,132 +355,137 @@ a {
 
   background: #4779db;
 
-  opacity: 0.45;
+  opacity: 0.5;
+
+  box-shadow: 0 0 8px #4779db;
 
   animation: particleFloat 5s ease-in-out infinite;
 }
 
 .nz-particles span:nth-child(1) {
-  left: 10%;
+  left: 20%;
   top: 20%;
 }
 
 .nz-particles span:nth-child(2) {
-  left: 20%;
-  top: 42%;
+  left: 35%;
+  top: 54%;
 }
 
 .nz-particles span:nth-child(3) {
-  left: 29%;
+  left: 48%;
   top: 18%;
 }
 
 .nz-particles span:nth-child(4) {
-  left: 38%;
-  top: 55%;
+  left: 63%;
+  top: 28%;
 }
 
 .nz-particles span:nth-child(5) {
-  left: 48%;
-  top: 13%;
+  left: 77%;
+  top: 14%;
 }
 
 .nz-particles span:nth-child(6) {
-  left: 58%;
-  top: 30%;
+  left: 90%;
+  top: 39%;
 }
 
 .nz-particles span:nth-child(7) {
-  left: 68%;
-  top: 17%;
+  left: 27%;
+  top: 70%;
 }
 
 .nz-particles span:nth-child(8) {
-  left: 78%;
-  top: 40%;
+  left: 52%;
+  top: 77%;
 }
 
 .nz-particles span:nth-child(9) {
-  left: 88%;
-  top: 24%;
+  left: 72%;
+  top: 67%;
 }
 
 .nz-particles span:nth-child(10) {
-  left: 18%;
+  left: 92%;
   top: 72%;
 }
 
 .nz-particles span:nth-child(11) {
-  left: 34%;
-  top: 78%;
+  left: 14%;
+  top: 45%;
   background: #f47a20;
+  box-shadow: 0 0 8px #f47a20;
 }
 
 .nz-particles span:nth-child(12) {
-  left: 50%;
-  top: 68%;
+  left: 39%;
+  top: 37%;
 }
 
 .nz-particles span:nth-child(13) {
-  left: 64%;
-  top: 72%;
+  left: 80%;
+  top: 51%;
   background: #f47a20;
+  box-shadow: 0 0 8px #f47a20;
 }
 
 .nz-particles span:nth-child(14) {
-  left: 76%;
-  top: 82%;
+  left: 59%;
+  top: 87%;
 }
 
 .nz-particles span:nth-child(15) {
-  left: 90%;
-  top: 68%;
+  left: 84%;
+  top: 84%;
 }
 
 .nz-particles span:nth-child(16) {
-  left: 13%;
-  top: 55%;
+  left: 29%;
+  top: 31%;
 }
 
 .nz-particles span:nth-child(17) {
-  left: 26%;
-  top: 30%;
+  left: 46%;
+  top: 65%;
 }
 
 .nz-particles span:nth-child(18) {
-  left: 43%;
-  top: 35%;
+  left: 68%;
+  top: 44%;
 }
 
 .nz-particles span:nth-child(19) {
-  left: 57%;
-  top: 58%;
+  left: 87%;
+  top: 23%;
 }
 
 .nz-particles span:nth-child(20) {
-  left: 72%;
-  top: 55%;
+  left: 11%;
+  top: 63%;
 }
 
 .nz-particles span:nth-child(21) {
-  left: 83%;
-  top: 48%;
+  left: 57%;
+  top: 16%;
 }
 
 .nz-particles span:nth-child(22) {
-  left: 35%;
-  top: 12%;
+  left: 75%;
+  top: 78%;
 }
 
 .nz-particles span:nth-child(23) {
-  left: 69%;
+  left: 40%;
   top: 88%;
 }
 
 .nz-particles span:nth-child(24) {
-  left: 92%;
-  top: 88%;
+  left: 94%;
+  top: 54%;
 }
+
 
 /* =========================================================
    ORBITS
@@ -489,7 +494,7 @@ a {
 .nz-orbit {
   position: absolute;
 
-  border: 1px solid rgba(50, 105, 205, 0.32);
+  border: 1px solid rgba(55, 110, 220, 0.35);
 
   border-radius: 50%;
 
@@ -499,11 +504,11 @@ a {
 }
 
 .nz-orbit-1 {
-  width: 540px;
-  height: 250px;
+  width: 620px;
+  height: 280px;
 
-  right: 10%;
-  top: 27%;
+  right: 4%;
+  top: 30%;
 
   transform: rotate(-18deg);
 
@@ -511,11 +516,11 @@ a {
 }
 
 .nz-orbit-2 {
-  width: 430px;
-  height: 610px;
+  width: 470px;
+  height: 650px;
 
-  right: 20%;
-  top: 8%;
+  right: 18%;
+  top: 7%;
 
   transform: rotate(28deg);
 
@@ -523,18 +528,19 @@ a {
 }
 
 .nz-orbit-3 {
-  width: 620px;
-  height: 330px;
+  width: 680px;
+  height: 350px;
 
-  right: 3%;
-  top: 33%;
+  right: -1%;
+  top: 36%;
 
-  border-color: rgba(244, 122, 32, 0.23);
+  border-color: rgba(244, 122, 32, 0.28);
 
-  transform: rotate(-28deg);
+  transform: rotate(-25deg);
 
   animation: orbitThree 25s ease-in-out infinite;
 }
+
 
 /* =========================================================
    PLATFORM
@@ -543,17 +549,15 @@ a {
 .nz-platform {
   position: absolute;
 
-  width: 480px;
-  height: 480px;
+  width: 530px;
+  height: 120px;
 
-  right: 17%;
-  top: 24%;
-
-  border-radius: 50%;
-
-  transform: rotateX(65deg) rotateZ(-10deg);
+  right: 13%;
+  bottom: 3%;
 
   z-index: 2;
+
+  transform: perspective(500px) rotateX(65deg);
 }
 
 .platform-ring {
@@ -561,9 +565,9 @@ a {
 
   inset: 0;
 
-  border-radius: 50%;
+  border: 1px solid rgba(45, 105, 230, 0.4);
 
-  border: 1px solid rgba(55, 115, 240, 0.18);
+  border-radius: 50%;
 }
 
 .ring-1 {
@@ -571,32 +575,35 @@ a {
 }
 
 .ring-2 {
-  transform: scale(0.78);
+  transform: scale(0.76);
+
+  border-color: rgba(244, 122, 32, 0.4);
 }
 
 .ring-3 {
-  transform: scale(0.56);
+  transform: scale(0.48);
 
-  border-color: rgba(244, 122, 32, 0.15);
+  border-color: rgba(55, 125, 255, 0.6);
 }
 
 .platform-glow {
   position: absolute;
 
   width: 260px;
-  height: 260px;
+  height: 80px;
 
   left: 50%;
   top: 50%;
 
   transform: translate(-50%, -50%);
 
+  background: rgba(35, 105, 255, 0.45);
+
+  filter: blur(35px);
+
   border-radius: 50%;
-
-  background: rgba(45, 100, 220, 0.08);
-
-  filter: blur(50px);
 }
+
 
 /* =========================================================
    NZ MAP STAGE
@@ -608,11 +615,10 @@ a {
   width: 470px;
   height: 650px;
 
-  right: 17%;
-  top: 2%;
+  right: 16%;
+  top: 1%;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -621,6 +627,7 @@ a {
   animation: mapFloat 6s ease-in-out infinite;
 }
 
+
 /* =========================================================
    MAP GLOW
 ========================================================= */
@@ -628,48 +635,64 @@ a {
 .nz-map-glow {
   position: absolute;
 
-  width: 360px;
-  height: 560px;
-
-  left: 50%;
-  top: 50%;
-
-  transform: translate(-50%, -50%);
+  width: 390px;
+  height: 590px;
 
   border-radius: 50%;
 
-  background: rgba(45, 100, 220, 0.22);
+  background: rgba(40, 105, 245, 0.22);
 
-  filter: blur(75px);
+  filter: blur(60px);
 
   z-index: -1;
 
-  animation: mapGlowPulse 5s ease-in-out infinite;
+  animation: mapGlow 4s ease-in-out infinite;
 }
 
+
 /* =========================================================
-   ACTUAL NZ SVG IMAGE
+   ACTUAL SVG MAP
 ========================================================= */
 
 .nz-map-image {
   position: relative;
 
-  width: 78%;
-  height: 88%;
+  width: 100%;
+  height: 100%;
 
   object-fit: contain;
 
-  display: block;
+  z-index: 4;
 
-  z-index: 3;
+  /*
+    Your SVG is green.
+    This filter converts it into the blue glowing
+    appearance from the reference.
+  */
 
   filter:
-    drop-shadow(0 0 10px rgba(61, 118, 228, 0.9))
-    drop-shadow(0 0 28px rgba(61, 118, 228, 0.55))
-    drop-shadow(0 0 70px rgba(40, 90, 210, 0.28));
+    brightness(0)
+    saturate(100%)
+    invert(40%)
+    sepia(86%)
+    saturate(1760%)
+    hue-rotate(192deg)
+    brightness(94%)
+    contrast(103%)
 
-  animation: mapImagePulse 4s ease-in-out infinite;
+    drop-shadow(0 0 8px rgba(55, 120, 255, 0.9))
+    drop-shadow(0 0 25px rgba(45, 105, 245, 0.75))
+    drop-shadow(0 0 60px rgba(35, 90, 220, 0.45));
+
+  transform: scale(0.88);
+
+  transition: transform 0.5s ease;
 }
+
+.nz-map-stage:hover .nz-map-image {
+  transform: scale(0.92);
+}
+
 
 /* =========================================================
    MAP NETWORK
@@ -678,43 +701,41 @@ a {
 .nz-map-network {
   position: absolute;
 
-  width: 78%;
-  height: 88%;
+  width: 300px;
+  height: 500px;
 
-  left: 11%;
-  top: 6%;
-
-  z-index: 4;
+  z-index: 6;
 
   pointer-events: none;
 
-  opacity: 0.35;
+  opacity: 0.18;
 
   background-image:
     linear-gradient(
-      rgba(83, 140, 255, 0.2) 1px,
+      rgba(110, 160, 255, 0.35) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(83, 140, 255, 0.2) 1px,
+      rgba(110, 160, 255, 0.35) 1px,
       transparent 1px
     );
 
-  background-size: 28px 28px;
+  background-size: 20px 20px;
 
-  mask-image: url("/nz.svg");
-  -webkit-mask-image: url("/nz.svg");
+  mask-image: radial-gradient(
+    ellipse,
+    black 35%,
+    transparent 72%
+  );
 
-  mask-repeat: no-repeat;
-  -webkit-mask-repeat: no-repeat;
-
-  mask-position: center;
-  -webkit-mask-position: center;
-
-  mask-size: contain;
-  -webkit-mask-size: contain;
+  -webkit-mask-image: radial-gradient(
+    ellipse,
+    black 35%,
+    transparent 72%
+  );
 }
+
 
 /* =========================================================
    MAP OUTLINE
@@ -723,28 +744,21 @@ a {
 .nz-map-outline {
   position: absolute;
 
-  width: 78%;
-  height: 88%;
+  width: 92%;
+  height: 92%;
 
-  left: 11%;
-  top: 6%;
+  z-index: 7;
 
-  z-index: 6;
+  border: 1px solid rgba(120, 175, 255, 0.15);
+
+  border-radius: 50%;
 
   pointer-events: none;
-
-  border-radius: 45%;
-
-  filter: blur(1px);
-
-  opacity: 0.2;
-
-  box-shadow:
-    inset 0 0 25px rgba(90, 145, 255, 0.35);
 }
 
+
 /* =========================================================
-   MAP NODES
+   MAP DATA NODES
 ========================================================= */
 
 .nz-node {
@@ -755,41 +769,50 @@ a {
 
   border-radius: 50%;
 
-  background: #5c91ff;
+  background: #4d8dff;
 
   box-shadow:
-    0 0 8px #5c91ff,
-    0 0 18px rgba(92, 145, 255, 0.7);
+    0 0 8px #4d8dff,
+    0 0 20px rgba(77, 141, 255, 0.7);
 
-  z-index: 8;
+  z-index: 10;
 
-  animation: nodePulse 2.5s ease-in-out infinite;
+  animation: nodePulse 2s ease-in-out infinite;
 }
 
 .node-1 {
-  left: 44%;
-  top: 30%;
+  left: 46%;
+  top: 28%;
 }
 
 .node-2 {
-  left: 53%;
+  left: 56%;
   top: 40%;
+
+  animation-delay: 0.4s;
 }
 
 .node-3 {
-  left: 40%;
-  top: 50%;
+  left: 43%;
+  top: 51%;
+
+  animation-delay: 0.8s;
 }
 
 .node-4 {
-  left: 55%;
-  top: 60%;
+  left: 52%;
+  top: 62%;
+
+  animation-delay: 1.2s;
 }
 
 .node-5 {
-  left: 47%;
+  left: 39%;
   top: 72%;
+
+  animation-delay: 1.6s;
 }
+
 
 /* =========================================================
    ORANGE HOTSPOTS
@@ -801,33 +824,19 @@ a {
   width: 12px;
   height: 12px;
 
-  border-radius: 50%;
-
-  z-index: 10;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.nz-hotspot::before {
-  content: "";
-
-  position: absolute;
-
-  width: 26px;
-  height: 26px;
-
-  border: 1px solid rgba(244, 122, 32, 0.55);
-
-  border-radius: 50%;
-
-  animation: hotspotPulse 2s ease-out infinite;
+  z-index: 12;
 }
 
 .nz-hotspot i {
-  width: 6px;
-  height: 6px;
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
 
   border-radius: 50%;
 
@@ -838,28 +847,49 @@ a {
     0 0 25px rgba(244, 122, 32, 0.8);
 }
 
+.nz-hotspot::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border: 1px solid rgba(244, 122, 32, 0.65);
+
+  border-radius: 50%;
+
+  animation: hotspotPulse 2s ease-out infinite;
+}
+
 .hotspot-1 {
-  left: 46%;
-  top: 31%;
+  left: 48%;
+  top: 34%;
 }
 
 .hotspot-2 {
   left: 55%;
-  top: 43%;
+  top: 48%;
+
+  animation-delay: 0.4s;
 }
 
 .hotspot-3 {
-  left: 43%;
-  top: 57%;
+  left: 45%;
+  top: 59%;
+
+  animation-delay: 0.8s;
 }
 
 .hotspot-4 {
   left: 51%;
-  top: 68%;
+  top: 70%;
+
+  animation-delay: 1.2s;
 }
 
+
 /* =========================================================
-   CONNECTION LINES
+   CONNECTION SVG
 ========================================================= */
 
 .nz-connections {
@@ -870,7 +900,7 @@ a {
   width: 100%;
   height: 100%;
 
-  z-index: 7;
+  z-index: 8;
 
   overflow: visible;
 
@@ -880,30 +910,45 @@ a {
 .nz-connections path {
   fill: none;
 
-  stroke-width: 2;
-
   stroke-linecap: round;
 
-  stroke-dasharray: 8 10;
+  stroke-width: 2;
 
-  opacity: 0.6;
+  stroke-dasharray: 7 10;
 
-  animation: connectionMove 4s linear infinite;
+  opacity: 0.65;
 }
 
 .connection-blue {
-  stroke: #4779db;
+  stroke: #3478e8;
 
   filter:
-    drop-shadow(0 0 5px rgba(71, 121, 219, 0.8));
+    drop-shadow(0 0 5px rgba(52, 120, 232, 0.7));
 }
 
 .connection-orange {
   stroke: #f47a20;
 
   filter:
-    drop-shadow(0 0 5px rgba(244, 122, 32, 0.8));
+    drop-shadow(0 0 5px rgba(244, 122, 32, 0.7));
 }
+
+.connection-seo {
+  animation: dashMove 5s linear infinite;
+}
+
+.connection-ads {
+  animation: dashMove 4s linear infinite reverse;
+}
+
+.connection-web {
+  animation: dashMove 5.5s linear infinite;
+}
+
+.connection-leads {
+  animation: dashMove 4.5s linear infinite reverse;
+}
+
 
 /* =========================================================
    FLOATING CARDS
@@ -912,30 +957,34 @@ a {
 .nz-floating-card {
   position: absolute;
 
-  min-width: 150px;
-
-  padding: 12px 15px;
-
   display: flex;
   align-items: center;
 
-  gap: 10px;
+  gap: 12px;
 
-  background: rgba(5, 7, 12, 0.78);
+  min-width: 130px;
 
-  border: 1px solid rgba(255, 255, 255, 0.13);
+  padding: 12px 16px;
 
-  border-radius: 14px;
+  background: rgba(5, 9, 18, 0.82);
 
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(90, 130, 205, 0.28);
+
+  border-radius: 16px;
+
+  backdrop-filter: blur(16px);
+
+  -webkit-backdrop-filter: blur(16px);
 
   box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.35);
+    0 15px 40px rgba(0, 0, 0, 0.35),
+    inset 0 0 20px rgba(40, 90, 180, 0.05);
 
   z-index: 20;
 
   color: #fff;
+
+  animation: cardFloat 5s ease-in-out infinite;
 }
 
 .nz-floating-card strong {
@@ -943,9 +992,11 @@ a {
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 12px;
+  font-size: 13px;
 
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
+
+  font-weight: 600;
 }
 
 .nz-floating-card span {
@@ -953,11 +1004,9 @@ a {
 
   margin-top: 3px;
 
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.52);
 
   font-size: 9px;
-
-  white-space: nowrap;
 }
 
 .card-icon {
@@ -970,52 +1019,56 @@ a {
 
   border-radius: 9px;
 
-  font-size: 14px;
+  font-size: 19px;
+
+  background: rgba(40, 100, 220, 0.13);
 }
 
 .blue-icon {
-  background: rgba(61, 118, 228, 0.14);
+  color: #4c91ff;
 
-  color: #6d9cff;
-
-  border: 1px solid rgba(61, 118, 228, 0.25);
+  text-shadow: 0 0 10px #4c91ff;
 }
 
 .orange-icon {
-  background: rgba(244, 122, 32, 0.12);
-
   color: #f47a20;
 
-  border: 1px solid rgba(244, 122, 32, 0.25);
+  background: rgba(244, 122, 32, 0.12);
+
+  text-shadow: 0 0 10px #f47a20;
 }
 
-.card-seo {
-  top: 20%;
-  left: 2%;
 
-  animation: cardFloat 4s ease-in-out infinite;
+/* CARD POSITIONS */
+
+.card-seo {
+  top: 18%;
+  right: 78%;
+
+  animation-delay: 0s;
 }
 
 .card-ads {
-  top: 29%;
-  right: 0%;
+  top: 31%;
+  left: 76%;
 
-  animation: cardFloat 5s ease-in-out infinite reverse;
+  animation-delay: 0.7s;
 }
 
 .card-web {
-  bottom: 22%;
-  left: 3%;
+  top: 62%;
+  right: 76%;
 
-  animation: cardFloat 4.5s ease-in-out infinite;
+  animation-delay: 1.2s;
 }
 
 .card-leads {
-  bottom: 14%;
-  right: 2%;
+  top: 47%;
+  left: 78%;
 
-  animation: cardFloat 5.5s ease-in-out infinite reverse;
+  animation-delay: 1.8s;
 }
+
 
 /* =========================================================
    EXTRA SIGNALS
@@ -1024,36 +1077,37 @@ a {
 .nz-signal {
   position: absolute;
 
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
 
-  border: 1px solid rgba(61, 118, 228, 0.18);
+  border: 1px solid rgba(55, 125, 255, 0.25);
 
   border-radius: 50%;
 
   z-index: 2;
 
-  animation: signalExpand 4s ease-out infinite;
+  animation: signalExpand 3s ease-out infinite;
 }
 
 .signal-a {
-  left: 10%;
-  bottom: 16%;
+  left: 30%;
+  top: 28%;
 }
 
 .signal-b {
-  right: 7%;
-  top: 15%;
+  right: 19%;
+  top: 58%;
 
-  animation-delay: 1.3s;
+  animation-delay: 1s;
 }
 
 .signal-c {
-  left: 28%;
-  top: 8%;
+  left: 42%;
+  bottom: 14%;
 
-  animation-delay: 2.3s;
+  animation-delay: 2s;
 }
+
 
 /* =========================================================
    HERO BOTTOM
@@ -1089,13 +1143,13 @@ a {
   font-style: normal;
 }
 
+
 /* =========================================================
    GENERAL SECTIONS
 ========================================================= */
 
 .section {
   padding: 160px 6vw;
-
   position: relative;
 }
 
@@ -1122,6 +1176,7 @@ a {
 .section h2 span {
   color: rgba(255, 255, 255, 0.24);
 }
+
 
 /* =========================================================
    SERVICES
@@ -1212,6 +1267,7 @@ a {
 
   color: #05070c;
 }
+
 
 /* =========================================================
    WORK
@@ -1383,6 +1439,7 @@ a {
   font-size: 15px;
 }
 
+
 /* =========================================================
    ABOUT
 ========================================================= */
@@ -1408,6 +1465,7 @@ a {
 
   color: rgba(255, 255, 255, 0.57);
 }
+
 
 /* =========================================================
    CTA
@@ -1493,6 +1551,7 @@ a {
   letter-spacing: -0.06em;
 }
 
+
 /* =========================================================
    FOOTER
 ========================================================= */
@@ -1523,6 +1582,7 @@ a {
   font-weight: 600;
 }
 
+
 /* =========================================================
    ANIMATIONS
 ========================================================= */
@@ -1534,11 +1594,11 @@ a {
   }
 
   50% {
-    transform: translateY(-10px) rotate(1deg);
+    transform: translateY(-12px) rotate(1deg);
   }
 }
 
-@keyframes glowPulse {
+@keyframes nzGlow {
   0%,
   100% {
     opacity: 0.55;
@@ -1546,38 +1606,21 @@ a {
   }
 
   50% {
-    opacity: 1;
+    opacity: 0.9;
     transform: scale(1.08);
   }
 }
 
-@keyframes mapGlowPulse {
+@keyframes mapGlow {
   0%,
   100% {
-    opacity: 0.55;
-    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+    transform: scale(0.95);
   }
 
   50% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.08);
-  }
-}
-
-@keyframes mapImagePulse {
-  0%,
-  100% {
-    filter:
-      drop-shadow(0 0 10px rgba(61, 118, 228, 0.8))
-      drop-shadow(0 0 28px rgba(61, 118, 228, 0.45))
-      drop-shadow(0 0 70px rgba(40, 90, 210, 0.2));
-  }
-
-  50% {
-    filter:
-      drop-shadow(0 0 15px rgba(61, 118, 228, 1))
-      drop-shadow(0 0 38px rgba(61, 118, 228, 0.65))
-      drop-shadow(0 0 90px rgba(40, 90, 210, 0.3));
+    opacity: 0.9;
+    transform: scale(1.08);
   }
 }
 
@@ -1585,7 +1628,7 @@ a {
   0%,
   100% {
     transform: translateY(0);
-    opacity: 0.3;
+    opacity: 0.25;
   }
 
   50% {
@@ -1595,48 +1638,39 @@ a {
 }
 
 @keyframes orbitOne {
-  0% {
+  0%,
+  100% {
     transform: rotate(-18deg);
   }
 
   50% {
     transform: rotate(12deg);
   }
-
-  100% {
-    transform: rotate(-18deg);
-  }
 }
 
 @keyframes orbitTwo {
-  0% {
+  0%,
+  100% {
     transform: rotate(28deg);
   }
 
   50% {
     transform: rotate(-22deg);
   }
-
-  100% {
-    transform: rotate(28deg);
-  }
 }
 
 @keyframes orbitThree {
-  0% {
-    transform: rotate(-28deg);
+  0%,
+  100% {
+    transform: rotate(-25deg);
   }
 
   50% {
-    transform: rotate(20deg);
-  }
-
-  100% {
-    transform: rotate(-28deg);
+    transform: rotate(18deg);
   }
 }
 
-@keyframes connectionMove {
+@keyframes dashMove {
   to {
     stroke-dashoffset: -100;
   }
@@ -1645,24 +1679,24 @@ a {
 @keyframes nodePulse {
   0%,
   100% {
-    transform: scale(0.8);
-    opacity: 0.5;
+    transform: scale(0.7);
+    opacity: 0.55;
   }
 
   50% {
-    transform: scale(1.5);
+    transform: scale(1.4);
     opacity: 1;
   }
 }
 
 @keyframes hotspotPulse {
   0% {
-    transform: scale(0.6);
-    opacity: 0.8;
+    transform: scale(0.5);
+    opacity: 0.9;
   }
 
   100% {
-    transform: scale(2.5);
+    transform: scale(2.8);
     opacity: 0;
   }
 }
@@ -1680,21 +1714,23 @@ a {
 
 @keyframes signalExpand {
   0% {
-    transform: scale(0.7);
-    opacity: 0.5;
+    transform: scale(0.6);
+    opacity: 0.7;
   }
 
   100% {
-    transform: scale(1.6);
+    transform: scale(1.8);
     opacity: 0;
   }
 }
+
 
 /* =========================================================
    TABLET
 ========================================================= */
 
 @media (max-width: 1100px) {
+
   .hero {
     min-height: 850px;
   }
@@ -1704,44 +1740,35 @@ a {
   }
 
   .hero-visual {
-    width: 54%;
+    width: 55%;
     right: -5%;
     height: 650px;
   }
 
   .nz-map-stage {
-    width: 400px;
+    width: 390px;
     height: 570px;
-
-    right: 12%;
-  }
-
-  .nz-platform {
-    width: 410px;
-    height: 410px;
 
     right: 13%;
   }
 
-  .nz-orbit-1 {
-    width: 450px;
+  .nz-platform {
+    width: 440px;
+    right: 10%;
   }
 
-  .nz-orbit-2 {
-    width: 360px;
-    height: 540px;
-  }
-
-  .nz-orbit-3 {
-    width: 520px;
+  .nz-floating-card {
+    transform: scale(0.9);
   }
 }
+
 
 /* =========================================================
    MOBILE
 ========================================================= */
 
 @media (max-width: 900px) {
+
   .navbar {
     height: 82px;
     padding: 0 5vw;
@@ -1765,67 +1792,75 @@ a {
 
   .hero h1 {
     font-size: clamp(64px, 15vw, 100px);
+
     line-height: 0.86;
   }
 
   .hero-description {
     max-width: 500px;
+
     font-size: 16px;
   }
 
   .hero-visual {
     width: 100%;
+
     height: 500px;
 
     right: 0;
-    top: 470px;
 
-    opacity: 1;
+    top: 470px;
   }
 
   .nz-map-stage {
-    width: 330px;
-    height: 460px;
+    width: 320px;
+    height: 450px;
 
     right: 17%;
     top: 3%;
   }
 
   .nz-map-image {
-    width: 78%;
-    height: 88%;
+    transform: scale(0.9);
   }
 
   .nz-platform {
-    width: 330px;
-    height: 330px;
+    width: 360px;
+    height: 90px;
 
-    right: 17%;
-    top: 25%;
+    right: 12%;
+    bottom: 3%;
   }
 
   .nz-orbit-1 {
-    width: 370px;
-    height: 180px;
+    width: 420px;
+    height: 190px;
   }
 
   .nz-orbit-2 {
-    width: 280px;
-    height: 430px;
+    width: 300px;
+    height: 460px;
   }
 
   .nz-orbit-3 {
-    width: 420px;
-    height: 230px;
+    width: 450px;
+    height: 240px;
   }
 
   .nz-floating-card {
-    min-width: 125px;
+    min-width: 110px;
+
     padding: 9px 11px;
+
+    gap: 8px;
+
+    border-radius: 12px;
+
+    transform: scale(0.8);
   }
 
   .nz-floating-card strong {
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .nz-floating-card span {
@@ -1835,27 +1870,27 @@ a {
   .card-icon {
     width: 25px;
     height: 25px;
-    font-size: 12px;
+    font-size: 15px;
   }
 
   .card-seo {
-    top: 15%;
-    left: 2%;
+    top: 14%;
+    right: 70%;
   }
 
   .card-ads {
     top: 27%;
-    right: 0;
+    left: 70%;
   }
 
   .card-web {
-    bottom: 17%;
-    left: 1%;
+    top: 64%;
+    right: 70%;
   }
 
   .card-leads {
-    bottom: 9%;
-    right: 0;
+    top: 45%;
+    left: 73%;
   }
 
   .service-grid {
@@ -1880,11 +1915,13 @@ a {
   }
 }
 
+
 /* =========================================================
    SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 600px) {
+
   .logo {
     font-size: 22px;
   }
@@ -1936,94 +1973,52 @@ a {
   }
 
   .nz-map-stage {
-    width: 250px;
+    width: 245px;
     height: 350px;
 
-    right: 9%;
-    top: 5%;
+    right: 10%;
   }
 
   .nz-platform {
-    width: 250px;
-    height: 250px;
+    width: 290px;
+    height: 70px;
 
-    right: 9%;
-    top: 28%;
-  }
-
-  .nz-bg-glow {
-    width: 300px;
-    height: 300px;
-
-    right: 5%;
+    right: 7%;
   }
 
   .nz-orbit-1 {
-    width: 300px;
+    width: 330px;
     height: 150px;
   }
 
   .nz-orbit-2 {
-    width: 220px;
-    height: 340px;
+    width: 250px;
+    height: 360px;
   }
 
   .nz-orbit-3 {
-    width: 340px;
+    width: 360px;
     height: 190px;
   }
 
   .nz-floating-card {
-    min-width: 110px;
-
-    padding: 7px 9px;
-
-    gap: 7px;
-  }
-
-  .nz-floating-card strong {
-    font-size: 8px;
-  }
-
-  .nz-floating-card span {
-    font-size: 7px;
-  }
-
-  .card-icon {
-    width: 22px;
-    height: 22px;
-
-    font-size: 10px;
+    transform: scale(0.68);
   }
 
   .card-seo {
-    top: 13%;
-    left: 0;
+    right: 66%;
   }
 
   .card-ads {
-    top: 25%;
-    right: -1%;
+    left: 66%;
   }
 
   .card-web {
-    bottom: 15%;
-    left: 0;
+    right: 66%;
   }
 
   .card-leads {
-    bottom: 7%;
-    right: -1%;
-  }
-
-  .nz-node {
-    width: 4px;
-    height: 4px;
-  }
-
-  .nz-hotspot {
-    width: 9px;
-    height: 9px;
+    left: 67%;
   }
 
   .hero-bottom {
