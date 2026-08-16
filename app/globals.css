@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-
 /* =========================================================
    RESET
 ========================================================= */
@@ -268,12 +267,13 @@ a {
 
 /* =========================================================
    HERO VISUAL
+   USES THE PROVIDED NZ IMAGE
 ========================================================= */
 
 .hero-visual {
   position: absolute;
 
-  width: 55%;
+  width: 58%;
   height: 720px;
 
   right: -2%;
@@ -282,470 +282,84 @@ a {
   z-index: 3;
 
   pointer-events: none;
-}
-
-.nz-visual {
-  position: absolute;
-
-  inset: 0;
-
-  overflow: visible;
-}
-
-
-/* =========================================================
-   AMBIENT GLOW
-========================================================= */
-
-.nz-glow {
-  position: absolute;
-
-  border-radius: 50%;
-
-  filter: blur(100px);
-
-  pointer-events: none;
-}
-
-.nz-glow-blue {
-  width: 520px;
-  height: 520px;
-
-  right: 12%;
-  top: 15%;
-
-  background: rgba(36, 91, 190, 0.28);
-
-  animation: glowPulse 6s ease-in-out infinite;
-}
-
-.nz-glow-orange {
-  width: 300px;
-  height: 300px;
-
-  right: 28%;
-  top: 43%;
-
-  background: rgba(244, 122, 32, 0.13);
-
-  animation: glowPulse 7s ease-in-out infinite reverse;
-}
-
-
-/* =========================================================
-   PARTICLES
-========================================================= */
-
-.nz-particles {
-  position: absolute;
-
-  inset: 0;
-}
-
-.nz-particles span {
-  position: absolute;
-
-  width: 3px;
-  height: 3px;
-
-  border-radius: 50%;
-
-  background: #4779db;
-
-  opacity: 0.5;
-
-  animation: particleFloat 5s ease-in-out infinite;
-}
-
-.nz-particles span:nth-child(1) {
-  left: 18%;
-  top: 25%;
-}
-
-.nz-particles span:nth-child(2) {
-  left: 31%;
-  top: 54%;
-}
-
-.nz-particles span:nth-child(3) {
-  left: 45%;
-  top: 21%;
-}
-
-.nz-particles span:nth-child(4) {
-  left: 60%;
-  top: 31%;
-}
-
-.nz-particles span:nth-child(5) {
-  left: 74%;
-  top: 16%;
-}
-
-.nz-particles span:nth-child(6) {
-  left: 86%;
-  top: 40%;
-}
-
-.nz-particles span:nth-child(7) {
-  left: 24%;
-  top: 72%;
-}
-
-.nz-particles span:nth-child(8) {
-  left: 51%;
-  top: 78%;
-}
-
-.nz-particles span:nth-child(9) {
-  left: 69%;
-  top: 68%;
-}
-
-.nz-particles span:nth-child(10) {
-  left: 91%;
-  top: 72%;
-}
-
-.nz-particles span:nth-child(11) {
-  left: 12%;
-  top: 46%;
-  background: #f47a20;
-}
-
-.nz-particles span:nth-child(12) {
-  left: 38%;
-  top: 38%;
-}
-
-.nz-particles span:nth-child(13) {
-  left: 78%;
-  top: 53%;
-  background: #f47a20;
-}
-
-.nz-particles span:nth-child(14) {
-  left: 58%;
-  top: 87%;
-}
-
-.nz-particles span:nth-child(15) {
-  left: 82%;
-  top: 83%;
-}
-
-
-/* =========================================================
-   ORBITS
-========================================================= */
-
-.nz-orbit {
-  position: absolute;
-
-  border: 1px solid rgba(50, 105, 205, 0.38);
-
-  border-radius: 50%;
-
-  right: 10%;
-  top: 25%;
-
-  transform: rotate(-18deg);
-
-  pointer-events: none;
-}
-
-.orbit-a {
-  width: 530px;
-  height: 240px;
-
-  animation: orbitRotate 18s ease-in-out infinite;
-}
-
-.orbit-b {
-  width: 430px;
-  height: 620px;
-
-  right: 20%;
-
-  transform: rotate(28deg);
-
-  animation: orbitRotateReverse 22s ease-in-out infinite;
-}
-
-.orbit-c {
-  width: 620px;
-  height: 330px;
-
-  right: 4%;
-  top: 32%;
-
-  border-color: rgba(244, 122, 32, 0.28);
-
-  transform: rotate(-28deg);
-
-  animation: orbitRotate 25s ease-in-out infinite;
-}
-
-
-/* =========================================================
-   NZ MAP
-========================================================= */
-
-.nz-map-wrap {
-  position: absolute;
-
-  width: 470px;
-  height: 650px;
-
-  right: 17%;
-  top: 2%;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
-  animation: mapFloat 6s ease-in-out infinite;
-
-  filter:
-    drop-shadow(0 0 25px rgba(55, 115, 240, 0.35))
-    drop-shadow(0 0 70px rgba(35, 90, 210, 0.18));
 }
 
-.nz-map {
+
+/*
+   Hide the old animated SVG/map system.
+   The new image already contains:
+   - NZ map
+   - glow
+   - SEO
+   - ADS
+   - WEB DESIGN
+   - LEADS
+   - orbits
+   - lights
+*/
+
+.hero-visual .nz-visual {
   width: 100%;
   height: 100%;
 
-  overflow: visible;
-}
-
-.nz-outline {
-  stroke: #3d76e4;
-
-  stroke-width: 3;
-
-  stroke-linejoin: round;
-
-  transition: all 0.5s ease;
-}
-
-.nz-map-wrap:hover .nz-outline {
-  stroke: #8aadff;
-}
-
-.map-dot {
-  filter:
-    drop-shadow(0 0 8px currentColor);
-}
-
-.growth-line {
-  fill: none;
-
-  stroke: url(#nzOrange);
-
-  stroke-width: 5;
-
-  stroke-linecap: round;
-
-  stroke-dasharray: 18 12;
-
-  filter:
-    drop-shadow(0 0 7px rgba(244, 122, 32, 0.7));
-
-  animation: lineMove 4s linear infinite;
-}
-
-.growth-point {
-  fill: #ffb45d;
-
-  filter:
-    drop-shadow(0 0 10px #f47a20);
-
-  animation: pointPulse 2s ease-in-out infinite;
-}
-
-
-/* =========================================================
-   MAP CENTER SIGNAL
-========================================================= */
-
-.nz-center-point {
-  position: absolute;
-
-  width: 28px;
-  height: 28px;
-
-  left: 55%;
-  top: 43%;
-
-  transform: translate(-50%, -50%);
+  position: relative;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background-image: url("/nz.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+
+  overflow: visible;
 }
 
-.nz-center-point::before {
+
+/* Hide all old visual elements */
+
+.hero-visual .nz-visual > * {
+  display: none !important;
+}
+
+
+/* Keep the background image visible */
+
+.hero-visual .nz-visual::before {
   content: "";
 
   position: absolute;
 
-  width: 28px;
-  height: 28px;
+  inset: 0;
 
-  border: 1px solid rgba(244, 122, 32, 0.6);
+  background-image: url("/nz.svg");
 
-  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
 
-  animation: signalPulse 2s ease-out infinite;
-}
-
-.nz-center-point span {
-  width: 7px;
-  height: 7px;
-
-  border-radius: 50%;
-
-  background: #f47a20;
-
-  box-shadow:
-    0 0 12px #f47a20,
-    0 0 30px rgba(244, 122, 32, 0.7);
+  z-index: 1;
 }
 
 
 /* =========================================================
-   FLOATING LABELS
+   REMOVE OLD VISUAL ANIMATIONS
 ========================================================= */
 
+.nz-glow,
+.nz-particles,
+.nz-orbit,
+.nz-map-wrap,
+.nz-center-point,
+.nz-label,
+.nz-signal,
 .floating-word {
-  display: none;
-}
-
-.nz-label {
-  position: absolute;
-
-  display: flex;
-  align-items: center;
-
-  gap: 9px;
-
-  padding: 11px 16px;
-
-  background: rgba(5, 7, 12, 0.72);
-
-  border: 1px solid rgba(255, 255, 255, 0.13);
-
-  backdrop-filter: blur(15px);
-
-  border-radius: 999px;
-
-  color: rgba(255, 255, 255, 0.72);
-
-  font-size: 11px;
-
-  letter-spacing: 0.14em;
-
-  box-shadow:
-    0 15px 50px rgba(0, 0, 0, 0.25);
-
-  z-index: 10;
-}
-
-.label-dot {
-  width: 5px;
-  height: 5px;
-
-  border-radius: 50%;
-
-  background: #4b82ee;
-
-  box-shadow:
-    0 0 10px #4b82ee;
-}
-
-.label-dot.orange {
-  background: #f47a20;
-
-  box-shadow:
-    0 0 10px #f47a20;
-}
-
-.label-seo {
-  top: 25%;
-  right: 2%;
-
-  animation: labelFloat 4s ease-in-out infinite;
-}
-
-.label-ads {
-  top: 56%;
-  left: 3%;
-
-  animation: labelFloat 5s ease-in-out infinite reverse;
-}
-
-.label-web {
-  bottom: 13%;
-  right: 15%;
-
-  animation: labelFloat 4.5s ease-in-out infinite;
-}
-
-.label-leads {
-  top: 42%;
-  right: 7%;
-
-  animation: labelFloat 5.5s ease-in-out infinite reverse;
-}
-
-
-/* =========================================================
-   SIGNAL BARS
-========================================================= */
-
-.nz-signal {
-  position: absolute;
-
-  width: 110px;
-  height: 30px;
-
-  left: 12%;
-  bottom: 15%;
-
-  display: flex;
-  align-items: center;
-
-  gap: 7px;
-
-  opacity: 0.4;
-}
-
-.nz-signal span {
-  display: block;
-
-  width: 4px;
-
-  border-radius: 999px;
-
-  background: #4779db;
-
-  animation: signalBars 1.4s ease-in-out infinite;
-}
-
-.nz-signal span:nth-child(1) {
-  height: 9px;
-}
-
-.nz-signal span:nth-child(2) {
-  height: 18px;
-
-  animation-delay: 0.15s;
-}
-
-.nz-signal span:nth-child(3) {
-  height: 28px;
-
-  animation-delay: 0.3s;
+  display: none !important;
 }
 
 
@@ -1226,137 +840,6 @@ a {
 
 
 /* =========================================================
-   ANIMATIONS
-========================================================= */
-
-@keyframes mapFloat {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-
-  50% {
-    transform: translateY(-12px) rotate(1deg);
-  }
-}
-
-@keyframes glowPulse {
-  0%,
-  100% {
-    opacity: 0.6;
-
-    transform: scale(1);
-  }
-
-  50% {
-    opacity: 1;
-
-    transform: scale(1.08);
-  }
-}
-
-@keyframes orbitRotate {
-  0% {
-    transform: rotate(-18deg);
-  }
-
-  50% {
-    transform: rotate(12deg);
-  }
-
-  100% {
-    transform: rotate(-18deg);
-  }
-}
-
-@keyframes orbitRotateReverse {
-  0% {
-    transform: rotate(28deg);
-  }
-
-  50% {
-    transform: rotate(-22deg);
-  }
-
-  100% {
-    transform: rotate(28deg);
-  }
-}
-
-@keyframes lineMove {
-  to {
-    stroke-dashoffset: -120;
-  }
-}
-
-@keyframes pointPulse {
-  0%,
-  100% {
-    r: 5;
-
-    opacity: 0.7;
-  }
-
-  50% {
-    r: 9;
-
-    opacity: 1;
-  }
-}
-
-@keyframes signalPulse {
-  0% {
-    transform: scale(0.5);
-
-    opacity: 0.8;
-  }
-
-  100% {
-    transform: scale(2.5);
-
-    opacity: 0;
-  }
-}
-
-@keyframes signalBars {
-  0%,
-  100% {
-    transform: scaleY(0.6);
-  }
-
-  50% {
-    transform: scaleY(1);
-  }
-}
-
-@keyframes particleFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-
-    opacity: 0.3;
-  }
-
-  50% {
-    transform: translateY(-12px);
-
-    opacity: 0.8;
-  }
-}
-
-@keyframes labelFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-
-/* =========================================================
    TABLET
 ========================================================= */
 
@@ -1371,29 +854,11 @@ a {
   }
 
   .hero-visual {
-    width: 50%;
+    width: 54%;
 
-    right: -7%;
-  }
+    right: -5%;
 
-  .nz-map-wrap {
-    width: 360px;
-
-    height: 540px;
-
-    right: 14%;
-  }
-
-  .orbit-a {
-    width: 450px;
-  }
-
-  .orbit-b {
-    height: 540px;
-  }
-
-  .orbit-c {
-    width: 500px;
+    height: 650px;
   }
 }
 
@@ -1417,10 +882,7 @@ a {
   .hero {
     min-height: 920px;
 
-    padding:
-      150px
-      5vw
-      100px;
+    padding: 150px 5vw 100px;
 
     display: block;
   }
@@ -1450,65 +912,11 @@ a {
 
     top: 470px;
 
-    opacity: 0.85;
+    opacity: 1;
   }
 
-  .nz-map-wrap {
-    width: 300px;
-
-    height: 430px;
-
-    right: 18%;
-  }
-
-  .nz-glow-blue {
-    width: 350px;
-
-    height: 350px;
-
-    right: 15%;
-  }
-
-  .orbit-a {
-    width: 370px;
-
-    height: 180px;
-  }
-
-  .orbit-b {
-    width: 280px;
-
-    height: 430px;
-  }
-
-  .orbit-c {
-    width: 420px;
-
-    height: 230px;
-  }
-
-  .label-seo {
-    top: 15%;
-
-    right: 3%;
-  }
-
-  .label-ads {
-    top: 54%;
-
-    left: 4%;
-  }
-
-  .label-web {
-    bottom: 5%;
-
-    right: 12%;
-  }
-
-  .label-leads {
-    top: 38%;
-
-    right: 0;
+  .hero-visual .nz-visual {
+    background-size: contain;
   }
 
   .service-grid {
@@ -1593,30 +1001,8 @@ a {
     top: 450px;
   }
 
-  .nz-map-wrap {
-    width: 230px;
-
-    height: 340px;
-
-    right: 12%;
-  }
-
-  .nz-label {
-    padding: 8px 11px;
-
-    font-size: 8px;
-  }
-
-  .label-seo {
-    right: 0;
-  }
-
-  .label-ads {
-    left: 0;
-  }
-
-  .label-leads {
-    right: -2%;
+  .hero-visual .nz-visual {
+    background-size: contain;
   }
 
   .hero-bottom {
