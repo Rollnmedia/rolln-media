@@ -43,7 +43,6 @@ a {
 .navbar {
   width: 100%;
   height: 96px;
-
   padding: 0 6vw;
 
   display: flex;
@@ -62,7 +61,6 @@ a {
 .logo {
   display: flex;
   flex-direction: column;
-
   line-height: 0.8;
 
   font-family: "Space Grotesk", sans-serif;
@@ -76,9 +74,7 @@ a {
 
 .logo-media {
   color: #f47a20;
-
   font-size: 15px;
-
   margin-left: 21px;
   margin-top: 4px;
 }
@@ -88,7 +84,6 @@ a {
   gap: 48px;
 
   color: rgba(255, 255, 255, 0.66);
-
   font-size: 14px;
 }
 
@@ -140,7 +135,6 @@ a {
   width: 55%;
 
   position: relative;
-
   z-index: 20;
 }
 
@@ -152,7 +146,6 @@ a {
   color: rgba(255, 255, 255, 0.52);
 
   font-size: 11px;
-
   letter-spacing: 0.18em;
 
   margin-bottom: 38px;
@@ -225,7 +218,6 @@ a {
   color: rgba(255, 255, 255, 0.58);
 
   font-size: 18px;
-
   line-height: 1.7;
 }
 
@@ -285,22 +277,15 @@ a {
 
 /* =========================================================
    HERO VISUAL
-   DESKTOP
 ========================================================= */
 
 .hero-visual {
   position: absolute;
 
   width: 55%;
-
   height: 780px;
 
-  /*
-    IMPORTANT:
-    Visual moved slightly LEFT from previous version.
-  */
   right: 1.5%;
-
   top: 95px;
 
   z-index: 5;
@@ -311,10 +296,6 @@ a {
   align-items: center;
   justify-content: center;
 }
-
-/* =========================================================
-   MAIN NZ VISUAL CONTAINER
-========================================================= */
 
 .hero-visual .nz-visual {
   width: 100%;
@@ -337,7 +318,6 @@ a {
 
 .hero-visual .nz-visual.is-mounted {
   opacity: 1;
-
   transform: translateX(0) scale(1);
 }
 
@@ -428,11 +408,11 @@ a {
 
 /* =========================================================
    PARTICLES
+   STRONGER REAL MOVEMENT
 ========================================================= */
 
 .nz-particles {
   position: absolute;
-
   inset: 0;
 
   z-index: 1;
@@ -451,35 +431,41 @@ a {
   background: #4f8cff;
 
   box-shadow:
-    0 0 7px rgba(79, 140, 255, 0.8),
-    0 0 16px rgba(79, 140, 255, 0.35);
+    0 0 7px rgba(79, 140, 255, 0.9),
+    0 0 18px rgba(79, 140, 255, 0.45);
 
-  animation:
-    particleFloat 5s ease-in-out infinite,
-    particleBlink 3s ease-in-out infinite;
+  animation-name: particleDrift;
+  animation-duration: 5.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  will-change: transform, opacity;
 }
+
+/* particle positions */
 
 .nz-particles span:nth-child(1) {
   left: 18%;
   top: 18%;
+  animation-delay: -1s;
 }
 
 .nz-particles span:nth-child(2) {
   left: 32%;
   top: 12%;
-  animation-delay: -1s;
+  animation-delay: -2s;
 }
 
 .nz-particles span:nth-child(3) {
   left: 48%;
   top: 22%;
-  animation-delay: -2s;
+  animation-delay: -3s;
 }
 
 .nz-particles span:nth-child(4) {
   left: 67%;
   top: 10%;
-  animation-delay: -3s;
+  animation-delay: -4s;
 }
 
 .nz-particles span:nth-child(5) {
@@ -602,31 +588,61 @@ a {
   animation-delay: -3.5s;
 }
 
-@keyframes particleFloat {
-  0%,
-  100% {
-    transform: translateY(0) translateX(0);
-  }
-
-  50% {
-    transform: translateY(-12px) translateX(5px);
-  }
+.nz-particles span:nth-child(25) {
+  left: 64%;
+  top: 34%;
+  animation-delay: -2.3s;
 }
 
-@keyframes particleBlink {
-  0%,
-  100% {
+.nz-particles span:nth-child(26) {
+  left: 77%;
+  top: 82%;
+  animation-delay: -4.2s;
+}
+
+.nz-particles span:nth-child(27) {
+  left: 52%;
+  top: 92%;
+  animation-delay: -1.9s;
+}
+
+.nz-particles span:nth-child(28) {
+  left: 94%;
+  top: 14%;
+  animation-delay: -3.7s;
+}
+
+@keyframes particleDrift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.7);
     opacity: 0.25;
   }
 
+  25% {
+    transform: translate3d(10px, -7px, 0) scale(1);
+    opacity: 0.65;
+  }
+
   50% {
+    transform: translate3d(-6px, -18px, 0) scale(1.25);
     opacity: 1;
+  }
+
+  75% {
+    transform: translate3d(12px, -10px, 0) scale(0.9);
+    opacity: 0.55;
+  }
+
+  100% {
+    transform: translate3d(-8px, 4px, 0) scale(0.7);
+    opacity: 0.2;
   }
 }
 
 /* =========================================================
-   ORBITS
-   DESKTOP FIX
+   ORBIT SYSTEM
+   IMPORTANT:
+   These are now visibly animated.
 ========================================================= */
 
 .nz-orbit {
@@ -638,7 +654,7 @@ a {
   width: 540px;
   height: 320px;
 
-  border: 1px solid rgba(58, 112, 221, 0.30);
+  border: 1px dashed rgba(58, 112, 221, 0.42);
 
   border-radius: 50%;
 
@@ -646,70 +662,167 @@ a {
 
   pointer-events: none;
 
-  /*
-    Animation is intentionally applied to the whole orbit.
-  */
   transform-origin: center center;
 
-  animation: orbitSpin1 14s linear infinite;
+  will-change: transform;
+
+  animation: orbitRotate1 12s linear infinite;
 }
+
+/* Moving light on orbit */
+
+.nz-orbit::after {
+  content: "";
+
+  position: absolute;
+
+  width: 9px;
+  height: 9px;
+
+  left: 50%;
+  top: -5px;
+
+  border-radius: 50%;
+
+  background: #4f8cff;
+
+  box-shadow:
+    0 0 8px #4f8cff,
+    0 0 20px rgba(79, 140, 255, 0.85),
+    0 0 40px rgba(79, 140, 255, 0.45);
+
+  transform: translateX(-50%);
+}
+
+/* Blue orbit */
 
 .nz-orbit-1 {
   width: 540px;
   height: 320px;
-  border-color: rgba(58, 112, 221, 0.30);
+
+  border-color: rgba(58, 112, 221, 0.48);
+
+  animation: orbitRotate1 12s linear infinite;
 }
+
+/* Large blue orbit */
 
 .nz-orbit-2 {
   width: 620px;
   height: 400px;
 
-  border-color: rgba(58, 112, 221, 0.22);
+  border-color: rgba(58, 112, 221, 0.28);
 
-  animation: orbitSpin2 18s linear infinite reverse;
+  animation: orbitRotate2 17s linear infinite reverse;
 }
+
+.nz-orbit-2::after {
+  background: #6ca2ff;
+
+  box-shadow:
+    0 0 8px #6ca2ff,
+    0 0 22px rgba(108, 162, 255, 0.8);
+}
+
+/* Orange orbit */
 
 .nz-orbit-3 {
   width: 700px;
   height: 460px;
 
-  border-color: rgba(244, 122, 32, 0.20);
+  border-color: rgba(244, 122, 32, 0.28);
 
-  animation: orbitSpin3 22s linear infinite;
+  animation: orbitRotate3 21s linear infinite;
 }
 
-/*
-  Using separate keyframes prevents the base transform
-  from fighting with the animation transform.
-*/
+.nz-orbit-3::after {
+  background: #f47a20;
 
-@keyframes orbitSpin1 {
+  box-shadow:
+    0 0 8px #f47a20,
+    0 0 24px rgba(244, 122, 32, 0.85),
+    0 0 45px rgba(244, 122, 32, 0.35);
+}
+
+/* Fourth outer orbit */
+
+.nz-orbit-4 {
+  width: 790px;
+  height: 520px;
+
+  border-color: rgba(58, 112, 221, 0.14);
+
+  animation: orbitRotate4 27s linear infinite reverse;
+}
+
+.nz-orbit-4::after {
+  width: 6px;
+  height: 6px;
+
+  background: #3d79e5;
+
+  box-shadow:
+    0 0 7px #3d79e5,
+    0 0 18px rgba(61, 121, 229, 0.6);
+}
+
+/* =========================================================
+   ORBIT ANIMATIONS
+========================================================= */
+
+@keyframes orbitRotate1 {
   from {
-    transform: translate(-50%, -50%) rotate(-18deg);
+    transform:
+      translate(-50%, -50%)
+      rotate(-18deg);
   }
 
   to {
-    transform: translate(-50%, -50%) rotate(342deg);
+    transform:
+      translate(-50%, -50%)
+      rotate(342deg);
   }
 }
 
-@keyframes orbitSpin2 {
+@keyframes orbitRotate2 {
   from {
-    transform: translate(-50%, -50%) rotate(31deg);
+    transform:
+      translate(-50%, -50%)
+      rotate(28deg);
   }
 
   to {
-    transform: translate(-50%, -50%) rotate(-329deg);
+    transform:
+      translate(-50%, -50%)
+      rotate(-332deg);
   }
 }
 
-@keyframes orbitSpin3 {
+@keyframes orbitRotate3 {
   from {
-    transform: translate(-50%, -50%) rotate(-42deg);
+    transform:
+      translate(-50%, -50%)
+      rotate(-38deg);
   }
 
   to {
-    transform: translate(-50%, -50%) rotate(318deg);
+    transform:
+      translate(-50%, -50%)
+      rotate(322deg);
+  }
+}
+
+@keyframes orbitRotate4 {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(12deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(-348deg);
   }
 }
 
@@ -790,12 +903,18 @@ a {
 @keyframes platformPulse {
   0%,
   100% {
-    transform: translate(-50%, -50%) scale(0.92);
+    transform:
+      translate(-50%, -50%)
+      scale(0.92);
+
     opacity: 0.65;
   }
 
   50% {
-    transform: translate(-50%, -50%) scale(1.08);
+    transform:
+      translate(-50%, -50%)
+      scale(1.08);
+
     opacity: 1;
   }
 }
@@ -853,12 +972,18 @@ a {
   0%,
   100% {
     opacity: 0.65;
-    transform: translate(-50%, -50%) scale(0.94);
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.94);
   }
 
   50% {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1.05);
+
+    transform:
+      translate(-50%, -50%)
+      scale(1.05);
   }
 }
 
@@ -889,17 +1014,81 @@ a {
     drop-shadow(0 0 70px rgba(48, 92, 190, 0.24));
 
   animation: mapFloat 6s ease-in-out infinite;
+
+  will-change: transform;
 }
 
 @keyframes mapFloat {
   0%,
   100% {
-    transform: translate(-50%, -50%) translateY(0);
+    transform:
+      translate(-50%, -50%)
+      translateY(0);
   }
 
   50% {
-    transform: translate(-50%, -50%) translateY(-8px);
+    transform:
+      translate(-50%, -50%)
+      translateY(-8px);
   }
+}
+
+/* =========================================================
+   MAP GRADIENT
+========================================================= */
+
+.nz-map-gradient {
+  position: absolute;
+
+  width: 315px;
+  height: 545px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 6;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(96, 154, 255, 0.08),
+      transparent 35%,
+      rgba(244, 122, 32, 0.05)
+    );
+
+  mix-blend-mode: screen;
+
+  opacity: 0.7;
+}
+
+/* =========================================================
+   MAP EDGE GLOW
+========================================================= */
+
+.nz-map-edge {
+  position: absolute;
+
+  width: 330px;
+  height: 560px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 7;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  box-shadow:
+    inset 0 0 30px rgba(92, 145, 255, 0.12),
+    0 0 30px rgba(70, 125, 240, 0.08);
 }
 
 /* =========================================================
@@ -947,33 +1136,6 @@ a {
       black 85%,
       transparent
     );
-}
-
-/* =========================================================
-   MAP OUTLINE
-========================================================= */
-
-.nz-map-outline {
-  position: absolute;
-
-  width: 330px;
-  height: 560px;
-
-  left: 50%;
-  top: 50%;
-
-  transform: translate(-50%, -50%);
-
-  border-radius: 50%;
-
-  z-index: 7;
-
-  opacity: 0.25;
-
-  box-shadow:
-    inset 0 0 30px rgba(92, 145, 255, 0.12);
-
-  pointer-events: none;
 }
 
 /* =========================================================
@@ -1035,6 +1197,13 @@ a {
   animation-delay: -2.5s;
 }
 
+.node-6 {
+  left: 40%;
+  top: 31%;
+
+  animation-delay: -1.1s;
+}
+
 @keyframes nodePulse {
   0%,
   100% {
@@ -1089,22 +1258,16 @@ a {
 .hotspot-2 {
   left: 47%;
   top: 47%;
-
-  animation-delay: -0.8s;
 }
 
 .hotspot-3 {
   left: 51%;
   top: 64%;
-
-  animation-delay: -1.4s;
 }
 
 .hotspot-4 {
   left: 57%;
   top: 75%;
-
-  animation-delay: -2s;
 }
 
 @keyframes hotspotRipple {
@@ -1229,6 +1392,8 @@ a {
   pointer-events: none;
 
   animation: cardFloat 5s ease-in-out infinite;
+
+  will-change: transform;
 }
 
 .nz-floating-card strong {
@@ -1294,7 +1459,6 @@ a {
 
 /* =========================================================
    CARD POSITIONS
-   DESKTOP BALANCED
 ========================================================= */
 
 .card-seo {
@@ -1305,10 +1469,6 @@ a {
 }
 
 .card-ads {
-  /*
-    Was right:-1%.
-    Now pulled significantly inward.
-  */
   right: 7%;
   top: 29%;
 
@@ -1323,10 +1483,6 @@ a {
 }
 
 .card-leads {
-  /*
-    Was right:-1%.
-    Now pulled inward.
-  */
   right: 7%;
   bottom: 11%;
 
@@ -1889,9 +2045,19 @@ a {
     height: 575px;
   }
 
+  .nz-map-gradient {
+    width: 340px;
+    height: 575px;
+  }
+
   .nz-map-network {
     width: 340px;
     height: 575px;
+  }
+
+  .nz-map-edge {
+    width: 355px;
+    height: 590px;
   }
 
   .nz-map-stage {
@@ -1924,9 +2090,11 @@ a {
     height: 480px;
   }
 
-  /*
-    Desktop cards are kept inside the visual.
-  */
+  .nz-orbit-4 {
+    width: 820px;
+    height: 535px;
+  }
+
   .card-seo {
     left: 1%;
     top: 20%;
@@ -1986,9 +2154,19 @@ a {
     height: 470px;
   }
 
+  .nz-map-gradient {
+    width: 270px;
+    height: 470px;
+  }
+
   .nz-map-network {
     width: 270px;
     height: 470px;
+  }
+
+  .nz-map-edge {
+    width: 285px;
+    height: 485px;
   }
 
   .nz-platform {
@@ -1996,25 +2174,29 @@ a {
     height: 460px;
   }
 
-  /*
-    Tablet orbit scaling is handled only here.
-    Mobile remains untouched below.
-  */
   .nz-orbit {
     left: 48%;
     top: 49%;
   }
 
   .nz-orbit-1 {
-    animation-name: orbitSpinTablet1;
+    width: 470px;
+    height: 285px;
   }
 
   .nz-orbit-2 {
-    animation-name: orbitSpinTablet2;
+    width: 540px;
+    height: 350px;
   }
 
   .nz-orbit-3 {
-    animation-name: orbitSpinTablet3;
+    width: 610px;
+    height: 400px;
+  }
+
+  .nz-orbit-4 {
+    width: 680px;
+    height: 450px;
   }
 
   .card-ads,
@@ -2031,46 +2213,14 @@ a {
   }
 }
 
-@keyframes orbitSpinTablet1 {
-  from {
-    transform: translate(-50%, -50%) rotate(-18deg) scale(0.85);
-  }
-
-  to {
-    transform: translate(-50%, -50%) rotate(342deg) scale(0.85);
-  }
-}
-
-@keyframes orbitSpinTablet2 {
-  from {
-    transform: translate(-50%, -50%) rotate(31deg) scale(0.85);
-  }
-
-  to {
-    transform: translate(-50%, -50%) rotate(-329deg) scale(0.85);
-  }
-}
-
-@keyframes orbitSpinTablet3 {
-  from {
-    transform: translate(-50%, -50%) rotate(-42deg) scale(0.85);
-  }
-
-  to {
-    transform: translate(-50%, -50%) rotate(318deg) scale(0.85);
-  }
-}
-
 /* =========================================================
    MOBILE
-   DO NOT CHANGE
 ========================================================= */
 
 @media (max-width: 900px) {
 
   .navbar {
     height: 82px;
-
     padding: 0 5vw;
   }
 
@@ -2161,9 +2311,19 @@ a {
     height: 410px;
   }
 
+  .nz-map-gradient {
+    width: 225px;
+    height: 410px;
+  }
+
   .nz-map-network {
     width: 225px;
     height: 410px;
+  }
+
+  .nz-map-edge {
+    width: 240px;
+    height: 425px;
   }
 
   .nz-map-glow {
@@ -2197,16 +2357,26 @@ a {
   .nz-orbit {
     left: 50%;
     top: 50%;
+  }
 
-    transform: translate(-50%, -50%) scale(0.72) rotate(-18deg);
+  .nz-orbit-1 {
+    width: 410px;
+    height: 250px;
   }
 
   .nz-orbit-2 {
-    transform: translate(-50%, -50%) scale(0.72) rotate(31deg);
+    width: 470px;
+    height: 300px;
   }
 
   .nz-orbit-3 {
-    transform: translate(-50%, -50%) scale(0.72) rotate(-42deg);
+    width: 530px;
+    height: 350px;
+  }
+
+  .nz-orbit-4 {
+    width: 590px;
+    height: 390px;
   }
 
   .nz-floating-card {
@@ -2281,7 +2451,6 @@ a {
 
 /* =========================================================
    SMALL MOBILE
-   DO NOT CHANGE
 ========================================================= */
 
 @media (max-width: 600px) {
@@ -2355,9 +2524,19 @@ a {
     height: 380px;
   }
 
+  .nz-map-gradient {
+    width: 210px;
+    height: 380px;
+  }
+
   .nz-map-network {
     width: 210px;
     height: 380px;
+  }
+
+  .nz-map-edge {
+    width: 225px;
+    height: 395px;
   }
 
   .nz-map-glow {
@@ -2383,6 +2562,26 @@ a {
   .ring-3 {
     width: 390px;
     height: 390px;
+  }
+
+  .nz-orbit-1 {
+    width: 380px;
+    height: 230px;
+  }
+
+  .nz-orbit-2 {
+    width: 435px;
+    height: 280px;
+  }
+
+  .nz-orbit-3 {
+    width: 490px;
+    height: 325px;
+  }
+
+  .nz-orbit-4 {
+    width: 545px;
+    height: 360px;
   }
 
   .nz-floating-card {
@@ -2476,7 +2675,6 @@ a {
 
 /* =========================================================
    VERY SMALL DEVICES
-   DO NOT CHANGE
 ========================================================= */
 
 @media (max-width: 390px) {
@@ -2522,7 +2720,7 @@ a {
 }
 
 /* =========================================================
-   REDUCE MOTION
+   ACCESSIBILITY
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
