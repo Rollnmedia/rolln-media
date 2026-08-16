@@ -36,7 +36,6 @@ a {
     #05070c;
 }
 
-
 /* =========================================================
    NAVBAR
 ========================================================= */
@@ -119,7 +118,6 @@ a {
   border-color: #f47a20;
   color: #05070c;
 }
-
 
 /* =========================================================
    HERO
@@ -285,7 +283,6 @@ a {
   color: #fff;
 }
 
-
 /* =========================================================
    HERO VISUAL
    DESKTOP
@@ -294,11 +291,17 @@ a {
 .hero-visual {
   position: absolute;
 
-  width: 53%;
-  height: 760px;
+  width: 55%;
 
-  right: -1%;
-  top: 105px;
+  height: 780px;
+
+  /*
+    IMPORTANT:
+    Visual moved slightly LEFT from previous version.
+  */
+  right: 1.5%;
+
+  top: 95px;
 
   z-index: 5;
 
@@ -308,7 +311,6 @@ a {
   align-items: center;
   justify-content: center;
 }
-
 
 /* =========================================================
    MAIN NZ VISUAL CONTAINER
@@ -326,7 +328,7 @@ a {
 
   opacity: 0;
 
-  transform: translateX(30px) scale(0.96);
+  transform: translateX(0) scale(0.96);
 
   transition:
     opacity 1s ease,
@@ -339,16 +341,9 @@ a {
   transform: translateX(0) scale(1);
 }
 
-
-/* =========================================================
-   IMPORTANT
-   DO NOT HIDE NZ VISUAL CHILDREN
-========================================================= */
-
 .hero-visual .nz-visual > * {
   display: block;
 }
-
 
 /* =========================================================
    AMBIENT BACKGROUND GLOW
@@ -430,7 +425,6 @@ a {
     opacity: 0.75;
   }
 }
-
 
 /* =========================================================
    PARTICLES
@@ -630,58 +624,66 @@ a {
   }
 }
 
-
 /* =========================================================
    ORBITS
+   DESKTOP FIX
 ========================================================= */
 
 .nz-orbit {
   position: absolute;
 
-  left: 51%;
+  left: 48%;
   top: 49%;
 
-  width: 520px;
-  height: 300px;
+  width: 540px;
+  height: 320px;
 
-  border: 1px solid rgba(58, 112, 221, 0.26);
+  border: 1px solid rgba(58, 112, 221, 0.30);
 
   border-radius: 50%;
 
   z-index: 2;
 
-  transform: translate(-50%, -50%) rotate(-18deg);
-
   pointer-events: none;
+
+  /*
+    Animation is intentionally applied to the whole orbit.
+  */
+  transform-origin: center center;
+
+  animation: orbitSpin1 14s linear infinite;
 }
 
 .nz-orbit-1 {
-  animation: orbitRotate1 14s linear infinite;
+  width: 540px;
+  height: 320px;
+  border-color: rgba(58, 112, 221, 0.30);
 }
 
 .nz-orbit-2 {
-  width: 600px;
-  height: 390px;
+  width: 620px;
+  height: 400px;
 
-  border-color: rgba(58, 112, 221, 0.2);
+  border-color: rgba(58, 112, 221, 0.22);
 
-  transform: translate(-50%, -50%) rotate(31deg);
-
-  animation: orbitRotate2 18s linear infinite reverse;
+  animation: orbitSpin2 18s linear infinite reverse;
 }
 
 .nz-orbit-3 {
-  width: 680px;
-  height: 450px;
+  width: 700px;
+  height: 460px;
 
-  border-color: rgba(244, 122, 32, 0.18);
+  border-color: rgba(244, 122, 32, 0.20);
 
-  transform: translate(-50%, -50%) rotate(-42deg);
-
-  animation: orbitRotate3 22s linear infinite;
+  animation: orbitSpin3 22s linear infinite;
 }
 
-@keyframes orbitRotate1 {
+/*
+  Using separate keyframes prevents the base transform
+  from fighting with the animation transform.
+*/
+
+@keyframes orbitSpin1 {
   from {
     transform: translate(-50%, -50%) rotate(-18deg);
   }
@@ -691,7 +693,7 @@ a {
   }
 }
 
-@keyframes orbitRotate2 {
+@keyframes orbitSpin2 {
   from {
     transform: translate(-50%, -50%) rotate(31deg);
   }
@@ -701,7 +703,7 @@ a {
   }
 }
 
-@keyframes orbitRotate3 {
+@keyframes orbitSpin3 {
   from {
     transform: translate(-50%, -50%) rotate(-42deg);
   }
@@ -711,7 +713,6 @@ a {
   }
 }
 
-
 /* =========================================================
    MAP PLATFORM
 ========================================================= */
@@ -719,10 +720,10 @@ a {
 .nz-platform {
   position: absolute;
 
-  width: 530px;
-  height: 530px;
+  width: 550px;
+  height: 550px;
 
-  left: 51%;
+  left: 48%;
   top: 49%;
 
   transform: translate(-50%, -50%);
@@ -746,25 +747,25 @@ a {
 }
 
 .ring-1 {
-  width: 310px;
-  height: 310px;
+  width: 320px;
+  height: 320px;
 }
 
 .ring-2 {
-  width: 420px;
-  height: 420px;
+  width: 435px;
+  height: 435px;
 }
 
 .ring-3 {
-  width: 530px;
-  height: 530px;
+  width: 550px;
+  height: 550px;
 }
 
 .platform-glow {
   position: absolute;
 
-  width: 380px;
-  height: 380px;
+  width: 400px;
+  height: 400px;
 
   left: 50%;
   top: 50%;
@@ -799,7 +800,6 @@ a {
   }
 }
 
-
 /* =========================================================
    MAP STAGE
 ========================================================= */
@@ -807,10 +807,10 @@ a {
 .nz-map-stage {
   position: absolute;
 
-  width: 460px;
-  height: 610px;
+  width: 480px;
+  height: 630px;
 
-  left: 51%;
+  left: 48%;
   top: 50%;
 
   transform: translate(-50%, -50%);
@@ -820,7 +820,6 @@ a {
   pointer-events: none;
 }
 
-
 /* =========================================================
    MAP GLOW
 ========================================================= */
@@ -828,8 +827,8 @@ a {
 .nz-map-glow {
   position: absolute;
 
-  width: 430px;
-  height: 560px;
+  width: 450px;
+  height: 580px;
 
   left: 50%;
   top: 50%;
@@ -863,7 +862,6 @@ a {
   }
 }
 
-
 /* =========================================================
    ACTUAL NZ SVG
 ========================================================= */
@@ -871,8 +869,8 @@ a {
 .nz-map-image {
   position: absolute;
 
-  width: 300px;
-  height: 520px;
+  width: 315px;
+  height: 545px;
 
   max-width: none;
 
@@ -904,7 +902,6 @@ a {
   }
 }
 
-
 /* =========================================================
    NETWORK GRID
 ========================================================= */
@@ -912,8 +909,8 @@ a {
 .nz-map-network {
   position: absolute;
 
-  width: 300px;
-  height: 520px;
+  width: 315px;
+  height: 545px;
 
   left: 50%;
   top: 50%;
@@ -952,7 +949,6 @@ a {
     );
 }
 
-
 /* =========================================================
    MAP OUTLINE
 ========================================================= */
@@ -960,8 +956,8 @@ a {
 .nz-map-outline {
   position: absolute;
 
-  width: 320px;
-  height: 540px;
+  width: 330px;
+  height: 560px;
 
   left: 50%;
   top: 50%;
@@ -979,7 +975,6 @@ a {
 
   pointer-events: none;
 }
-
 
 /* =========================================================
    MAP DATA NODES
@@ -1052,7 +1047,6 @@ a {
     opacity: 1;
   }
 }
-
 
 /* =========================================================
    ORANGE HOTSPOTS
@@ -1127,7 +1121,6 @@ a {
   }
 }
 
-
 /* =========================================================
    CONNECTION SVG
 ========================================================= */
@@ -1197,7 +1190,6 @@ a {
     opacity: 0.9;
   }
 }
-
 
 /* =========================================================
    FLOATING CARDS
@@ -1300,35 +1292,43 @@ a {
     inset 0 0 18px rgba(244, 122, 32, 0.08);
 }
 
-
 /* =========================================================
    CARD POSITIONS
+   DESKTOP BALANCED
 ========================================================= */
 
 .card-seo {
-  left: 3%;
-  top: 22%;
+  left: 0;
+  top: 20%;
 
   animation-delay: -0.5s;
 }
 
 .card-ads {
-  right: -1%;
-  top: 31%;
+  /*
+    Was right:-1%.
+    Now pulled significantly inward.
+  */
+  right: 7%;
+  top: 29%;
 
   animation-delay: -1.4s;
 }
 
 .card-web {
-  left: 9%;
-  bottom: 20%;
+  left: 5%;
+  bottom: 18%;
 
   animation-delay: -2.2s;
 }
 
 .card-leads {
-  right: -1%;
-  bottom: 13%;
+  /*
+    Was right:-1%.
+    Now pulled inward.
+  */
+  right: 7%;
+  bottom: 11%;
 
   animation-delay: -3s;
 }
@@ -1343,7 +1343,6 @@ a {
     transform: translateY(-9px);
   }
 }
-
 
 /* =========================================================
    EXTRA SIGNALS
@@ -1400,7 +1399,6 @@ a {
   }
 }
 
-
 /* =========================================================
    HERO BOTTOM
 ========================================================= */
@@ -1438,7 +1436,6 @@ a {
   font-style: normal;
 }
 
-
 /* =========================================================
    GENERAL SECTIONS
 ========================================================= */
@@ -1472,7 +1469,6 @@ a {
 .section h2 span {
   color: rgba(255, 255, 255, 0.24);
 }
-
 
 /* =========================================================
    SERVICES
@@ -1563,7 +1559,6 @@ a {
 
   color: #05070c;
 }
-
 
 /* =========================================================
    WORK
@@ -1735,7 +1730,6 @@ a {
   font-size: 15px;
 }
 
-
 /* =========================================================
    ABOUT
 ========================================================= */
@@ -1761,7 +1755,6 @@ a {
 
   color: rgba(255, 255, 255, 0.57);
 }
-
 
 /* =========================================================
    CTA
@@ -1847,7 +1840,6 @@ a {
   letter-spacing: -0.06em;
 }
 
-
 /* =========================================================
    FOOTER
 ========================================================= */
@@ -1878,7 +1870,6 @@ a {
   font-weight: 600;
 }
 
-
 /* =========================================================
    LARGE DESKTOP
 ========================================================= */
@@ -1886,49 +1877,76 @@ a {
 @media (min-width: 1400px) {
 
   .hero-visual {
-    width: 55%;
-    height: 790px;
+    width: 57%;
+    height: 810px;
 
-    right: -1%;
-    top: 100px;
+    right: 0.5%;
+    top: 90px;
   }
 
   .nz-map-image {
-    width: 330px;
-    height: 560px;
+    width: 340px;
+    height: 575px;
   }
 
   .nz-map-network {
-    width: 330px;
-    height: 560px;
+    width: 340px;
+    height: 575px;
   }
 
   .nz-map-stage {
-    width: 500px;
-    height: 650px;
+    width: 510px;
+    height: 660px;
   }
 
   .nz-platform {
-    width: 570px;
-    height: 570px;
+    width: 580px;
+    height: 580px;
+  }
+
+  .nz-orbit {
+    left: 48%;
+    top: 49%;
   }
 
   .nz-orbit-1 {
-    width: 560px;
-    height: 330px;
+    width: 575px;
+    height: 340px;
   }
 
   .nz-orbit-2 {
-    width: 650px;
-    height: 410px;
+    width: 665px;
+    height: 420px;
   }
 
   .nz-orbit-3 {
-    width: 720px;
-    height: 470px;
+    width: 735px;
+    height: 480px;
+  }
+
+  /*
+    Desktop cards are kept inside the visual.
+  */
+  .card-seo {
+    left: 1%;
+    top: 20%;
+  }
+
+  .card-ads {
+    right: 8%;
+    top: 29%;
+  }
+
+  .card-web {
+    left: 5%;
+    bottom: 18%;
+  }
+
+  .card-leads {
+    right: 8%;
+    bottom: 11%;
   }
 }
-
 
 /* =========================================================
    TABLET
@@ -1951,7 +1969,7 @@ a {
   .hero-visual {
     width: 54%;
 
-    right: -4%;
+    right: -1%;
 
     height: 650px;
 
@@ -1978,21 +1996,30 @@ a {
     height: 460px;
   }
 
+  /*
+    Tablet orbit scaling is handled only here.
+    Mobile remains untouched below.
+  */
   .nz-orbit {
-    transform: translate(-50%, -50%) scale(0.85) rotate(-18deg);
+    left: 48%;
+    top: 49%;
+  }
+
+  .nz-orbit-1 {
+    animation-name: orbitSpinTablet1;
   }
 
   .nz-orbit-2 {
-    transform: translate(-50%, -50%) scale(0.85) rotate(31deg);
+    animation-name: orbitSpinTablet2;
   }
 
   .nz-orbit-3 {
-    transform: translate(-50%, -50%) scale(0.85) rotate(-42deg);
+    animation-name: orbitSpinTablet3;
   }
 
   .card-ads,
   .card-leads {
-    right: 0;
+    right: 4%;
   }
 
   .card-seo {
@@ -2004,9 +2031,39 @@ a {
   }
 }
 
+@keyframes orbitSpinTablet1 {
+  from {
+    transform: translate(-50%, -50%) rotate(-18deg) scale(0.85);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(342deg) scale(0.85);
+  }
+}
+
+@keyframes orbitSpinTablet2 {
+  from {
+    transform: translate(-50%, -50%) rotate(31deg) scale(0.85);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-329deg) scale(0.85);
+  }
+}
+
+@keyframes orbitSpinTablet3 {
+  from {
+    transform: translate(-50%, -50%) rotate(-42deg) scale(0.85);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(318deg) scale(0.85);
+  }
+}
 
 /* =========================================================
    MOBILE
+   DO NOT CHANGE
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -2050,10 +2107,6 @@ a {
 
     font-size: 16px;
   }
-
-  /* ================================================
-     MOBILE VISUAL
-  ================================================ */
 
   .hero-visual {
     width: 100%;
@@ -2156,10 +2209,6 @@ a {
     transform: translate(-50%, -50%) scale(0.72) rotate(-42deg);
   }
 
-  /* ================================================
-     MOBILE CARDS
-  ================================================ */
-
   .nz-floating-card {
     min-width: 145px;
 
@@ -2230,9 +2279,9 @@ a {
   }
 }
 
-
 /* =========================================================
    SMALL MOBILE
+   DO NOT CHANGE
 ========================================================= */
 
 @media (max-width: 600px) {
@@ -2284,10 +2333,6 @@ a {
 
     align-items: flex-start;
   }
-
-  /* ================================================
-     SMALL MOBILE MAP
-  ================================================ */
 
   .hero-visual {
     height: 430px;
@@ -2429,9 +2474,9 @@ a {
   }
 }
 
-
 /* =========================================================
    VERY SMALL DEVICES
+   DO NOT CHANGE
 ========================================================= */
 
 @media (max-width: 390px) {
@@ -2475,7 +2520,6 @@ a {
     right: 0;
   }
 }
-
 
 /* =========================================================
    REDUCE MOTION
