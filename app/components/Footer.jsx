@@ -12,273 +12,75 @@ export default function Footer() {
   ];
 
   return (
-    <>
-      <footer className="rm-footer">
+    <footer className="relative w-full overflow-hidden border-t border-white/[0.08] bg-[#05070c] text-[#f5f7fa]">
 
-        <div className="rm-footer-top">
+      {/* Ambient glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-[-180px] h-[300px] w-[600px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(49,93,168,0.10),transparent_70%)]"
+      />
 
-          {/* Brand */}
-          <div className="rm-footer-brand">
-            <Link href="/" className="rm-footer-logo">
-              ROLL'N MEDIA
+      {/* Footer Top */}
+      <div className="relative z-10 mx-auto grid max-w-[1600px] grid-cols-1 gap-10 px-5 py-12 sm:px-[6vw] sm:py-[60px] md:grid-cols-2 md:gap-[50px_30px] lg:grid-cols-[1.5fr_1fr_1fr] lg:gap-[70px] lg:px-[6vw] lg:py-[75px]">
+
+        {/* Brand */}
+        <div className="flex flex-col items-start md:col-span-2 lg:col-span-1">
+          <Link
+            href="/"
+            className="text-[24px] font-bold tracking-[-0.04em] text-white transition-colors duration-300 hover:text-[#f47a20]"
+          >
+            ROLL'N MEDIA
+          </Link>
+
+          <p className="mt-4 max-w-[300px] text-[15px] leading-[1.7] text-white/50">
+            Digital growth that actually moves.
+          </p>
+        </div>
+
+        {/* Navigation */}
+        <nav
+          aria-label="Footer navigation"
+          className="flex flex-col items-start gap-[15px]"
+        >
+          {links.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="text-[14px] text-white/[0.62] transition-colors duration-300 hover:text-white"
+            >
+              {link.name}
             </Link>
+          ))}
+        </nav>
 
-            <p>
-              Digital growth that actually moves.
-            </p>
-          </div>
-
-          {/* Links */}
-          <nav className="rm-footer-links" aria-label="Footer navigation">
-            {links.map((link) => (
-              <Link key={link.name} href={link.href}>
-                {link.name}
-              </Link>
-            ))}
-          </nav>
-
-          {/* Contact */}
-          <div className="rm-footer-contact">
-            <span>GET IN TOUCH</span>
-
-            <a href="mailto:hello@rollnmedia.com">
-              hello@rollnmedia.com
-            </a>
-
-            <a href="tel:+6492424548">
-              +64 9 242 4548
-            </a>
-          </div>
-
-        </div>
-
-        <div className="rm-footer-bottom">
-          <span>
-            © {currentYear} Roll'n Media
+        {/* Contact */}
+        <div className="flex flex-col items-start">
+          <span className="mb-4 text-[11px] font-semibold tracking-[0.14em] text-white/40">
+            GET IN TOUCH
           </span>
 
-          <span>
-            Digital Growth Systems
-          </span>
+          <a
+            href="mailto:hello@rollnmedia.com"
+            className="mb-[10px] text-[14px] text-white/[0.72] transition-colors duration-300 hover:text-[#f47a20]"
+          >
+            hello@rollnmedia.com
+          </a>
+
+          <a
+            href="tel:+6492424548"
+            className="text-[14px] text-white/[0.72] transition-colors duration-300 hover:text-[#f47a20]"
+          >
+            +64 9 242 4548
+          </a>
         </div>
+      </div>
 
-      </footer>
+      {/* Footer Bottom */}
+      <div className="relative z-10 mx-auto flex max-w-[1600px] flex-col items-start gap-2 border-t border-white/[0.07] px-5 py-5 text-[12px] text-white/35 sm:px-[6vw] md:flex-row md:items-center md:justify-between lg:px-[6vw]">
+        <span>© {currentYear} Roll'n Media</span>
 
-      <style jsx>{`
-        .rm-footer {
-          position: relative;
-          width: 100%;
-          background: #05070c;
-          border-top: 1px solid rgba(255, 255, 255, 0.08);
-          color: #f5f7fa;
-          overflow: hidden;
-        }
-
-        .rm-footer::before {
-          content: "";
-          position: absolute;
-          top: -180px;
-          left: 50%;
-          width: 600px;
-          height: 300px;
-          transform: translateX(-50%);
-
-          background: radial-gradient(
-            ellipse,
-            rgba(49, 93, 168, 0.1),
-            transparent 70%
-          );
-
-          pointer-events: none;
-        }
-
-        .rm-footer-top {
-          position: relative;
-          z-index: 1;
-
-          max-width: 1600px;
-          margin: 0 auto;
-          padding: 75px 6vw 65px;
-
-          display: grid;
-          grid-template-columns: 1.5fr 1fr 1fr;
-          gap: 70px;
-        }
-
-        .rm-footer-brand {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .rm-footer-logo {
-          display: inline-block;
-
-          color: #ffffff;
-
-          font-family: Arial, Helvetica, sans-serif;
-          font-size: 24px;
-          font-weight: 700;
-          letter-spacing: -0.04em;
-
-          transition: color 0.25s ease;
-        }
-
-        .rm-footer-logo:hover {
-          color: #f47a20;
-        }
-
-        .rm-footer-brand p {
-          max-width: 300px;
-          margin: 16px 0 0;
-
-          color: rgba(245, 247, 250, 0.5);
-
-          font-family: Arial, Helvetica, sans-serif;
-          font-size: 15px;
-          line-height: 1.7;
-        }
-
-        .rm-footer-links {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 15px;
-        }
-
-        .rm-footer-links a {
-          position: relative;
-
-          color: rgba(245, 247, 250, 0.62);
-
-          font-family: Arial, Helvetica, sans-serif;
-          font-size: 14px;
-
-          transition: color 0.25s ease;
-        }
-
-        .rm-footer-links a::after {
-          content: "";
-
-          position: absolute;
-          left: 0;
-          bottom: -4px;
-
-          width: 0;
-          height: 1px;
-
-          background: #f47a20;
-
-          transition: width 0.25s ease;
-        }
-
-        .rm-footer-links a:hover {
-          color: #ffffff;
-        }
-
-        .rm-footer-links a:hover::after {
-          width: 100%;
-        }
-
-        .rm-footer-contact {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .rm-footer-contact > span {
-          margin-bottom: 16px;
-
-          color: rgba(245, 247, 250, 0.4);
-
-          font-family: Arial, Helvetica, sans-serif;
-          font-size: 11px;
-          font-weight: 600;
-          letter-spacing: 0.14em;
-        }
-
-        .rm-footer-contact a {
-          margin-bottom: 10px;
-
-          color: rgba(245, 247, 250, 0.72);
-
-          font-family: Arial, Helvetica, sans-serif;
-          font-size: 14px;
-
-          transition: color 0.25s ease;
-        }
-
-        .rm-footer-contact a:hover {
-          color: #f47a20;
-        }
-
-        .rm-footer-bottom {
-          position: relative;
-          z-index: 1;
-
-          max-width: 1600px;
-          margin: 0 auto;
-
-          padding: 22px 6vw;
-
-          border-top: 1px solid rgba(255, 255, 255, 0.07);
-
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-
-          color: rgba(245, 247, 250, 0.35);
-
-          font-family: Arial, Helvetica, sans-serif;
-          font-size: 12px;
-        }
-
-        @media (max-width: 900px) {
-          .rm-footer-top {
-            grid-template-columns: 1fr 1fr;
-            gap: 50px 30px;
-            padding: 60px 5vw 50px;
-          }
-
-          .rm-footer-brand {
-            grid-column: 1 / -1;
-          }
-
-          .rm-footer-bottom {
-            padding-left: 5vw;
-            padding-right: 5vw;
-          }
-        }
-
-        @media (max-width: 600px) {
-          .rm-footer-top {
-            grid-template-columns: 1fr;
-            gap: 40px;
-            padding: 50px 20px 40px;
-          }
-
-          .rm-footer-brand {
-            grid-column: auto;
-          }
-
-          .rm-footer-bottom {
-            padding: 20px;
-
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 8px;
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .rm-footer-logo,
-          .rm-footer-links a,
-          .rm-footer-links a::after,
-          .rm-footer-contact a {
-            transition: none;
-          }
-        }
-      `}</style>
-    </>
+        <span>Digital Growth Systems</span>
+      </div>
+    </footer>
   );
 }
