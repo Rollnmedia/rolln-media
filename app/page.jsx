@@ -4,30 +4,7 @@ export default function Home() {
   return (
     <main className="site">
 
-      {/* ================= NAVBAR ================= */}
-
-      <header className="navbar">
-
-        <a href="/" className="logo">
-          <span className="logo-roll">ROLL’N</span>
-          <span className="logo-media">MEDIA</span>
-        </a>
-
-        <nav className="nav-links">
-          <a href="/">Home</a>
-          <a href="/services">Services</a>
-          <a href="/portfolio">Portfolio</a>
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
-        </nav>
-
-        <a href="/contact" className="nav-cta">
-          +64 Get in touch
-        </a>
-
-      </header>
-
-
+     
       {/* =====================================================
           HERO
       ===================================================== */}
