@@ -1,7 +1,9 @@
+import Header from "./components/Header";
+
 export default function Home() {
   return (
     <main>
-      <h1>Roll’n Media</h1>
+      <Header />
     </main>
   );
 }
