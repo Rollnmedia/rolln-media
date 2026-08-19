@@ -4,6 +4,7 @@ import Gap from "./components/Gap";
 import Engine from "./components/Engine";
 import Work from "./components/Work";
 import About from "./components/About";
+import FinalCTA from "./components/FinalCTA";
 export default function Home() {
   return (
     <main>
@@ -13,6 +14,7 @@ export default function Home() {
       <Engine />
       <Work />
       <About />
+      <FinalCTA />
     </main>
   );
 }
