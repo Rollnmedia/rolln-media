@@ -1,0 +1,255 @@
+.about-section {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 130px 5vw 110px;
+
+  background: #f3f3f1;
+  color: #090909;
+}
+
+
+/* ================= TOP ================= */
+
+.about-top {
+  display: flex;
+  justify-content: space-between;
+
+  padding-bottom: 28px;
+
+  border-bottom: 1px solid #d5d5d2;
+
+  color: #777;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+}
+
+
+/* ================= MAIN ================= */
+
+.about-main {
+  display: grid;
+
+  grid-template-columns: 1.25fr 0.75fr;
+
+  gap: 8vw;
+
+  padding: 90px 0 110px;
+}
+
+.about-small {
+  display: block;
+
+  margin-bottom: 35px;
+
+  color: #777;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+}
+
+.about-heading h2 {
+  margin: 0;
+
+  font-size: clamp(55px, 7vw, 105px);
+
+  line-height: 0.88;
+
+  letter-spacing: -0.07em;
+
+  font-weight: 600;
+}
+
+.about-heading h2 span {
+  color: #999;
+}
+
+
+/* ================= COPY ================= */
+
+.about-copy {
+  align-self: end;
+
+  max-width: 430px;
+}
+
+.about-copy p {
+  margin: 0 0 28px;
+
+  color: #666;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+.about-copy .about-lead {
+  color: #161616;
+
+  font-size: 17px;
+
+  line-height: 1.65;
+
+  letter-spacing: -0.02em;
+}
+
+
+/* ================= PRINCIPLES ================= */
+
+.about-principles {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid #cfcfcb;
+  border-bottom: 1px solid #cfcfcb;
+}
+
+.about-principle {
+  min-height: 260px;
+
+  padding: 30px;
+
+  border-right: 1px solid #cfcfcb;
+}
+
+.about-principle:last-child {
+  border-right: none;
+}
+
+.about-principle > span {
+  display: block;
+
+  margin-bottom: 55px;
+
+  color: #888;
+
+  font-size: 9px;
+
+  letter-spacing: 0.14em;
+}
+
+.about-principle strong {
+  display: block;
+
+  margin-bottom: 15px;
+
+  font-size: 12px;
+
+  letter-spacing: 0.1em;
+}
+
+.about-principle p {
+  max-width: 260px;
+
+  margin: 0;
+
+  color: #777;
+
+  font-size: 11px;
+
+  line-height: 1.7;
+}
+
+
+/* ================= BOTTOM ================= */
+
+.about-bottom {
+  display: grid;
+
+  grid-template-columns: 1fr 2fr 1fr;
+
+  align-items: center;
+
+  padding-top: 35px;
+
+  color: #777;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+}
+
+.about-bottom p {
+  margin: 0;
+
+  color: #222;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 1.5;
+
+  letter-spacing: -0.02em;
+
+  text-align: center;
+}
+
+.about-bottom span:last-child {
+  text-align: right;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 800px) {
+
+  .about-section {
+    padding: 90px 24px;
+  }
+
+  .about-top {
+    gap: 20px;
+  }
+
+  .about-main {
+    display: block;
+
+    padding: 60px 0 75px;
+  }
+
+  .about-copy {
+    margin-top: 45px;
+  }
+
+  .about-principles {
+    grid-template-columns: 1fr;
+  }
+
+  .about-principle {
+    min-height: auto;
+
+    border-right: none;
+    border-bottom: 1px solid #cfcfcb;
+  }
+
+  .about-principle:last-child {
+    border-bottom: none;
+  }
+
+  .about-principle > span {
+    margin-bottom: 35px;
+  }
+
+  .about-bottom {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+  }
+
+  .about-bottom p {
+    grid-column: 1 / -1;
+
+    grid-row: 1;
+    text-align: left;
+  }
+
+}
