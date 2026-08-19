@@ -1,0 +1,377 @@
+.engine-section {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 130px 5vw 110px;
+
+  background: #080808;
+  color: #ffffff;
+}
+
+
+/* ================= TOP ================= */
+
+.engine-top {
+  display: flex;
+  justify-content: space-between;
+
+  padding-bottom: 28px;
+
+  border-bottom: 1px solid #202020;
+
+  color: #666;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+}
+
+
+/* ================= INTRO ================= */
+
+.engine-intro {
+  display: grid;
+
+  grid-template-columns: 1.4fr 0.6fr;
+
+  gap: 8vw;
+
+  padding: 80px 0;
+}
+
+.engine-intro h2 {
+  margin: 0;
+
+  font-size: clamp(55px, 7vw, 105px);
+
+  line-height: 0.92;
+
+  letter-spacing: -0.065em;
+
+  font-weight: 600;
+}
+
+.engine-intro h2 span {
+  color: #555;
+}
+
+.engine-intro p {
+  align-self: end;
+
+  max-width: 410px;
+
+  margin: 0;
+
+  color: #777;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* ================= SYSTEM ================= */
+
+.engine-system {
+  position: relative;
+
+  width: min(100%, 1050px);
+
+  height: 650px;
+
+  margin: 0 auto;
+}
+
+
+/* ================= CORE ================= */
+
+.engine-core {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  z-index: 5;
+
+  width: 150px;
+  height: 150px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  transform: translate(-50%, -50%);
+
+  border: 1px solid rgba(100, 140, 255, 0.45);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(50, 90, 180, 0.18),
+      rgba(8, 8, 8, 0.9) 70%
+    );
+
+  box-shadow:
+    0 0 70px rgba(60, 100, 255, 0.12),
+    inset 0 0 35px rgba(60, 100, 255, 0.08);
+}
+
+.engine-core span {
+  color: #888;
+
+  font-size: 8px;
+
+  letter-spacing: 0.2em;
+}
+
+.engine-core strong {
+  margin-top: 4px;
+
+  font-size: 18px;
+
+  letter-spacing: -0.04em;
+}
+
+.engine-core small {
+  margin-top: 7px;
+
+  color: #555;
+
+  font-size: 7px;
+
+  letter-spacing: 0.14em;
+}
+
+
+/* ================= RINGS ================= */
+
+.engine-ring {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 390px;
+  height: 390px;
+
+  transform: translate(-50%, -50%);
+
+  border: 1px solid rgba(80, 120, 255, 0.18);
+
+  border-radius: 50%;
+}
+
+.engine-orbit {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  border: 1px solid rgba(80, 120, 255, 0.12);
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.orbit-one {
+  width: 700px;
+  height: 330px;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(22deg);
+}
+
+.orbit-two {
+  width: 760px;
+  height: 400px;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-22deg);
+}
+
+
+/* ================= NODES ================= */
+
+.engine-node {
+  position: absolute;
+
+  width: 220px;
+
+  padding: 20px;
+
+  border: 1px solid #1e1e1e;
+
+  background: rgba(12, 12, 12, 0.8);
+
+  backdrop-filter: blur(12px);
+
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.engine-node:hover {
+  border-color: rgba(100, 140, 255, 0.45);
+
+  transform: translateY(-5px);
+}
+
+.engine-number {
+  display: block;
+
+  margin-bottom: 13px;
+
+  color: var(--orange);
+
+  font-size: 8px;
+
+  letter-spacing: 0.12em;
+}
+
+.engine-node strong {
+  display: block;
+
+  font-size: 14px;
+
+  letter-spacing: 0.08em;
+}
+
+.engine-node p {
+  margin: 10px 0 0;
+
+  color: #666;
+
+  font-size: 10px;
+
+  line-height: 1.6;
+}
+
+
+/* ================= NODE POSITIONS ================= */
+
+.engine-node-1 {
+  left: 0;
+  top: 8%;
+}
+
+.engine-node-2 {
+  right: 0;
+  top: 8%;
+}
+
+.engine-node-3 {
+  left: 0;
+  top: 42%;
+}
+
+.engine-node-4 {
+  right: 0;
+  top: 42%;
+}
+
+.engine-node-5 {
+  left: 14%;
+  bottom: 5%;
+}
+
+.engine-node-6 {
+  right: 14%;
+  bottom: 5%;
+}
+
+
+/* ================= FLOW ================= */
+
+.engine-flow {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  padding-top: 40px;
+
+  border-top: 1px solid #1b1b1b;
+
+  color: #555;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+}
+
+.engine-flow i {
+  color: var(--orange);
+
+  font-style: normal;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+  .engine-section {
+    padding: 90px 24px;
+  }
+
+  .engine-top {
+    gap: 20px;
+  }
+
+  .engine-intro {
+    display: block;
+
+    padding: 60px 0;
+  }
+
+  .engine-intro p {
+    margin-top: 30px;
+  }
+
+  .engine-system {
+    height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .engine-ring,
+  .engine-orbit,
+  .engine-core {
+    display: none;
+  }
+
+  .engine-node {
+    position: relative;
+
+    inset: auto !important;
+
+    width: 100%;
+  }
+
+  .engine-flow {
+    justify-content: flex-start;
+
+    overflow-x: auto;
+
+    white-space: nowrap;
+  }
+
+}
