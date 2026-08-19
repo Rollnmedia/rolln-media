@@ -1,7 +1,13 @@
+import Header from "./components/Header";
+
 export default function Home() {
   return (
-    <main>
-      <h1>Roll’n Media</h1>
+    <main className="site">
+      <Header />
+
+      <section className="hero-placeholder">
+        <p>Hero coming next.</p>
+      </section>
     </main>
   );
 }
