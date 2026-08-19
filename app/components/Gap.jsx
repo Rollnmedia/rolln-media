@@ -6,83 +6,62 @@ export default function Gap() {
 
       <div className="gap-top">
         <span>01 / THE GAP</span>
-        <span>BUSINESS × DIGITAL</span>
+        <span>WHAT YOU BUILD · WHAT THEY SEE</span>
       </div>
 
       <div className="gap-heading">
         <h2>
-          Great businesses
+          Your business
           <br />
-          <span>deserve to be seen.</span>
+          <span>deserves to be found.</span>
         </h2>
 
         <p>
-          You can have the product, the people and the reputation.
-          But if the digital experience doesn't communicate that,
-          there's a gap between what you've built and what customers see.
+          You can have a great product, great people and great
+          service. But none of that matters if the digital experience
+          doesn't communicate it.
         </p>
       </div>
-
 
       <div className="gap-visual">
 
         <div className="gap-side gap-business">
-          <span className="gap-number">01</span>
-
-          <h3>
-            WHAT YOU'VE
-            <br />
-            BUILT
-          </h3>
+          <span>WHAT YOU DO</span>
 
           <div className="gap-items">
-            <span>Great service</span>
-            <span>Real experience</span>
-            <span>Happy customers</span>
-            <span>Strong reputation</span>
+            <p>Great service</p>
+            <p>Real experience</p>
+            <p>Good people</p>
+            <p>Happy customers</p>
           </div>
         </div>
 
-
-        <div className="gap-center">
-
-          <div className="gap-line"></div>
-
-          <div className="gap-node">
-            <span></span>
-          </div>
-
-          <small>THE GAP</small>
-
+        <div className="gap-middle">
+          <span>THE</span>
+          <strong>GAP</strong>
         </div>
-
 
         <div className="gap-side gap-digital">
-          <span className="gap-number">02</span>
-
-          <h3>
-            WHAT THEY
-            <br />
-            SEE
-          </h3>
+          <span>WHAT THEY SEE</span>
 
           <div className="gap-items">
-            <span>Search visibility</span>
-            <span>Website experience</span>
-            <span>Clear messaging</span>
-            <span>Easy action</span>
+            <p>Low visibility</p>
+            <p>Unclear messaging</p>
+            <p>Outdated experience</p>
+            <p>No obvious next step</p>
           </div>
         </div>
 
       </div>
 
-
       <div className="gap-bottom">
-        <strong>
-          That's where we work.
-        </strong>
+        <span>01</span>
 
-        <span>We close the distance between the business and the screen.</span>
+        <p>
+          That's where we work.
+        </p>
+
+        <span>02</span>
       </div>
 
     </section>
