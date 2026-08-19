@@ -5,6 +5,7 @@ import Engine from "./components/Engine";
 import Work from "./components/Work";
 import About from "./components/About";
 import FinalCTA from "./components/FinalCTA";
+import Footer from "./components/Footer";
 export default function Home() {
   return (
     <main>
@@ -15,6 +16,7 @@ export default function Home() {
       <Work />
       <About />
       <FinalCTA />
+      <Footer />
     </main>
   );
 }
