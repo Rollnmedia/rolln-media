@@ -1,15 +1,15 @@
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 100svh;
   overflow: hidden;
 
   display: flex;
   align-items: center;
 
-  padding: 140px 5vw 100px;
+  padding: 140px 5vw 110px;
 
   background: #080808;
-  color: #ffffff;
+  color: #fff;
 }
 
 
@@ -20,7 +20,7 @@
   z-index: 5;
 
   width: 52%;
-  max-width: 800px;
+  max-width: 780px;
 }
 
 .hero-eyebrow {
@@ -28,55 +28,70 @@
   align-items: center;
   gap: 10px;
 
-  margin-bottom: 32px;
+  margin-bottom: 30px;
 
-  color: #777777;
+  color: #6f6f74;
 
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
 }
 
 .hero-eyebrow span {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
+
+  flex-shrink: 0;
 
   border-radius: 50%;
 
   background: var(--orange);
 
-  box-shadow: 0 0 14px rgba(255, 122, 0, 0.7);
+  box-shadow:
+    0 0 10px rgba(255, 122, 0, 0.7),
+    0 0 24px rgba(255, 122, 0, 0.25);
 }
+
+
+/* ================= HEADING ================= */
 
 .hero h1 {
   margin: 0;
 
-  font-size: clamp(70px, 8vw, 125px);
-  line-height: 0.9;
+  max-width: 900px;
+
+  font-size: clamp(72px, 8.4vw, 128px);
+  line-height: 0.87;
 
   font-weight: 600;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.075em;
 }
 
 .hero h1 span {
-  color: #777777;
+  color: #77777d;
 }
+
+
+/* ================= DESCRIPTION ================= */
 
 .hero p {
   max-width: 500px;
 
-  margin-top: 38px;
+  margin: 38px 0 0;
 
-  color: #8a8a8a;
+  color: #8b8b91;
 
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.75;
 }
+
+
+/* ================= ACTIONS ================= */
 
 .hero-actions {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 28px;
 
   margin-top: 40px;
 }
@@ -84,41 +99,69 @@
 .hero-primary {
   display: inline-flex;
   align-items: center;
-  gap: 18px;
+  gap: 22px;
 
-  padding: 15px 20px;
+  padding: 16px 21px;
 
-  background: #ffffff;
+  background: #fff;
   color: #080808;
 
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
 
-  transition: transform 0.25s ease;
+  transition:
+    transform 0.3s ease,
+    gap 0.3s ease;
 }
 
 .hero-primary span {
   color: var(--orange);
   font-size: 17px;
+  line-height: 1;
 }
 
 .hero-primary:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  gap: 30px;
 }
 
 .hero-secondary {
-  color: #888888;
+  position: relative;
 
-  font-size: 12px;
+  color: #77777d;
 
-  border-bottom: 1px solid #444444;
-  padding-bottom: 5px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
 
-  transition: color 0.25s ease;
+  padding-bottom: 6px;
+
+  transition:
+    color 0.3s ease;
+}
+
+.hero-secondary::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: #353539;
+
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
 .hero-secondary:hover {
-  color: #ffffff;
+  color: #fff;
+}
+
+.hero-secondary:hover::after {
+  transform: scaleX(0.35);
 }
 
 
@@ -127,17 +170,22 @@
 .hero-visual {
   position: absolute;
 
-  right: -5%;
+  z-index: 2;
+
+  right: -6%;
   top: 50%;
 
-  width: 58vw;
-  height: 58vw;
+  width: 60vw;
+  height: 60vw;
 
-  max-width: 780px;
-  max-height: 780px;
+  max-width: 820px;
+  max-height: 820px;
 
   transform: translateY(-50%);
 }
+
+
+/* ================= GLOW ================= */
 
 .hero-glow {
   position: absolute;
@@ -145,43 +193,71 @@
   left: 50%;
   top: 50%;
 
-  width: 45%;
-  height: 45%;
+  width: 48%;
+  height: 48%;
 
   border-radius: 50%;
 
   transform: translate(-50%, -50%);
 
-  background: rgba(70, 110, 255, 0.15);
+  background:
+    radial-gradient(
+      circle,
+      rgba(55, 105, 255, 0.22) 0%,
+      rgba(55, 105, 255, 0.08) 40%,
+      transparent 72%
+    );
 
-  filter: blur(90px);
+  filter: blur(45px);
+
+  animation: heroGlow 7s ease-in-out infinite alternate;
 }
+
+@keyframes heroGlow {
+  from {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.65;
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(1.08);
+    opacity: 1;
+  }
+}
+
+
+/* ================= GRID ================= */
 
 .hero-grid {
   position: absolute;
-  inset: 10%;
 
-  opacity: 0.25;
+  inset: 8%;
+
+  opacity: 0.2;
 
   background-image:
     linear-gradient(
-      rgba(80, 120, 255, 0.08) 1px,
+      rgba(80, 120, 255, 0.09) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(80, 120, 255, 0.08) 1px,
+      rgba(80, 120, 255, 0.09) 1px,
       transparent 1px
     );
 
-  background-size: 45px 45px;
+  background-size: 44px 44px;
 
-  mask-image: radial-gradient(
-    circle,
-    black 20%,
-    transparent 70%
-  );
+  mask-image:
+    radial-gradient(
+      circle at center,
+      black 15%,
+      transparent 70%
+    );
 }
+
+
+/* ================= ORBITS ================= */
 
 .hero-orbit {
   position: absolute;
@@ -189,7 +265,7 @@
   left: 50%;
   top: 50%;
 
-  border: 1px solid rgba(90, 130, 255, 0.2);
+  border: 1px solid rgba(95, 130, 255, 0.2);
 
   border-radius: 50%;
 
@@ -203,6 +279,8 @@
   transform:
     translate(-50%, -50%)
     rotate(-25deg);
+
+  animation: orbitOne 14s linear infinite;
 }
 
 .hero-orbit-two {
@@ -212,7 +290,40 @@
   transform:
     translate(-50%, -50%)
     rotate(25deg);
+
+  animation: orbitTwo 18s linear infinite reverse;
 }
+
+@keyframes orbitOne {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(-25deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(335deg);
+  }
+}
+
+@keyframes orbitTwo {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(25deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(-335deg);
+  }
+}
+
+
+/* ================= CORE ================= */
 
 .hero-core {
   position: absolute;
@@ -220,36 +331,58 @@
   left: 50%;
   top: 50%;
 
-  width: 110px;
-  height: 110px;
+  width: 115px;
+  height: 115px;
 
   display: grid;
   place-items: center;
 
-  border: 1px solid rgba(100, 150, 255, 0.35);
+  border: 1px solid rgba(110, 150, 255, 0.35);
 
   border-radius: 50%;
 
-  background: rgba(20, 30, 60, 0.35);
+  background:
+    radial-gradient(
+      circle,
+      rgba(35, 55, 110, 0.3),
+      rgba(10, 12, 20, 0.2)
+    );
 
   box-shadow:
-    0 0 60px rgba(60, 110, 255, 0.2),
-    inset 0 0 40px rgba(60, 110, 255, 0.1);
+    0 0 70px rgba(60, 110, 255, 0.18),
+    inset 0 0 45px rgba(60, 110, 255, 0.1);
 
   transform: translate(-50%, -50%);
+
+  animation: corePulse 4s ease-in-out infinite;
+}
+
+@keyframes corePulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 55px rgba(60, 110, 255, 0.15),
+      inset 0 0 35px rgba(60, 110, 255, 0.08);
+  }
+
+  50% {
+    box-shadow:
+      0 0 90px rgba(60, 110, 255, 0.25),
+      inset 0 0 55px rgba(60, 110, 255, 0.14);
+  }
 }
 
 .hero-core div {
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
 
   border-radius: 50%;
 
-  background: #6d9cff;
+  background: #79a2ff;
 
   box-shadow:
-    0 0 15px #6d9cff,
-    0 0 45px rgba(90, 140, 255, 0.8);
+    0 0 14px #79a2ff,
+    0 0 40px rgba(90, 140, 255, 0.85);
 }
 
 
@@ -258,53 +391,66 @@
 .hero-label {
   position: absolute;
 
+  z-index: 4;
+
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 9px;
 
   padding: 8px 12px;
 
   border: 1px solid rgba(255, 255, 255, 0.08);
 
-  background: rgba(10, 10, 10, 0.6);
+  background: rgba(9, 9, 11, 0.58);
 
-  color: #777777;
+  color: #77777d;
 
   font-size: 8px;
+  font-weight: 600;
   letter-spacing: 0.15em;
 
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .hero-label span {
   color: var(--orange);
 }
 
+.hero-label:hover {
+  border-color: rgba(255, 122, 0, 0.35);
+}
+
 .hero-label-one {
-  left: 15%;
+  left: 14%;
   top: 29%;
 }
 
 .hero-label-two {
-  right: 12%;
-  top: 25%;
+  right: 11%;
+  top: 24%;
 }
 
 .hero-label-three {
-  right: 10%;
-  bottom: 26%;
+  right: 9%;
+  bottom: 25%;
 }
 
 .hero-label-four {
-  left: 17%;
-  bottom: 23%;
+  left: 16%;
+  bottom: 22%;
 }
 
 
-/* ================= BOTTOM ================= */
+/* ================= BOTTOM STRIP ================= */
 
 .hero-bottom {
   position: absolute;
+
+  z-index: 6;
 
   left: 5vw;
   right: 5vw;
@@ -314,20 +460,40 @@
   align-items: center;
   gap: 18px;
 
-  border-top: 1px solid #1d1d1d;
+  border-top: 1px solid #1d1d20;
 
   padding-top: 16px;
 
-  color: #4f4f4f;
+  color: #4d4d52;
 
   font-size: 8px;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
 }
 
 .hero-bottom i {
   color: var(--orange);
+
   font-style: normal;
+
+  opacity: 0.8;
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 1100px) {
+
+  .hero-content {
+    width: 58%;
+  }
+
+  .hero-visual {
+    right: -15%;
+    width: 62vw;
+    height: 62vw;
+  }
+
 }
 
 
@@ -338,10 +504,7 @@
   .hero {
     min-height: 100svh;
 
-    padding:
-      130px
-      24px
-      100px;
+    padding: 125px 24px 105px;
 
     align-items: flex-start;
   }
@@ -350,51 +513,98 @@
     width: 100%;
   }
 
+  .hero-eyebrow {
+    margin-bottom: 25px;
+
+    font-size: 9px;
+  }
+
   .hero h1 {
-    font-size: clamp(58px, 15vw, 90px);
+    max-width: 650px;
+
+    font-size: clamp(58px, 15vw, 88px);
+    line-height: 0.9;
   }
 
   .hero p {
-    font-size: 15px;
     max-width: 420px;
+
+    margin-top: 30px;
+
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    margin-top: 32px;
   }
 
   .hero-visual {
     width: 100vw;
     height: 100vw;
 
-    right: -25%;
-    top: 68%;
+    right: -28%;
+    top: 70%;
 
-    opacity: 0.65;
+    opacity: 0.58;
   }
 
   .hero-bottom {
     left: 24px;
     right: 24px;
 
-    gap: 10px;
+    gap: 12px;
 
     overflow: hidden;
+
     white-space: nowrap;
   }
 
 }
+
+
+/* ================= SMALL MOBILE ================= */
 
 @media (max-width: 600px) {
 
   .hero-actions {
     align-items: flex-start;
     flex-direction: column;
-    gap: 20px;
+    gap: 21px;
+  }
+
+  .hero-primary {
+    padding: 15px 19px;
   }
 
   .hero-visual {
-    top: 70%;
+    top: 72%;
+    right: -35%;
+
+    opacity: 0.48;
   }
 
   .hero-label {
-    transform: scale(0.8);
+    transform: scale(0.78);
+  }
+
+  .hero-bottom {
+    font-size: 7px;
+    gap: 9px;
+  }
+
+}
+
+
+/* ================= REDUCED MOTION ================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-glow,
+  .hero-orbit-one,
+  .hero-orbit-two,
+  .hero-core {
+    animation: none;
   }
 
 }
