@@ -1,3 +1,7 @@
+/* =========================================================
+   HERO
+========================================================= */
+
 .hero {
   position: relative;
   min-height: 100svh;
@@ -14,7 +18,7 @@
 
 
 /* =========================================================
-   CONTENT
+   HERO CONTENT
 ========================================================= */
 
 .hero-content {
@@ -209,7 +213,7 @@
 
 
 /* =========================================================
-   MAIN WEBSITE FRAME
+   MAIN DIGITAL FRAME
 ========================================================= */
 
 .digital-frame {
@@ -228,7 +232,7 @@
   background:
     linear-gradient(
       145deg,
-      rgba(25, 25, 28, 0.92),
+      rgba(25, 25, 28, 0.94),
       rgba(9, 9, 11, 0.98)
     );
 
@@ -244,7 +248,6 @@
 }
 
 @keyframes digitalFloat {
-
   0%,
   100% {
     transform:
@@ -263,7 +266,7 @@
 
 
 /* =========================================================
-   BROWSER BAR
+   BROWSER TOP
 ========================================================= */
 
 .browser-top {
@@ -323,7 +326,7 @@
 
 
 /* =========================================================
-   WEBSITE INTERFACE
+   DIGITAL INTERFACE
 ========================================================= */
 
 .digital-interface {
@@ -387,7 +390,6 @@
 
 .interface-copy {
   position: relative;
-
   z-index: 3;
 }
 
@@ -479,7 +481,6 @@
 }
 
 @keyframes interfacePulse {
-
   0%,
   100% {
     transform: scale(0.92);
@@ -565,7 +566,7 @@
 
 
 /* =========================================================
-   FLOATING GROWTH LAYERS
+   FLOATING DIGITAL LAYERS
 ========================================================= */
 
 .growth-layer {
@@ -586,7 +587,6 @@
 }
 
 @keyframes layerFloat {
-
   0%,
   100% {
     transform: translate3d(0, 0, 0);
@@ -666,7 +666,6 @@
 
   display: flex;
   align-items: flex-end;
-
   gap: 6px;
 }
 
@@ -770,7 +769,6 @@
 }
 
 @keyframes cursorMove {
-
   0%,
   100% {
     transform:
@@ -787,7 +785,7 @@
 
 
 /* =========================================================
-   BOTTOM STRIP
+   BOTTOM SERVICE STRIP
 ========================================================= */
 
 .hero-bottom {
@@ -830,14 +828,14 @@
 @media (max-width: 1100px) {
 
   .hero-content {
-    width: 57%;
+    width: 56%;
   }
 
   .hero-visual {
-    right: -13%;
+    right: -15%;
 
-    width: 63vw;
-    height: 63vw;
+    width: 64vw;
+    height: 64vw;
   }
 
   .growth-search {
@@ -851,7 +849,10 @@
 
 
 /* =========================================================
-   MOBILE — CONTENT FIRST
+   MOBILE
+   IMPORTANT:
+   CONTENT FIRST
+   VISUAL SECOND
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -859,30 +860,33 @@
   .hero {
     min-height: auto;
 
-    display: block;
+    display: flex;
+    flex-direction: column;
+
+    align-items: stretch;
 
     padding:
       125px
       24px
-      110px;
+      45px;
   }
 
 
-  /* ================= CONTENT ================= */
+  /* -------------------------
+     CONTENT
+  ------------------------- */
 
   .hero-content {
-    position: relative;
-    z-index: 10;
-
     width: 100%;
     max-width: none;
+
+    z-index: 10;
   }
 
   .hero-eyebrow {
     margin-bottom: 25px;
 
     font-size: 9px;
-    line-height: 1.4;
   }
 
   .hero h1 {
@@ -893,7 +897,7 @@
   }
 
   .hero p {
-    max-width: 430px;
+    max-width: 500px;
 
     margin-top: 30px;
 
@@ -901,27 +905,22 @@
     line-height: 1.65;
   }
 
-
-  /* ================= ACTIONS ================= */
-
   .hero-actions {
     margin-top: 32px;
-
-    display: flex;
-    align-items: center;
-    gap: 22px;
   }
 
 
-  /* ================= VISUAL ================= */
+  /* -------------------------
+     VISUAL
+  ------------------------- */
 
   .hero-visual {
     position: relative;
 
-    z-index: 3;
+    order: 2;
 
     width: 125vw;
-    height: 105vw;
+    height: 92vw;
 
     max-width: none;
     max-height: none;
@@ -929,35 +928,63 @@
     right: auto;
     top: auto;
 
-    margin-top: 70px;
-    margin-left: -22vw;
+    margin-top: 35px;
+    margin-left: -30vw;
 
     transform: none;
 
-    perspective: 1200px;
+    opacity: 0.72;
 
-    opacity: 1;
+    perspective: 1000px;
 
-    pointer-events: none;
+    flex-shrink: 0;
   }
 
 
-  /* ================= FRAME ================= */
+  /* -------------------------
+     DIGITAL FRAME
+  ------------------------- */
 
   .digital-frame {
-    left: 8%;
-    top: 20%;
+    left: 12%;
+    top: 15%;
 
-    width: 78%;
-    height: 57%;
+    width: 76%;
+    height: 67%;
+
+    transform:
+      rotateY(-6deg)
+      rotateZ(-2deg);
+
+    animation: digitalFloatMobile 7s ease-in-out infinite;
+  }
+
+  @keyframes digitalFloatMobile {
+
+    0%,
+    100% {
+      transform:
+        rotateY(-6deg)
+        rotateZ(-2deg)
+        translateY(0);
+    }
+
+    50% {
+      transform:
+        rotateY(-6deg)
+        rotateZ(-2deg)
+        translateY(-9px);
+    }
   }
 
 
-  /* ================= SEARCH ================= */
+  /* -------------------------
+     SEARCH
+  ------------------------- */
 
   .growth-search {
-    left: 0;
-    top: 10%;
+    left: 4%;
+    top: 4%;
 
     width: 190px;
 
@@ -965,46 +992,67 @@
   }
 
 
-  /* ================= GROWTH ================= */
+  /* -------------------------
+     GROWTH
+  ------------------------- */
 
   .growth-data {
     right: 2%;
-    top: 13%;
+    top: 8%;
 
-    width: 105px;
+    width: 100px;
+
+    padding: 10px;
   }
 
 
-  /* ================= ENQUIRY ================= */
+  /* -------------------------
+     ENQUIRY
+  ------------------------- */
 
   .growth-action {
-    right: 0;
-    bottom: 9%;
+    right: 4%;
+    bottom: 5%;
 
     width: 95px;
+
+    padding: 11px 12px;
   }
 
 
-  /* ================= CURSOR ================= */
+  /* -------------------------
+     CURSOR
+  ------------------------- */
 
   .digital-cursor {
-    right: 14%;
-    bottom: 16%;
+    right: 16%;
+    bottom: 7%;
+
+    width: 36px;
+    height: 36px;
+
+    font-size: 13px;
   }
 
 
-  /* ================= BOTTOM ================= */
+  /* -------------------------
+     BOTTOM STRIP
+  ------------------------- */
 
   .hero-bottom {
     position: relative;
+
+    order: 3;
 
     left: auto;
     right: auto;
     bottom: auto;
 
-    margin:
-      0
-      0;
+    width: 100%;
+
+    margin-top: 5px;
+
+    padding-top: 16px;
 
     gap: 12px;
 
@@ -1025,11 +1073,49 @@
     padding:
       120px
       20px
-      90px;
+      35px;
   }
 
 
-  /* ================= ACTIONS ================= */
+  /* -------------------------
+     CONTENT
+  ------------------------- */
+
+  .hero-eyebrow {
+    margin-bottom: 24px;
+
+    font-size: 8px;
+
+    letter-spacing: 0.17em;
+  }
+
+  .hero-eyebrow span {
+    width: 5px;
+    height: 5px;
+  }
+
+  .hero h1 {
+    font-size: clamp(52px, 14.5vw, 78px);
+
+    line-height: 0.9;
+
+    letter-spacing: -0.07em;
+  }
+
+  .hero p {
+    max-width: 100%;
+
+    margin-top: 28px;
+
+    font-size: 15px;
+
+    line-height: 1.65;
+  }
+
+
+  /* -------------------------
+     BUTTONS
+  ------------------------- */
 
   .hero-actions {
     align-items: flex-start;
@@ -1037,42 +1123,50 @@
     flex-direction: column;
 
     gap: 21px;
+
+    margin-top: 30px;
   }
 
   .hero-primary {
+    min-width: 175px;
+
     padding: 15px 19px;
   }
 
 
-  /* ================= VISUAL ================= */
+  /* -------------------------
+     VISUAL
+  ------------------------- */
 
   .hero-visual {
-    width: 135vw;
-    height: 112vw;
+    width: 138vw;
+    height: 102vw;
 
-    margin-top: 60px;
-    margin-left: -27vw;
+    margin-top: 38px;
+    margin-left: -35vw;
 
-    opacity: 0.9;
+    opacity: 0.58;
   }
 
 
-  /* ================= FRAME ================= */
+  /* -------------------------
+     FRAME
+  ------------------------- */
 
   .digital-frame {
-    left: 9%;
-    top: 22%;
+    left: 12%;
 
-    width: 74%;
-    height: 53%;
+    top: 16%;
+
+    width: 76%;
+
+    height: 64%;
   }
 
 
-  /* ================= INTERFACE ================= */
-
-  .digital-interface {
-    padding: 18px;
-  }
+  /* -------------------------
+     BROWSER
+  ------------------------- */
 
   .browser-top {
     height: 36px;
@@ -1080,13 +1174,69 @@
     padding: 0 12px;
   }
 
+  .browser-dots {
+    gap: 5px;
+  }
+
+  .browser-dots span {
+    width: 4px;
+    height: 4px;
+  }
+
+  .browser-address {
+    font-size: 6px;
+  }
+
+  .browser-status {
+    font-size: 6px;
+  }
+
+
+  /* -------------------------
+     INTERFACE
+  ------------------------- */
+
+  .digital-interface {
+    padding: 18px;
+  }
+
+  .interface-nav {
+    gap: 8px;
+  }
+
+  .interface-nav > span:not(.interface-logo) {
+    width: 18px;
+  }
+
+  .interface-logo {
+    width: 30px;
+  }
+
   .interface-hero {
     left: 18px;
     right: 18px;
+
+    top: 27%;
+  }
+
+  .interface-copy small {
+    font-size: 5px;
   }
 
   .interface-copy strong {
     font-size: 24px;
+  }
+
+  .interface-button {
+    margin-top: 15px;
+
+    padding: 8px 10px;
+
+    font-size: 5px;
+  }
+
+  .interface-button span {
+    font-size: 8px;
   }
 
   .interface-stats {
@@ -1094,54 +1244,133 @@
     right: 18px;
 
     bottom: 16px;
+
+    padding-top: 11px;
+  }
+
+  .interface-stats small {
+    font-size: 4px;
+  }
+
+  .interface-stats strong {
+    font-size: 10px;
   }
 
 
-  /* ================= FLOATING CARDS ================= */
+  /* -------------------------
+     SEARCH
+  ------------------------- */
 
   .growth-search {
-    width: 160px;
+    left: 2%;
+
+    width: 155px;
+
+    padding: 9px;
   }
 
+  .growth-search > span {
+    margin-bottom: 6px;
+
+    font-size: 5px;
+  }
+
+  .search-bar {
+    padding: 8px 9px;
+
+    font-size: 6px;
+  }
+
+  .search-bar b {
+    font-size: 10px;
+  }
+
+
+  /* -------------------------
+     CHART
+  ------------------------- */
+
   .growth-data {
-    width: 85px;
+    right: 3%;
+
+    width: 82px;
+
+    padding: 9px;
+  }
+
+  .growth-data > span {
+    margin-bottom: 6px;
+
+    font-size: 5px;
   }
 
   .growth-chart {
-    height: 35px;
+    height: 30px;
+
+    gap: 4px;
   }
 
   .growth-chart i {
-    width: 9px;
+    width: 8px;
   }
 
+
+  /* -------------------------
+     ENQUIRY
+  ------------------------- */
+
   .growth-action {
-    width: 82px;
+    right: 3%;
+
+    width: 78px;
+
+    padding: 10px;
+  }
+
+  .growth-action > span {
+    margin-bottom: 6px;
+
+    font-size: 5px;
   }
 
   .growth-action strong {
-    font-size: 22px;
+    font-size: 21px;
+  }
+
+  .growth-action small {
+    margin-top: 6px;
+
+    font-size: 4px;
   }
 
 
-  /* ================= CURSOR ================= */
+  /* -------------------------
+     CURSOR
+  ------------------------- */
 
   .digital-cursor {
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
 
-    font-size: 12px;
+    right: 13%;
+    bottom: 8%;
+
+    font-size: 11px;
   }
 
 
-  /* ================= BOTTOM ================= */
+  /* -------------------------
+     BOTTOM STRIP
+  ------------------------- */
 
   .hero-bottom {
-    margin-left: 0;
-    margin-right: 0;
+    margin-top: 0;
+
+    gap: 9px;
 
     font-size: 7px;
-    gap: 9px;
+
+    letter-spacing: 0.16em;
   }
 }
 
@@ -1153,15 +1382,15 @@
 @media (max-width: 380px) {
 
   .hero {
-    padding-top: 115px;
+    padding-top: 110px;
   }
 
   .hero h1 {
-    font-size: 55px;
+    font-size: 52px;
   }
 
   .hero-eyebrow {
-    font-size: 8px;
+    font-size: 7px;
   }
 
   .hero p {
@@ -1170,10 +1399,32 @@
 
   .hero-visual {
     width: 145vw;
-    height: 120vw;
+    height: 105vw;
 
-    margin-top: 55px;
-    margin-left: -32vw;
+    margin-left: -38vw;
+
+    margin-top: 32px;
+  }
+
+  .digital-frame {
+    left: 13%;
+    width: 75%;
+  }
+
+  .growth-search {
+    width: 145px;
+  }
+
+  .growth-data {
+    width: 76px;
+  }
+
+  .growth-action {
+    width: 72px;
+  }
+
+  .hero-bottom {
+    font-size: 6px;
   }
 }
 
@@ -1188,6 +1439,6 @@
   .interface-circle,
   .growth-layer,
   .digital-cursor {
-    animation: none;
+    animation: none !important;
   }
 }
