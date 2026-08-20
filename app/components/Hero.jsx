@@ -28,8 +28,8 @@ export default function Hero() {
         <div className="hero-actions">
 
           <a href="#portfolio" className="hero-primary">
-            See Our Work
-            <span>↗</span>
+            <span>See Our Work</span>
+            <b>↗</b>
           </a>
 
           <a href="#contact" className="hero-secondary">
@@ -53,7 +53,9 @@ export default function Hero() {
         <div className="growth-ring ring-two"></div>
         <div className="growth-ring ring-three"></div>
 
-        {/* Main SVG system */}
+
+        {/* ================= SVG SYSTEM ================= */}
+
         <svg
           className="growth-svg"
           viewBox="0 0 700 650"
@@ -61,37 +63,46 @@ export default function Hero() {
           xmlns="http://www.w3.org/2000/svg"
         >
 
-          {/* horizontal system lines */}
+          {/* Main axis */}
           <path
             d="M70 325H630"
-            stroke="rgba(255,255,255,0.08)"
+            className="axis-line"
           />
 
           <path
             d="M350 45V605"
-            stroke="rgba(255,255,255,0.06)"
+            className="axis-line vertical"
           />
 
-          {/* diagonal growth line */}
+
+          {/* Main growth line */}
+
           <path
-            d="M90 470
-               C170 455 190 420 250 425
-               C310 430 315 350 370 355
-               C430 360 440 280 485 285
-               C530 290 545 205 615 150"
+            d="
+              M90 470
+              C170 455 190 420 250 425
+              C310 430 315 350 370 355
+              C430 360 440 280 485 285
+              C530 290 545 205 615 150
+            "
             className="growth-line"
           />
 
-          {/* secondary line */}
+
+          {/* Secondary growth line */}
+
           <path
-            d="M95 510
-               C180 490 225 475 285 470
-               C360 465 405 430 470 390
-               C525 355 555 315 610 285"
+            d="
+              M95 510
+              C180 490 225 475 285 470
+              C360 465 405 430 470 390
+              C525 355 555 315 610 285
+            "
             className="growth-line-secondary"
           />
 
-          {/* connection lines */}
+
+          {/* Connection lines */}
 
           <path
             d="M350 325L190 170"
@@ -113,7 +124,9 @@ export default function Hero() {
             className="connection-line"
           />
 
-          {/* central circle */}
+
+          {/* Centre rings */}
+
           <circle
             cx="350"
             cy="325"
@@ -128,7 +141,9 @@ export default function Hero() {
             className="central-ring-inner"
           />
 
-          {/* centre mark */}
+
+          {/* Centre dot */}
+
           <circle
             cx="350"
             cy="325"
@@ -136,7 +151,9 @@ export default function Hero() {
             className="central-dot"
           />
 
-          {/* node: SEO */}
+
+          {/* SEO node */}
+
           <circle
             cx="190"
             cy="170"
@@ -151,7 +168,9 @@ export default function Hero() {
             className="node-halo"
           />
 
-          {/* node: ADS */}
+
+          {/* ADS node */}
+
           <circle
             cx="520"
             cy="170"
@@ -166,7 +185,9 @@ export default function Hero() {
             className="node-halo"
           />
 
-          {/* node: AI */}
+
+          {/* AI node */}
+
           <circle
             cx="180"
             cy="490"
@@ -181,7 +202,9 @@ export default function Hero() {
             className="node-halo"
           />
 
-          {/* node: WEB */}
+
+          {/* WEB node */}
+
           <circle
             cx="525"
             cy="490"
@@ -199,63 +222,108 @@ export default function Hero() {
         </svg>
 
 
-        {/* Centre brand */}
+        {/* ================= CENTRE CLICK ARROW ================= */}
 
         <div className="growth-centre">
 
-          <div className="growth-centre-mark">
-            R
+          <div className="growth-centre-arrow">
+            ↗
           </div>
 
-          <strong>
-            ROLL'N
-          </strong>
-
           <span>
-            MEDIA
+            EXPLORE
           </span>
 
         </div>
 
 
-        {/* Floating labels */}
+        {/* ================= FLOATING LABELS ================= */}
 
         <div className="growth-label label-seo">
+
           <small>01</small>
-          <strong>SEO</strong>
-          <span>VISIBILITY</span>
+
+          <strong>
+            SEO
+          </strong>
+
+          <span>
+            VISIBILITY
+          </span>
+
         </div>
+
 
         <div className="growth-label label-ads">
+
           <small>02</small>
-          <strong>ADS</strong>
-          <span>PERFORMANCE</span>
+
+          <strong>
+            ADS
+          </strong>
+
+          <span>
+            PERFORMANCE
+          </span>
+
         </div>
+
 
         <div className="growth-label label-ai">
+
           <small>03</small>
-          <strong>AI</strong>
-          <span>SYSTEMS</span>
+
+          <strong>
+            AI
+          </strong>
+
+          <span>
+            SYSTEMS
+          </span>
+
         </div>
+
 
         <div className="growth-label label-web">
+
           <small>04</small>
-          <strong>WEB</strong>
-          <span>EXPERIENCE</span>
+
+          <strong>
+            WEB
+          </strong>
+
+          <span>
+            EXPERIENCE
+          </span>
+
         </div>
 
 
-        {/* Growth metric */}
+        {/* ================= GROWTH METRIC ================= */}
 
         <div className="growth-metric">
-          <span>GROWTH SIGNAL</span>
-          <strong>+84%</strong>
-          <small>VISIBILITY</small>
+
+          <span>
+            GROWTH SIGNAL
+          </span>
+
+          <strong>
+            +84%
+          </strong>
+
+          <small>
+            VISIBILITY
+          </small>
+
         </div>
 
-        {/* tiny orange signal */}
+
+        {/* ================= SIGNALS ================= */}
+
         <span className="signal signal-one"></span>
+
         <span className="signal signal-two"></span>
+
         <span className="signal signal-three"></span>
 
       </div>
