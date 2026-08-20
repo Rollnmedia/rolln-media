@@ -1,6 +1,5 @@
 .about-section {
   position: relative;
-
   overflow: hidden;
 
   padding: 130px 5vw 110px;
@@ -15,6 +14,7 @@
 .about-top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   padding-bottom: 28px;
 
@@ -26,6 +26,10 @@
   font-weight: 600;
 
   letter-spacing: 0.16em;
+}
+
+.about-top span:last-child {
+  text-align: right;
 }
 
 
@@ -89,6 +93,10 @@
   line-height: 1.8;
 }
 
+.about-copy p:last-child {
+  margin-bottom: 0;
+}
+
 .about-copy .about-lead {
   color: #161616;
 
@@ -117,10 +125,18 @@
   padding: 30px;
 
   border-right: 1px solid #cfcfcb;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
 .about-principle:last-child {
   border-right: none;
+}
+
+.about-principle:hover {
+  background: #ecece9;
 }
 
 .about-principle > span {
@@ -139,6 +155,8 @@
   display: block;
 
   margin-bottom: 15px;
+
+  color: #111;
 
   font-size: 12px;
 
@@ -198,6 +216,23 @@
 }
 
 
+/* ================= TABLET ================= */
+
+@media (max-width: 1000px) {
+
+  .about-main {
+    grid-template-columns: 1fr 0.8fr;
+
+    gap: 5vw;
+  }
+
+  .about-heading h2 {
+    font-size: clamp(52px, 7vw, 82px);
+  }
+
+}
+
+
 /* ================= MOBILE ================= */
 
 @media (max-width: 800px) {
@@ -208,7 +243,16 @@
 
   .about-top {
     gap: 20px;
+
+    align-items: flex-start;
   }
+
+  .about-top span:last-child {
+    max-width: 160px;
+
+    line-height: 1.5;
+  }
+
 
   .about-main {
     display: block;
@@ -216,9 +260,36 @@
     padding: 60px 0 75px;
   }
 
+  .about-small {
+    margin-bottom: 25px;
+
+    font-size: 8px;
+  }
+
+  .about-heading h2 {
+    font-size: clamp(52px, 14vw, 78px);
+
+    line-height: 0.9;
+  }
+
   .about-copy {
     margin-top: 45px;
+
+    max-width: 100%;
   }
+
+  .about-copy .about-lead {
+    font-size: 16px;
+  }
+
+  .about-copy p {
+    font-size: 13px;
+
+    line-height: 1.75;
+  }
+
+
+  /* ================= PRINCIPLES ================= */
 
   .about-principles {
     grid-template-columns: 1fr;
@@ -226,6 +297,8 @@
 
   .about-principle {
     min-height: auto;
+
+    padding: 28px 24px 32px;
 
     border-right: none;
     border-bottom: 1px solid #cfcfcb;
@@ -236,20 +309,72 @@
   }
 
   .about-principle > span {
-    margin-bottom: 35px;
+    margin-bottom: 32px;
   }
+
+  .about-principle p {
+    max-width: 320px;
+  }
+
+
+  /* ================= BOTTOM ================= */
 
   .about-bottom {
     grid-template-columns: 1fr 1fr;
 
     gap: 25px;
+
+    padding-top: 30px;
   }
 
   .about-bottom p {
     grid-column: 1 / -1;
 
     grid-row: 1;
+
+    margin-bottom: 5px;
+
     text-align: left;
+  }
+
+  .about-bottom span:last-child {
+    text-align: right;
+  }
+
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+
+  .about-section {
+    padding: 75px 20px 80px;
+  }
+
+  .about-top {
+    font-size: 8px;
+  }
+
+  .about-top span:last-child {
+    display: none;
+  }
+
+  .about-main {
+    padding: 55px 0 65px;
+  }
+
+  .about-heading h2 {
+    font-size: 52px;
+  }
+
+  .about-copy {
+    margin-top: 38px;
+  }
+
+  .about-principle {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
 }
