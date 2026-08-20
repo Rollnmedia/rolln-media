@@ -1,108 +1,237 @@
 .final-cta {
   position: relative;
+
   min-height: 85vh;
+
   padding: 40px 5vw 32px;
-  background: #0b0b0d;
+
+  background: #080808;
   color: #f5f5f5;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   overflow: hidden;
 }
 
+
+/* ================= AMBIENT GLOW ================= */
+
 .final-cta::before {
   content: "";
+
   position: absolute;
+
   width: 520px;
   height: 520px;
+
   border-radius: 50%;
-  background: rgba(30, 120, 255, 0.08);
-  filter: blur(100px);
-  right: -180px;
-  bottom: -180px;
+
+  background: rgba(255, 122, 0, 0.055);
+
+  filter: blur(110px);
+
+  right: -190px;
+  bottom: -190px;
+
   pointer-events: none;
 }
+
+
+/* ================= TOP / BOTTOM ================= */
 
 .final-cta-top,
 .final-cta-bottom {
   position: relative;
+
   z-index: 2;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  color: #77777d;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+
+  color: #66666b;
 }
+
+.final-cta-top span:last-child,
+.final-cta-bottom span:last-child {
+  text-align: right;
+}
+
+
+/* ================= CONTENT ================= */
 
 .final-cta-content {
   position: relative;
+
   z-index: 2;
-  max-width: 900px;
+
+  max-width: 980px;
+
   margin: 100px auto;
+
   text-align: center;
 }
 
+
+/* ================= EYEBROW ================= */
+
 .final-cta-eyebrow {
-  display: inline-block;
-  margin-bottom: 28px;
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  color: #8b8b91;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 30px;
+
+  color: #77777d;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
 }
+
+.final-cta-eyebrow::before {
+  content: "";
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: var(--orange);
+
+  box-shadow:
+    0 0 10px rgba(255, 122, 0, 0.7),
+    0 0 22px rgba(255, 122, 0, 0.2);
+}
+
+
+/* ================= HEADING ================= */
 
 .final-cta h2 {
   margin: 0;
-  font-size: clamp(48px, 7vw, 100px);
-  line-height: 0.95;
-  letter-spacing: -0.055em;
-  font-weight: 500;
+
+  font-size: clamp(52px, 7.5vw, 108px);
+
+  line-height: 0.88;
+
+  letter-spacing: -0.07em;
+
+  font-weight: 600;
 }
 
 .final-cta h2 span {
-  color: #8b8b91;
+  color: #69696e;
 }
 
+
+/* ================= DESCRIPTION ================= */
+
 .final-cta-content p {
-  max-width: 520px;
-  margin: 35px auto 42px;
-  font-size: 17px;
-  line-height: 1.7;
-  color: #a4a4aa;
+  max-width: 540px;
+
+  margin: 38px auto 42px;
+
+  color: #88888e;
+
+  font-size: 15px;
+
+  line-height: 1.75;
+
+  letter-spacing: -0.01em;
 }
+
+
+/* ================= CTA ================= */
 
 .gap-button {
   display: inline-flex;
   align-items: center;
-  gap: 28px;
-  padding: 18px 24px;
-  background: #f47b20;
-  color: #111;
+  justify-content: center;
+
+  gap: 22px;
+
+  min-width: 165px;
+
+  padding: 17px 20px;
+
+  background: #ffffff;
+  color: #080808;
+
   text-decoration: none;
-  font-size: 12px;
+
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  transition: transform 0.3s ease, gap 0.3s ease;
+
+  letter-spacing: 0.1em;
+
+  transition:
+    transform 0.3s ease,
+    gap 0.3s ease,
+    background 0.3s ease;
 }
 
 .gap-button span {
-  font-size: 18px;
+  color: var(--orange);
+
+  font-size: 17px;
+
+  line-height: 1;
 }
 
 .gap-button:hover {
   transform: translateY(-3px);
-  gap: 38px;
+
+  gap: 30px;
+
+  background: #f5f5f5;
 }
 
+
+/* ================= BOTTOM ================= */
+
 .final-cta-bottom {
-  border-top: 1px solid #242428;
+  border-top: 1px solid #202023;
+
   padding-top: 20px;
 }
 
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+  .final-cta-content {
+    max-width: 760px;
+  }
+
+  .final-cta h2 {
+    font-size: clamp(50px, 8vw, 82px);
+  }
+
+}
+
+
+/* ================= MOBILE ================= */
+
 @media (max-width: 700px) {
+
   .final-cta {
     min-height: 80vh;
+
     padding: 28px 22px 24px;
+  }
+
+
+  .final-cta-top {
+    align-items: flex-start;
   }
 
   .final-cta-top span:last-child,
@@ -110,21 +239,76 @@
     display: none;
   }
 
+
   .final-cta-content {
     margin: 70px auto;
+
+    width: 100%;
   }
+
+
+  .final-cta-eyebrow {
+    margin-bottom: 25px;
+
+    font-size: 8px;
+
+    letter-spacing: 0.16em;
+  }
+
 
   .final-cta h2 {
     font-size: clamp(46px, 13vw, 72px);
+
+    line-height: 0.9;
   }
 
+
   .final-cta-content p {
-    font-size: 15px;
-    line-height: 1.6;
+    margin: 30px auto 35px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
   }
+
 
   .gap-button {
     width: 100%;
+
     justify-content: space-between;
+
+    padding: 16px 18px;
   }
+
+
+  .final-cta-bottom {
+    padding-top: 17px;
+
+    font-size: 8px;
+  }
+
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 420px) {
+
+  .final-cta {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .final-cta-content {
+    margin: 60px auto;
+  }
+
+  .final-cta h2 {
+    font-size: 47px;
+  }
+
+  .final-cta-content p {
+    font-size: 13px;
+  }
+
 }
