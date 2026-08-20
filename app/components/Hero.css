@@ -214,26 +214,23 @@
 }
 
 
-/* =========================================================
-   GROWTH VISUAL
-========================================================= */
-
 .growth-visual {
   position: absolute;
 
   z-index: 3;
 
-  right: -3%;
+  /* right side se thoda andar */
+  right: 1%;
 
-  top: 51%;
+  /* thoda neeche */
+  top: 56%;
 
-  width: 58vw;
+  /* thoda smaller */
+  width: 52vw;
+  height: 52vw;
 
-  height: 58vw;
-
-  max-width: 820px;
-
-  max-height: 820px;
+  max-width: 760px;
+  max-height: 760px;
 
   transform: translateY(-50%);
 
