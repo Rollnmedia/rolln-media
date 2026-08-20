@@ -3,45 +3,33 @@ import "./Engine.css";
 export default function Engine() {
   const systems = [
     {
-      number: "01",
       title: "STRATEGY",
-      text: "Research, positioning and a clear digital direction."
+      text: "Research, positioning and a clear direction for sustainable digital growth."
     },
     {
-      number: "02",
       title: "WEB",
-      text: "Websites, applications and digital experiences built to convert."
+      text: "Websites and digital experiences designed to turn attention into action."
     },
     {
-      number: "03",
       title: "SEARCH",
-      text: "SEO and search visibility that put your business in front of intent."
+      text: "SEO and search visibility that put your business in front of the right people."
     },
     {
-      number: "04",
       title: "PAID",
-      text: "Performance campaigns designed around measurable outcomes."
+      text: "Performance campaigns built around measurable traffic, leads and growth."
     },
     {
-      number: "05",
       title: "DATA",
-      text: "Tracking, insights and feedback that show what is actually working."
+      text: "Tracking and insights that show what is working and where to improve."
     },
     {
-      number: "06",
       title: "AUTOMATION",
-      text: "AI tools, agents and workflows that make the system work smarter."
+      text: "AI-powered tools and workflows that make your business faster and more efficient."
     }
   ];
 
   return (
     <section className="engine-section">
-
-      <div className="engine-top">
-        <span>02 / THE ENGINE</span>
-        <span>ONE SYSTEM · MULTIPLE MOVING PARTS</span>
-      </div>
-
 
       <div className="engine-intro">
 
@@ -54,9 +42,10 @@ export default function Engine() {
         </div>
 
         <p>
-          The strongest digital growth doesn't come from isolated
-          tactics. It comes from the pieces working together —
-          continuously learning, improving and moving the business forward.
+          Real digital growth doesn't come from disconnected tactics.
+          It comes from the right pieces working together — creating
+          momentum, learning from results and continuously moving
+          your business forward.
         </p>
 
       </div>
@@ -80,11 +69,8 @@ export default function Engine() {
         {systems.map((system, index) => (
           <div
             className={`engine-node engine-node-${index + 1}`}
-            key={system.number}
+            key={system.title}
           >
-            <span className="engine-number">
-              {system.number}
-            </span>
 
             <strong>
               {system.title}
@@ -93,6 +79,7 @@ export default function Engine() {
             <p>
               {system.text}
             </p>
+
           </div>
         ))}
 
