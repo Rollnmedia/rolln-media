@@ -4,6 +4,8 @@ export default function Hero() {
   return (
     <section className="hero" id="home">
 
+      {/* ================= CONTENT ================= */}
+
       <div className="hero-content">
 
         <div className="hero-eyebrow">
@@ -39,53 +41,193 @@ export default function Hero() {
       </div>
 
 
+      {/* ================= DIGITAL GROWTH VISUAL ================= */}
+
       <div className="hero-visual">
 
-        <div className="hero-glow"></div>
+        {/* Main website experience */}
 
-        <div className="hero-grid"></div>
+        <div className="digital-frame">
 
-        <div className="hero-orbit hero-orbit-one"></div>
+          <div className="browser-top">
 
-        <div className="hero-orbit hero-orbit-two"></div>
+            <div className="browser-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
 
-        <div className="hero-core">
-          <div></div>
+            <div className="browser-address">
+              yourbusiness.co.nz
+            </div>
+
+            <div className="browser-status">
+              LIVE
+            </div>
+
+          </div>
+
+
+          <div className="digital-interface">
+
+            <div className="interface-nav">
+
+              <span className="interface-logo"></span>
+
+              <span></span>
+              <span></span>
+              <span></span>
+
+            </div>
+
+
+            <div className="interface-hero">
+
+              <div className="interface-copy">
+
+                <small>
+                  YOUR DIGITAL PRESENCE
+                </small>
+
+                <strong>
+                  Built to
+                  <br />
+                  <em>perform.</em>
+                </strong>
+
+                <div className="interface-button">
+                  GET STARTED
+                  <span>↗</span>
+                </div>
+
+              </div>
+
+
+              <div className="interface-visual">
+
+                <div className="interface-circle"></div>
+
+                <div className="interface-line line-one"></div>
+
+                <div className="interface-line line-two"></div>
+
+                <div className="interface-line line-three"></div>
+
+              </div>
+
+            </div>
+
+
+            <div className="interface-stats">
+
+              <div>
+                <small>VISIBILITY</small>
+                <strong>+84%</strong>
+              </div>
+
+              <div>
+                <small>TRAFFIC</small>
+                <strong>+62%</strong>
+              </div>
+
+              <div>
+                <small>ENQUIRIES</small>
+                <strong>+41%</strong>
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
-        <div className="hero-label hero-label-one">
-          <span>01</span>
-          WEB
+
+        {/* Search layer */}
+
+        <div className="growth-layer growth-search">
+
+          <span>SEARCH</span>
+
+          <div className="search-bar">
+
+            <span>
+              best business near me
+            </span>
+
+            <b>
+              ⌕
+            </b>
+
+          </div>
+
         </div>
 
-        <div className="hero-label hero-label-two">
-          <span>02</span>
-          SEARCH
+
+        {/* Growth layer */}
+
+        <div className="growth-layer growth-data">
+
+          <span>GROWTH</span>
+
+          <div className="growth-chart">
+
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+
+          </div>
+
         </div>
 
-        <div className="hero-label hero-label-three">
-          <span>03</span>
-          GROWTH
+
+        {/* Enquiry layer */}
+
+        <div className="growth-layer growth-action">
+
+          <span>ENQUIRY</span>
+
+          <strong>
+            +1
+          </strong>
+
+          <small>
+            NEW LEAD
+          </small>
+
         </div>
 
-        <div className="hero-label hero-label-four">
-          <span>04</span>
-          AI
+
+        {/* Cursor */}
+
+        <div className="digital-cursor">
+          ↗
         </div>
 
       </div>
 
 
+      {/* ================= BOTTOM STRIP ================= */}
+
       <div className="hero-bottom">
 
         <span>STRATEGY</span>
+
         <i>✦</i>
+
         <span>WEB</span>
+
         <i>✦</i>
+
         <span>SEARCH</span>
+
         <i>✦</i>
+
         <span>PERFORMANCE</span>
+
         <i>✦</i>
+
         <span>AI</span>
 
       </div>
