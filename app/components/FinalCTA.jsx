@@ -5,14 +5,15 @@ export default function FinalCTA() {
     <section className="final-cta" id="contact">
 
       <div className="final-cta-top">
-        <span>05 / NEXT MOVE</span>
+        <span>THE NEXT MOVE</span>
         <span>ROLL’N MEDIA · NEW ZEALAND</span>
       </div>
+
 
       <div className="final-cta-content">
 
         <span className="final-cta-eyebrow">
-          THERE’S ALWAYS A GAP.
+          YOUR BUSINESS HAS MORE ROOM TO GROW.
         </span>
 
         <h2>
@@ -23,16 +24,20 @@ export default function FinalCTA() {
 
         <p>
           Your business might already be doing great things.
-          The question is whether your digital presence is
-          showing the world.
+          We help make sure your website, search presence and
+          digital systems are working hard enough to show it.
         </p>
 
-        <a href="mailto:hello@rollnmedia.co.nz" className="gap-button">
-          SHOW ME THE GAP
+        <a
+          href="mailto:hello@rollnmedia.co.nz"
+          className="gap-button"
+        >
+          LET’S TALK
           <span>↗</span>
         </a>
 
       </div>
+
 
       <div className="final-cta-bottom">
         <span>WEB · SEARCH · GROWTH · AUTOMATION</span>
