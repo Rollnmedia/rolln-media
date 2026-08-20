@@ -2,11 +2,10 @@ import "./Work.css";
 
 const projects = [
   {
-    number: "01",
     category: "PROPERTY MANAGEMENT · NEW ZEALAND",
     title: "Rent My Home",
     description:
-      "Website, SEO and digital growth work for a New Zealand property management brand.",
+      "A complete digital growth system combining website development, SEO and conversion-focused strategy for a New Zealand property management brand.",
     images: [
       "/work/rmh-01.jpg",
       "/work/rmh-02.jpg",
@@ -15,11 +14,10 @@ const projects = [
     ],
   },
   {
-    number: "02",
     category: "DIGITAL GROWTH · NEW ZEALAND",
     title: "Project Two",
     description:
-      "A digital experience built around clarity, performance and growth.",
+      "A digital experience designed around clarity, performance and a stronger path from attention to action.",
     images: [
       "/work/project-02-01.jpg",
       "/work/project-02-02.jpg",
@@ -32,12 +30,6 @@ export default function Work() {
   return (
     <section className="work-section">
 
-      <div className="work-top">
-        <span>03 / SELECTED WORK</span>
-        <span>REAL BUSINESSES · REAL DIGITAL SYSTEMS</span>
-      </div>
-
-
       <div className="work-heading">
 
         <h2>
@@ -47,8 +39,8 @@ export default function Work() {
         </h2>
 
         <p>
-          Here's what happens when strategy, design and
-          digital growth are put to work.
+          Real businesses. Real challenges. Real digital work built
+          to create visibility, improve experience and drive growth.
         </p>
 
       </div>
@@ -58,11 +50,12 @@ export default function Work() {
 
         {projects.map((project) => (
 
-          <article className="project" key={project.number}>
+          <article
+            className="project"
+            key={project.title}
+          >
 
             <div className="project-meta">
-
-              <span>{project.number}</span>
 
               <span>
                 {project.category}
@@ -95,7 +88,8 @@ export default function Work() {
 
                   <img
                     src={image}
-                    alt={`${project.title} project ${index + 1}`}
+                    alt={`${project.title} — project view ${index + 1}`}
+                    loading="lazy"
                   />
 
                 </div>
@@ -108,7 +102,7 @@ export default function Work() {
             <div className="project-bottom">
 
               <span>
-                {project.images.length} SCREENS
+                {project.title}
               </span>
 
               <span>
