@@ -2,32 +2,24 @@ import "./Gap.css";
 
 export default function Gap() {
   return (
-    <section className="gap-section" id="gap">
+    <section className="gap-section">
 
-      {/* ================= HEADER ================= */}
+      {/* ================= HEADING ================= */}
 
-      <div className="gap-intro">
+      <div className="gap-heading">
 
-        <div className="gap-kicker">
-          <span></span>
-          THE DIGITAL GAP
-        </div>
+        <h2>
+          Your business
+          <br />
+          <span>deserves to be seen.</span>
+        </h2>
 
-        <div className="gap-heading">
-
-          <h2>
-            Your business
-            <br />
-            <span>deserves to be found.</span>
-          </h2>
-
-          <p>
-            You might have great people, great service and a business
-            worth talking about. But if your digital presence doesn't
-            communicate that clearly, potential customers move on.
-          </p>
-
-        </div>
+        <p>
+          You may have the right service, the right people and a
+          business worth choosing. But if customers cannot find you,
+          understand you or trust what they see, the opportunity is
+          already being lost.
+        </p>
 
       </div>
 
@@ -36,119 +28,47 @@ export default function Gap() {
 
       <div className="gap-visual">
 
-        {/* BUSINESS SIDE */}
-
         <div className="gap-side gap-business">
 
-          <div className="gap-side-heading">
-            <span className="gap-index">01</span>
-
-            <div>
-              <small>WHAT YOU DO</small>
-              <h3>Your business</h3>
-            </div>
-          </div>
+          <span>WHAT YOU BRING</span>
 
           <div className="gap-items">
 
-            <div className="gap-item">
-              <span>01</span>
-              <p>Great service</p>
-              <i>↗</i>
-            </div>
+            <p>Great service</p>
 
-            <div className="gap-item">
-              <span>02</span>
-              <p>Real experience</p>
-              <i>↗</i>
-            </div>
+            <p>Real expertise</p>
 
-            <div className="gap-item">
-              <span>03</span>
-              <p>Good people</p>
-              <i>↗</i>
-            </div>
+            <p>Strong reputation</p>
 
-            <div className="gap-item">
-              <span>04</span>
-              <p>Happy customers</p>
-              <i>↗</i>
-            </div>
+            <p>Happy customers</p>
 
           </div>
 
         </div>
 
 
-        {/* ================= CENTRE GAP ================= */}
+        <div className="gap-middle">
 
-        <div className="gap-core">
-
-          <div className="gap-core-line"></div>
-
-          <div className="gap-core-orbit orbit-one"></div>
-          <div className="gap-core-orbit orbit-two"></div>
-
-          <div className="gap-core-mark">
-            <span>↗</span>
-          </div>
-
-          <small>THE</small>
+          <span>THE</span>
 
           <strong>GAP</strong>
 
-          <p>
-            Between what
-            <br />
-            you offer and
-            <br />
-            what they see.
-          </p>
-
         </div>
 
 
-        {/* DIGITAL SIDE */}
-
         <div className="gap-side gap-digital">
 
-          <div className="gap-side-heading">
-
-            <span className="gap-index">02</span>
-
-            <div>
-              <small>WHAT THEY SEE</small>
-              <h3>Your digital presence</h3>
-            </div>
-
-          </div>
-
+          <span>WHAT CUSTOMERS EXPERIENCE</span>
 
           <div className="gap-items">
 
-            <div className="gap-item">
-              <span>01</span>
-              <p>Hard to find</p>
-              <i>↗</i>
-            </div>
+            <p>Hard to find</p>
 
-            <div className="gap-item">
-              <span>02</span>
-              <p>Unclear messaging</p>
-              <i>↗</i>
-            </div>
+            <p>Unclear message</p>
 
-            <div className="gap-item">
-              <span>03</span>
-              <p>Outdated experience</p>
-              <i>↗</i>
-            </div>
+            <p>Outdated presence</p>
 
-            <div className="gap-item">
-              <span>04</span>
-              <p>No clear next step</p>
-              <i>↗</i>
-            </div>
+            <p>No clear next step</p>
 
           </div>
 
@@ -157,19 +77,18 @@ export default function Gap() {
       </div>
 
 
-      {/* ================= BOTTOM STATEMENT ================= */}
+      {/* ================= CLOSING ================= */}
 
       <div className="gap-bottom">
 
-        <div className="gap-bottom-line"></div>
+        <span></span>
 
         <p>
-          That's the gap we help close.
+          We close the gap between how good your business is
+          and how clearly the digital world sees it.
         </p>
 
-        <span>
-          FIND · CHOOSE · GROW
-        </span>
+        <span></span>
 
       </div>
 
