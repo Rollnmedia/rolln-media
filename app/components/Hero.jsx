@@ -4,7 +4,9 @@ export default function Hero() {
   return (
     <section className="hero" id="home">
 
-      {/* ================= CONTENT ================= */}
+      {/* =====================================================
+          HERO CONTENT
+      ===================================================== */}
 
       <div className="hero-content">
 
@@ -41,174 +43,215 @@ export default function Hero() {
       </div>
 
 
-      {/* ================= DIGITAL GROWTH VISUAL ================= */}
+      {/* =====================================================
+          DIGITAL GROWTH CIRCUIT
+      ===================================================== */}
 
       <div className="hero-visual">
 
-        {/* Main website experience */}
+        {/* Ambient glow */}
+        <div className="circuit-glow"></div>
 
-        <div className="digital-frame">
+        {/* Background grid */}
+        <div className="circuit-grid"></div>
 
-          <div className="browser-top">
 
-            <div className="browser-dots">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
+        {/* ================= SVG NETWORK ================= */}
 
-            <div className="browser-address">
-              yourbusiness.co.nz
-            </div>
+        <svg
+          className="growth-network"
+          viewBox="0 0 700 620"
+          preserveAspectRatio="xMidYMid meet"
+          aria-hidden="true"
+        >
 
-            <div className="browser-status">
-              LIVE
-            </div>
+          {/* WEB → GROWTH */}
+          <path
+            className="network-path"
+            d="M90 170 C180 90, 255 120, 330 280"
+          />
 
+          {/* SEARCH → GROWTH */}
+          <path
+            className="network-path"
+            d="M610 125 C515 80, 430 125, 350 280"
+          />
+
+          {/* TRAFFIC → GROWTH */}
+          <path
+            className="network-path"
+            d="M620 430 C535 470, 450 420, 350 315"
+          />
+
+          {/* GROWTH → LEADS */}
+          <path
+            className="network-path"
+            d="M350 335 C300 420, 225 470, 125 455"
+          />
+
+          {/* WEB → SEARCH */}
+          <path
+            className="network-path network-path-soft"
+            d="M115 160 C250 20, 470 20, 590 115"
+          />
+
+          {/* TRAFFIC → LEADS */}
+          <path
+            className="network-path network-path-soft"
+            d="M600 445 C420 575, 260 555, 130 465"
+          />
+
+
+          {/* Moving signal 1 */}
+          <circle
+            className="network-signal signal-one"
+            r="4"
+          >
+            <animateMotion
+              dur="5s"
+              repeatCount="indefinite"
+              path="M90 170 C180 90, 255 120, 330 280"
+            />
+          </circle>
+
+
+          {/* Moving signal 2 */}
+          <circle
+            className="network-signal signal-two"
+            r="4"
+          >
+            <animateMotion
+              dur="6s"
+              repeatCount="indefinite"
+              path="M610 125 C515 80, 430 125, 350 280"
+            />
+          </circle>
+
+
+          {/* Moving signal 3 */}
+          <circle
+            className="network-signal signal-three"
+            r="4"
+          >
+            <animateMotion
+              dur="5.5s"
+              repeatCount="indefinite"
+              path="M620 430 C535 470, 450 420, 350 315"
+            />
+          </circle>
+
+        </svg>
+
+
+        {/* =================================================
+            NETWORK NODES
+        ================================================= */}
+
+        <div className="growth-node node-web">
+
+          <div className="node-dot"></div>
+
+          <div className="node-info">
+            <span>01</span>
+            WEB
           </div>
 
-
-          <div className="digital-interface">
-
-            <div className="interface-nav">
-
-              <span className="interface-logo"></span>
-
-              <span></span>
-              <span></span>
-              <span></span>
-
-            </div>
+        </div>
 
 
-            <div className="interface-hero">
+        <div className="growth-node node-search">
 
-              <div className="interface-copy">
+          <div className="node-dot"></div>
 
-                <small>
-                  YOUR DIGITAL PRESENCE
-                </small>
+          <div className="node-info">
+            <span>02</span>
+            SEARCH
+          </div>
 
-                <strong>
-                  Built to
-                  <br />
-                  <em>perform.</em>
-                </strong>
-
-                <div className="interface-button">
-                  GET STARTED
-                  <span>↗</span>
-                </div>
-
-              </div>
+        </div>
 
 
-              <div className="interface-visual">
+        <div className="growth-node node-traffic">
 
-                <div className="interface-circle"></div>
+          <div className="node-dot"></div>
 
-                <div className="interface-line line-one"></div>
+          <div className="node-info">
+            <span>03</span>
+            TRAFFIC
+          </div>
 
-                <div className="interface-line line-two"></div>
-
-                <div className="interface-line line-three"></div>
-
-              </div>
-
-            </div>
+        </div>
 
 
-            <div className="interface-stats">
+        <div className="growth-node node-leads">
 
-              <div>
-                <small>VISIBILITY</small>
-                <strong>+84%</strong>
-              </div>
+          <div className="node-dot"></div>
 
-              <div>
-                <small>TRAFFIC</small>
-                <strong>+62%</strong>
-              </div>
+          <div className="node-info">
+            <span>04</span>
+            LEADS
+          </div>
 
-              <div>
-                <small>ENQUIRIES</small>
-                <strong>+41%</strong>
-              </div>
+        </div>
 
-            </div>
+
+        {/* =================================================
+            CENTRAL GROWTH NODE
+        ================================================= */}
+
+        <div className="growth-core">
+
+          <div className="core-ring core-ring-one"></div>
+
+          <div className="core-ring core-ring-two"></div>
+
+          <div className="core-inner">
+
+            <span>GROWTH</span>
+
+            <strong>+</strong>
 
           </div>
 
         </div>
 
 
-        {/* Search layer */}
+        {/* =================================================
+            SMALL DATA READOUT
+        ================================================= */}
 
-        <div className="growth-layer growth-search">
+        <div className="growth-readout">
 
-          <span>SEARCH</span>
+          <span>GROWTH SYSTEM</span>
 
-          <div className="search-bar">
-
-            <span>
-              best business near me
-            </span>
-
-            <b>
-              ⌕
-            </b>
-
+          <div>
+            <strong>LIVE</strong>
+            <i></i>
           </div>
 
         </div>
 
 
-        {/* Growth layer */}
+        {/* =================================================
+            FLOATING METRIC
+        ================================================= */}
 
-        <div className="growth-layer growth-data">
+        <div className="growth-metric">
 
-          <span>GROWTH</span>
+          <span>CONVERSION</span>
 
-          <div className="growth-chart">
+          <strong>+41%</strong>
 
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
+          <small>LEADS GENERATED</small>
 
-          </div>
-
-        </div>
-
-
-        {/* Enquiry layer */}
-
-        <div className="growth-layer growth-action">
-
-          <span>ENQUIRY</span>
-
-          <strong>
-            +1
-          </strong>
-
-          <small>
-            NEW LEAD
-          </small>
-
-        </div>
-
-
-        {/* Cursor */}
-
-        <div className="digital-cursor">
-          ↗
         </div>
 
       </div>
 
 
-      {/* ================= BOTTOM STRIP ================= */}
+      {/* =====================================================
+          BOTTOM SERVICE STRIP
+      ===================================================== */}
 
       <div className="hero-bottom">
 
