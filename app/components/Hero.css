@@ -1,3 +1,7 @@
+/* =========================================================
+   HERO
+========================================================= */
+
 .hero {
   position: relative;
 
@@ -8,7 +12,10 @@
   display: flex;
   align-items: center;
 
-  padding: 125px 5vw 105px;
+  padding:
+    120px
+    5vw
+    100px;
 
   background: #080808;
 
@@ -25,7 +32,7 @@
 
   z-index: 5;
 
-  width: 52%;
+  width: 50%;
 
   max-width: 820px;
 }
@@ -41,7 +48,7 @@
 
   gap: 10px;
 
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 
   color: #77777d;
 
@@ -53,8 +60,8 @@
 }
 
 .hero-eyebrow span {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
 
   flex-shrink: 0;
 
@@ -63,8 +70,8 @@
   background: var(--orange);
 
   box-shadow:
-    0 0 10px rgba(255, 122, 0, 0.75),
-    0 0 24px rgba(255, 122, 0, 0.25);
+    0 0 10px rgba(255, 122, 0, 0.8),
+    0 0 24px rgba(255, 122, 0, 0.3);
 }
 
 
@@ -75,9 +82,9 @@
 .hero h1 {
   margin: 0;
 
-  max-width: 850px;
+  max-width: 820px;
 
-  font-size: clamp(64px, 6.6vw, 105px);
+  font-size: clamp(64px, 6.4vw, 105px);
 
   line-height: 0.88;
 
@@ -96,7 +103,7 @@
 ========================================================= */
 
 .hero p {
-  max-width: 560px;
+  max-width: 550px;
 
   margin: 38px 0 0;
 
@@ -104,7 +111,7 @@
 
   font-size: 16px;
 
-  line-height: 1.72;
+  line-height: 1.7;
 }
 
 
@@ -117,25 +124,28 @@
 
   align-items: center;
 
-  gap: 28px;
+  gap: 34px;
 
-  margin-top: 40px;
+  margin-top: 42px;
 }
 
 
-/* PRIMARY */
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
 
 .hero-primary {
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
-  gap: 22px;
+  gap: 24px;
 
-  min-width: 225px;
+  min-width: 210px;
 
-  padding: 19px 25px;
+  padding: 20px 24px;
 
   background: #fff;
 
@@ -167,11 +177,13 @@
 .hero-primary:hover {
   transform: translateY(-3px);
 
-  gap: 30px;
+  gap: 32px;
 }
 
 
-/* SECONDARY */
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
 
 .hero-secondary {
   position: relative;
@@ -182,7 +194,7 @@
 
   font-size: 12px;
 
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
 
   transition: color 0.3s ease;
 }
@@ -193,9 +205,11 @@
   position: absolute;
 
   left: 0;
+
   bottom: 0;
 
   width: 100%;
+
   height: 1px;
 
   background: #38383c;
@@ -219,7 +233,7 @@
 
 
 /* =========================================================
-   HERO VISUAL
+   RIGHT HERO VISUAL
 ========================================================= */
 
 .hero-visual {
@@ -227,15 +241,21 @@
 
   z-index: 2;
 
-  right: -2vw;
+  top: 50%;
 
-  top: 53%;
+  right: 0;
 
-  width: 54vw;
+  width: 52%;
 
-  max-width: 850px;
+  max-width: 950px;
 
   transform: translateY(-50%);
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  pointer-events: none;
 }
 
 
@@ -248,12 +268,15 @@
 
   width: 100%;
 
-  display: flex;
+  overflow: hidden;
 
-  align-items: center;
-  justify-content: center;
+  background: #050505;
 
-  animation: heroImageFloat 7s ease-in-out infinite;
+  border-left: 1px solid rgba(255, 255, 255, 0.035);
+
+  box-shadow:
+    -30px 0 80px rgba(0, 0, 0, 0.45),
+    0 30px 100px rgba(0, 0, 0, 0.35);
 }
 
 
@@ -262,93 +285,53 @@
 ========================================================= */
 
 .hero-image {
-  position: relative;
-
-  z-index: 2;
-
   display: block;
 
   width: 100%;
 
   height: auto;
 
-  object-fit: contain;
+  object-fit: cover;
 
-  filter:
-    drop-shadow(0 35px 70px rgba(0, 0, 0, 0.7))
-    drop-shadow(0 0 45px rgba(255, 122, 0, 0.06));
+  opacity: 0.98;
 
-  user-select: none;
+  transform: scale(1.01);
 
-  -webkit-user-drag: none;
+  transition:
+    transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1),
+    opacity 0.6s ease;
+}
+
+
+/* Subtle movement */
+
+.hero-image-wrap:hover .hero-image {
+  transform: scale(1.035);
 }
 
 
 /* =========================================================
-   ORANGE AMBIENT GLOW
+   ORANGE LIGHT OVER IMAGE
 ========================================================= */
 
-.hero-image-glow {
+.hero-image-wrap::after {
+  content: "";
+
   position: absolute;
 
-  z-index: 1;
+  inset: 0;
 
-  width: 65%;
-
-  height: 65%;
-
-  top: 18%;
-  left: 18%;
-
-  border-radius: 50%;
+  pointer-events: none;
 
   background:
-    radial-gradient(
-      circle,
-      rgba(255, 122, 0, 0.13) 0%,
-      rgba(255, 122, 0, 0.05) 35%,
-      transparent 72%
+    linear-gradient(
+      90deg,
+      rgba(8, 8, 8, 0.16),
+      transparent 22%,
+      transparent 100%
     );
 
-  filter: blur(35px);
-
-  animation: glowPulse 5s ease-in-out infinite;
-}
-
-
-/* =========================================================
-   IMAGE ANIMATION
-========================================================= */
-
-@keyframes heroImageFloat {
-
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  50% {
-    transform: translate3d(0, -12px, 0);
-  }
-
-}
-
-
-@keyframes glowPulse {
-
-  0%,
-  100% {
-    opacity: 0.55;
-
-    transform: scale(0.95);
-  }
-
-  50% {
-    opacity: 1;
-
-    transform: scale(1.08);
-  }
-
+  mix-blend-mode: normal;
 }
 
 
@@ -362,6 +345,7 @@
   z-index: 10;
 
   left: 5vw;
+
   right: 5vw;
 
   bottom: 28px;
@@ -398,44 +382,59 @@
    LARGE DESKTOP
 ========================================================= */
 
-@media (min-width: 1500px) {
+@media (min-width: 1400px) {
+
+  .hero {
+    padding-left: 5vw;
+    padding-right: 3vw;
+  }
 
   .hero-content {
-    width: 50%;
+    width: 48%;
   }
 
   .hero-visual {
-    width: 52vw;
+    width: 53%;
 
-    right: 0;
+    max-width: 1000px;
+  }
+
+  .hero-image-wrap {
+    max-height: 650px;
   }
 
 }
 
 
 /* =========================================================
-   TABLET
+   TABLET / SMALL DESKTOP
 ========================================================= */
 
 @media (max-width: 1100px) {
 
   .hero {
-    padding-left: 5vw;
-    padding-right: 5vw;
+    padding:
+      120px
+      4vw
+      100px;
   }
 
   .hero-content {
-    width: 55%;
+    width: 52%;
   }
 
   .hero h1 {
-    font-size: clamp(60px, 7vw, 90px);
+    font-size: clamp(58px, 7vw, 82px);
+  }
+
+  .hero p {
+    max-width: 470px;
+
+    font-size: 15px;
   }
 
   .hero-visual {
-    width: 58vw;
-
-    right: -7vw;
+    width: 51%;
   }
 
 }
@@ -448,36 +447,35 @@
 @media (max-width: 900px) {
 
   .hero {
-
     min-height: auto;
 
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
     padding:
-      125px
+      120px
       24px
       105px;
-
-    display: block;
-
-    overflow: hidden;
   }
 
 
-  /* CONTENT FIRST */
+  /* -----------------------------------------
+     CONTENT FIRST
+  ----------------------------------------- */
 
   .hero-content {
-
     width: 100%;
 
     max-width: none;
-
-    position: relative;
 
     z-index: 5;
   }
 
 
   .hero-eyebrow {
-
     margin-bottom: 25px;
 
     font-size: 9px;
@@ -487,18 +485,16 @@
 
 
   .hero h1 {
+    max-width: 700px;
 
-    max-width: 650px;
-
-    font-size: clamp(56px, 15vw, 88px);
+    font-size: clamp(58px, 14vw, 82px);
 
     line-height: 0.9;
   }
 
 
   .hero p {
-
-    max-width: 520px;
+    max-width: 550px;
 
     margin-top: 30px;
 
@@ -509,76 +505,68 @@
 
 
   .hero-actions {
-
     margin-top: 32px;
 
-    align-items: flex-start;
+    gap: 24px;
   }
 
 
-  /* IMAGE BELOW CONTENT */
+  /* -----------------------------------------
+     IMAGE BELOW CONTENT
+  ----------------------------------------- */
 
   .hero-visual {
-
     position: relative;
 
     top: auto;
+
     right: auto;
 
-    width: 120%;
+    width: 100%;
 
     max-width: none;
 
-    margin-top: 55px;
-
-    margin-left: -10%;
+    margin-top: 65px;
 
     transform: none;
+
+    display: block;
 
     z-index: 2;
   }
 
 
   .hero-image-wrap {
-
     width: 100%;
 
-    animation:
-      heroImageFloat 7s ease-in-out infinite;
+    border-left: none;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+
+    box-shadow:
+      0 25px 70px rgba(0, 0, 0, 0.5);
   }
 
 
   .hero-image {
-
     width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
   }
 
 
-  .hero-image-glow {
-
-    width: 75%;
-
-    height: 75%;
-
-    top: 12%;
-
-    left: 12%;
-  }
-
-
-  /* BOTTOM STRIP */
+  /* -----------------------------------------
+     BOTTOM
+  ----------------------------------------- */
 
   .hero-bottom {
+    left: 24px;
 
-    position: relative;
+    right: 24px;
 
-    left: auto;
-    right: auto;
-    bottom: auto;
-
-    margin-top: 45px;
-
-    padding-top: 16px;
+    bottom: 25px;
 
     gap: 12px;
 
@@ -599,45 +587,35 @@
 @media (max-width: 600px) {
 
   .hero {
-
     padding:
-      120px
-      20px
-      70px;
+      115px
+      24px
+      100px;
   }
 
 
   .hero-eyebrow {
-
     font-size: 8px;
 
     gap: 8px;
-
-    white-space: nowrap;
   }
 
-
   .hero-eyebrow span {
+    width: 6px;
 
-    width: 5px;
-
-    height: 5px;
+    height: 6px;
   }
 
 
   .hero h1 {
-
-    font-size: clamp(52px, 15vw, 76px);
+    font-size: clamp(52px, 14.5vw, 72px);
 
     letter-spacing: -0.07em;
   }
 
 
   .hero p {
-
-    max-width: 100%;
-
-    margin-top: 28px;
+    margin-top: 27px;
 
     font-size: 15px;
 
@@ -645,13 +623,10 @@
   }
 
 
-  /* BUTTONS */
-
   .hero-actions {
+    align-items: flex-start;
 
     flex-direction: column;
-
-    align-items: flex-start;
 
     gap: 22px;
 
@@ -660,50 +635,33 @@
 
 
   .hero-primary {
+    min-width: 190px;
 
-    min-width: 225px;
+    padding: 17px 20px;
 
-    padding: 18px 22px;
-
-    font-size: 11px;
+    gap: 20px;
   }
 
 
   .hero-secondary {
-
     font-size: 11px;
   }
 
 
-  /* IMAGE */
-
   .hero-visual {
-
-    width: 135%;
-
-    margin-top: 45px;
-
-    margin-left: -17.5%;
+    margin-top: 55px;
   }
 
 
-  .hero-image {
-
+  .hero-image-wrap {
     width: 100%;
   }
 
 
-  /* BOTTOM */
-
   .hero-bottom {
-
-    margin-top: 35px;
-
-    gap: 10px;
+    gap: 9px;
 
     font-size: 6.5px;
-
-    letter-spacing: 0.17em;
   }
 
 }
@@ -716,28 +674,31 @@
 @media (max-width: 380px) {
 
   .hero {
+    padding-left: 20px;
 
-    padding-top: 115px;
+    padding-right: 20px;
   }
 
 
   .hero h1 {
-
-    font-size: 50px;
+    font-size: 51px;
   }
 
 
   .hero p {
-
     font-size: 14px;
   }
 
 
   .hero-visual {
+    margin-top: 48px;
+  }
 
-    width: 140%;
 
-    margin-left: -20%;
+  .hero-bottom {
+    left: 20px;
+
+    right: 20px;
   }
 
 }
@@ -749,10 +710,8 @@
 
 @media (prefers-reduced-motion: reduce) {
 
-  .hero-image-wrap,
-  .hero-image-glow {
-
-    animation: none;
+  .hero-image {
+    transition: none;
   }
 
 }
