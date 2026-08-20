@@ -10,27 +10,9 @@
 }
 
 
-/* ================= TOP ================= */
-
-.work-top {
-  display: flex;
-  justify-content: space-between;
-
-  padding-bottom: 28px;
-
-  border-bottom: 1px solid #d8d8d5;
-
-  color: #777;
-
-  font-size: 9px;
-
-  font-weight: 600;
-
-  letter-spacing: 0.16em;
-}
-
-
-/* ================= HEADING ================= */
+/* =========================================================
+   HEADING
+========================================================= */
 
 .work-heading {
   display: grid;
@@ -39,7 +21,7 @@
 
   gap: 8vw;
 
-  padding: 80px 0 90px;
+  padding: 45px 0 95px;
 }
 
 .work-heading h2 {
@@ -50,6 +32,8 @@
   line-height: 0.82;
 
   letter-spacing: -0.075em;
+
+  font-weight: 600;
 }
 
 .work-heading h2 span {
@@ -59,7 +43,7 @@
 .work-heading p {
   align-self: end;
 
-  max-width: 380px;
+  max-width: 390px;
 
   margin: 0;
 
@@ -71,7 +55,9 @@
 }
 
 
-/* ================= PROJECT ================= */
+/* =========================================================
+   PROJECT LIST
+========================================================= */
 
 .work-list {
   display: flex;
@@ -86,12 +72,14 @@
 }
 
 
-/* ================= META ================= */
+/* =========================================================
+   META
+========================================================= */
 
 .project-meta {
   display: flex;
 
-  justify-content: space-between;
+  justify-content: flex-start;
 
   padding: 20px 0;
 
@@ -105,7 +93,9 @@
 }
 
 
-/* ================= TITLE ================= */
+/* =========================================================
+   TITLE
+========================================================= */
 
 .project-title {
   display: flex;
@@ -127,10 +117,12 @@
   line-height: 0.9;
 
   letter-spacing: -0.065em;
+
+  font-weight: 600;
 }
 
 .project-title p {
-  max-width: 330px;
+  max-width: 360px;
 
   margin: 0;
 
@@ -138,11 +130,13 @@
 
   font-size: 13px;
 
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 
-/* ================= GALLERY ================= */
+/* =========================================================
+   GALLERY
+========================================================= */
 
 .project-gallery {
   display: flex;
@@ -169,7 +163,9 @@
 }
 
 
-/* ================= IMAGE ================= */
+/* =========================================================
+   IMAGE
+========================================================= */
 
 .project-image {
   flex: 0 0 76vw;
@@ -191,7 +187,9 @@
 
   object-fit: cover;
 
-  transition: transform 0.7s ease;
+  transition:
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.4s ease;
 }
 
 .project-image:hover img {
@@ -199,7 +197,9 @@
 }
 
 
-/* ================= BOTTOM ================= */
+/* =========================================================
+   BOTTOM
+========================================================= */
 
 .project-bottom {
   display: flex;
@@ -217,8 +217,14 @@
   letter-spacing: 0.16em;
 }
 
+.project-bottom span:last-child {
+  color: #555;
+}
 
-/* ================= MOBILE ================= */
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 800px) {
 
@@ -226,26 +232,58 @@
     padding: 90px 24px 100px;
   }
 
-  .work-top {
-    gap: 20px;
-  }
-
   .work-heading {
     display: block;
 
-    padding: 60px 0;
+    padding: 35px 0 65px;
+  }
+
+  .work-heading h2 {
+    font-size: clamp(62px, 16vw, 95px);
+
+    line-height: 0.84;
   }
 
   .work-heading p {
-    margin-top: 35px;
+    max-width: 420px;
+
+    margin-top: 32px;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+  }
+
+  .work-list {
+    gap: 90px;
+  }
+
+  .project-meta {
+    padding: 17px 0;
+
+    font-size: 8px;
   }
 
   .project-title {
     display: block;
+
+    padding: 30px 0 35px;
+  }
+
+  .project-title h3 {
+    font-size: clamp(46px, 13vw, 72px);
   }
 
   .project-title p {
-    margin-top: 25px;
+    max-width: 420px;
+
+    margin-top: 24px;
+
+    font-size: 12px;
+  }
+
+  .project-gallery {
+    gap: 12px;
   }
 
   .project-image {
@@ -254,4 +292,48 @@
     height: 440px;
   }
 
+  .project-bottom {
+    padding-top: 15px;
+
+    font-size: 7px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+  .work-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .work-heading h2 {
+    font-size: 60px;
+  }
+
+  .project-image {
+    flex-basis: 90vw;
+
+    height: 390px;
+  }
+
+  .project-bottom {
+    letter-spacing: 0.12em;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .project-image img {
+    transition: none;
+  }
 }
