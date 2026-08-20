@@ -1,4 +1,7 @@
-```css
+/* =========================================================
+   GAP SECTION
+========================================================= */
+
 .gap-section {
   position: relative;
   overflow: hidden;
@@ -10,10 +13,13 @@
 }
 
 
-/* ================= TOP ================= */
+/* =========================================================
+   TOP
+========================================================= */
 
 .gap-top {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 
   padding-bottom: 28px;
@@ -21,7 +27,6 @@
   border-bottom: 1px solid #d5d5d2;
 
   color: #777;
-
   font-size: 9px;
   font-weight: 600;
 
@@ -29,13 +34,14 @@
 }
 
 
-/* ================= HEADING ================= */
+/* =========================================================
+   HEADING
+========================================================= */
 
 .gap-heading {
   display: grid;
 
   grid-template-columns: 1.35fr 0.65fr;
-
   gap: 8vw;
 
   padding: 85px 0 100px;
@@ -44,13 +50,14 @@
 .gap-heading h2 {
   margin: 0;
 
-  font-size: clamp(60px, 8vw, 120px);
+  max-width: 950px;
 
+  font-size: clamp(60px, 8vw, 120px);
   line-height: 0.88;
 
-  letter-spacing: -0.07em;
-
   font-weight: 600;
+
+  letter-spacing: -0.07em;
 }
 
 .gap-heading h2 span {
@@ -67,12 +74,13 @@
   color: #666;
 
   font-size: 14px;
-
   line-height: 1.8;
 }
 
 
-/* ================= GAP VISUAL ================= */
+/* =========================================================
+   GAP VISUAL
+========================================================= */
 
 .gap-visual {
   display: grid;
@@ -86,18 +94,20 @@
 }
 
 
-/* ================= SIDES ================= */
+/* =========================================================
+   SIDES
+========================================================= */
 
 .gap-side {
-  padding: 45px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  padding: 45px;
 }
 
 .gap-side > span {
-  color: #888;
+  color: #777;
 
   font-size: 9px;
   font-weight: 600;
@@ -105,22 +115,30 @@
   letter-spacing: 0.16em;
 }
 
+
+/* LEFT */
+
 .gap-business {
   background: #e8e8e5;
 }
+
+
+/* RIGHT */
 
 .gap-digital {
   background: #dededb;
 }
 
 
-/* ================= ITEMS ================= */
+/* =========================================================
+   ITEMS
+========================================================= */
 
 .gap-items {
   display: flex;
   flex-direction: column;
 
-  gap: 0;
+  margin-top: 50px;
 }
 
 .gap-items p {
@@ -130,22 +148,39 @@
 
   border-top: 1px solid rgba(0, 0, 0, 0.12);
 
+  color: #161616;
+
   font-size: clamp(18px, 2vw, 26px);
+  font-weight: 500;
+
+  line-height: 1.2;
 
   letter-spacing: -0.03em;
+
+  transition:
+    padding-left 0.3s ease,
+    color 0.3s ease;
+}
+
+.gap-items p:hover {
+  padding-left: 8px;
+  color: var(--orange);
 }
 
 
-/* ================= MIDDLE ================= */
+/* =========================================================
+   MIDDLE GAP
+========================================================= */
 
 .gap-middle {
   position: relative;
 
   display: flex;
   flex-direction: column;
-
   align-items: center;
   justify-content: center;
+
+  overflow: hidden;
 
   background: #0a0a0a;
 
@@ -154,16 +189,20 @@
   text-align: center;
 }
 
+
+/* Vertical guide lines */
+
 .gap-middle::before,
 .gap-middle::after {
   content: "";
 
   position: absolute;
+  top: 0;
+  bottom: 0;
 
   width: 1px;
-  height: 100%;
 
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .gap-middle::before {
@@ -174,32 +213,63 @@
   right: 22px;
 }
 
+
+/* Small orange centre signal */
+
 .gap-middle span {
+  position: relative;
+
   color: #777;
 
   font-size: 8px;
+  font-weight: 600;
 
   letter-spacing: 0.25em;
 }
 
+.gap-middle span::before {
+  content: "";
+
+  display: inline-block;
+
+  width: 5px;
+  height: 5px;
+
+  margin-right: 8px;
+
+  border-radius: 50%;
+
+  background: var(--orange);
+
+  box-shadow: 0 0 12px rgba(255, 122, 0, 0.5);
+
+  vertical-align: middle;
+}
+
 .gap-middle strong {
+  position: relative;
+
   margin-top: 7px;
 
   color: #fff;
 
   font-size: 34px;
+  font-weight: 600;
+
+  line-height: 1;
 
   letter-spacing: -0.06em;
 }
 
 
-/* ================= BOTTOM ================= */
+/* =========================================================
+   BOTTOM
+========================================================= */
 
 .gap-bottom {
   display: grid;
 
   grid-template-columns: 1fr 2fr 1fr;
-
   align-items: center;
 
   padding-top: 28px;
@@ -207,6 +277,7 @@
   color: #777;
 
   font-size: 9px;
+  font-weight: 600;
 
   letter-spacing: 0.14em;
 }
@@ -217,10 +288,9 @@
   color: #0a0a0a;
 
   font-size: 18px;
-
   font-weight: 500;
 
-  line-height: 1.45;
+  line-height: 1.4;
 
   letter-spacing: -0.03em;
 
@@ -232,7 +302,42 @@
 }
 
 
-/* ================= MOBILE ================= */
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .gap-section {
+    padding: 110px 5vw 100px;
+  }
+
+  .gap-heading {
+    grid-template-columns: 1.2fr 0.8fr;
+
+    gap: 5vw;
+
+    padding: 70px 0 80px;
+  }
+
+  .gap-heading h2 {
+    font-size: clamp(54px, 8vw, 90px);
+  }
+
+  .gap-side {
+    padding: 35px;
+  }
+
+  .gap-visual {
+    grid-template-columns: 1fr 150px 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 800px) {
 
@@ -240,11 +345,17 @@
     padding: 90px 24px 90px;
   }
 
+
+  /* TOP */
+
   .gap-top {
     gap: 20px;
 
     font-size: 8px;
   }
+
+
+  /* HEADING */
 
   .gap-heading {
     display: block;
@@ -254,15 +365,21 @@
 
   .gap-heading h2 {
     font-size: clamp(52px, 14vw, 82px);
+
+    line-height: 0.9;
   }
 
   .gap-heading p {
-    margin-top: 30px;
-
     max-width: 430px;
 
+    margin-top: 30px;
+
     font-size: 14px;
+    line-height: 1.7;
   }
+
+
+  /* VISUAL */
 
   .gap-visual {
     grid-template-columns: 1fr;
@@ -270,11 +387,27 @@
     min-height: auto;
   }
 
+
+  /* SIDES */
+
   .gap-side {
     min-height: 300px;
 
     padding: 30px;
   }
+
+  .gap-items {
+    margin-top: 45px;
+  }
+
+  .gap-items p {
+    padding: 15px 0;
+
+    font-size: 21px;
+  }
+
+
+  /* MIDDLE */
 
   .gap-middle {
     min-height: 150px;
@@ -285,22 +418,31 @@
     display: none;
   }
 
-  .gap-items p {
-    font-size: 22px;
-  }
+
+  /* BOTTOM */
 
   .gap-bottom {
     grid-template-columns: 40px 1fr 40px;
 
-    gap: 15px;
+    padding-top: 24px;
+
+    gap: 10px;
   }
 
   .gap-bottom p {
     font-size: 15px;
   }
 
+  .gap-bottom span {
+    font-size: 8px;
+  }
+
 }
 
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
 
 @media (max-width: 500px) {
 
@@ -310,10 +452,11 @@
 
   .gap-top {
     flex-direction: column;
-
-    gap: 8px;
+    align-items: flex-start;
 
     padding-bottom: 20px;
+
+    line-height: 1.5;
   }
 
   .gap-heading {
@@ -321,25 +464,45 @@
   }
 
   .gap-heading h2 {
-    font-size: 52px;
+    font-size: clamp(48px, 14vw, 70px);
+  }
+
+  .gap-heading p {
+    margin-top: 25px;
+
+    font-size: 13px;
   }
 
   .gap-side {
-    min-height: 260px;
+    min-height: 270px;
 
     padding: 25px;
   }
 
-  .gap-items p {
-    padding: 15px 0;
+  .gap-side > span {
+    font-size: 8px;
+  }
 
-    font-size: 20px;
+  .gap-items {
+    margin-top: 35px;
+  }
+
+  .gap-items p {
+    padding: 14px 0;
+
+    font-size: 19px;
+  }
+
+  .gap-middle {
+    min-height: 130px;
+  }
+
+  .gap-middle strong {
+    font-size: 30px;
   }
 
   .gap-bottom {
     grid-template-columns: 30px 1fr 30px;
-
-    padding-top: 22px;
   }
 
   .gap-bottom p {
@@ -347,4 +510,16 @@
   }
 
 }
-```
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .gap-items p {
+    transition: none;
+  }
+
+}
