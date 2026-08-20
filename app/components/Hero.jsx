@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="hero" id="home">
 
-      {/* ================= CONTENT ================= */}
+      {/* ================= LEFT CONTENT ================= */}
 
       <div className="hero-content">
 
@@ -32,7 +32,9 @@ export default function Hero() {
               See Our Work
             </span>
 
-            <span className="hero-arrow">↗</span>
+            <span className="hero-arrow">
+              ↗
+            </span>
           </a>
 
           <a href="#contact" className="hero-secondary">
@@ -44,13 +46,11 @@ export default function Hero() {
       </div>
 
 
-      {/* ================= HERO IMAGE ================= */}
+      {/* ================= RIGHT VISUAL ================= */}
 
       <div className="hero-visual">
 
         <div className="hero-image-wrap">
-
-          <div className="hero-image-glow"></div>
 
           <img
             src="/hero.png"
