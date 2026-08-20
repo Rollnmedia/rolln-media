@@ -1,3 +1,4 @@
+```css
 .gap-section {
   position: relative;
   overflow: hidden;
@@ -91,7 +92,6 @@
   padding: 45px;
 
   display: flex;
-
   flex-direction: column;
   justify-content: space-between;
 }
@@ -100,7 +100,6 @@
   color: #888;
 
   font-size: 9px;
-
   font-weight: 600;
 
   letter-spacing: 0.16em;
@@ -119,7 +118,6 @@
 
 .gap-items {
   display: flex;
-
   flex-direction: column;
 
   gap: 0;
@@ -132,21 +130,9 @@
 
   border-top: 1px solid rgba(0, 0, 0, 0.12);
 
-  color: #202020;
-
   font-size: clamp(18px, 2vw, 26px);
 
   letter-spacing: -0.03em;
-
-  transition:
-    color 0.25s ease,
-    padding-left 0.25s ease;
-}
-
-.gap-items p:hover {
-  color: var(--orange);
-
-  padding-left: 8px;
 }
 
 
@@ -156,16 +142,14 @@
   position: relative;
 
   display: flex;
-
   flex-direction: column;
 
   align-items: center;
-
   justify-content: center;
 
   background: #0a0a0a;
 
-  color: white;
+  color: #fff;
 
   text-align: center;
 }
@@ -177,7 +161,6 @@
   position: absolute;
 
   width: 1px;
-
   height: 100%;
 
   background: rgba(255, 255, 255, 0.12);
@@ -205,8 +188,6 @@
   color: #fff;
 
   font-size: 34px;
-
-  font-weight: 600;
 
   letter-spacing: -0.06em;
 }
@@ -239,6 +220,8 @@
 
   font-weight: 500;
 
+  line-height: 1.45;
+
   letter-spacing: -0.03em;
 
   text-align: center;
@@ -259,6 +242,8 @@
 
   .gap-top {
     gap: 20px;
+
+    font-size: 8px;
   }
 
   .gap-heading {
@@ -268,17 +253,15 @@
   }
 
   .gap-heading h2 {
-    font-size: clamp(52px, 14vw, 80px);
+    font-size: clamp(52px, 14vw, 82px);
   }
 
   .gap-heading p {
-    max-width: 420px;
-
     margin-top: 30px;
 
-    font-size: 14px;
+    max-width: 430px;
 
-    line-height: 1.7;
+    font-size: 14px;
   }
 
   .gap-visual {
@@ -302,17 +285,22 @@
     display: none;
   }
 
+  .gap-items p {
+    font-size: 22px;
+  }
+
   .gap-bottom {
     grid-template-columns: 40px 1fr 40px;
+
+    gap: 15px;
   }
 
   .gap-bottom p {
     font-size: 15px;
   }
+
 }
 
-
-/* ================= SMALL MOBILE ================= */
 
 @media (max-width: 500px) {
 
@@ -320,16 +308,24 @@
     padding: 80px 20px 80px;
   }
 
+  .gap-top {
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding-bottom: 20px;
+  }
+
   .gap-heading {
     padding: 50px 0 60px;
   }
 
   .gap-heading h2 {
-    font-size: 48px;
+    font-size: 52px;
   }
 
   .gap-side {
-    min-height: 270px;
+    min-height: 260px;
 
     padding: 25px;
   }
@@ -337,28 +333,18 @@
   .gap-items p {
     padding: 15px 0;
 
-    font-size: 18px;
-  }
-
-  .gap-middle {
-    min-height: 140px;
-  }
-
-  .gap-middle strong {
-    font-size: 30px;
+    font-size: 20px;
   }
 
   .gap-bottom {
-    grid-template-columns: 1fr;
-  }
+    grid-template-columns: 30px 1fr 30px;
 
-  .gap-bottom span {
-    display: none;
+    padding-top: 22px;
   }
 
   .gap-bottom p {
-    text-align: left;
-
-    font-size: 15px;
+    font-size: 14px;
   }
+
 }
+```
