@@ -1,6 +1,5 @@
 .engine-section {
   position: relative;
-
   overflow: hidden;
 
   padding: 130px 5vw 110px;
@@ -10,26 +9,9 @@
 }
 
 
-/* ================= TOP ================= */
-
-.engine-top {
-  display: flex;
-  justify-content: space-between;
-
-  padding-bottom: 28px;
-
-  border-bottom: 1px solid #202020;
-
-  color: #666;
-
-  font-size: 9px;
-  font-weight: 600;
-
-  letter-spacing: 0.16em;
-}
-
-
-/* ================= INTRO ================= */
+/* =========================================================
+   INTRO
+========================================================= */
 
 .engine-intro {
   display: grid;
@@ -38,7 +20,7 @@
 
   gap: 8vw;
 
-  padding: 80px 0;
+  padding: 45px 0 85px;
 }
 
 .engine-intro h2 {
@@ -46,9 +28,9 @@
 
   font-size: clamp(55px, 7vw, 105px);
 
-  line-height: 0.92;
+  line-height: 0.9;
 
-  letter-spacing: -0.065em;
+  letter-spacing: -0.07em;
 
   font-weight: 600;
 }
@@ -72,7 +54,9 @@
 }
 
 
-/* ================= SYSTEM ================= */
+/* =========================================================
+   SYSTEM
+========================================================= */
 
 .engine-system {
   position: relative;
@@ -85,7 +69,9 @@
 }
 
 
-/* ================= CORE ================= */
+/* =========================================================
+   CORE
+========================================================= */
 
 .engine-core {
   position: absolute;
@@ -121,6 +107,18 @@
   box-shadow:
     0 0 70px rgba(60, 100, 255, 0.12),
     inset 0 0 35px rgba(60, 100, 255, 0.08);
+
+  transition:
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.engine-core:hover {
+  border-color: rgba(255, 122, 0, 0.45);
+
+  box-shadow:
+    0 0 80px rgba(255, 122, 0, 0.12),
+    inset 0 0 35px rgba(255, 122, 0, 0.06);
 }
 
 .engine-core span {
@@ -133,6 +131,8 @@
 
 .engine-core strong {
   margin-top: 4px;
+
+  color: #fff;
 
   font-size: 18px;
 
@@ -150,7 +150,9 @@
 }
 
 
-/* ================= RINGS ================= */
+/* =========================================================
+   RINGS
+========================================================= */
 
 .engine-ring {
   position: absolute;
@@ -200,7 +202,9 @@
 }
 
 
-/* ================= NODES ================= */
+/* =========================================================
+   NODES
+========================================================= */
 
 .engine-node {
   position: absolute;
@@ -217,31 +221,26 @@
 
   transition:
     border-color 0.3s ease,
-    transform 0.3s ease;
+    transform 0.3s ease,
+    background 0.3s ease;
 }
 
 .engine-node:hover {
-  border-color: rgba(100, 140, 255, 0.45);
+  border-color: rgba(255, 122, 0, 0.35);
+
+  background: rgba(18, 18, 18, 0.9);
 
   transform: translateY(-5px);
-}
-
-.engine-number {
-  display: block;
-
-  margin-bottom: 13px;
-
-  color: var(--orange);
-
-  font-size: 8px;
-
-  letter-spacing: 0.12em;
 }
 
 .engine-node strong {
   display: block;
 
+  color: #e8e8e8;
+
   font-size: 14px;
+
+  font-weight: 600;
 
   letter-spacing: 0.08em;
 }
@@ -253,11 +252,13 @@
 
   font-size: 10px;
 
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 
-/* ================= NODE POSITIONS ================= */
+/* =========================================================
+   NODE POSITIONS
+========================================================= */
 
 .engine-node-1 {
   left: 0;
@@ -290,7 +291,9 @@
 }
 
 
-/* ================= FLOW ================= */
+/* =========================================================
+   FLOW
+========================================================= */
 
 .engine-flow {
   display: flex;
@@ -317,10 +320,14 @@
   color: var(--orange);
 
   font-style: normal;
+
+  opacity: 0.8;
 }
 
 
-/* ================= MOBILE ================= */
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 900px) {
 
@@ -328,18 +335,22 @@
     padding: 90px 24px;
   }
 
-  .engine-top {
-    gap: 20px;
-  }
-
   .engine-intro {
     display: block;
 
-    padding: 60px 0;
+    padding: 40px 0 60px;
+  }
+
+  .engine-intro h2 {
+    font-size: clamp(52px, 14vw, 80px);
   }
 
   .engine-intro p {
+    max-width: 420px;
+
     margin-top: 30px;
+
+    font-size: 14px;
   }
 
   .engine-system {
@@ -364,14 +375,94 @@
     inset: auto !important;
 
     width: 100%;
+
+    padding: 22px;
+
+    background: rgba(12, 12, 12, 0.85);
+  }
+
+  .engine-node strong {
+    font-size: 13px;
+  }
+
+  .engine-node p {
+    max-width: 520px;
+
+    font-size: 11px;
   }
 
   .engine-flow {
     justify-content: flex-start;
 
+    gap: 14px;
+
     overflow-x: auto;
 
     white-space: nowrap;
+
+    scrollbar-width: none;
   }
 
+  .engine-flow::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .engine-section {
+    padding: 80px 20px;
+  }
+
+  .engine-intro {
+    padding-top: 30px;
+  }
+
+  .engine-intro h2 {
+    font-size: clamp(48px, 14vw, 70px);
+
+    line-height: 0.92;
+  }
+
+  .engine-intro p {
+    margin-top: 26px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+  .engine-node {
+    padding: 20px;
+  }
+
+  .engine-node p {
+    margin-top: 9px;
+
+    font-size: 10px;
+  }
+
+  .engine-flow {
+    padding-top: 28px;
+
+    font-size: 7px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .engine-core,
+  .engine-node {
+    transition: none;
+  }
 }
