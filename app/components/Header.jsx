@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <header className="header">
 
-      <a href="#home" className="header-logo">
+      <a href="#home" className="header-logo" aria-label="Roll’n Media Home">
         <img
           src="/logo.png"
           alt="Roll’n Media"
@@ -22,7 +22,7 @@ export default function Header() {
           Services
         </a>
 
-        <a href="#portfolio">
+        <a href="#work">
           Portfolio
         </a>
 
@@ -33,9 +33,18 @@ export default function Header() {
       </nav>
 
 
-      <a href="#contact" className="header-contact">
-        <span>Contact</span>
-        <i>↗</i>
+      <a
+        href="tel:+64 22 020 5848"
+        className="header-contact"
+        aria-label="Call Roll’n Media"
+      >
+        <span className="header-phone">
+          +64 22 020 5848
+        </span>
+
+        <span className="header-arrow">
+          ↗
+        </span>
       </a>
 
     </header>
