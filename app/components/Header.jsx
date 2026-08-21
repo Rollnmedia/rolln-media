@@ -34,8 +34,8 @@ export default function Header() {
 
 
       <a href="#contact" className="header-contact">
-        Contact
-        <span>↗</span>
+        <span>Contact</span>
+        <i>↗</i>
       </a>
 
     </header>
