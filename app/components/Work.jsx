@@ -42,22 +42,22 @@ const projects = [
 
     images: [
       {
-        src: "/work/godswing-01.jpg",
+        src: "/work/gods1.png",
         label: "01 · WEBSITE VIEW",
         note: "E-COMMERCE EXPERIENCE",
       },
       {
-        src: "/work/godswing-02.jpg",
+        src: "/work/gods2.png",
         label: "02 · WEBSITE / DESIGN",
         note: "UI · PRODUCT · EXPERIENCE",
       },
       {
-        src: "/work/godswing-03.jpg",
+        src: "/work/gods3.png",
         label: "03 · GRAPHICS",
         note: "CONTENT · VISUAL SYSTEM",
       },
       {
-        src: "/work/godswing-04.jpg",
+        src: "/work/gods4.png",
         label: "04 · RESULT",
         note: "AFTER 1 MONTH",
       },
