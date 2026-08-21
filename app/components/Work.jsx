@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import "./Work.css";
 
 const projects = [
@@ -63,6 +64,40 @@ const projects = [
 ];
 
 export default function Work() {
+  const galleryRefs = useRef([]);
+
+  const handleMouseDown = (event, index) => {
+    const gallery = galleryRefs.current[index];
+
+    if (!gallery) return;
+
+    gallery.dataset.dragging = "true";
+    gallery.dataset.startX = event.pageX - gallery.offsetLeft;
+    gallery.dataset.scrollLeft = gallery.scrollLeft;
+  };
+
+  const handleMouseMove = (event, index) => {
+    const gallery = galleryRefs.current[index];
+
+    if (!gallery || gallery.dataset.dragging !== "true") return;
+
+    event.preventDefault();
+
+    const x = event.pageX - gallery.offsetLeft;
+    const walk = (x - Number(gallery.dataset.startX)) * 1.2;
+
+    gallery.scrollLeft =
+      Number(gallery.dataset.scrollLeft) - walk;
+  };
+
+  const stopDragging = (index) => {
+    const gallery = galleryRefs.current[index];
+
+    if (!gallery) return;
+
+    gallery.dataset.dragging = "false";
+  };
+
   return (
     <section className="work-section" id="work">
 
@@ -84,7 +119,7 @@ export default function Work() {
 
       <div className="work-list">
 
-        {projects.map((project) => (
+        {projects.map((project, projectIndex) => (
 
           <article
             className="project"
@@ -92,11 +127,7 @@ export default function Work() {
           >
 
             <div className="project-meta">
-
-              <span>
-                {project.category}
-              </span>
-
+              <span>{project.category}</span>
             </div>
 
 
@@ -113,7 +144,24 @@ export default function Work() {
             </div>
 
 
-            <div className="project-gallery">
+            <div
+              className="project-gallery"
+              ref={(element) => {
+                galleryRefs.current[projectIndex] = element;
+              }}
+              onMouseDown={(event) =>
+                handleMouseDown(event, projectIndex)
+              }
+              onMouseMove={(event) =>
+                handleMouseMove(event, projectIndex)
+              }
+              onMouseUp={() =>
+                stopDragging(projectIndex)
+              }
+              onMouseLeave={() =>
+                stopDragging(projectIndex)
+              }
+            >
 
               {project.images.map((image) => (
 
@@ -126,6 +174,7 @@ export default function Work() {
                     src={image.src}
                     alt={`${project.title} — ${image.label}`}
                     loading="lazy"
+                    draggable="false"
                   />
 
                   <div className="project-image-info">
@@ -154,7 +203,7 @@ export default function Work() {
               </span>
 
               <span>
-                SWIPE →
+                DRAG TO EXPLORE →
               </span>
 
             </div>
