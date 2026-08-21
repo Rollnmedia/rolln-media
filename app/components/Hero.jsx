@@ -39,7 +39,7 @@ export default function Hero() {
 
       <div className="hero-visual">
         <img
-          src="/hero.png"
+          src="/Hero.png"
           alt="Roll’n Media digital growth systems"
         />
       </div>
