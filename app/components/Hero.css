@@ -1,63 +1,57 @@
-/* =========================================================
-   HERO
-========================================================= */
-
 .hero {
   position: relative;
 
-  min-height: 100svh;
+  min-height: 100vh;
 
-  overflow: hidden;
+  padding: 150px 5vw 45px;
 
-  display: flex;
+  display: grid;
+
+  grid-template-columns: 0.92fr 1.08fr;
+
   align-items: center;
 
-  padding: 150px 5vw 105px;
+  gap: 3vw;
 
   background: #080808;
 
-  color: #fff;
+  color: #ffffff;
+
+  overflow: hidden;
 }
 
 
-/* =========================================================
-   CONTENT
-========================================================= */
+/* ================= CONTENT ================= */
 
 .hero-content {
   position: relative;
 
-  z-index: 10;
+  z-index: 2;
 
-  width: 52%;
-
-  max-width: 820px;
+  max-width: 760px;
 }
-
-
-/* =========================================================
-   EYEBROW
-========================================================= */
 
 .hero-eyebrow {
   display: flex;
+
   align-items: center;
 
-  gap: 10px;
+  gap: 12px;
 
-  margin-bottom: 30px;
+  margin-bottom: 42px;
 
-  color: #77777d;
+  color: #8a8a8f;
 
   font-size: 10px;
+
   font-weight: 600;
 
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
 }
 
 .hero-eyebrow span {
-  width: 6px;
-  height: 6px;
+  width: 9px;
+  height: 9px;
 
   flex-shrink: 0;
 
@@ -65,122 +59,122 @@
 
   background: var(--orange);
 
-  box-shadow:
-    0 0 10px rgba(255, 122, 0, 0.8),
-    0 0 25px rgba(255, 122, 0, 0.25);
+  box-shadow: 0 0 18px rgba(244, 123, 32, 0.55);
 }
 
 
-/* =========================================================
-   HEADING
-========================================================= */
+/* ================= HEADING ================= */
 
 .hero h1 {
   margin: 0;
 
-  max-width: 850px;
+  font-size: clamp(65px, 7.5vw, 120px);
 
-  font-size: clamp(64px, 6.6vw, 105px);
-
-  line-height: 0.88;
-
-  font-weight: 600;
+  line-height: 0.86;
 
   letter-spacing: -0.075em;
+
+  font-weight: 600;
 }
 
 .hero h1 span {
-  color: #737378;
+  color: #55555b;
 }
 
 
-/* =========================================================
-   DESCRIPTION
-========================================================= */
+/* ================= DESCRIPTION ================= */
 
-.hero p {
-  max-width: 520px;
+.hero-content > p {
+  max-width: 650px;
 
-  margin: 38px 0 0;
+  margin: 42px 0 0;
 
-  color: #89898e;
+  color: #8d8d92;
 
-  font-size: 16px;
+  font-size: 15px;
 
-  line-height: 1.72;
+  line-height: 1.8;
+
+  letter-spacing: -0.01em;
 }
 
 
-/* =========================================================
-   ACTIONS
-========================================================= */
+/* ================= ACTIONS ================= */
 
 .hero-actions {
   display: flex;
+
   align-items: center;
 
   gap: 36px;
 
-  margin-top: 40px;
+  margin-top: 48px;
 }
-
-
-/* PRIMARY */
 
 .hero-primary {
   display: inline-flex;
+
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
-  gap: 25px;
+  gap: 42px;
 
-  min-width: 205px;
+  min-width: 245px;
 
-  padding: 17px 22px;
+  padding: 20px 24px;
 
-  background: #fff;
+  background: #f5f5f3;
 
-  color: #080808;
+  color: #0a0a0a;
 
-  font-size: 11px;
-  font-weight: 700;
+  text-decoration: none;
 
-  letter-spacing: 0.07em;
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.06em;
 
   transition:
     transform 0.3s ease,
-    gap 0.3s ease;
+    background 0.3s ease;
 }
 
-.hero-primary b {
+.hero-primary span {
   color: var(--orange);
 
   font-size: 18px;
 
-  font-weight: 400;
+  line-height: 1;
+
+  transition: transform 0.3s ease;
 }
 
 .hero-primary:hover {
   transform: translateY(-3px);
 
-  gap: 34px;
+  background: #ffffff;
 }
 
+.hero-primary:hover span {
+  transform: translate(3px, -3px);
+}
 
-/* SECONDARY */
 
 .hero-secondary {
   position: relative;
 
-  padding-bottom: 7px;
+  padding-bottom: 8px;
 
   color: #77777d;
 
-  font-size: 11px;
+  text-decoration: none;
 
-  letter-spacing: 0.06em;
+  font-size: 12px;
 
-  transition: color 0.3s ease;
+  letter-spacing: 0.05em;
+
+  transition: color 0.25s ease;
 }
 
 .hero-secondary::after {
@@ -189,540 +183,79 @@
   position: absolute;
 
   left: 0;
+  right: 0;
   bottom: 0;
 
-  width: 100%;
   height: 1px;
 
-  background: #38383c;
-
-  transform-origin: left;
-
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease;
+  background: #444448;
 }
 
 .hero-secondary:hover {
-  color: #fff;
-}
-
-.hero-secondary:hover::after {
-  background: var(--orange);
-
-  transform: scaleX(0.35);
+  color: #ffffff;
 }
 
 
-.growth-visual {
-  position: absolute;
+/* ================= HERO IMAGE ================= */
 
-  z-index: 3;
+.hero-visual {
+  position: relative;
 
-  /* right side se thoda andar */
-  right: 1%;
-
-  /* thoda neeche */
-  top: 56%;
-
-  /* thoda smaller */
-  width: 52vw;
-  height: 50vw;
-
-  max-width: 760px;
-  max-height: 760px;
-
-  transform: translateY(-50%);
-
-  pointer-events: none;
-}
-
-
-/* =========================================================
-   TECHNICAL GRID
-========================================================= */
-
-.growth-grid {
-  position: absolute;
-
-  inset: 8%;
-
-  background-image:
-    linear-gradient(
-      rgba(255, 255, 255, 0.018) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.018) 1px,
-      transparent 1px
-    );
-
-  background-size: 70px 70px;
-
-  mask-image: radial-gradient(
-    circle,
-    black 25%,
-    transparent 75%
-  );
-
-  opacity: 0.45;
-}
-
-
-/* =========================================================
-   OUTER RINGS
-========================================================= */
-
-.growth-ring {
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-
-  border: 1px solid rgba(255, 122, 0, 0.1);
-
-  border-radius: 50%;
-
-  transform: translate(-50%, -50%);
-}
-
-.ring-one {
-  width: 72%;
-  height: 72%;
-}
-
-.ring-two {
-  width: 57%;
-  height: 57%;
-
-  border-color: rgba(255, 255, 255, 0.06);
-}
-
-.ring-three {
-  width: 43%;
-  height: 43%;
-
-  border-color: rgba(255, 122, 0, 0.2);
-}
-
-
-/* =========================================================
-   SVG
-========================================================= */
-
-.growth-svg {
-  position: absolute;
-
-  inset: 0;
+  z-index: 1;
 
   width: 100%;
-  height: 100%;
-
-  overflow: visible;
-}
-
-
-/* =========================================================
-   AXIS
-========================================================= */
-
-.axis-line {
-  fill: none;
-
-  stroke: rgba(255, 255, 255, 0.07);
-
-  stroke-width: 1;
-}
-
-.axis-line.vertical {
-  stroke: rgba(255, 255, 255, 0.055);
-}
-
-
-/* =========================================================
-   MAIN GROWTH LINE
-========================================================= */
-
-.growth-line {
-  fill: none;
-
-  stroke: var(--orange);
-
-  stroke-width: 3;
-
-  stroke-linecap: round;
-
-  filter:
-    drop-shadow(
-      0 0 8px rgba(255, 122, 0, 0.3)
-    );
-
-  stroke-dasharray: 900;
-
-  stroke-dashoffset: 900;
-
-  animation: drawGrowth 5s ease-out forwards;
-}
-
-@keyframes drawGrowth {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-
-/* =========================================================
-   SECONDARY LINE
-========================================================= */
-
-.growth-line-secondary {
-  fill: none;
-
-  stroke: rgba(255, 255, 255, 0.1);
-
-  stroke-width: 1.2;
-
-  stroke-linecap: round;
-}
-
-
-/* =========================================================
-   CONNECTION LINES
-========================================================= */
-
-.connection-line {
-  fill: none;
-
-  stroke: rgba(255, 255, 255, 0.07);
-
-  stroke-width: 1;
-
-  stroke-dasharray: 4 8;
-}
-
-
-/* =========================================================
-   CENTRAL RINGS
-========================================================= */
-
-.central-ring {
-  fill: rgba(8, 8, 8, 0.5);
-
-  stroke: rgba(255, 122, 0, 0.28);
-
-  stroke-width: 1;
-}
-
-.central-ring-inner {
-  fill: none;
-
-  stroke: rgba(255, 255, 255, 0.08);
-
-  stroke-width: 1;
-}
-
-.central-dot {
-  fill: var(--orange);
-
-  filter:
-    drop-shadow(
-      0 0 12px rgba(255, 122, 0, 0.8)
-    );
-}
-
-
-/* =========================================================
-   SYSTEM NODES
-========================================================= */
-
-.system-node {
-  fill: var(--orange);
-
-  filter:
-    drop-shadow(
-      0 0 8px rgba(255, 122, 0, 0.7)
-    );
-}
-
-.node-halo {
-  fill: none;
-
-  stroke: rgba(255, 122, 0, 0.15);
-
-  stroke-width: 1;
-}
-
-
-/* =========================================================
-   CENTRE
-========================================================= */
-
-.growth-centre {
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-
-  width: 145px;
-  height: 145px;
 
   display: flex;
-  flex-direction: column;
 
   align-items: center;
   justify-content: center;
 
-  gap: 9px;
+  min-width: 0;
+}
 
-  transform: translate(-50%, -50%);
+.hero-visual img {
+  display: block;
+
+  width: min(100%, 850px);
+
+  height: auto;
+
+  object-fit: contain;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
 }
 
 
-/* CLICK ARROW */
-
-.growth-centre-arrow {
-  width: 62px;
-  height: 62px;
-
-  display: grid;
-  place-items: center;
-
-  border: 1px solid rgba(255, 122, 0, 0.5);
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(255, 122, 0, 0.1),
-      rgba(255, 122, 0, 0.01)
-    );
-
-  color: var(--orange);
-
-  font-size: 27px;
-
-  font-weight: 400;
-
-  box-shadow:
-    0 0 25px rgba(255, 122, 0, 0.08);
-
-  transition:
-    transform 0.35s ease,
-    background 0.35s ease,
-    box-shadow 0.35s ease;
-}
-
-.growth-centre:hover .growth-centre-arrow {
-  transform: scale(1.08) rotate(3deg);
-
-  background:
-    rgba(255, 122, 0, 0.12);
-
-  box-shadow:
-    0 0 35px rgba(255, 122, 0, 0.18);
-}
-
-.growth-centre span {
-  color: #55555a;
-
-  font-size: 7px;
-
-  letter-spacing: 0.22em;
-}
-
-
-/* =========================================================
-   FLOATING LABELS
-========================================================= */
-
-.growth-label {
-  position: absolute;
-
-  display: flex;
-  flex-direction: column;
-
-  min-width: 105px;
-
-  padding-left: 12px;
-
-  border-left: 1px solid var(--orange);
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(8, 8, 8, 0.8),
-      transparent
-    );
-}
-
-.growth-label small {
-  margin-bottom: 5px;
-
-  color: #444449;
-
-  font-size: 6px;
-
-  letter-spacing: 0.15em;
-}
-
-.growth-label strong {
-  color: #d8d8da;
-
-  font-size: 15px;
-
-  font-weight: 500;
-
-  letter-spacing: 0.02em;
-}
-
-.growth-label span {
-  margin-top: 4px;
-
-  color: #414146;
-
-  font-size: 5px;
-
-  letter-spacing: 0.16em;
-}
-
-
-/* LABEL POSITIONS */
-
-.label-seo {
-  left: 11%;
-  top: 18%;
-}
-
-.label-ads {
-  right: 8%;
-  top: 18%;
-}
-
-.label-ai {
-  left: 9%;
-  bottom: 17%;
-}
-
-.label-web {
-  right: 7%;
-  bottom: 17%;
-}
-
-
-/* =========================================================
-   GROWTH METRIC
-========================================================= */
-
-.growth-metric {
-  position: absolute;
-
-  right: -2%;
-  top: 45%;
-
-  display: flex;
-  flex-direction: column;
-
-  padding-left: 14px;
-
-  border-left: 1px solid var(--orange);
-}
-
-.growth-metric span {
-  color: #4a4a4f;
-
-  font-size: 6px;
-
-  letter-spacing: 0.2em;
-}
-
-.growth-metric strong {
-  margin-top: 7px;
-
-  color: var(--orange);
-
-  font-size: 30px;
-
-  line-height: 1;
-
-  font-weight: 500;
-
-  letter-spacing: -0.04em;
-}
-
-.growth-metric small {
-  margin-top: 7px;
-
-  color: #414146;
-
-  font-size: 5px;
-
-  letter-spacing: 0.18em;
-}
-
-
-/* =========================================================
-   SIGNALS
-========================================================= */
-
-.signal {
-  position: absolute;
-
-  width: 6px;
-  height: 6px;
-
-  border-radius: 50%;
-
-  background: var(--orange);
-
-  box-shadow:
-    0 0 12px rgba(255, 122, 0, 0.8);
-}
-
-.signal-one {
-  left: 28%;
-  top: 16%;
-}
-
-.signal-two {
-  right: 16%;
-  top: 37%;
-}
-
-.signal-three {
-  left: 25%;
-  bottom: 23%;
-}
-
-
-/* =========================================================
-   BOTTOM STRIP
-========================================================= */
+/* ================= BOTTOM STRIP ================= */
 
 .hero-bottom {
   position: absolute;
 
-  z-index: 12;
-
   left: 5vw;
   right: 5vw;
-  bottom: 28px;
+  bottom: 22px;
+
+  z-index: 3;
 
   display: flex;
+
   align-items: center;
 
-  gap: 18px;
+  gap: 25px;
+
+  padding-top: 20px;
 
   border-top: 1px solid #1c1c1f;
 
-  padding-top: 16px;
-
-  color: #4c4c51;
+  color: #5f5f64;
 
   font-size: 8px;
 
   font-weight: 600;
 
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
 }
 
 .hero-bottom i {
@@ -730,198 +263,84 @@
 
   font-style: normal;
 
-  opacity: 0.75;
+  font-size: 9px;
 }
 
 
-/* =========================================================
-   TABLET
-========================================================= */
+/* ================= TABLET ================= */
 
 @media (max-width: 1100px) {
 
-  .hero-content {
-    width: 56%;
+  .hero {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 2vw;
+
+    padding-top: 135px;
   }
 
-  .growth-visual {
-    right: -12%;
-
-    width: 64vw;
-    height: 64vw;
+  .hero h1 {
+    font-size: clamp(58px, 7vw, 90px);
   }
 
-  .growth-metric {
-    right: -5%;
+  .hero-content > p {
+    max-width: 540px;
+  }
+
+  .hero-visual img {
+    width: 110%;
+    max-width: none;
   }
 
 }
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
+/* ================= MOBILE ================= */
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
 
   .hero {
     min-height: auto;
 
-    padding:
-      125px
-      24px
-      100px;
+    padding: 120px 24px 100px;
 
     display: flex;
 
     flex-direction: column;
 
     align-items: stretch;
+
+    gap: 45px;
   }
 
-
-  /* CONTENT FIRST */
 
   .hero-content {
-    width: 100%;
-
     max-width: none;
-
-    order: 1;
   }
 
 
   .hero-eyebrow {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 
-    font-size: 9px;
-  }
-
-
-  .hero h1 {
-    max-width: 650px;
-
-    font-size: clamp(55px, 15vw, 85px);
-
-    line-height: 0.9;
-  }
-
-
-  .hero p {
-    max-width: 460px;
-
-    margin-top: 30px;
-
-    font-size: 15px;
-
-    line-height: 1.65;
-  }
-
-
-  .hero-actions {
-    margin-top: 32px;
-
-    gap: 25px;
-  }
-
-
-  /* VISUAL BELOW CONTENT */
-
-  .growth-visual {
-    position: relative;
-
-    order: 2;
-
-    width: 110vw;
-    height: 100vw;
-
-    max-width: none;
-    max-height: none;
-
-    right: auto;
-    top: auto;
-
-    margin-top: 45px;
-
-    margin-left: -25vw;
-
-    transform: none;
-
-    opacity: 1;
-  }
-
-
-  /* BOTTOM STRIP */
-
-  .hero-bottom {
-    position: relative;
-
-    order: 3;
-
-    left: auto;
-    right: auto;
-    bottom: auto;
-
-    width: 100%;
-
-    margin-top: 15px;
-
-    padding-top: 16px;
-
-    gap: 12px;
-
-    overflow: hidden;
-
-    white-space: nowrap;
-  }
-
-
-  .growth-label {
-    min-width: 90px;
-  }
-
-
-  .growth-metric {
-    right: 1%;
-  }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-  .hero {
-    padding:
-      115px
-      20px
-      70px;
-  }
-
-
-  .hero-eyebrow {
     font-size: 8px;
 
-    letter-spacing: 0.17em;
+    letter-spacing: 0.15em;
   }
 
 
   .hero h1 {
-    font-size: clamp(51px, 15.5vw, 72px);
+    font-size: clamp(54px, 15vw, 78px);
 
-    letter-spacing: -0.07em;
+    line-height: 0.88;
   }
 
 
-  .hero p {
-    margin-top: 26px;
+  .hero-content > p {
+    margin-top: 30px;
 
     font-size: 14px;
 
-    line-height: 1.65;
+    line-height: 1.7;
   }
 
 
@@ -930,187 +349,75 @@
 
     flex-direction: column;
 
-    gap: 22px;
+    gap: 25px;
 
-    margin-top: 30px;
+    margin-top: 35px;
   }
 
 
   .hero-primary {
-    min-width: 190px;
+    width: 100%;
 
-    padding: 15px 19px;
+    min-width: 0;
   }
 
 
-  /* MOBILE VISUAL */
+  .hero-visual {
+    width: 100%;
 
-  .growth-visual {
-    width: 125vw;
-
-    height: 112vw;
-
-    margin-top: 35px;
-
-    margin-left: -30vw;
-
-    opacity: 0.9;
+    margin-top: 5px;
   }
 
 
-  .growth-centre {
-    width: 115px;
-    height: 115px;
-  }
+  .hero-visual img {
+    width: 125%;
 
+    max-width: none;
 
-  .growth-centre-arrow {
-    width: 52px;
-    height: 52px;
-
-    font-size: 22px;
-  }
-
-
-  .growth-centre span {
-    font-size: 6px;
-  }
-
-
-  .growth-label {
-    min-width: 75px;
-
-    padding-left: 8px;
-  }
-
-
-  .growth-label strong {
-    font-size: 11px;
-  }
-
-
-  .growth-label span {
-    font-size: 4px;
-  }
-
-
-  .label-seo {
-    left: 13%;
-    top: 18%;
-  }
-
-
-  .label-ads {
-    right: 10%;
-    top: 18%;
-  }
-
-
-  .label-ai {
-    left: 11%;
-    bottom: 18%;
-  }
-
-
-  .label-web {
-    right: 9%;
-    bottom: 18%;
-  }
-
-
-  .growth-metric {
-    right: 4%;
-
-    top: 44%;
-
-    padding-left: 9px;
-  }
-
-
-  .growth-metric strong {
-    font-size: 22px;
-  }
-
-
-  .growth-metric span {
-    font-size: 5px;
+    margin-left: -12.5%;
   }
 
 
   .hero-bottom {
-    font-size: 6px;
+    position: relative;
 
-    gap: 9px;
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding-top: 18px;
+
+    gap: 14px;
+
+    overflow: hidden;
+
+    white-space: nowrap;
   }
 
 }
 
 
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
+/* ================= SMALL MOBILE ================= */
 
-@media (max-width: 380px) {
+@media (max-width: 420px) {
 
   .hero {
-    padding:
-      105px
-      18px
-      60px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-
 
   .hero h1 {
-    font-size: 50px;
+    font-size: 52px;
   }
 
+  .hero-bottom {
+    gap: 11px;
 
-  .hero-eyebrow {
     font-size: 7px;
-  }
-
-
-  .hero p {
-    font-size: 13px;
-  }
-
-
-  .growth-visual {
-    width: 135vw;
-
-    height: 120vw;
-
-    margin-left: -35vw;
-  }
-
-
-  .growth-label strong {
-    font-size: 10px;
-  }
-
-
-  .growth-metric {
-    display: none;
-  }
-
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .growth-line {
-    animation: none;
-
-    stroke-dashoffset: 0;
-  }
-
-  .hero-primary,
-  .growth-centre-arrow {
-    transition: none;
   }
 
 }
