@@ -12,7 +12,7 @@ const projects = [
 
     images: [
       {
-        src: "/work/rmh-01.jpg",
+        src: "/work/rmh1.png",
         label: "01 · WEBSITE VIEW",
         note: "DIGITAL EXPERIENCE",
       },
