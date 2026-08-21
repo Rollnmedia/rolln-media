@@ -3,16 +3,42 @@
 
   padding: 80px 5vw 28px;
 
-  background: #f3f3f1;
-  color: #0a0a0a;
+  background: #111111;
+  color: #f5f5f3;
 
   overflow: hidden;
+}
+
+
+/* ================= AMBIENT GLOW ================= */
+
+.footer::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background: rgba(244, 123, 32, 0.035);
+
+  filter: blur(110px);
+
+  right: -180px;
+  bottom: -180px;
+
+  pointer-events: none;
 }
 
 
 /* ================= TOP ================= */
 
 .footer-top {
+  position: relative;
+  z-index: 2;
+
   display: flex;
 
   justify-content: space-between;
@@ -21,7 +47,7 @@
 
   padding-bottom: 90px;
 
-  border-bottom: 1px solid #d2d2d0;
+  border-bottom: 1px solid #292929;
 }
 
 
@@ -69,7 +95,7 @@
 .footer-column > span {
   margin-bottom: 8px;
 
-  color: #999;
+  color: #666;
 
   font-size: 9px;
 
@@ -83,7 +109,7 @@
 
   width: fit-content;
 
-  color: #222;
+  color: #d0d0ce;
 
   text-decoration: none;
 
@@ -112,11 +138,14 @@
 /* ================= BIG TAGLINE ================= */
 
 .footer-middle {
+  position: relative;
+  z-index: 2;
+
   padding: 100px 0;
 }
 
 .footer-tagline > span {
-  color: #999;
+  color: #666;
 
   font-size: 9px;
 
@@ -138,13 +167,16 @@
 }
 
 .footer-tagline h2 span {
-  color: #999;
+  color: var(--orange);
 }
 
 
 /* ================= BOTTOM ================= */
 
 .footer-bottom {
+  position: relative;
+  z-index: 2;
+
   display: grid;
 
   grid-template-columns: 1fr 1fr 1fr;
@@ -153,9 +185,9 @@
 
   padding-top: 22px;
 
-  border-top: 1px solid #d2d2d0;
+  border-top: 1px solid #292929;
 
-  color: #999;
+  color: #666;
 
   font-size: 8px;
 
