@@ -15,7 +15,6 @@
 
 .work-heading {
   display: grid;
-
   grid-template-columns: 1.3fr 0.7fr;
 
   gap: 8vw;
@@ -29,7 +28,6 @@
   font-size: clamp(70px, 10vw, 150px);
 
   line-height: 0.82;
-
   letter-spacing: -0.075em;
 
   font-weight: 600;
@@ -49,7 +47,6 @@
   color: #666;
 
   font-size: 14px;
-
   line-height: 1.8;
 }
 
@@ -60,7 +57,6 @@
 
 .work-list {
   display: flex;
-
   flex-direction: column;
 
   gap: 130px;
@@ -77,7 +73,6 @@
 
 .project-meta {
   display: flex;
-
   justify-content: flex-start;
 
   padding: 20px 0;
@@ -85,7 +80,6 @@
   color: #777;
 
   font-size: 9px;
-
   font-weight: 600;
 
   letter-spacing: 0.14em;
@@ -100,7 +94,6 @@
   display: flex;
 
   align-items: flex-end;
-
   justify-content: space-between;
 
   gap: 40px;
@@ -114,7 +107,6 @@
   font-size: clamp(45px, 6vw, 90px);
 
   line-height: 0.9;
-
   letter-spacing: -0.065em;
 
   font-weight: 600;
@@ -128,7 +120,6 @@
   color: #666;
 
   font-size: 13px;
-
   line-height: 1.75;
 }
 
@@ -142,8 +133,9 @@
 
   gap: 18px;
 
-  overflow-x: auto;
+  width: 100%;
 
+  overflow-x: auto;
   overflow-y: hidden;
 
   padding-bottom: 14px;
@@ -155,10 +147,11 @@
   cursor: grab;
 
   user-select: none;
-
   -webkit-user-select: none;
 
   -webkit-overflow-scrolling: touch;
+
+  overscroll-behavior-x: contain;
 }
 
 .project-gallery::-webkit-scrollbar {
@@ -171,7 +164,7 @@
 
 
 /* =========================================================
-   IMAGE CARD
+   IMAGE CARD — DESKTOP
 ========================================================= */
 
 .project-image {
@@ -179,9 +172,9 @@
 
   flex: 0 0 62vw;
 
-  aspect-ratio: 16 / 9;
+  width: 62vw;
 
-  height: auto;
+  aspect-ratio: 16 / 9;
 
   overflow: hidden;
 
@@ -206,13 +199,14 @@
 
   z-index: 1;
 
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.28),
-    transparent 28%,
-    transparent 70%,
-    rgba(0, 0, 0, 0.42)
-  );
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.25),
+      transparent 30%,
+      transparent 70%,
+      rgba(0, 0, 0, 0.38)
+    );
 
   pointer-events: none;
 }
@@ -224,7 +218,6 @@
 
 .project-image img {
   width: 100%;
-
   height: 100%;
 
   display: block;
@@ -238,7 +231,7 @@
   -webkit-user-drag: none;
 
   transition:
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
     filter 0.4s ease;
 }
 
@@ -257,15 +250,12 @@
   z-index: 3;
 
   top: 22px;
-
   left: 24px;
-
   right: 24px;
 
   display: flex;
 
   align-items: flex-start;
-
   justify-content: space-between;
 
   gap: 20px;
@@ -284,7 +274,7 @@
 
   line-height: 1.4;
 
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .project-image-note {
@@ -295,7 +285,6 @@
   background: rgba(0, 0, 0, 0.22);
 
   backdrop-filter: blur(8px);
-
   -webkit-backdrop-filter: blur(8px);
 
   font-size: 8px;
@@ -336,37 +325,26 @@
 
 
 /* =========================================================
-   DESKTOP DRAG SUPPORT
+   TABLET
 ========================================================= */
 
-@media (min-width: 801px) {
+@media (max-width: 1100px) {
 
-  .project-gallery {
-    touch-action: pan-y;
-
-    overscroll-behavior-x: contain;
-  }
-
-  .project-gallery.dragging {
-    cursor: grabbing;
-
-    scroll-snap-type: none;
-  }
-
-  .project-gallery.dragging .project-image img {
-    transform: none;
+  .project-image {
+    flex-basis: 72vw;
+    width: 72vw;
   }
 }
 
 
 /* =========================================================
-   TABLET / MOBILE
+   MOBILE
 ========================================================= */
 
 @media (max-width: 800px) {
 
   .work-section {
-    padding: 90px 24px 100px;
+    padding: 90px 20px 100px;
   }
 
 
@@ -377,7 +355,7 @@
   .work-heading {
     display: block;
 
-    padding: 35px 0 65px;
+    padding: 35px 0 60px;
   }
 
   .work-heading h2 {
@@ -389,7 +367,7 @@
   .work-heading p {
     max-width: 420px;
 
-    margin-top: 32px;
+    margin-top: 30px;
 
     font-size: 13px;
 
@@ -398,7 +376,7 @@
 
 
   /* -----------------------------
-     PROJECTS
+     PROJECT LIST
   ----------------------------- */
 
   .work-list {
@@ -411,9 +389,11 @@
   ----------------------------- */
 
   .project-meta {
-    padding: 17px 0;
+    padding: 16px 0;
 
     font-size: 8px;
+
+    letter-spacing: 0.12em;
   }
 
 
@@ -424,19 +404,23 @@
   .project-title {
     display: block;
 
-    padding: 30px 0 35px;
+    padding: 28px 0 32px;
   }
 
   .project-title h3 {
     font-size: clamp(46px, 13vw, 72px);
+
+    line-height: 0.88;
   }
 
   .project-title p {
-    max-width: 420px;
+    max-width: 100%;
 
-    margin-top: 24px;
+    margin-top: 22px;
 
     font-size: 12px;
+
+    line-height: 1.7;
   }
 
 
@@ -447,6 +431,10 @@
   .project-gallery {
     gap: 12px;
 
+    width: calc(100vw - 40px);
+
+    padding-bottom: 10px;
+
     scroll-snap-type: x mandatory;
 
     touch-action: pan-x;
@@ -456,17 +444,35 @@
 
 
   /* -----------------------------
-     IMAGE
+     IMAGE CARD
   ----------------------------- */
 
   .project-image {
-    flex: 0 0 88vw;
+    flex: 0 0 calc(100vw - 56px);
+
+    width: calc(100vw - 56px);
 
     aspect-ratio: 16 / 9;
 
     height: auto;
 
     min-height: 0;
+
+    scroll-snap-align: center;
+
+    border-radius: 0;
+  }
+
+
+  /* -----------------------------
+     IMAGE
+  ----------------------------- */
+
+  .project-image img {
+    object-fit: contain;
+
+    width: 100%;
+    height: 100%;
   }
 
 
@@ -475,25 +481,26 @@
   ----------------------------- */
 
   .project-image-info {
-    top: 18px;
+    top: 14px;
 
-    left: 18px;
+    left: 14px;
+    right: 14px;
 
-    right: 18px;
-
-    gap: 12px;
+    gap: 10px;
   }
 
   .project-image-label {
-    font-size: 8px;
+    font-size: 7px;
+
+    letter-spacing: 0.11em;
   }
 
   .project-image-note {
-    padding: 6px 8px;
+    padding: 6px 7px;
 
-    font-size: 7px;
+    font-size: 6px;
 
-    letter-spacing: 0.08em;
+    letter-spacing: 0.07em;
   }
 
 
@@ -502,9 +509,11 @@
   ----------------------------- */
 
   .project-bottom {
-    padding-top: 15px;
+    padding-top: 13px;
 
     font-size: 7px;
+
+    letter-spacing: 0.12em;
   }
 }
 
@@ -516,9 +525,8 @@
 @media (max-width: 500px) {
 
   .work-section {
-    padding-left: 20px;
-
-    padding-right: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
 
@@ -526,8 +534,26 @@
      HEADING
   ----------------------------- */
 
+  .work-heading {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+
   .work-heading h2 {
     font-size: 60px;
+  }
+
+
+  /* -----------------------------
+     GALLERY
+  ----------------------------- */
+
+  .project-gallery {
+    width: calc(100vw - 32px);
+
+    gap: 10px;
+
+    padding-bottom: 8px;
   }
 
 
@@ -536,7 +562,9 @@
   ----------------------------- */
 
   .project-image {
-    flex: 0 0 90vw;
+    flex: 0 0 calc(100vw - 44px);
+
+    width: calc(100vw - 44px);
 
     aspect-ratio: 16 / 9;
 
@@ -549,13 +577,28 @@
   ----------------------------- */
 
   .project-image-info {
+    top: 12px;
+
+    left: 12px;
+    right: 12px;
+
     display: block;
+  }
+
+  .project-image-label {
+    display: block;
+
+    font-size: 7px;
   }
 
   .project-image-note {
     display: inline-block;
 
-    margin-top: 9px;
+    margin-top: 7px;
+
+    padding: 5px 7px;
+
+    font-size: 6px;
   }
 
 
@@ -564,43 +607,51 @@
   ----------------------------- */
 
   .project-bottom {
-    letter-spacing: 0.12em;
+    padding-top: 12px;
+
+    font-size: 6px;
+
+    letter-spacing: 0.1em;
   }
 }
 
 
 /* =========================================================
-   VERY SMALL DEVICES
+   VERY SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 380px) {
 
   .work-section {
-    padding-left: 16px;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
 
-    padding-right: 16px;
+  .project-gallery {
+    width: calc(100vw - 28px);
   }
 
   .project-image {
-    flex-basis: 92vw;
+    flex-basis: calc(100vw - 36px);
+
+    width: calc(100vw - 36px);
   }
 
   .project-image-info {
-    top: 14px;
+    top: 10px;
 
-    left: 14px;
-
-    right: 14px;
+    left: 10px;
+    right: 10px;
   }
 
   .project-image-label {
-    font-size: 7px;
+    font-size: 6px;
   }
 
   .project-image-note {
-    font-size: 6px;
+    font-size: 5.5px;
 
-    padding: 5px 7px;
+    padding: 4px 6px;
   }
 }
 
