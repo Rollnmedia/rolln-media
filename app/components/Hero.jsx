@@ -1,76 +1,43 @@
-import "./Hero.css";
+import "./Header.css";
 
-export default function Hero() {
+export default function Header() {
   return (
-    <section className="hero" id="home">
+    <header className="header">
 
-      {/* ================= HERO CONTENT ================= */}
-
-      <div className="hero-content">
-
-        <div className="hero-eyebrow">
-          <span></span>
-          DIGITAL GROWTH AGENCY · NEW ZEALAND
-        </div>
-
-        <h1>
-          Digital growth
-          <br />
-          <span>that moves.</span>
-        </h1>
-
-        <p>
-          We build websites, digital systems and growth engines
-          that help ambitious businesses get found, get chosen
-          and keep growing.
-        </p>
-
-        <div className="hero-actions">
-
-          <a href="#portfolio" className="hero-primary">
-            See Our Work
-            <span>↗</span>
-          </a>
-
-          <a href="#contact" className="hero-secondary">
-            Start a Conversation
-          </a>
-
-        </div>
-
-      </div>
-
-
-      {/* ================= HERO IMAGE ================= */}
-
-      <div className="hero-visual" aria-hidden="true">
+      <a href="#home" className="header-logo">
         <img
-          src="/Hero.png"
-          alt=""
+          src="/logo.png"
+          alt="Roll’n Media"
         />
-      </div>
+      </a>
 
 
-      {/* ================= BOTTOM STRIP ================= */}
+      <nav className="header-nav" aria-label="Main navigation">
 
-      <div className="hero-bottom">
+        <a href="#home">
+          Home
+        </a>
 
-        <span>STRATEGY</span>
-        <i>✦</i>
+        <a href="#services">
+          Services
+        </a>
 
-        <span>WEB</span>
-        <i>✦</i>
+        <a href="#portfolio">
+          Portfolio
+        </a>
 
-        <span>SEARCH</span>
-        <i>✦</i>
+        <a href="#about">
+          About
+        </a>
 
-        <span>PERFORMANCE</span>
-        <i>✦</i>
+      </nav>
 
-        <span>AI</span>
 
-      </div>
+      <a href="#contact" className="header-contact">
+        <span>Contact</span>
+        <i>↗</i>
+      </a>
 
-    </section>
+    </header>
   );
 }
