@@ -1,43 +1,49 @@
-import "./Header.css";
+import "./Hero.css";
 
-export default function Header() {
+export default function Hero() {
   return (
-    <header className="header">
+    <section className="hero" id="home">
 
-      <a href="#home" className="header-logo">
+      <div className="hero-content">
+
+        <div className="hero-eyebrow">
+          <span></span>
+          DIGITAL GROWTH AGENCY · NEW ZEALAND
+        </div>
+
+        <h1>
+          Digital growth
+          <br />
+          <span>that moves.</span>
+        </h1>
+
+        <p className="hero-description">
+          We build websites, digital systems and growth engines
+          that help ambitious businesses get found, get chosen
+          and keep growing.
+        </p>
+
+        <div className="hero-actions">
+          <a href="#portfolio" className="hero-primary">
+            See Our Work
+            <span>↗</span>
+          </a>
+
+          <a href="#contact" className="hero-secondary">
+            Start a Conversation
+          </a>
+        </div>
+
+      </div>
+
+
+      <div className="hero-visual">
         <img
-          src="/logo.png"
-          alt="Roll’n Media"
+          src="/hero.png"
+          alt="Roll’n Media digital growth systems"
         />
-      </a>
+      </div>
 
-
-      <nav className="header-nav" aria-label="Main navigation">
-
-        <a href="#home">
-          Home
-        </a>
-
-        <a href="#services">
-          Services
-        </a>
-
-        <a href="#portfolio">
-          Portfolio
-        </a>
-
-        <a href="#about">
-          About
-        </a>
-
-      </nav>
-
-
-      <a href="#contact" className="header-contact">
-        <span>Contact</span>
-        <i>↗</i>
-      </a>
-
-    </header>
+    </section>
   );
 }
