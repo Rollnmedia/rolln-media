@@ -1,11 +1,12 @@
 .about-section {
   position: relative;
+
   overflow: hidden;
 
   padding: 130px 5vw 110px;
 
-  background: #f3f3f1;
-  color: #090909;
+  background: #080808;
+  color: #ffffff;
 }
 
 
@@ -13,16 +14,19 @@
 
 .about-top {
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
 
   padding-bottom: 28px;
 
-  border-bottom: 1px solid #d5d5d2;
+  border-bottom: 1px solid #202020;
 
-  color: #777;
+  color: #666;
 
   font-size: 9px;
+
   font-weight: 600;
 
   letter-spacing: 0.16em;
@@ -50,9 +54,10 @@
 
   margin-bottom: 35px;
 
-  color: #777;
+  color: #666;
 
   font-size: 9px;
+
   font-weight: 600;
 
   letter-spacing: 0.16em;
@@ -71,7 +76,7 @@
 }
 
 .about-heading h2 span {
-  color: #999;
+  color: #55555b;
 }
 
 
@@ -86,7 +91,7 @@
 .about-copy p {
   margin: 0 0 28px;
 
-  color: #666;
+  color: #777;
 
   font-size: 13px;
 
@@ -98,7 +103,7 @@
 }
 
 .about-copy .about-lead {
-  color: #161616;
+  color: #d8d8d8;
 
   font-size: 17px;
 
@@ -115,8 +120,9 @@
 
   grid-template-columns: repeat(3, 1fr);
 
-  border-top: 1px solid #cfcfcb;
-  border-bottom: 1px solid #cfcfcb;
+  border-top: 1px solid #252525;
+
+  border-bottom: 1px solid #252525;
 }
 
 .about-principle {
@@ -124,11 +130,11 @@
 
   padding: 30px;
 
-  border-right: 1px solid #cfcfcb;
+  border-right: 1px solid #252525;
 
   transition:
     background 0.3s ease,
-    transform 0.3s ease;
+    border-color 0.3s ease;
 }
 
 .about-principle:last-child {
@@ -136,7 +142,9 @@
 }
 
 .about-principle:hover {
-  background: #ecece9;
+  background: #0d0d0d;
+
+  border-color: #303030;
 }
 
 .about-principle > span {
@@ -144,7 +152,7 @@
 
   margin-bottom: 55px;
 
-  color: #888;
+  color: var(--orange);
 
   font-size: 9px;
 
@@ -156,7 +164,7 @@
 
   margin-bottom: 15px;
 
-  color: #111;
+  color: #ffffff;
 
   font-size: 12px;
 
@@ -168,7 +176,7 @@
 
   margin: 0;
 
-  color: #777;
+  color: #666;
 
   font-size: 11px;
 
@@ -187,9 +195,10 @@
 
   padding-top: 35px;
 
-  color: #777;
+  color: #666;
 
   font-size: 8px;
+
   font-weight: 600;
 
   letter-spacing: 0.14em;
@@ -198,7 +207,7 @@
 .about-bottom p {
   margin: 0;
 
-  color: #222;
+  color: #b5b5b5;
 
   font-size: 14px;
 
@@ -241,6 +250,7 @@
     padding: 90px 24px;
   }
 
+
   .about-top {
     gap: 20px;
 
@@ -253,6 +263,8 @@
     line-height: 1.5;
   }
 
+
+  /* ================= MAIN ================= */
 
   .about-main {
     display: block;
@@ -301,7 +313,8 @@
     padding: 28px 24px 32px;
 
     border-right: none;
-    border-bottom: 1px solid #cfcfcb;
+
+    border-bottom: 1px solid #252525;
   }
 
   .about-principle:last-child {
@@ -374,6 +387,7 @@
 
   .about-principle {
     padding-left: 20px;
+
     padding-right: 20px;
   }
 
