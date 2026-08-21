@@ -144,6 +144,7 @@
   gap: 18px;
 
   overflow-x: auto;
+  overflow-y: hidden;
 
   padding-bottom: 14px;
 
@@ -152,6 +153,31 @@
   scrollbar-width: none;
 
   cursor: grab;
+
+  /*
+    Desktop:
+    Enables proper click + drag behaviour.
+  */
+  user-select: none;
+
+  -webkit-user-select: none;
+
+  /*
+    Mobile:
+    Allows horizontal finger scrolling.
+  */
+  touch-action: pan-x;
+
+  /*
+    Prevents the browser from chaining the horizontal
+    scroll into another container.
+  */
+  overscroll-behavior-x: contain;
+
+  /*
+    Prevents browser image dragging behaviour.
+  */
+  -webkit-overflow-scrolling: touch;
 }
 
 .project-gallery::-webkit-scrollbar {
@@ -179,6 +205,10 @@
   scroll-snap-align: start;
 
   background: #dededb;
+
+  user-select: none;
+
+  -webkit-user-select: none;
 }
 
 .project-image::after {
@@ -206,6 +236,20 @@
   display: block;
 
   object-fit: cover;
+
+  /*
+    Important:
+    JS handles the gallery drag.
+    This prevents the browser from trying
+    to drag the image itself.
+  */
+  pointer-events: none;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+
+  -webkit-user-select: none;
 
   transition:
     transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
@@ -251,6 +295,9 @@
   letter-spacing: 0.14em;
 
   line-height: 1.4;
+
+  text-shadow:
+    0 1px 10px rgba(0, 0, 0, 0.35);
 }
 
 .project-image-note {
@@ -302,6 +349,31 @@
 
 
 /* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .work-heading {
+    grid-template-columns: 1fr 0.8fr;
+
+    gap: 5vw;
+  }
+
+  .work-heading h2 {
+    font-size: clamp(60px, 9vw, 110px);
+  }
+
+  .project-image {
+    flex-basis: 78vw;
+
+    height: 500px;
+  }
+
+}
+
+
+/* =========================================================
    MOBILE
 ========================================================= */
 
@@ -310,6 +382,7 @@
   .work-section {
     padding: 90px 24px 100px;
   }
+
 
   .work-heading {
     display: block;
@@ -333,15 +406,30 @@
     line-height: 1.75;
   }
 
+
+  /* =======================================================
+     PROJECT LIST
+  ======================================================= */
+
   .work-list {
     gap: 90px;
   }
+
+
+  /* =======================================================
+     META
+  ======================================================= */
 
   .project-meta {
     padding: 17px 0;
 
     font-size: 8px;
   }
+
+
+  /* =======================================================
+     TITLE
+  ======================================================= */
 
   .project-title {
     display: block;
@@ -361,8 +449,20 @@
     font-size: 12px;
   }
 
+
+  /* =======================================================
+     GALLERY
+  ======================================================= */
+
   .project-gallery {
     gap: 12px;
+
+    /*
+      Keep touch swipe smooth.
+    */
+    touch-action: pan-x;
+
+    cursor: grab;
   }
 
   .project-image {
@@ -370,6 +470,11 @@
 
     height: 440px;
   }
+
+
+  /* =======================================================
+     IMAGE INFO
+  ======================================================= */
 
   .project-image-info {
     top: 18px;
@@ -392,11 +497,17 @@
     letter-spacing: 0.08em;
   }
 
+
+  /* =======================================================
+     BOTTOM
+  ======================================================= */
+
   .project-bottom {
     padding-top: 15px;
 
     font-size: 7px;
   }
+
 }
 
 
@@ -408,6 +519,7 @@
 
   .work-section {
     padding-left: 20px;
+
     padding-right: 20px;
   }
 
@@ -415,11 +527,13 @@
     font-size: 60px;
   }
 
+
   .project-image {
     flex-basis: 90vw;
 
     height: 390px;
   }
+
 
   .project-image-info {
     display: block;
@@ -431,9 +545,47 @@
     margin-top: 9px;
   }
 
+
   .project-bottom {
     letter-spacing: 0.12em;
   }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .work-section {
+    padding-left: 18px;
+
+    padding-right: 18px;
+  }
+
+  .project-image {
+    flex-basis: 92vw;
+
+    height: 360px;
+  }
+
+  .project-image-info {
+    top: 15px;
+
+    left: 15px;
+    right: 15px;
+  }
+
+  .project-image-label {
+    font-size: 7px;
+  }
+
+  .project-image-note {
+    font-size: 6px;
+  }
+
 }
 
 
@@ -445,5 +597,9 @@
 
   .project-image img {
     transition: none;
+  }
+
+  html {
+    scroll-behavior: auto;
   }
 }
