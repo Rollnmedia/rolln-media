@@ -5,23 +5,59 @@ const projects = [
     category: "PROPERTY MANAGEMENT · NEW ZEALAND",
     title: "Rent My Home",
     description:
-      "A complete digital growth system combining website development, SEO and conversion-focused strategy for a New Zealand property management brand.",
+      "A complete digital growth system combining website development, SEO, visual communication and conversion-focused strategy for a New Zealand property management brand.",
+
     images: [
-      "/work/rmh-01.jpg",
-      "/work/rmh-02.jpg",
-      "/work/rmh-03.jpg",
-      "/work/rmh-04.jpg",
+      {
+        src: "/work/rmh-01.jpg",
+        label: "01 · WEBSITE VIEW",
+        note: "DIGITAL EXPERIENCE",
+      },
+      {
+        src: "/work/rmh-02.jpg",
+        label: "02 · WEBSITE / DESIGN",
+        note: "UI · STRUCTURE · CONVERSION",
+      },
+      {
+        src: "/work/rmh-03.jpg",
+        label: "03 · GRAPHICS",
+        note: "CONTENT · BRAND COMMUNICATION",
+      },
+      {
+        src: "/work/rmh-04.jpg",
+        label: "04 · RESULT",
+        note: "AFTER 1 MONTH",
+      },
     ],
   },
+
   {
-    category: "DIGITAL GROWTH · NEW ZEALAND",
-    title: "Project Two",
+    category: "E-COMMERCE · INDIA",
+    title: "Godswing",
     description:
-      "A digital experience designed around clarity, performance and a stronger path from attention to action.",
+      "An e-commerce experience built around a stronger visual identity, product presentation and a clearer path from discovery to purchase.",
+
     images: [
-      "/work/project-02-01.jpg",
-      "/work/project-02-02.jpg",
-      "/work/project-02-03.jpg",
+      {
+        src: "/work/godswing-01.jpg",
+        label: "01 · WEBSITE VIEW",
+        note: "E-COMMERCE EXPERIENCE",
+      },
+      {
+        src: "/work/godswing-02.jpg",
+        label: "02 · WEBSITE / DESIGN",
+        note: "UI · PRODUCT · EXPERIENCE",
+      },
+      {
+        src: "/work/godswing-03.jpg",
+        label: "03 · GRAPHICS",
+        note: "CONTENT · VISUAL SYSTEM",
+      },
+      {
+        src: "/work/godswing-04.jpg",
+        label: "04 · RESULT",
+        note: "AFTER 1 MONTH",
+      },
     ],
   },
 ];
@@ -79,18 +115,30 @@ export default function Work() {
 
             <div className="project-gallery">
 
-              {project.images.map((image, index) => (
+              {project.images.map((image) => (
 
                 <div
                   className="project-image"
-                  key={image}
+                  key={image.src}
                 >
 
                   <img
-                    src={image}
-                    alt={`${project.title} — project view ${index + 1}`}
+                    src={image.src}
+                    alt={`${project.title} — ${image.label}`}
                     loading="lazy"
                   />
+
+                  <div className="project-image-info">
+
+                    <span className="project-image-label">
+                      {image.label}
+                    </span>
+
+                    <span className="project-image-note">
+                      {image.note}
+                    </span>
+
+                  </div>
 
                 </div>
 
