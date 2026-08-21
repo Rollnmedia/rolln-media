@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef } from "react";
 import "./Work.css";
 
@@ -79,12 +81,16 @@ export default function Work() {
   const handleMouseMove = (event, index) => {
     const gallery = galleryRefs.current[index];
 
-    if (!gallery || gallery.dataset.dragging !== "true") return;
+    if (!gallery || gallery.dataset.dragging !== "true") {
+      return;
+    }
 
     event.preventDefault();
 
     const x = event.pageX - gallery.offsetLeft;
-    const walk = (x - Number(gallery.dataset.startX)) * 1.2;
+
+    const walk =
+      (x - Number(gallery.dataset.startX)) * 1.2;
 
     gallery.scrollLeft =
       Number(gallery.dataset.scrollLeft) - walk;
@@ -101,6 +107,10 @@ export default function Work() {
   return (
     <section className="work-section" id="work">
 
+      {/* =====================================================
+          HEADING
+      ===================================================== */}
+
       <div className="work-heading">
 
         <h2>
@@ -110,12 +120,17 @@ export default function Work() {
         </h2>
 
         <p>
-          Real businesses. Real challenges. Real digital work built
-          to create visibility, improve experience and drive growth.
+          Real businesses. Real challenges. Real digital work
+          built to create visibility, improve experience and
+          drive growth.
         </p>
 
       </div>
 
+
+      {/* =====================================================
+          PROJECTS
+      ===================================================== */}
 
       <div className="work-list">
 
@@ -126,10 +141,18 @@ export default function Work() {
             key={project.title}
           >
 
+            {/* PROJECT CATEGORY */}
+
             <div className="project-meta">
-              <span>{project.category}</span>
+
+              <span>
+                {project.category}
+              </span>
+
             </div>
 
+
+            {/* PROJECT TITLE */}
 
             <div className="project-title">
 
@@ -144,21 +167,40 @@ export default function Work() {
             </div>
 
 
+            {/* =================================================
+                PROJECT GALLERY
+            ================================================= */}
+
             <div
               className="project-gallery"
+
               ref={(element) => {
                 galleryRefs.current[projectIndex] = element;
               }}
+
               onMouseDown={(event) =>
-                handleMouseDown(event, projectIndex)
+                handleMouseDown(
+                  event,
+                  projectIndex
+                )
               }
+
               onMouseMove={(event) =>
-                handleMouseMove(event, projectIndex)
+                handleMouseMove(
+                  event,
+                  projectIndex
+                )
               }
+
               onMouseUp={() =>
                 stopDragging(projectIndex)
               }
+
               onMouseLeave={() =>
+                stopDragging(projectIndex)
+              }
+
+              onMouseCancel={() =>
                 stopDragging(projectIndex)
               }
             >
@@ -176,6 +218,9 @@ export default function Work() {
                     loading="lazy"
                     draggable="false"
                   />
+
+
+                  {/* IMAGE LABEL */}
 
                   <div className="project-image-info">
 
@@ -195,6 +240,8 @@ export default function Work() {
 
             </div>
 
+
+            {/* PROJECT FOOTER */}
 
             <div className="project-bottom">
 
