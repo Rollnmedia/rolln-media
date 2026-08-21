@@ -8,13 +8,20 @@ export default function Footer() {
 
         <div className="footer-brand">
 
-          <div className="footer-logo">
-            Roll’n Media
-          </div>
+          <a href="#home" className="footer-logo">
+            <img
+              src="/logo.png"
+              alt="Roll’n Media"
+            />
+          </a>
 
           <p>
-            Digital growth systems for ambitious businesses.
+            Digital growth for ambitious businesses.
           </p>
+
+          <span className="footer-location">
+            NEW ZEALAND · DIGITAL GROWTH
+          </span>
 
         </div>
 
@@ -26,9 +33,9 @@ export default function Footer() {
             <span>EXPLORE</span>
 
             <a href="#home">Home</a>
-            <a href="#about">About</a>
             <a href="#services">Services</a>
-            <a href="#work">Our Work</a>
+            <a href="#work">Portfolio</a>
+            <a href="#about">About</a>
             <a href="#contact">Contact</a>
 
           </div>
@@ -69,6 +76,10 @@ export default function Footer() {
             side <span>work.</span>
           </h2>
 
+        </div>
+
+        <div className="footer-mark">
+          ↗
         </div>
 
       </div>
