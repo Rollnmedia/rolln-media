@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="footer">
 
-      <div className="footer-top">
+      <div className="footer-main">
 
         <div className="footer-brand">
 
@@ -64,23 +64,17 @@ export default function Footer() {
       </div>
 
 
-      <div className="footer-middle">
+      <div className="footer-tagline">
 
-        <div className="footer-tagline">
+        <span>ROLL’N MEDIA</span>
 
-          <span>ROLL’N MEDIA</span>
+        <h2>
+          Make the digital side <em>work.</em>
+        </h2>
 
-          <h2>
-            Make the digital
-            <br />
-            side <span>work.</span>
-          </h2>
-
-        </div>
-
-        <div className="footer-mark">
+        <a href="#contact" className="footer-arrow">
           ↗
-        </div>
+        </a>
 
       </div>
 
