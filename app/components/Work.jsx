@@ -28,7 +28,7 @@ const projects = [
 
 export default function Work() {
   return (
-    <section className="work-section" id="Portfolio">
+    <section className="work-section" id="work">
 
       <div className="work-heading">
 
