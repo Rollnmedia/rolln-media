@@ -17,17 +17,17 @@ const projects = [
         note: "DIGITAL EXPERIENCE",
       },
       {
-        src: "/work/rmh-02.jpg",
+        src: "/work/rmh2.png",
         label: "02 · WEBSITE / DESIGN",
         note: "UI · STRUCTURE · CONVERSION",
       },
       {
-        src: "/work/rmh-03.jpg",
+        src: "/work/rmh3.png",
         label: "03 · GRAPHICS",
         note: "CONTENT · BRAND COMMUNICATION",
       },
       {
-        src: "/work/rmh-04.jpg",
+        src: "/work/rmh4.png",
         label: "04 · RESULT",
         note: "AFTER 1 MONTH",
       },
