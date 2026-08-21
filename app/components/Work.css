@@ -168,6 +168,8 @@
 ========================================================= */
 
 .project-image {
+  position: relative;
+
   flex: 0 0 76vw;
 
   height: 550px;
@@ -177,6 +179,24 @@
   scroll-snap-align: start;
 
   background: #dededb;
+}
+
+.project-image::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.32),
+    transparent 28%,
+    transparent 68%,
+    rgba(0, 0, 0, 0.45)
+  );
+
+  pointer-events: none;
 }
 
 .project-image img {
@@ -194,6 +214,65 @@
 
 .project-image:hover img {
   transform: scale(1.025);
+}
+
+
+/* =========================================================
+   IMAGE INFORMATION
+========================================================= */
+
+.project-image-info {
+  position: absolute;
+
+  z-index: 2;
+
+  top: 22px;
+  left: 24px;
+  right: 24px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  color: #fff;
+
+  pointer-events: none;
+}
+
+.project-image-label {
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+
+  line-height: 1.4;
+}
+
+.project-image-note {
+  padding: 7px 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  background: rgba(0, 0, 0, 0.22);
+
+  backdrop-filter: blur(8px);
+
+  -webkit-backdrop-filter: blur(8px);
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+
+  line-height: 1;
+
+  white-space: nowrap;
 }
 
 
@@ -292,6 +371,27 @@
     height: 440px;
   }
 
+  .project-image-info {
+    top: 18px;
+
+    left: 18px;
+    right: 18px;
+
+    gap: 12px;
+  }
+
+  .project-image-label {
+    font-size: 8px;
+  }
+
+  .project-image-note {
+    padding: 6px 8px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.08em;
+  }
+
   .project-bottom {
     padding-top: 15px;
 
@@ -319,6 +419,16 @@
     flex-basis: 90vw;
 
     height: 390px;
+  }
+
+  .project-image-info {
+    display: block;
+  }
+
+  .project-image-note {
+    display: inline-block;
+
+    margin-top: 9px;
   }
 
   .project-bottom {
