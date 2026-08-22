@@ -24,10 +24,10 @@ export default function Hero() {
         </p>
 
         <div className="hero-actions">
-          <a href="#portfolio" className="hero-primary">
-            See Our Work
-            <span>↗</span>
-          </a>
+          <a href="#work" className="hero-primary">
+  <span className="hero-primary-text">See Our Work</span>
+  <span className="hero-primary-arrow">↗</span>
+</a>
 
           <a href="#contact" className="hero-secondary">
             Start a Conversation
