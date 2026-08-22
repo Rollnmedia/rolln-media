@@ -1,46 +1,41 @@
 .hero {
   position: relative;
-
   min-height: 100vh;
 
   padding: 150px 5vw 45px;
 
   display: grid;
-
-  grid-template-columns: 0.95fr 1.05fr;
+  grid-template-columns: 1fr 0.82fr;
 
   align-items: center;
 
-  gap: 2vw;
-
   background: #080808;
-
   color: #ffffff;
 
   overflow: hidden;
 }
 
 
-/* ================= CONTENT ================= */
+/* =========================================================
+   CONTENT
+========================================================= */
 
 .hero-content {
   position: relative;
 
-  z-index: 2;
+  z-index: 3;
 
-  max-width: 760px;
-
-  min-width: 0;
+  max-width: 720px;
 }
 
 
-/* ================= EYEBROW ================= */
+/* =========================================================
+   EYEBROW
+========================================================= */
 
 .hero-eyebrow {
   display: flex;
-
   align-items: center;
-
   gap: 12px;
 
   margin-bottom: 42px;
@@ -48,7 +43,6 @@
   color: #8a8a8f;
 
   font-size: 10px;
-
   font-weight: 600;
 
   letter-spacing: 0.18em;
@@ -69,12 +63,14 @@
 }
 
 
-/* ================= HEADING ================= */
+/* =========================================================
+   HEADING
+========================================================= */
 
 .hero h1 {
   margin: 0;
 
-  font-size: clamp(65px, 7.5vw, 120px);
+  font-size: clamp(65px, 7.2vw, 110px);
 
   line-height: 0.86;
 
@@ -88,10 +84,12 @@
 }
 
 
-/* ================= DESCRIPTION ================= */
+/* =========================================================
+   DESCRIPTION
+========================================================= */
 
 .hero-content > p {
-  max-width: 650px;
+  max-width: 620px;
 
   margin: 42px 0 0;
 
@@ -105,7 +103,9 @@
 }
 
 
-/* ================= ACTIONS ================= */
+/* =========================================================
+   ACTIONS
+========================================================= */
 
 .hero-actions {
   display: flex;
@@ -118,7 +118,9 @@
 }
 
 
-/* ================= PRIMARY CTA ================= */
+/* =========================================================
+   PRIMARY CTA
+========================================================= */
 
 .hero-primary {
   position: relative;
@@ -203,7 +205,9 @@
 }
 
 
-/* ================= SECONDARY CTA ================= */
+/* =========================================================
+   SECONDARY CTA
+========================================================= */
 
 .hero-secondary {
   position: relative;
@@ -272,7 +276,9 @@
 }
 
 
-/* ================= HERO VISUAL ================= */
+/* =========================================================
+   HERO VISUAL — DESKTOP
+========================================================= */
 
 .hero-visual {
   position: relative;
@@ -281,23 +287,23 @@
 
   width: 100%;
 
-  min-width: 0;
-
   display: flex;
 
   align-items: center;
 
   justify-content: flex-end;
 
-  overflow: visible;
+  min-width: 0;
+
+  pointer-events: none;
 }
 
 .hero-visual img {
   display: block;
 
-  width: min(82%, 680px);
+  width: 560px;
 
-  max-width: 680px;
+  max-width: 100%;
 
   height: auto;
 
@@ -307,15 +313,13 @@
 
   -webkit-user-drag: none;
 
-  flex-shrink: 0;
-
-  transform: translateX(3%);
-
-  transition: transform 0.5s ease;
+  transform: translateX(4%);
 }
 
 
-/* ================= BOTTOM STRIP ================= */
+/* =========================================================
+   BOTTOM STRIP
+========================================================= */
 
 .hero-bottom {
   position: absolute;
@@ -324,7 +328,7 @@
   right: 5vw;
   bottom: 22px;
 
-  z-index: 3;
+  z-index: 4;
 
   display: flex;
 
@@ -355,54 +359,54 @@
 
 
 /* =========================================================
-   LARGE DESKTOP
+   LAPTOP
 ========================================================= */
 
-@media (min-width: 1400px) {
+@media (max-width: 1200px) {
+
+  .hero {
+    grid-template-columns: 1fr 0.75fr;
+
+    gap: 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(60px, 7vw, 92px);
+  }
 
   .hero-visual img {
-    width: min(78%, 700px);
+    width: 480px;
 
-    max-width: 700px;
-
-    transform: translateX(5%);
+    max-width: 115%;
   }
 
 }
 
 
 /* =========================================================
-   TABLET / LAPTOP
+   TABLET
 ========================================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 900px) {
 
   .hero {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 0.68fr;
 
-    gap: 1vw;
-
-    padding-top: 135px;
+    padding-top: 130px;
   }
 
   .hero h1 {
-    font-size: clamp(58px, 7vw, 90px);
+    font-size: clamp(56px, 7vw, 78px);
   }
 
   .hero-content > p {
-    max-width: 540px;
-  }
-
-  .hero-visual {
-    justify-content: flex-end;
+    max-width: 500px;
   }
 
   .hero-visual img {
-    width: 88%;
+    width: 420px;
 
-    max-width: 580px;
-
-    transform: translateX(8%);
+    max-width: 125%;
   }
 
 }
@@ -415,28 +419,28 @@
 @media (max-width: 800px) {
 
   .hero {
-    min-height: auto;
+    position: relative;
 
-    padding: 120px 24px 90px;
+    min-height: 100svh;
 
-    display: flex;
+    padding: 115px 24px 100px;
 
-    flex-direction: column;
-
-    align-items: stretch;
-
-    gap: 35px;
+    display: block;
 
     overflow: hidden;
   }
 
 
-  /* ================= MOBILE CONTENT ================= */
+  /* ---------------- CONTENT ---------------- */
 
   .hero-content {
+    position: relative;
+
+    z-index: 3;
+
     width: 100%;
 
-    max-width: none;
+    max-width: 600px;
   }
 
 
@@ -450,13 +454,17 @@
 
 
   .hero h1 {
-    font-size: clamp(54px, 15vw, 78px);
+    max-width: 430px;
+
+    font-size: clamp(54px, 15vw, 76px);
 
     line-height: 0.88;
   }
 
 
   .hero-content > p {
+    max-width: 390px;
+
     margin-top: 30px;
 
     font-size: 14px;
@@ -465,9 +473,13 @@
   }
 
 
-  /* ================= MOBILE ACTIONS ================= */
+  /* ---------------- ACTIONS ---------------- */
 
   .hero-actions {
+    position: relative;
+
+    z-index: 4;
+
     align-items: flex-start;
 
     flex-direction: column;
@@ -475,6 +487,8 @@
     gap: 22px;
 
     margin-top: 35px;
+
+    max-width: 330px;
   }
 
 
@@ -492,58 +506,59 @@
   }
 
 
-  /* ================= MOBILE IMAGE ================= */
+  /* =====================================================
+     IMAGE — RIGHT SIDE
+  ===================================================== */
 
   .hero-visual {
-    position: relative;
+    position: absolute;
 
-    width: 100%;
+    z-index: 1;
+
+    top: 30%;
+
+    right: -155px;
+
+    width: 430px;
 
     height: auto;
 
-    min-height: 300px;
+    margin: 0;
 
-    margin-top: 5px;
+    display: block;
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: flex-end;
-
-    overflow: visible;
+    pointer-events: none;
   }
 
 
   .hero-visual img {
-    width: 125%;
+    display: block;
+
+    width: 430px;
 
     max-width: none;
 
     height: auto;
 
-    flex-shrink: 0;
-
     margin: 0;
 
-    transform: translateX(22%);
-
-    object-fit: contain;
+    transform: none;
   }
 
 
-  /* ================= MOBILE BOTTOM ================= */
+  /* ---------------- BOTTOM ---------------- */
 
   .hero-bottom {
-    position: relative;
+    position: absolute;
 
-    left: auto;
-    right: auto;
-    bottom: auto;
+    left: 24px;
+    right: 24px;
 
-    width: 100%;
+    bottom: 22px;
 
-    margin-top: 10px;
+    width: auto;
+
+    margin: 0;
 
     padding-top: 18px;
 
@@ -568,14 +583,21 @@
 
     padding-right: 20px;
 
-    padding-top: 110px;
-
-    gap: 30px;
+    padding-top: 105px;
   }
 
 
   .hero h1 {
     font-size: 52px;
+
+    max-width: 300px;
+  }
+
+
+  .hero-content > p {
+    max-width: 300px;
+
+    font-size: 13px;
   }
 
 
@@ -584,25 +606,26 @@
   }
 
 
-  /* Keep visual pushed to the right */
+  /* RIGHT-SIDE VISUAL */
 
   .hero-visual {
-    min-height: 270px;
+    top: 32%;
 
-    justify-content: flex-end;
+    right: -175px;
+
+    width: 420px;
   }
 
 
   .hero-visual img {
-    width: 135%;
-
-    max-width: none;
-
-    transform: translateX(25%);
+    width: 420px;
   }
 
 
   .hero-bottom {
+    left: 20px;
+    right: 20px;
+
     gap: 11px;
 
     font-size: 7px;
@@ -629,15 +652,28 @@
   }
 
 
+  .hero-content > p {
+    max-width: 280px;
+  }
+
+
   .hero-visual {
-    min-height: 245px;
+    top: 34%;
+
+    right: -190px;
+
+    width: 410px;
   }
 
 
   .hero-visual img {
-    width: 140%;
+    width: 410px;
+  }
 
-    transform: translateX(27%);
+
+  .hero-bottom {
+    left: 18px;
+    right: 18px;
   }
 
 }
@@ -648,10 +684,6 @@
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-
-  .hero-visual img {
-    transition: none;
-  }
 
   .hero-primary,
   .hero-primary::before,
