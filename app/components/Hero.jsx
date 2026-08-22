@@ -33,7 +33,15 @@ export default function Hero() {
             Start a Conversation
           </a>
         </div>
-
+<div className="hero-capabilities">
+  WEB DEVELOPMENT
+  <span>·</span>
+  SEO
+  <span>·</span>
+  PAID GROWTH
+  <span>·</span>
+  DIGITAL SYSTEMS
+</div>
       </div>
 
 
