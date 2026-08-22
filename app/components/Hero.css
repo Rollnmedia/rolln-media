@@ -287,6 +287,30 @@
 
   transform: scaleX(0.55);
 }
+/* =========================================================
+   Extra function like seo and all
+========================================================= */
+.hero-capabilities {
+  margin-top: 30px;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  color: #55555b;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+}
+
+.hero-capabilities span {
+  color: var(--orange);
+}
+
 
 
 /* =========================================================
