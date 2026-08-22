@@ -167,10 +167,13 @@
 
   overflow: hidden;
 
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease;
+  isolation: isolate;
+
+  transition: transform 0.3s ease;
 }
+
+
+/* ORANGE HOVER LAYER */
 
 .hero-primary::before {
   content: "";
@@ -184,13 +187,21 @@
   transform: translateX(-101%);
 
   transition: transform 0.35s ease;
+
+  z-index: -1;
 }
+
+
+/* BUTTON CONTENT */
 
 .hero-primary > * {
   position: relative;
 
-  z-index: 1;
+  z-index: 2;
 }
+
+
+/* ARROW */
 
 .hero-primary span:last-child {
   color: var(--orange);
@@ -203,6 +214,9 @@
     color 0.3s ease,
     transform 0.3s ease;
 }
+
+
+/* HOVER */
 
 .hero-primary:hover {
   transform: translateY(-3px);
@@ -217,7 +231,6 @@
 
   transform: translate(3px, -3px);
 }
-
 
 /* =========================================================
    SECONDARY BUTTON
