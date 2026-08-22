@@ -1,20 +1,22 @@
+/* =========================================================
+   HERO
+========================================================= */
+
 .hero {
   position: relative;
 
-  min-height: calc(100vh - 108px);
+  min-height: calc(100vh - 110px);
 
-  padding: 65px 5vw 75px;
+  padding: 80px 5vw 55px;
 
   display: grid;
-
-  grid-template-columns: 0.95fr 1.05fr;
+  grid-template-columns: 1fr 0.9fr;
 
   align-items: center;
 
   gap: 2vw;
 
   background: #080808;
-
   color: #ffffff;
 
   overflow: hidden;
@@ -30,6 +32,7 @@
 
   z-index: 3;
 
+  width: 100%;
   max-width: 760px;
 }
 
@@ -45,7 +48,7 @@
 
   gap: 12px;
 
-  margin-bottom: 38px;
+  margin-bottom: 40px;
 
   color: #8a8a8f;
 
@@ -78,7 +81,7 @@
 .hero h1 {
   margin: 0;
 
-  font-size: clamp(64px, 7.1vw, 108px);
+  font-size: clamp(62px, 7vw, 112px);
 
   line-height: 0.86;
 
@@ -99,7 +102,7 @@
 .hero-description {
   max-width: 650px;
 
-  margin: 38px 0 0;
+  margin: 40px 0 0;
 
   color: #8d8d92;
 
@@ -122,7 +125,7 @@
 
   gap: 32px;
 
-  margin-top: 42px;
+  margin-top: 46px;
 }
 
 
@@ -273,7 +276,7 @@
 
 
 /* =========================================================
-   HERO VISUAL — DESKTOP
+   HERO IMAGE
 ========================================================= */
 
 .hero-visual {
@@ -283,70 +286,27 @@
 
   width: 100%;
 
-  min-width: 0;
-
   display: flex;
 
   align-items: center;
 
-  justify-content: flex-end;
+  justify-content: center;
 
-  pointer-events: none;
+  min-width: 0;
 }
 
 .hero-visual img {
   display: block;
 
-  width: min(100%, 620px);
+  width: min(100%, 650px);
 
   height: auto;
-
-  max-height: 72vh;
 
   object-fit: contain;
 
   user-select: none;
 
   -webkit-user-drag: none;
-
-  transform: translateX(3%);
-}
-
-
-/* =========================================================
-   LAPTOP
-========================================================= */
-
-@media (max-width: 1200px) {
-
-  .hero {
-    min-height: calc(100vh - 100px);
-
-    padding-top: 50px;
-
-    padding-bottom: 65px;
-
-    grid-template-columns: 0.95fr 1fr;
-
-    gap: 10px;
-  }
-
-  .hero h1 {
-    font-size: clamp(58px, 7vw, 92px);
-  }
-
-  .hero-description {
-    max-width: 560px;
-  }
-
-  .hero-visual img {
-    width: 550px;
-
-    max-width: 110%;
-
-    max-height: 68vh;
-  }
-
 }
 
 
@@ -354,36 +314,33 @@
    TABLET
 ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
 
   .hero {
-    min-height: calc(100vh - 95px);
+    min-height: calc(100vh - 100px);
 
-    padding: 45px 4vw 60px;
+    padding: 70px 5vw 50px;
 
-    grid-template-columns: 1fr 0.8fr;
+    grid-template-columns: 1fr 0.85fr;
+
+    gap: 1vw;
   }
 
   .hero h1 {
-    font-size: clamp(52px, 7vw, 76px);
-  }
-
-  .hero-eyebrow {
-    margin-bottom: 30px;
+    font-size: clamp(58px, 7vw, 90px);
   }
 
   .hero-description {
-    max-width: 470px;
+    max-width: 560px;
 
     font-size: 14px;
   }
 
   .hero-visual img {
-    width: 460px;
+    width: 100%;
 
-    max-width: 125%;
+    max-width: 570px;
   }
-
 }
 
 
@@ -396,11 +353,11 @@
   .hero {
     position: relative;
 
-    min-height: calc(100svh - 78px);
+    min-height: 760px;
 
     height: auto;
 
-    padding: 85px 24px 90px;
+    padding: 48px 20px 70px;
 
     display: block;
 
@@ -408,83 +365,85 @@
   }
 
 
-  /* =====================================================
+  /* -----------------------------------------
      CONTENT
-  ===================================================== */
+  ----------------------------------------- */
 
   .hero-content {
     position: relative;
 
-    z-index: 3;
+    z-index: 4;
 
-    width: 100%;
+    width: 72%;
 
-    max-width: 520px;
+    max-width: none;
   }
 
 
-  /* =====================================================
+  /* -----------------------------------------
      EYEBROW
-  ===================================================== */
+  ----------------------------------------- */
 
   .hero-eyebrow {
-    gap: 10px;
+    gap: 9px;
 
-    margin-bottom: 28px;
+    margin-bottom: 34px;
 
-    font-size: 8px;
+    font-size: 7px;
 
-    letter-spacing: 0.14em;
+    letter-spacing: 0.13em;
+
+    white-space: nowrap;
   }
 
   .hero-eyebrow span {
-    width: 7px;
-    height: 7px;
+    width: 8px;
+    height: 8px;
   }
 
 
-  /* =====================================================
+  /* -----------------------------------------
      HEADING
-  ===================================================== */
+  ----------------------------------------- */
 
   .hero h1 {
-    max-width: 360px;
-
-    font-size: clamp(53px, 14.5vw, 72px);
+    font-size: clamp(48px, 14vw, 66px);
 
     line-height: 0.87;
+
+    letter-spacing: -0.075em;
+
+    white-space: normal;
   }
 
 
-  /* =====================================================
+  /* -----------------------------------------
      DESCRIPTION
-  ===================================================== */
+  ----------------------------------------- */
 
   .hero-description {
-    position: relative;
+    width: 100%;
 
-    z-index: 3;
-
-    max-width: 320px;
+    max-width: none;
 
     margin-top: 30px;
 
-    color: #8d8d92;
-
-    font-size: 13px;
+    font-size: 12px;
 
     line-height: 1.7;
+
+    color: #85858b;
   }
 
 
-  /* =====================================================
+  /* -----------------------------------------
      ACTIONS
-  ===================================================== */
+  ----------------------------------------- */
 
   .hero-actions {
     position: relative;
 
-    z-index: 4;
+    z-index: 5;
 
     display: flex;
 
@@ -492,45 +451,49 @@
 
     align-items: flex-start;
 
-    gap: 20px;
+    gap: 22px;
 
     margin-top: 32px;
   }
 
+
   .hero-primary {
-    width: 290px;
+    width: 235px;
 
     min-width: 0;
 
-    padding: 17px 19px;
+    padding: 17px 18px;
+
+    gap: 20px;
+
+    font-size: 10px;
   }
+
 
   .hero-secondary {
     font-size: 10px;
   }
 
 
-  /* =====================================================
-     MOBILE IMAGE
-     RIGHT SIDE — ABSOLUTE
-  ===================================================== */
+  /* -----------------------------------------
+     IMAGE
+     Desktop-style right side positioning
+  ----------------------------------------- */
 
   .hero-visual {
     position: absolute;
 
     z-index: 1;
 
-    top: 105px;
+    top: 145px;
 
-    right: -190px;
+    right: -31%;
 
-    width: 470px;
+    width: 78%;
 
     height: auto;
 
     margin: 0;
-
-    padding: 0;
 
     display: block;
 
@@ -540,46 +503,14 @@
   .hero-visual img {
     display: block;
 
-    width: 470px;
+    width: 100%;
 
     max-width: none;
-
-    max-height: none;
 
     height: auto;
 
     margin: 0;
-
-    transform: none;
   }
-
-
-  /* =====================================================
-     SMALL DARK OVERLAY
-     Keeps text readable over visual
-  ===================================================== */
-
-  .hero::after {
-    content: "";
-
-    position: absolute;
-
-    z-index: 2;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    background:
-      linear-gradient(
-        90deg,
-        rgba(8, 8, 8, 0.95) 0%,
-        rgba(8, 8, 8, 0.72) 35%,
-        rgba(8, 8, 8, 0.15) 72%,
-        rgba(8, 8, 8, 0) 100%
-      );
-  }
-
 }
 
 
@@ -590,112 +521,122 @@
 @media (max-width: 500px) {
 
   .hero {
-    min-height: calc(100svh - 72px);
+    min-height: 720px;
 
-    padding: 78px 20px 85px;
+    padding: 44px 20px 60px;
+  }
+
+
+  .hero-content {
+    width: 73%;
+  }
+
+
+  .hero-eyebrow {
+    margin-bottom: 30px;
+
+    font-size: 6.5px;
   }
 
 
   .hero h1 {
-    max-width: 310px;
-
-    font-size: 52px;
+    font-size: 51px;
 
     line-height: 0.88;
   }
 
 
   .hero-description {
-    max-width: 285px;
-
     margin-top: 27px;
 
-    font-size: 12.5px;
+    font-size: 11px;
+
+    line-height: 1.65;
   }
 
 
   .hero-actions {
-    margin-top: 30px;
+    margin-top: 29px;
+
+    gap: 19px;
   }
 
 
   .hero-primary {
-    width: 275px;
+    width: 220px;
 
-    padding: 16px 18px;
+    padding: 16px 17px;
   }
 
 
-  /* ---------------- IMAGE ---------------- */
+  .hero-secondary {
+    font-size: 9px;
+  }
+
+
+  /* IMAGE RIGHT SIDE */
 
   .hero-visual {
-    top: 125px;
+    top: 155px;
 
-    right: -205px;
+    right: -39%;
 
-    width: 450px;
+    width: 86%;
   }
-
-  .hero-visual img {
-    width: 450px;
-  }
-
 }
 
 
 /* =========================================================
-   VERY SMALL MOBILE
+   VERY SMALL PHONES
 ========================================================= */
 
 @media (max-width: 380px) {
 
   .hero {
+    min-height: 700px;
+
     padding-left: 18px;
 
     padding-right: 18px;
   }
 
 
-  .hero h1 {
-    max-width: 285px;
+  .hero-content {
+    width: 74%;
+  }
 
-    font-size: 48px;
+
+  .hero h1 {
+    font-size: 47px;
   }
 
 
   .hero-description {
-    max-width: 265px;
-
-    font-size: 12px;
+    font-size: 10.5px;
   }
 
 
   .hero-visual {
-    top: 135px;
+    top: 150px;
 
-    right: -215px;
+    right: -45%;
 
-    width: 440px;
+    width: 92%;
   }
-
-  .hero-visual img {
-    width: 440px;
-  }
-
 }
 
 
 /* =========================================================
-   ACCESSIBILITY
+   REDUCED MOTION
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
   .hero-primary,
   .hero-primary::before,
+  .hero-primary span:last-child,
   .hero-secondary,
   .hero-secondary::after {
     transition: none;
   }
-
 }
