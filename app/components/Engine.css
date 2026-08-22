@@ -337,18 +337,159 @@
 .engine-stages {
   margin-top: 150px;
 
+  margin-left: -5vw;
+  margin-right: -5vw;
+
   border-top: 1px solid #1b1b1b;
 }
 
 
 /* =========================================================
-   INDIVIDUAL STAGE
+   INDIVIDUAL STAGE — BASE
 ========================================================= */
 
 .engine-stage {
-  padding: 75px 0 85px;
+  padding: 90px 5vw 100px;
 
   border-bottom: 1px solid #1b1b1b;
+
+  background: #080808;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   STAGE 01 — BE FOUND
+   WHITE
+========================================================= */
+
+.engine-stage:nth-child(1) {
+  background: #f3f3f1;
+
+  color: #090909;
+
+  border-color: #d5d5d1;
+}
+
+.engine-stage:nth-child(1) .engine-stage-top {
+  color: #777;
+}
+
+.engine-stage:nth-child(1) .engine-stage-number {
+  color: var(--orange);
+}
+
+.engine-stage:nth-child(1) .engine-stage-title {
+  color: #777;
+}
+
+.engine-stage:nth-child(1) .engine-stage-heading h3 {
+  color: #090909;
+}
+
+.engine-stage:nth-child(1) .engine-stage-description {
+  color: #555;
+}
+
+.engine-stage:nth-child(1) .engine-stage-text {
+  color: #777;
+}
+
+.engine-stage:nth-child(1) .engine-stage-services {
+  border-color: #d4d4d0;
+}
+
+.engine-stage:nth-child(1) .engine-stage-service {
+  border-color: #d4d4d0;
+}
+
+.engine-stage:nth-child(1) .engine-service-title {
+  color: #090909;
+}
+
+.engine-stage:nth-child(1) .engine-stage-service p {
+  color: #666;
+}
+
+
+/* =========================================================
+   STAGE 02 — BE CHOSEN
+   BLACK
+========================================================= */
+
+.engine-stage:nth-child(2) {
+  background: #080808;
+
+  color: #ffffff;
+
+  border-color: #1b1b1b;
+}
+
+.engine-stage:nth-child(2) .engine-stage-heading h3 {
+  color: #ffffff;
+}
+
+.engine-stage:nth-child(2) .engine-stage-description {
+  color: #999;
+}
+
+.engine-stage:nth-child(2) .engine-stage-text {
+  color: #666;
+}
+
+
+/* =========================================================
+   STAGE 03 — BE REMEMBERED
+   WHITE
+========================================================= */
+
+.engine-stage:nth-child(3) {
+  background: #f3f3f1;
+
+  color: #090909;
+
+  border-color: #d5d5d1;
+}
+
+.engine-stage:nth-child(3) .engine-stage-top {
+  color: #777;
+}
+
+.engine-stage:nth-child(3) .engine-stage-number {
+  color: var(--orange);
+}
+
+.engine-stage:nth-child(3) .engine-stage-title {
+  color: #777;
+}
+
+.engine-stage:nth-child(3) .engine-stage-heading h3 {
+  color: #090909;
+}
+
+.engine-stage:nth-child(3) .engine-stage-description {
+  color: #555;
+}
+
+.engine-stage:nth-child(3) .engine-stage-text {
+  color: #777;
+}
+
+.engine-stage:nth-child(3) .engine-stage-services {
+  border-color: #d4d4d0;
+}
+
+.engine-stage:nth-child(3) .engine-stage-service {
+  border-color: #d4d4d0;
+}
+
+.engine-stage:nth-child(3) .engine-service-title {
+  color: #090909;
+}
+
+.engine-stage:nth-child(3) .engine-stage-service p {
+  color: #666;
 }
 
 
@@ -372,14 +513,6 @@
   font-weight: 600;
 
   letter-spacing: 0.16em;
-}
-
-.engine-stage-number {
-  color: var(--orange);
-}
-
-.engine-stage-title {
-  color: #666;
 }
 
 
@@ -467,6 +600,10 @@
   padding: 24px 0;
 
   border-bottom: 1px solid #1c1c1c;
+
+  transition:
+    padding-left 0.3s ease,
+    background 0.3s ease;
 }
 
 .engine-service-title {
@@ -493,14 +630,23 @@
 
 
 /* =========================================================
-   STAGE HOVER
+   WHITE STAGE SERVICE OVERRIDES
 ========================================================= */
 
-.engine-stage-service {
-  transition:
-    padding-left 0.3s ease,
-    background 0.3s ease;
+.engine-stage:nth-child(1) .engine-service-title,
+.engine-stage:nth-child(3) .engine-service-title {
+  color: #090909;
 }
+
+.engine-stage:nth-child(1) .engine-stage-service p,
+.engine-stage:nth-child(3) .engine-stage-service p {
+  color: #666;
+}
+
+
+/* =========================================================
+   SERVICE HOVER
+========================================================= */
 
 .engine-stage-service:hover {
   padding-left: 8px;
@@ -512,7 +658,7 @@
 
 
 /* =========================================================
-   FINAL CTA
+   FINAL CTA — BLACK
 ========================================================= */
 
 .engine-start {
@@ -524,11 +670,18 @@
 
   align-items: end;
 
-  margin-top: 100px;
+  margin-top: 0;
 
-  padding-top: 70px;
+  margin-left: -5vw;
+  margin-right: -5vw;
+
+  padding: 100px 5vw 110px;
+
+  background: #080808;
 
   border-top: 1px solid #1b1b1b;
+
+  color: #ffffff;
 }
 
 
@@ -689,6 +842,11 @@
     transform: scale(0.92);
   }
 
+  .engine-stage {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+
   .engine-stage-main {
     gap: 5vw;
   }
@@ -697,6 +855,13 @@
     font-size: clamp(48px, 6vw, 75px);
   }
 
+  .engine-start {
+    margin-left: -4vw;
+    margin-right: -4vw;
+
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
 }
 
 
@@ -707,7 +872,7 @@
 @media (max-width: 900px) {
 
   .engine-section {
-    padding: 90px 24px 90px;
+    padding: 90px 24px 0;
   }
 
 
@@ -816,10 +981,13 @@
 
   .engine-stages {
     margin-top: 90px;
+
+    margin-left: -24px;
+    margin-right: -24px;
   }
 
   .engine-stage {
-    padding: 55px 0 60px;
+    padding: 65px 24px 70px;
   }
 
   .engine-stage-top {
@@ -889,9 +1057,9 @@
   .engine-start {
     display: block;
 
-    margin-top: 70px;
+    margin: 0 -24px;
 
-    padding-top: 45px;
+    padding: 70px 24px 80px;
   }
 
   .engine-start-copy {
@@ -921,7 +1089,6 @@
 
     padding: 16px 17px;
   }
-
 }
 
 
@@ -932,7 +1099,7 @@
 @media (max-width: 600px) {
 
   .engine-section {
-    padding: 75px 20px 80px;
+    padding: 75px 20px 0;
   }
 
   .engine-intro {
@@ -955,7 +1122,6 @@
     line-height: 1.75;
   }
 
-
   .engine-node {
     padding: 19px;
   }
@@ -970,13 +1136,15 @@
     line-height: 1.65;
   }
 
-
   .engine-stages {
     margin-top: 75px;
+
+    margin-left: -20px;
+    margin-right: -20px;
   }
 
   .engine-stage {
-    padding: 48px 0 55px;
+    padding: 55px 20px 60px;
   }
 
   .engine-stage-top {
@@ -996,7 +1164,6 @@
   .engine-stage-text {
     font-size: 11px;
   }
-
 
   .engine-stage-services {
     margin-top: 38px;
@@ -1018,11 +1185,11 @@
     font-size: 10px;
   }
 
-
   .engine-start {
-    margin-top: 60px;
+    margin-left: -20px;
+    margin-right: -20px;
 
-    padding-top: 38px;
+    padding: 55px 20px 65px;
   }
 
   .engine-start-label {
@@ -1068,6 +1235,11 @@
     font-size: 43px;
   }
 
+  .engine-stage {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
   .engine-stage-service {
     grid-template-columns: 75px 1fr;
 
@@ -1076,6 +1248,14 @@
 
   .engine-stage-service p {
     font-size: 9.5px;
+  }
+
+  .engine-start {
+    margin-left: -16px;
+    margin-right: -16px;
+
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
@@ -1093,3 +1273,4 @@
     transition: none;
   }
 }
+
