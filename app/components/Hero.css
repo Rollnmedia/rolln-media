@@ -5,18 +5,20 @@
 .hero {
   position: relative;
 
-  min-height: calc(100vh - 110px);
+  min-height: 100vh;
 
-  padding: 80px 5vw 55px;
+  padding: 125px 5vw 55px;
 
   display: grid;
-  grid-template-columns: 1fr 0.9fr;
+
+  grid-template-columns: 1fr 0.78fr;
 
   align-items: center;
 
   gap: 2vw;
 
   background: #080808;
+
   color: #ffffff;
 
   overflow: hidden;
@@ -30,10 +32,11 @@
 .hero-content {
   position: relative;
 
-  z-index: 3;
+  z-index: 5;
 
   width: 100%;
-  max-width: 760px;
+
+  max-width: 780px;
 }
 
 
@@ -48,7 +51,7 @@
 
   gap: 12px;
 
-  margin-bottom: 40px;
+  margin-bottom: 42px;
 
   color: #8a8a8f;
 
@@ -57,10 +60,13 @@
   font-weight: 600;
 
   letter-spacing: 0.18em;
+
+  white-space: nowrap;
 }
 
 .hero-eyebrow span {
   width: 9px;
+
   height: 9px;
 
   flex-shrink: 0;
@@ -81,7 +87,7 @@
 .hero h1 {
   margin: 0;
 
-  font-size: clamp(62px, 7vw, 112px);
+  font-size: clamp(65px, 7.2vw, 112px);
 
   line-height: 0.86;
 
@@ -102,7 +108,7 @@
 .hero-description {
   max-width: 650px;
 
-  margin: 40px 0 0;
+  margin: 42px 0 0;
 
   color: #8d8d92;
 
@@ -123,9 +129,9 @@
 
   align-items: center;
 
-  gap: 32px;
+  gap: 40px;
 
-  margin-top: 46px;
+  margin-top: 48px;
 }
 
 
@@ -144,9 +150,11 @@
 
   gap: 55px;
 
-  min-width: 235px;
+  width: 305px;
 
-  padding: 18px 20px;
+  min-width: 0;
+
+  padding: 20px 24px;
 
   background: #f3f3f1;
 
@@ -250,7 +258,9 @@
   position: absolute;
 
   left: 0;
+
   right: 0;
+
   bottom: 0;
 
   height: 1px;
@@ -276,29 +286,29 @@
 
 
 /* =========================================================
-   HERO IMAGE
+   HERO VISUAL — DESKTOP
 ========================================================= */
 
 .hero-visual {
   position: relative;
 
-  z-index: 1;
+  z-index: 2;
 
   width: 100%;
+
+  min-width: 0;
 
   display: flex;
 
   align-items: center;
 
-  justify-content: center;
-
-  min-width: 0;
+  justify-content: flex-end;
 }
 
 .hero-visual img {
   display: block;
 
-  width: min(100%, 650px);
+  width: min(100%, 540px);
 
   height: auto;
 
@@ -311,35 +321,106 @@
 
 
 /* =========================================================
-   TABLET
+   BOTTOM STRIP
+========================================================= */
+
+.hero-bottom {
+  position: absolute;
+
+  left: 5vw;
+
+  right: 5vw;
+
+  bottom: 22px;
+
+  z-index: 6;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #1c1c1f;
+
+  color: #5f5f64;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+}
+
+.hero-bottom i {
+  color: var(--orange);
+
+  font-style: normal;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1400px) {
+
+  .hero {
+    grid-template-columns: 1fr 0.72fr;
+
+    padding-left: 5vw;
+
+    padding-right: 5vw;
+  }
+
+  .hero h1 {
+    font-size: clamp(80px, 7vw, 118px);
+  }
+
+  .hero-visual img {
+    width: 500px;
+  }
+}
+
+
+/* =========================================================
+   TABLET / SMALL DESKTOP
 ========================================================= */
 
 @media (max-width: 1100px) {
 
   .hero {
-    min-height: calc(100vh - 100px);
+    min-height: 100vh;
 
-    padding: 70px 5vw 50px;
+    padding-top: 115px;
 
-    grid-template-columns: 1fr 0.85fr;
+    grid-template-columns: 1fr 0.75fr;
 
     gap: 1vw;
   }
 
   .hero h1 {
-    font-size: clamp(58px, 7vw, 90px);
+    font-size: clamp(58px, 7vw, 88px);
   }
 
   .hero-description {
-    max-width: 560px;
+    max-width: 540px;
 
     font-size: 14px;
   }
 
   .hero-visual img {
-    width: 100%;
+    width: 470px;
 
-    max-width: 570px;
+    max-width: 100%;
+  }
+
+  .hero-primary {
+    width: 260px;
   }
 }
 
@@ -353,11 +434,11 @@
   .hero {
     position: relative;
 
-    min-height: 760px;
+    min-height: 720px;
 
     height: auto;
 
-    padding: 48px 20px 70px;
+    padding: 42px 20px 65px;
 
     display: block;
 
@@ -365,14 +446,14 @@
   }
 
 
-  /* -----------------------------------------
+  /* =====================================================
      CONTENT
-  ----------------------------------------- */
+  ===================================================== */
 
   .hero-content {
     position: relative;
 
-    z-index: 4;
+    z-index: 5;
 
     width: 72%;
 
@@ -380,14 +461,14 @@
   }
 
 
-  /* -----------------------------------------
+  /* =====================================================
      EYEBROW
-  ----------------------------------------- */
+  ===================================================== */
 
   .hero-eyebrow {
     gap: 9px;
 
-    margin-bottom: 34px;
+    margin-bottom: 30px;
 
     font-size: 7px;
 
@@ -397,53 +478,54 @@
   }
 
   .hero-eyebrow span {
-    width: 8px;
-    height: 8px;
+    width: 7px;
+
+    height: 7px;
   }
 
 
-  /* -----------------------------------------
+  /* =====================================================
      HEADING
-  ----------------------------------------- */
+  ===================================================== */
 
   .hero h1 {
-    font-size: clamp(48px, 14vw, 66px);
+    margin: 0;
+
+    font-size: clamp(48px, 13vw, 64px);
 
     line-height: 0.87;
 
     letter-spacing: -0.075em;
-
-    white-space: normal;
   }
 
 
-  /* -----------------------------------------
+  /* =====================================================
      DESCRIPTION
-  ----------------------------------------- */
+  ===================================================== */
 
   .hero-description {
     width: 100%;
 
-    max-width: none;
+    max-width: 255px;
 
-    margin-top: 30px;
+    margin-top: 28px;
 
-    font-size: 12px;
+    color: #8d8d92;
+
+    font-size: 11px;
 
     line-height: 1.7;
-
-    color: #85858b;
   }
 
 
-  /* -----------------------------------------
+  /* =====================================================
      ACTIONS
-  ----------------------------------------- */
+  ===================================================== */
 
   .hero-actions {
     position: relative;
 
-    z-index: 5;
+    z-index: 7;
 
     display: flex;
 
@@ -451,45 +533,56 @@
 
     align-items: flex-start;
 
-    gap: 22px;
+    gap: 18px;
 
-    margin-top: 32px;
+    margin-top: 30px;
   }
 
 
+  /* =====================================================
+     PRIMARY CTA
+  ===================================================== */
+
   .hero-primary {
-    width: 235px;
+    width: 205px;
 
     min-width: 0;
 
-    padding: 17px 18px;
+    padding: 16px 17px;
 
-    gap: 20px;
+    gap: 15px;
 
     font-size: 10px;
   }
 
+  .hero-primary span:last-child {
+    font-size: 16px;
+  }
+
+
+  /* =====================================================
+     SECONDARY CTA
+  ===================================================== */
 
   .hero-secondary {
-    font-size: 10px;
+    font-size: 9px;
   }
 
 
-  /* -----------------------------------------
-     IMAGE
-     Desktop-style right side positioning
-  ----------------------------------------- */
+  /* =====================================================
+     IMAGE — RIGHT SIDE
+  ===================================================== */
 
   .hero-visual {
     position: absolute;
 
-    z-index: 1;
+    z-index: 2;
 
-    top: 145px;
+    top: 165px;
 
-    right: -31%;
+    right: -22%;
 
-    width: 78%;
+    width: 60%;
 
     height: auto;
 
@@ -511,6 +604,35 @@
 
     margin: 0;
   }
+
+
+  /* =====================================================
+     BOTTOM STRIP
+  ===================================================== */
+
+  .hero-bottom {
+    position: relative;
+
+    left: auto;
+
+    right: auto;
+
+    bottom: auto;
+
+    z-index: 8;
+
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding-top: 18px;
+
+    gap: 14px;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+  }
 }
 
 
@@ -521,49 +643,55 @@
 @media (max-width: 500px) {
 
   .hero {
-    min-height: 720px;
+    min-height: 700px;
 
-    padding: 44px 20px 60px;
+    padding-left: 20px;
+
+    padding-right: 20px;
   }
 
 
   .hero-content {
-    width: 73%;
+    width: 71%;
   }
 
 
   .hero-eyebrow {
-    margin-bottom: 30px;
+    margin-bottom: 29px;
 
     font-size: 6.5px;
+
+    letter-spacing: 0.12em;
   }
 
 
   .hero h1 {
-    font-size: 51px;
+    font-size: 50px;
 
     line-height: 0.88;
   }
 
 
   .hero-description {
+    max-width: 245px;
+
     margin-top: 27px;
 
-    font-size: 11px;
+    font-size: 10.5px;
 
     line-height: 1.65;
   }
 
 
   .hero-actions {
-    margin-top: 29px;
+    margin-top: 28px;
 
-    gap: 19px;
+    gap: 18px;
   }
 
 
   .hero-primary {
-    width: 220px;
+    width: 205px;
 
     padding: 16px 17px;
   }
@@ -574,14 +702,31 @@
   }
 
 
-  /* IMAGE RIGHT SIDE */
+  /* =====================================================
+     IMAGE
+  ===================================================== */
 
   .hero-visual {
-    top: 155px;
+    top: 160px;
 
-    right: -39%;
+    right: -25%;
 
-    width: 86%;
+    width: 58%;
+  }
+
+  .hero-visual img {
+    width: 100%;
+  }
+
+
+  /* =====================================================
+     BOTTOM
+  ===================================================== */
+
+  .hero-bottom {
+    gap: 11px;
+
+    font-size: 7px;
   }
 }
 
@@ -593,7 +738,7 @@
 @media (max-width: 380px) {
 
   .hero {
-    min-height: 700px;
+    min-height: 680px;
 
     padding-left: 18px;
 
@@ -602,32 +747,43 @@
 
 
   .hero-content {
-    width: 74%;
+    width: 73%;
   }
 
 
   .hero h1 {
     font-size: 47px;
+
+    line-height: 0.88;
   }
 
 
   .hero-description {
-    font-size: 10.5px;
+    max-width: 235px;
+
+    font-size: 10px;
+  }
+
+
+  .hero-primary {
+    width: 195px;
+
+    padding: 15px 16px;
   }
 
 
   .hero-visual {
-    top: 150px;
+    top: 155px;
 
-    right: -45%;
+    right: -29%;
 
-    width: 92%;
+    width: 56%;
   }
 }
 
 
 /* =========================================================
-   REDUCED MOTION
+   ACCESSIBILITY
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
