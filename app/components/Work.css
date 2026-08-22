@@ -1,3 +1,7 @@
+/* =========================================================
+   WORK SECTION
+========================================================= */
+
 .work-section {
   position: relative;
   overflow: hidden;
@@ -63,6 +67,8 @@
 }
 
 .project {
+  min-width: 0;
+
   border-top: 1px solid #cfcfcb;
 }
 
@@ -87,7 +93,7 @@
 
 
 /* =========================================================
-   TITLE
+   PROJECT TITLE
 ========================================================= */
 
 .project-title {
@@ -141,6 +147,7 @@
   padding-bottom: 14px;
 
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 
   scrollbar-width: none;
 
@@ -152,19 +159,25 @@
   -webkit-overflow-scrolling: touch;
 
   overscroll-behavior-x: contain;
+
+  touch-action: pan-x;
 }
 
 .project-gallery::-webkit-scrollbar {
   display: none;
 }
 
-.project-gallery:active {
+.project-gallery:active,
+.project-gallery.is-dragging {
   cursor: grabbing;
+
+  scroll-behavior: auto;
 }
 
 
 /* =========================================================
-   IMAGE CARD — DESKTOP
+   PROJECT CARD
+   IMAGE + WHITE INFO = ONE SINGLE SLIDE
 ========================================================= */
 
 .project-image {
@@ -174,8 +187,6 @@
 
   width: 62vw;
 
-  aspect-ratio: 16 / 9;
-
   overflow: hidden;
 
   scroll-snap-align: start;
@@ -183,32 +194,29 @@
   background: #dededb;
 
   border: 1px solid rgba(0, 0, 0, 0.08);
+
+  cursor: grab;
+}
+
+.project-gallery.is-dragging .project-image {
+  cursor: grabbing;
 }
 
 
 /* =========================================================
-   IMAGE OVERLAY
+   IMAGE MEDIA
 ========================================================= */
 
-.project-image::after {
-  content: "";
+.project-image-media {
+  position: relative;
 
-  position: absolute;
+  width: 100%;
 
-  inset: 0;
+  aspect-ratio: 16 / 9;
 
-  z-index: 1;
+  overflow: hidden;
 
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.25),
-      transparent 30%,
-      transparent 70%,
-      rgba(0, 0, 0, 0.38)
-    );
-
-  pointer-events: none;
+  background: #dededb;
 }
 
 
@@ -217,10 +225,10 @@
 ========================================================= */
 
 .project-image img {
+  display: block;
+
   width: 100%;
   height: 100%;
-
-  display: block;
 
   object-fit: contain;
 
@@ -228,6 +236,9 @@
 
   pointer-events: none;
 
+  user-select: none;
+
+  -webkit-user-select: none;
   -webkit-user-drag: none;
 
   transition:
@@ -241,51 +252,78 @@
 
 
 /* =========================================================
-   IMAGE INFORMATION
+   REMOVE OLD IMAGE OVERLAY
+========================================================= */
+
+.project-image::after {
+  display: none;
+}
+
+
+/* =========================================================
+   WHITE INFORMATION STRIP
 ========================================================= */
 
 .project-image-info {
-  position: absolute;
+  position: relative;
 
-  z-index: 3;
+  z-index: 2;
 
-  top: 22px;
-  left: 24px;
-  right: 24px;
+  width: 100%;
+
+  min-height: 62px;
+
+  padding: 18px 22px;
 
   display: flex;
 
-  align-items: flex-start;
+  align-items: center;
+
   justify-content: space-between;
 
-  gap: 20px;
+  gap: 25px;
 
-  color: #fff;
+  background: #ffffff;
+
+  color: #0a0a0a;
 
   pointer-events: none;
 }
 
-.project-image-label {
-  font-size: 10px;
 
-  font-weight: 600;
+/* =========================================================
+   IMAGE LABEL
+========================================================= */
+
+.project-image-label {
+  display: block;
+
+  color: #111;
+
+  font-size: 9px;
+
+  font-weight: 700;
 
   letter-spacing: 0.14em;
 
   line-height: 1.4;
-
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
+
+/* =========================================================
+   IMAGE NOTE
+========================================================= */
+
 .project-image-note {
-  padding: 7px 10px;
+  display: block;
 
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 0;
 
-  background: rgba(0, 0, 0, 0.22);
+  border: none;
 
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: transparent;
+
+  color: #777;
 
   font-size: 8px;
 
@@ -293,19 +331,20 @@
 
   letter-spacing: 0.12em;
 
-  line-height: 1;
+  line-height: 1.4;
 
   white-space: nowrap;
 }
 
 
 /* =========================================================
-   BOTTOM
+   PROJECT BOTTOM
 ========================================================= */
 
 .project-bottom {
   display: flex;
 
+  align-items: center;
   justify-content: space-between;
 
   padding-top: 18px;
@@ -330,9 +369,20 @@
 
 @media (max-width: 1100px) {
 
+  .work-section {
+    padding-top: 110px;
+  }
+
   .project-image {
     flex-basis: 72vw;
+
     width: 72vw;
+  }
+
+  .project-image-info {
+    min-height: 58px;
+
+    padding: 17px 20px;
   }
 }
 
@@ -348,9 +398,9 @@
   }
 
 
-  /* -----------------------------
+  /* -------------------------------------------------------
      HEADING
-  ----------------------------- */
+  ------------------------------------------------------- */
 
   .work-heading {
     display: block;
@@ -375,18 +425,18 @@
   }
 
 
-  /* -----------------------------
+  /* -------------------------------------------------------
      PROJECT LIST
-  ----------------------------- */
+  ------------------------------------------------------- */
 
   .work-list {
     gap: 90px;
   }
 
 
-  /* -----------------------------
+  /* -------------------------------------------------------
      META
-  ----------------------------- */
+  ------------------------------------------------------- */
 
   .project-meta {
     padding: 16px 0;
@@ -397,9 +447,9 @@
   }
 
 
-  /* -----------------------------
-     TITLE
-  ----------------------------- */
+  /* -------------------------------------------------------
+     PROJECT TITLE
+  ------------------------------------------------------- */
 
   .project-title {
     display: block;
@@ -424,18 +474,20 @@
   }
 
 
-  /* -----------------------------
+  /* -------------------------------------------------------
      GALLERY
-  ----------------------------- */
+  ------------------------------------------------------- */
 
   .project-gallery {
-    gap: 12px;
-
     width: calc(100vw - 40px);
+
+    gap: 12px;
 
     padding-bottom: 10px;
 
     scroll-snap-type: x mandatory;
+
+    scroll-padding-left: 0;
 
     touch-action: pan-x;
 
@@ -443,50 +495,56 @@
   }
 
 
-  /* -----------------------------
-     IMAGE CARD
-  ----------------------------- */
+  /* -------------------------------------------------------
+     PROJECT CARD
+  ------------------------------------------------------- */
 
   .project-image {
     flex: 0 0 calc(100vw - 56px);
 
     width: calc(100vw - 56px);
 
-    aspect-ratio: 16 / 9;
+    min-width: 0;
 
-    height: auto;
-
-    min-height: 0;
-
-    scroll-snap-align: center;
+    scroll-snap-align: start;
 
     border-radius: 0;
   }
 
 
-  /* -----------------------------
-     IMAGE
-  ----------------------------- */
+  /* -------------------------------------------------------
+     IMAGE MEDIA
+  ------------------------------------------------------- */
 
-  .project-image img {
-    object-fit: contain;
-
+  .project-image-media {
     width: 100%;
-    height: 100%;
+
+    aspect-ratio: 16 / 9;
   }
 
 
-  /* -----------------------------
-     IMAGE INFO
-  ----------------------------- */
+  /* -------------------------------------------------------
+     IMAGE
+  ------------------------------------------------------- */
+
+  .project-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+  }
+
+
+  /* -------------------------------------------------------
+     WHITE INFO STRIP
+  ------------------------------------------------------- */
 
   .project-image-info {
-    top: 14px;
+    min-height: 52px;
 
-    left: 14px;
-    right: 14px;
+    padding: 15px 15px;
 
-    gap: 10px;
+    gap: 12px;
   }
 
   .project-image-label {
@@ -496,17 +554,15 @@
   }
 
   .project-image-note {
-    padding: 6px 7px;
-
     font-size: 6px;
 
-    letter-spacing: 0.07em;
+    letter-spacing: 0.08em;
   }
 
 
-  /* -----------------------------
-     BOTTOM
-  ----------------------------- */
+  /* -------------------------------------------------------
+     PROJECT BOTTOM
+  ------------------------------------------------------- */
 
   .project-bottom {
     padding-top: 13px;
@@ -530,12 +586,13 @@
   }
 
 
-  /* -----------------------------
+  /* -------------------------------------------------------
      HEADING
-  ----------------------------- */
+  ------------------------------------------------------- */
 
   .work-heading {
     padding-top: 30px;
+
     padding-bottom: 50px;
   }
 
@@ -544,9 +601,9 @@
   }
 
 
-  /* -----------------------------
+  /* -------------------------------------------------------
      GALLERY
-  ----------------------------- */
+  ------------------------------------------------------- */
 
   .project-gallery {
     width: calc(100vw - 32px);
@@ -557,54 +614,61 @@
   }
 
 
-  /* -----------------------------
-     IMAGE
-  ----------------------------- */
+  /* -------------------------------------------------------
+     PROJECT CARD
+  ------------------------------------------------------- */
 
   .project-image {
     flex: 0 0 calc(100vw - 44px);
 
     width: calc(100vw - 44px);
 
-    aspect-ratio: 16 / 9;
-
-    height: auto;
+    scroll-snap-align: start;
   }
 
 
-  /* -----------------------------
-     IMAGE INFO
-  ----------------------------- */
+  /* -------------------------------------------------------
+     IMAGE
+  ------------------------------------------------------- */
+
+  .project-image-media {
+    aspect-ratio: 16 / 9;
+  }
+
+
+  /* -------------------------------------------------------
+     WHITE INFO
+  ------------------------------------------------------- */
 
   .project-image-info {
-    top: 12px;
+    min-height: 48px;
 
-    left: 12px;
-    right: 12px;
+    padding: 13px 12px;
 
-    display: block;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
   }
 
   .project-image-label {
-    display: block;
+    font-size: 6.5px;
 
-    font-size: 7px;
+    letter-spacing: 0.09em;
   }
 
   .project-image-note {
-    display: inline-block;
+    font-size: 5.5px;
 
-    margin-top: 7px;
+    letter-spacing: 0.06em;
 
-    padding: 5px 7px;
-
-    font-size: 6px;
+    white-space: nowrap;
   }
 
 
-  /* -----------------------------
+  /* -------------------------------------------------------
      BOTTOM
-  ----------------------------- */
+  ------------------------------------------------------- */
 
   .project-bottom {
     padding-top: 12px;
@@ -624,12 +688,17 @@
 
   .work-section {
     padding-left: 14px;
+
     padding-right: 14px;
   }
 
+
   .project-gallery {
     width: calc(100vw - 28px);
+
+    gap: 9px;
   }
+
 
   .project-image {
     flex-basis: calc(100vw - 36px);
@@ -637,21 +706,23 @@
     width: calc(100vw - 36px);
   }
 
-  .project-image-info {
-    top: 10px;
 
-    left: 10px;
-    right: 10px;
+  .project-image-info {
+    min-height: 44px;
+
+    padding: 11px 10px;
   }
+
 
   .project-image-label {
     font-size: 6px;
   }
 
-  .project-image-note {
-    font-size: 5.5px;
 
-    padding: 4px 6px;
+  .project-image-note {
+    font-size: 5px;
+
+    letter-spacing: 0.05em;
   }
 }
 
