@@ -2,7 +2,7 @@
   position: relative;
   overflow: hidden;
 
-  padding: 130px 5vw 110px;
+  padding: 130px 5vw 120px;
 
   background: #080808;
   color: #ffffff;
@@ -16,21 +16,23 @@
 .engine-intro {
   display: grid;
 
-  grid-template-columns: 1.4fr 0.6fr;
+  grid-template-columns: 1.35fr 0.65fr;
 
   gap: 8vw;
 
-  padding: 45px 0 85px;
+  padding: 45px 0 105px;
+
+  border-bottom: 1px solid #1b1b1b;
 }
 
 .engine-intro h2 {
   margin: 0;
 
-  font-size: clamp(55px, 7vw, 105px);
+  font-size: clamp(55px, 7.2vw, 110px);
 
-  line-height: 0.9;
+  line-height: 0.88;
 
-  letter-spacing: -0.07em;
+  letter-spacing: -0.075em;
 
   font-weight: 600;
 }
@@ -42,7 +44,7 @@
 .engine-intro p {
   align-self: end;
 
-  max-width: 410px;
+  max-width: 420px;
 
   margin: 0;
 
@@ -55,239 +57,347 @@
 
 
 /* =========================================================
-   SYSTEM
+   NEW GROWTH STAGES
 ========================================================= */
 
-.engine-system {
-  position: relative;
-
-  width: min(100%, 1050px);
-
-  height: 650px;
-
-  margin: 0 auto;
-}
-
-
-/* =========================================================
-   CORE
-========================================================= */
-
-.engine-core {
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-
-  z-index: 5;
-
-  width: 150px;
-  height: 150px;
-
+.engine-stages {
   display: flex;
 
   flex-direction: column;
 
-  align-items: center;
-  justify-content: center;
-
-  transform: translate(-50%, -50%);
-
-  border: 1px solid rgba(100, 140, 255, 0.45);
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(50, 90, 180, 0.18),
-      rgba(8, 8, 8, 0.9) 70%
-    );
-
-  box-shadow:
-    0 0 70px rgba(60, 100, 255, 0.12),
-    inset 0 0 35px rgba(60, 100, 255, 0.08);
-
-  transition:
-    box-shadow 0.4s ease,
-    border-color 0.4s ease;
+  width: 100%;
 }
 
-.engine-core:hover {
-  border-color: rgba(255, 122, 0, 0.45);
 
-  box-shadow:
-    0 0 80px rgba(255, 122, 0, 0.12),
-    inset 0 0 35px rgba(255, 122, 0, 0.06);
+/* =========================================================
+   STAGE
+========================================================= */
+
+.engine-stage {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 0.75fr 1.25fr;
+
+  gap: 7vw;
+
+  padding: 95px 0 100px;
+
+  border-bottom: 1px solid #1b1b1b;
 }
 
-.engine-core span {
-  color: #888;
 
-  font-size: 8px;
+/* =========================================================
+   STAGE NUMBER / LABEL
+========================================================= */
 
-  letter-spacing: 0.2em;
+.engine-stage-label {
+  position: relative;
+
+  align-self: start;
 }
 
-.engine-core strong {
-  margin-top: 4px;
+.engine-stage-number {
+  display: block;
 
-  color: #fff;
+  margin-bottom: 22px;
 
-  font-size: 18px;
+  color: var(--orange);
 
-  letter-spacing: -0.04em;
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
 }
 
-.engine-core small {
-  margin-top: 7px;
+.engine-stage-label h3 {
+  margin: 0;
+
+  font-size: clamp(48px, 6vw, 88px);
+
+  line-height: 0.85;
+
+  letter-spacing: -0.075em;
+
+  font-weight: 600;
+}
+
+.engine-stage-label h3 span {
+  display: block;
+
+  margin-top: 10px;
 
   color: #555;
+}
 
-  font-size: 7px;
+
+/* =========================================================
+   STAGE DESCRIPTION
+========================================================= */
+
+.engine-stage-description {
+  max-width: 570px;
+
+  padding-top: 7px;
+}
+
+.engine-stage-description h4 {
+  margin: 0 0 18px;
+
+  color: #ffffff;
+
+  font-size: clamp(22px, 2.3vw, 32px);
+
+  line-height: 1;
+
+  letter-spacing: -0.04em;
+
+  font-weight: 500;
+}
+
+.engine-stage-description > p {
+  max-width: 470px;
+
+  margin: 0 0 42px;
+
+  color: #777;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   SERVICES GRID
+========================================================= */
+
+.engine-services {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 1px;
+
+  background: #222;
+
+  border: 1px solid #222;
+}
+
+
+/* =========================================================
+   SERVICE ITEM
+========================================================= */
+
+.engine-service {
+  min-height: 150px;
+
+  padding: 25px 22px;
+
+  background: #080808;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.engine-service:hover {
+  background: #101010;
+
+  transform: translateY(-2px);
+}
+
+.engine-service strong {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: #e8e8e8;
+
+  font-size: 11px;
+
+  font-weight: 600;
 
   letter-spacing: 0.14em;
 }
 
+.engine-service p {
+  max-width: 250px;
 
-/* =========================================================
-   RINGS
-========================================================= */
-
-.engine-ring {
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-
-  width: 390px;
-  height: 390px;
-
-  transform: translate(-50%, -50%);
-
-  border: 1px solid rgba(80, 120, 255, 0.18);
-
-  border-radius: 50%;
-}
-
-.engine-orbit {
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-
-  border: 1px solid rgba(80, 120, 255, 0.12);
-
-  border-radius: 50%;
-
-  transform: translate(-50%, -50%);
-}
-
-.orbit-one {
-  width: 700px;
-  height: 330px;
-
-  transform:
-    translate(-50%, -50%)
-    rotate(22deg);
-}
-
-.orbit-two {
-  width: 760px;
-  height: 400px;
-
-  transform:
-    translate(-50%, -50%)
-    rotate(-22deg);
-}
-
-
-/* =========================================================
-   NODES
-========================================================= */
-
-.engine-node {
-  position: absolute;
-
-  width: 220px;
-
-  padding: 20px;
-
-  border: 1px solid #1e1e1e;
-
-  background: rgba(12, 12, 12, 0.8);
-
-  backdrop-filter: blur(12px);
-
-  transition:
-    border-color 0.3s ease,
-    transform 0.3s ease,
-    background 0.3s ease;
-}
-
-.engine-node:hover {
-  border-color: rgba(255, 122, 0, 0.35);
-
-  background: rgba(18, 18, 18, 0.9);
-
-  transform: translateY(-5px);
-}
-
-.engine-node strong {
-  display: block;
-
-  color: #e8e8e8;
-
-  font-size: 14px;
-
-  font-weight: 600;
-
-  letter-spacing: 0.08em;
-}
-
-.engine-node p {
-  margin: 10px 0 0;
+  margin: 0;
 
   color: #666;
 
-  font-size: 10px;
+  font-size: 11px;
 
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 
 /* =========================================================
-   NODE POSITIONS
+   STAGE ACCENT
 ========================================================= */
 
-.engine-node-1 {
+.engine-stage::before {
+  content: "";
+
+  position: absolute;
+
   left: 0;
-  top: 8%;
+
+  top: 0;
+
+  width: 45px;
+
+  height: 1px;
+
+  background: var(--orange);
+
+  opacity: 0.8;
 }
 
-.engine-node-2 {
-  right: 0;
-  top: 8%;
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.engine-start {
+  display: grid;
+
+  grid-template-columns: 1fr auto;
+
+  align-items: end;
+
+  gap: 40px;
+
+  padding: 105px 0 20px;
 }
 
-.engine-node-3 {
-  left: 0;
-  top: 42%;
+.engine-start-label {
+  margin-bottom: 22px;
+
+  color: var(--orange);
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
 }
 
-.engine-node-4 {
-  right: 0;
-  top: 42%;
+.engine-start h3 {
+  margin: 0;
+
+  max-width: 800px;
+
+  font-size: clamp(45px, 6vw, 88px);
+
+  line-height: 0.88;
+
+  letter-spacing: -0.075em;
+
+  font-weight: 600;
 }
 
-.engine-node-5 {
-  left: 14%;
-  bottom: 5%;
+.engine-start h3 span {
+  color: #555;
 }
 
-.engine-node-6 {
-  right: 14%;
-  bottom: 5%;
+.engine-start p {
+  max-width: 420px;
+
+  margin: 25px 0 0;
+
+  color: #777;
+
+  font-size: 13px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
+.engine-start-link {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 55px;
+
+  min-width: 220px;
+
+  padding: 17px 19px;
+
+  background: #f3f3f1;
+
+  color: #090909;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.engine-start-link::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: var(--orange);
+
+  transform: translateX(-101%);
+
+  transition: transform 0.35s ease;
+}
+
+.engine-start-link span {
+  position: relative;
+
+  z-index: 2;
+}
+
+.engine-start-link span:last-child {
+  color: var(--orange);
+
+  font-size: 17px;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.engine-start-link:hover {
+  transform: translateY(-3px);
+}
+
+.engine-start-link:hover::before {
+  transform: translateX(0);
+}
+
+.engine-start-link:hover span:last-child {
+  color: #090909;
+
+  transform: translate(3px, -3px);
 }
 
 
@@ -301,9 +411,13 @@
   align-items: center;
   justify-content: center;
 
+  flex-wrap: wrap;
+
   gap: 18px;
 
-  padding-top: 40px;
+  margin-top: 90px;
+
+  padding-top: 25px;
 
   border-top: 1px solid #1b1b1b;
 
@@ -326,81 +440,233 @@
 
 
 /* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .engine-section {
+    padding: 110px 4vw 100px;
+  }
+
+  .engine-intro {
+    grid-template-columns: 1fr 0.8fr;
+
+    gap: 5vw;
+
+    padding-bottom: 85px;
+  }
+
+  .engine-stage {
+    grid-template-columns: 0.7fr 1.3fr;
+
+    gap: 5vw;
+
+    padding: 80px 0 85px;
+  }
+
+  .engine-services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .engine-start {
+    grid-template-columns: 1fr;
+
+    align-items: start;
+  }
+
+}
+
+
+/* =========================================================
    MOBILE
 ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
 
   .engine-section {
-    padding: 90px 24px;
+    padding: 85px 20px 90px;
   }
+
+
+  /* -----------------------------
+     INTRO
+  ----------------------------- */
 
   .engine-intro {
     display: block;
 
-    padding: 40px 0 60px;
+    padding: 30px 0 65px;
   }
 
   .engine-intro h2 {
-    font-size: clamp(52px, 14vw, 80px);
+    font-size: clamp(50px, 14vw, 76px);
+
+    line-height: 0.9;
   }
 
   .engine-intro p {
-    max-width: 420px;
+    max-width: 100%;
+
+    margin-top: 28px;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+  }
+
+
+  /* -----------------------------
+     STAGE
+  ----------------------------- */
+
+  .engine-stage {
+    display: block;
+
+    padding: 65px 0 70px;
+  }
+
+  .engine-stage::before {
+    width: 35px;
+  }
+
+
+  /* -----------------------------
+     STAGE TITLE
+  ----------------------------- */
+
+  .engine-stage-number {
+    margin-bottom: 18px;
+
+    font-size: 8px;
+  }
+
+  .engine-stage-label h3 {
+    font-size: clamp(48px, 14vw, 70px);
+
+    line-height: 0.87;
+  }
+
+  .engine-stage-label h3 span {
+    margin-top: 7px;
+  }
+
+
+  /* -----------------------------
+     DESCRIPTION
+  ----------------------------- */
+
+  .engine-stage-description {
+    padding-top: 30px;
+  }
+
+  .engine-stage-description h4 {
+    margin-bottom: 15px;
+
+    font-size: 24px;
+  }
+
+  .engine-stage-description > p {
+    margin-bottom: 30px;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+  }
+
+
+  /* -----------------------------
+     SERVICES
+  ----------------------------- */
+
+  .engine-services {
+    grid-template-columns: 1fr;
+  }
+
+  .engine-service {
+    min-height: auto;
+
+    padding: 21px 18px;
+  }
+
+  .engine-service strong {
+    margin-bottom: 10px;
+
+    font-size: 10px;
+  }
+
+  .engine-service p {
+    max-width: 100%;
+
+    font-size: 10px;
+
+    line-height: 1.7;
+  }
+
+
+  /* -----------------------------
+     FINAL CTA
+  ----------------------------- */
+
+  .engine-start {
+    display: block;
+
+    padding-top: 75px;
+  }
+
+  .engine-start-label {
+    margin-bottom: 18px;
+
+    font-size: 8px;
+  }
+
+  .engine-start h3 {
+    font-size: clamp(45px, 13vw, 68px);
+
+    line-height: 0.88;
+  }
+
+  .engine-start p {
+    margin-top: 22px;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+  }
+
+  .engine-start-link {
+    width: 100%;
+
+    min-width: 0;
 
     margin-top: 30px;
 
-    font-size: 14px;
+    padding: 17px 18px;
   }
 
-  .engine-system {
-    height: auto;
 
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 12px;
-  }
-
-  .engine-ring,
-  .engine-orbit,
-  .engine-core {
-    display: none;
-  }
-
-  .engine-node {
-    position: relative;
-
-    inset: auto !important;
-
-    width: 100%;
-
-    padding: 22px;
-
-    background: rgba(12, 12, 12, 0.85);
-  }
-
-  .engine-node strong {
-    font-size: 13px;
-  }
-
-  .engine-node p {
-    max-width: 520px;
-
-    font-size: 11px;
-  }
+  /* -----------------------------
+     FLOW
+  ----------------------------- */
 
   .engine-flow {
     justify-content: flex-start;
 
-    gap: 14px;
+    flex-wrap: nowrap;
+
+    gap: 13px;
+
+    margin-top: 65px;
+
+    padding-top: 20px;
 
     overflow-x: auto;
 
     white-space: nowrap;
 
     scrollbar-width: none;
+
+    font-size: 7px;
   }
 
   .engine-flow::-webkit-scrollbar {
@@ -413,45 +679,88 @@
    SMALL MOBILE
 ========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
 
   .engine-section {
-    padding: 80px 20px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .engine-intro {
-    padding-top: 30px;
+    padding-top: 25px;
+
+    padding-bottom: 55px;
   }
 
   .engine-intro h2 {
-    font-size: clamp(48px, 14vw, 70px);
-
-    line-height: 0.92;
+    font-size: 50px;
   }
 
-  .engine-intro p {
+  .engine-stage {
+    padding: 55px 0 60px;
+  }
+
+  .engine-stage-label h3 {
+    font-size: 50px;
+  }
+
+  .engine-stage-description {
+    padding-top: 27px;
+  }
+
+  .engine-stage-description h4 {
+    font-size: 22px;
+  }
+
+  .engine-stage-description > p {
+    font-size: 12px;
+  }
+
+  .engine-service {
+    padding: 19px 16px;
+  }
+
+  .engine-start {
+    padding-top: 65px;
+  }
+
+  .engine-start h3 {
+    font-size: 48px;
+  }
+
+  .engine-start-link {
     margin-top: 26px;
-
-    font-size: 13px;
-
-    line-height: 1.7;
-  }
-
-  .engine-node {
-    padding: 20px;
-  }
-
-  .engine-node p {
-    margin-top: 9px;
-
-    font-size: 10px;
   }
 
   .engine-flow {
-    padding-top: 28px;
-
-    font-size: 7px;
+    margin-top: 55px;
   }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .engine-section {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .engine-intro h2 {
+    font-size: 46px;
+  }
+
+  .engine-stage-label h3 {
+    font-size: 46px;
+  }
+
+  .engine-start h3 {
+    font-size: 44px;
+  }
+
 }
 
 
@@ -461,8 +770,9 @@
 
 @media (prefers-reduced-motion: reduce) {
 
-  .engine-core,
-  .engine-node {
+  .engine-service,
+  .engine-start-link {
     transition: none;
   }
+
 }
