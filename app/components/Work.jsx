@@ -68,26 +68,38 @@ const projects = [
 export default function Work() {
   const galleryRefs = useRef([]);
 
+  /* =====================================================
+     MOUSE DRAG
+  ===================================================== */
+
   const handleMouseDown = (event, index) => {
     const gallery = galleryRefs.current[index];
 
     if (!gallery) return;
 
     gallery.dataset.dragging = "true";
-    gallery.dataset.startX = event.pageX - gallery.offsetLeft;
-    gallery.dataset.scrollLeft = gallery.scrollLeft;
+    gallery.dataset.startX =
+      event.pageX - gallery.offsetLeft;
+    gallery.dataset.scrollLeft =
+      gallery.scrollLeft;
+
+    gallery.classList.add("is-dragging");
   };
 
   const handleMouseMove = (event, index) => {
     const gallery = galleryRefs.current[index];
 
-    if (!gallery || gallery.dataset.dragging !== "true") {
+    if (
+      !gallery ||
+      gallery.dataset.dragging !== "true"
+    ) {
       return;
     }
 
     event.preventDefault();
 
-    const x = event.pageX - gallery.offsetLeft;
+    const x =
+      event.pageX - gallery.offsetLeft;
 
     const walk =
       (x - Number(gallery.dataset.startX)) * 1.2;
@@ -102,6 +114,7 @@ export default function Work() {
     if (!gallery) return;
 
     gallery.dataset.dragging = "false";
+    gallery.classList.remove("is-dragging");
   };
 
   return (
@@ -141,7 +154,9 @@ export default function Work() {
             key={project.title}
           >
 
-            {/* PROJECT CATEGORY */}
+            {/* =================================================
+                PROJECT CATEGORY
+            ================================================= */}
 
             <div className="project-meta">
 
@@ -152,7 +167,9 @@ export default function Work() {
             </div>
 
 
-            {/* PROJECT TITLE */}
+            {/* =================================================
+                PROJECT TITLE
+            ================================================= */}
 
             <div className="project-title">
 
@@ -175,7 +192,8 @@ export default function Work() {
               className="project-gallery"
 
               ref={(element) => {
-                galleryRefs.current[projectIndex] = element;
+                galleryRefs.current[projectIndex] =
+                  element;
               }}
 
               onMouseDown={(event) =>
@@ -212,15 +230,25 @@ export default function Work() {
                   key={image.src}
                 >
 
-                  <img
-                    src={image.src}
-                    alt={`${project.title} — ${image.label}`}
-                    loading="lazy"
-                    draggable="false"
-                  />
+                  {/* =========================================
+                      IMAGE
+                  ========================================= */}
+
+                  <div className="project-image-media">
+
+                    <img
+                      src={image.src}
+                      alt={`${project.title} — ${image.label}`}
+                      loading="lazy"
+                      draggable="false"
+                    />
+
+                  </div>
 
 
-                  {/* IMAGE LABEL */}
+                  {/* =========================================
+                      WHITE INFO AREA
+                  ========================================= */}
 
                   <div className="project-image-info">
 
@@ -241,7 +269,9 @@ export default function Work() {
             </div>
 
 
-            {/* PROJECT FOOTER */}
+            {/* =================================================
+                PROJECT FOOTER
+            ================================================= */}
 
             <div className="project-bottom">
 
