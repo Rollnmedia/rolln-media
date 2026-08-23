@@ -10,6 +10,7 @@ export default function FinalCTA() {
     name: "",
     email: "",
     phone: "",
+    service: "",
     message: "",
   });
 
@@ -68,6 +69,7 @@ export default function FinalCTA() {
         name: "",
         email: "",
         phone: "",
+        service: "",
         message: "",
       });
     } catch (error) {
@@ -185,11 +187,12 @@ export default function FinalCTA() {
                 </span>
 
                 <h4>
-                  Message received.
+                  Enquiry received.
                 </h4>
 
                 <p>
-                  Thanks for reaching out. We’ll be in touch soon.
+                  Thanks for getting in touch. Your enquiry is safely
+                  with our team, and we’ll be in touch shortly.
                 </p>
 
                 <button
@@ -254,8 +257,60 @@ export default function FinalCTA() {
                 </label>
 
 
+                {/* SERVICE / REQUIREMENT */}
+
                 <label>
-                  <span>WHAT CAN WE HELP WITH?</span>
+                  <span>WHAT DO YOU NEED HELP WITH?</span>
+
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="" disabled>
+                      Select a service
+                    </option>
+
+                    <option value="Website Design & Development">
+                      Website Design & Development
+                    </option>
+
+                    <option value="SEO">
+                      SEO
+                    </option>
+
+                    <option value="Google Ads / PPC">
+                      Google Ads / PPC
+                    </option>
+
+                    <option value="Social Media Marketing">
+                      Social Media Marketing
+                    </option>
+
+                    <option value="Digital Marketing">
+                      Digital Marketing
+                    </option>
+
+                    <option value="Automation">
+                      Automation
+                    </option>
+
+                    <option value="Website + SEO">
+                      Website + SEO
+                    </option>
+
+                    <option value="Other">
+                      Other
+                    </option>
+                  </select>
+                </label>
+
+
+                {/* MESSAGE */}
+
+                <label>
+                  <span>TELL US MORE</span>
 
                   <textarea
                     name="message"
