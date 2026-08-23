@@ -1,3 +1,7 @@
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
 .final-cta {
   position: relative;
 
@@ -16,7 +20,9 @@
 }
 
 
-/* ================= AMBIENT GLOW ================= */
+/* =========================================================
+   AMBIENT GLOW
+========================================================= */
 
 .final-cta::before {
   content: "";
@@ -39,7 +45,9 @@
 }
 
 
-/* ================= TOP / BOTTOM ================= */
+/* =========================================================
+   TOP / BOTTOM
+========================================================= */
 
 .final-cta-top,
 .final-cta-bottom {
@@ -48,10 +56,12 @@
   z-index: 2;
 
   display: flex;
+
   justify-content: space-between;
   align-items: center;
 
   font-size: 9px;
+
   font-weight: 600;
 
   letter-spacing: 0.16em;
@@ -65,7 +75,9 @@
 }
 
 
-/* ================= CONTENT ================= */
+/* =========================================================
+   CONTENT
+========================================================= */
 
 .final-cta-content {
   position: relative;
@@ -80,11 +92,15 @@
 }
 
 
-/* ================= EYEBROW ================= */
+/* =========================================================
+   EYEBROW
+========================================================= */
 
 .final-cta-eyebrow {
   display: inline-flex;
+
   align-items: center;
+
   gap: 10px;
 
   margin-bottom: 30px;
@@ -92,6 +108,7 @@
   color: #777;
 
   font-size: 9px;
+
   font-weight: 600;
 
   letter-spacing: 0.2em;
@@ -113,7 +130,9 @@
 }
 
 
-/* ================= HEADING ================= */
+/* =========================================================
+   HEADING
+========================================================= */
 
 .final-cta h2 {
   margin: 0;
@@ -132,9 +151,11 @@
 }
 
 
-/* ================= DESCRIPTION ================= */
+/* =========================================================
+   DESCRIPTION
+========================================================= */
 
-.final-cta-content p {
+.final-cta-content > p {
   max-width: 540px;
 
   margin: 38px auto 42px;
@@ -149,12 +170,17 @@
 }
 
 
-/* ================= CTA ================= */
+/* =========================================================
+   CTA BUTTON
+========================================================= */
 
 .gap-button {
+  border: 0;
+
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
   gap: 22px;
@@ -164,11 +190,15 @@
   padding: 17px 22px;
 
   background: var(--orange);
+
   color: #111;
 
-  text-decoration: none;
+  font-family: inherit;
+
+  cursor: pointer;
 
   font-size: 10px;
+
   font-weight: 700;
 
   letter-spacing: 0.1em;
@@ -196,7 +226,9 @@
 }
 
 
-/* ================= BOTTOM ================= */
+/* =========================================================
+   BOTTOM
+========================================================= */
 
 .final-cta-bottom {
   border-top: 1px solid #d4d4d1;
@@ -205,7 +237,481 @@
 }
 
 
-/* ================= TABLET ================= */
+/* =========================================================
+   CONTACT MODAL
+========================================================= */
+
+.contact-modal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 30px;
+
+  background: rgba(5, 5, 5, 0.78);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  animation: contactModalFade 0.25s ease;
+}
+
+@keyframes contactModalFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   MODAL BOX
+========================================================= */
+
+.contact-modal-box {
+  position: relative;
+
+  width: min(100%, 720px);
+
+  max-height: calc(100vh - 60px);
+
+  overflow-y: auto;
+
+  padding: 48px;
+
+  background: #0a0a0a;
+
+  color: #ffffff;
+
+  border: 1px solid #242424;
+
+  box-shadow:
+    0 30px 100px rgba(0, 0, 0, 0.55),
+    0 0 60px rgba(244, 123, 32, 0.035);
+
+  animation: contactModalUp 0.35s ease;
+}
+
+@keyframes contactModalUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================================================
+   MODAL CLOSE
+========================================================= */
+
+.contact-modal-close {
+  position: absolute;
+
+  top: 20px;
+  right: 22px;
+
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #292929;
+
+  background: transparent;
+
+  color: #888;
+
+  font-family: inherit;
+
+  font-size: 22px;
+
+  font-weight: 300;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.contact-modal-close:hover {
+  color: #fff;
+
+  border-color: var(--orange);
+
+  background: rgba(244, 123, 32, 0.08);
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.contact-modal-header {
+  max-width: 560px;
+
+  padding-right: 35px;
+}
+
+.contact-modal-header > span {
+  display: block;
+
+  margin-bottom: 22px;
+
+  color: var(--orange);
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+}
+
+.contact-modal-header h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(42px, 5vw, 65px);
+
+  line-height: 0.9;
+
+  letter-spacing: -0.06em;
+
+  font-weight: 600;
+}
+
+.contact-modal-header h3 em {
+  color: #555;
+
+  font-style: normal;
+}
+
+.contact-modal-header p {
+  max-width: 470px;
+
+  margin: 24px 0 0;
+
+  color: #777;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+
+.contact-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 22px;
+
+  margin-top: 42px;
+}
+
+.contact-form-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+.contact-form label {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+.contact-form label > span {
+  color: #666;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 0;
+
+  border-bottom: 1px solid #2a2a2a;
+
+  border-radius: 0;
+
+  outline: none;
+
+  padding: 12px 0;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  transition:
+    border-color 0.25s ease;
+}
+
+.contact-form textarea {
+  min-height: 115px;
+
+  resize: vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #454545;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--orange);
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.contact-submit {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  width: 100%;
+
+  margin-top: 5px;
+
+  padding: 17px 18px;
+
+  border: 0;
+
+  background: #f3f3f1;
+
+  color: #090909;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.contact-submit::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: var(--orange);
+
+  transform: translateX(-101%);
+
+  transition: transform 0.35s ease;
+}
+
+.contact-submit:hover::before {
+  transform: translateX(0);
+}
+
+.contact-submit:hover {
+  transform: translateY(-2px);
+}
+
+.contact-submit > * {
+  position: relative;
+
+  z-index: 1;
+}
+
+.contact-submit span {
+  font-size: 17px;
+
+  font-weight: 400;
+
+  transition: transform 0.3s ease;
+}
+
+.contact-submit:hover span {
+  transform: translate(3px, -3px);
+}
+
+.contact-submit:disabled {
+  opacity: 0.6;
+
+  cursor: wait;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.contact-form-error {
+  margin: -4px 0 0;
+
+  color: #ff6b4a;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   SUCCESS STATE
+========================================================= */
+
+.contact-success {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  margin-top: 55px;
+}
+
+.contact-success-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 24px;
+
+  border: 1px solid rgba(244, 123, 32, 0.45);
+
+  border-radius: 50%;
+
+  color: var(--orange);
+
+  font-size: 20px;
+}
+
+.contact-success h4 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 32px;
+
+  line-height: 1;
+
+  letter-spacing: -0.04em;
+}
+
+.contact-success p {
+  max-width: 400px;
+
+  margin: 14px 0 28px;
+
+  color: #777;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+.contact-success button {
+  padding: 13px 20px;
+
+  border: 1px solid #292929;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.contact-success button:hover {
+  border-color: var(--orange);
+
+  color: var(--orange);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media (max-width: 900px) {
 
@@ -217,10 +723,16 @@
     font-size: clamp(50px, 8vw, 82px);
   }
 
+  .contact-modal-box {
+    padding: 42px;
+  }
+
 }
 
 
-/* ================= MOBILE ================= */
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 700px) {
 
@@ -264,7 +776,7 @@
   }
 
 
-  .final-cta-content p {
+  .final-cta-content > p {
     margin: 30px auto 35px;
 
     font-size: 14px;
@@ -288,10 +800,101 @@
     font-size: 8px;
   }
 
+
+  /* ================= MODAL ================= */
+
+  .contact-modal {
+    align-items: flex-end;
+
+    padding: 0;
+  }
+
+  .contact-modal-box {
+    width: 100%;
+
+    max-height: 92vh;
+
+    padding: 38px 22px 28px;
+
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+
+    animation: contactModalMobile 0.35s ease;
+  }
+
+  @keyframes contactModalMobile {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .contact-modal-close {
+    top: 16px;
+    right: 18px;
+  }
+
+  .contact-modal-header {
+    padding-right: 35px;
+  }
+
+  .contact-modal-header > span {
+    margin-bottom: 18px;
+
+    font-size: 7px;
+  }
+
+  .contact-modal-header h3 {
+    font-size: clamp(40px, 12vw, 58px);
+
+    line-height: 0.9;
+  }
+
+  .contact-modal-header p {
+    margin-top: 20px;
+
+    font-size: 11px;
+
+    line-height: 1.65;
+  }
+
+  .contact-form {
+    gap: 20px;
+
+    margin-top: 35px;
+  }
+
+  .contact-form-row {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 12px;
+  }
+
+  .contact-form textarea {
+    min-height: 100px;
+  }
+
+  .contact-submit {
+    padding: 16px;
+  }
+
 }
 
 
-/* ================= SMALL MOBILE ================= */
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
 
 @media (max-width: 420px) {
 
@@ -308,8 +911,56 @@
     font-size: 47px;
   }
 
-  .final-cta-content p {
+  .final-cta-content > p {
     font-size: 13px;
   }
 
+
+  .contact-modal-box {
+    padding: 34px 20px 24px;
+  }
+
+  .contact-modal-header h3 {
+    font-size: 42px;
+  }
+
+  .contact-form {
+    margin-top: 30px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .contact-modal-header h3 {
+    font-size: 39px;
+  }
+
+  .contact-form label > span {
+    font-size: 7px;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .gap-button,
+  .contact-modal,
+  .contact-modal-box,
+  .contact-submit,
+  .contact-modal-close {
+    animation: none;
+
+    transition: none;
+  }
 }
