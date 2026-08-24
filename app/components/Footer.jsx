@@ -45,16 +45,12 @@ export default function Footer() {
 
             <span>CONNECT</span>
 
-            <a href="mailto:hello@rollnmedia.co.nz">
-              Email <em>↗</em>
+            <a href="mailto:hello@rolln.media">
+              hello@rolln.media <em>↗</em>
             </a>
 
-            <a href="#">
-              Instagram <em>↗</em>
-            </a>
-
-            <a href="#">
-              LinkedIn <em>↗</em>
+            <a href="tel:+64220205848">
+              +64 22 020 5848 <em>↗</em>
             </a>
 
           </div>
